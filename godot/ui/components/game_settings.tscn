@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://nbaodrlopo7y"]
+
+[ext_resource type="PackedScene" uid="uid://cpo1u33eut0i4" path="res://ui/components/float_range_game_settings_option.tscn" id="1_0gpwr"]
+[ext_resource type="Script" path="res://ui/components/game_settings.gd" id="1_eje8l"]
+
+[node name="GameSettings" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eje8l")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 10
+
+[node name="GridContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Empty1" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Language" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "settings_language"
+horizontal_alignment = 1
+
+[node name="LanguageDropdown" type="OptionButton" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Empty2" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Empty3" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Volume" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "volume"
+horizontal_alignment = 1
+
+[node name="MasterVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "settings_volume_master"
+
+[node name="MasterVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
+unique_name_in_owner = true
+layout_mode = 2
+property = "mastervolume"
+
+[node name="MusicVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "settings_volume_music"
+
+[node name="MusicVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
+unique_name_in_owner = true
+layout_mode = 2
+property = "musicvolume"
+
+[node name="SoundVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "settings_volume_sound"
+
+[node name="SoundVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
+unique_name_in_owner = true
+layout_mode = 2
+property = "soundvolume"
+
+[connection signal="item_selected" from="MarginContainer/GridContainer/LanguageDropdown" to="." method="_on_language_dropdown_item_selected"]
