@@ -13,6 +13,7 @@ func save_data() -> Dictionary:
 	}
 	
 func _process(delta):
+	return
 	if Input.is_action_pressed("ui_right"):
 		position.x += 100 * delta
 	if Input.is_action_pressed("ui_left"):

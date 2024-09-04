@@ -1,0 +1,716 @@
+[gd_scene load_steps=40 format=3 uid="uid://luullnf7r6q2"]
+
+[ext_resource type="Texture2D" uid="uid://32emst0ctttf" path="res://assets/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_ykuyc"]
+[ext_resource type="Texture2D" uid="uid://bylxapp1aec53" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="2_n6yub"]
+[ext_resource type="Texture2D" uid="uid://k20k0rpc5f1l" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="3_kqi2c"]
+[ext_resource type="Texture2D" uid="uid://dc2sdtxl2ou4a" path="res://assets/Tiny Swords/UI/Buttons/Button_Disable_3Slides.png" id="4_h36gj"]
+[ext_resource type="Script" path="res://multiple_choice.gd" id="4_nh0nq"]
+[ext_resource type="Texture2D" uid="uid://b4ufxisxmbjfp" path="res://assets/Tiny Swords/Resources/Trees/i-just-released-a-free-demo-of-tiny-swords-game-assets-link-v0-f22woqj3miz91.png" id="5_80thm"]
+
+[sub_resource type="GDScript" id="GDScript_n3afd"]
+script/source = "extends Control
+
+@onready var my_health = %MyHealth
+@onready var opponent_health = %OpponentHealth
+@onready var button = $VBoxContainer/Button
+@onready var button_2 = $VBoxContainer/Button2
+@onready var button_3 = $VBoxContainer/Button3
+@onready var my_hp: int = my_health.max_value
+@onready var opponent_hp: int = opponent_health.max_value
+@onready var my_health_label = %MyHealthLabel
+@onready var opponent_health_label = %OpponentHealthLabel
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	my_health.value = my_health.max_value
+	opponent_health.value = opponent_health.max_value
+	button.pressed.connect(func():
+		opponent_hp = min(100.0, max(0.0, opponent_hp + 30))
+	)
+	button_2.pressed.connect(func():
+		hurt_opponent(opponent_hp / 2.0)
+	)
+	button_3.pressed.connect(func():
+		hurt_player(50)
+	)
+
+func hurt_opponent(damage):
+	%AnimatedSprite2D.play(\"attack\")
+	await %AnimatedSprite2D.animation_finished
+	%AnimatedSprite2D.play(\"idle\")
+	opponent_hp = clamp(opponent_hp - damage, 0, 100)
+
+func hurt_player(damage):
+	%AnimatedSprite2D2.play(\"attack\")
+	await %AnimatedSprite2D2.animation_finished
+	%AnimatedSprite2D2.play(\"idle\")
+	my_hp = clamp(my_hp - damage, 0, 100)
+
+func _process(delta):
+	my_health.value = move_toward(my_health.value, my_hp, delta * 50.0)
+	opponent_health.value = move_toward(opponent_health.value, opponent_hp, delta * 50.0)
+	my_health_label.text = str(my_hp)
+	opponent_health_label.text = str(opponent_hp)
+	
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d806"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiets"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmbk8"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(384, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35ky7"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(576, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpsgo"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(768, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_522y8"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(960, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dia6y"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77mto"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rgk0"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6iat"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kl27"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f23nk"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4lus"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4ntx"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obgy0"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3pq2"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7eid"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbl3k"]
+atlas = ExtResource("1_ykuyc")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7qjlr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7d806")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aiets")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmbk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35ky7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpsgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_522y8")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dia6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77mto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rgk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6iat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kl27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f23nk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4lus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4ntx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obgy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3pq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7eid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbl3k")
+}],
+"loop": true,
+"name": &"running",
+"speed": 12.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_qobb3"]
+script/source = "extends VBoxContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	for child in get_children():
+		child.pressed.connect(func(): self.reorder_children())
+	
+func reorder_children():
+	get_children().map(func(child):
+		move_child(child, randf_range(0, get_child_count() - 1))
+		child.pop()
+	)
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c4456"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f5f8n"]
+texture = ExtResource("3_kqi2c")
+texture_margin_left = 60.0
+texture_margin_top = 10.0
+texture_margin_right = 60.0
+texture_margin_bottom = 30.0
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+axis_stretch_horizontal = 1
+modulate_color = Color(0.643137, 0.490196, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ui1xv"]
+content_margin_top = 20.0
+texture = ExtResource("2_n6yub")
+texture_margin_left = 60.0
+texture_margin_top = 10.0
+texture_margin_right = 60.0
+texture_margin_bottom = 30.0
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vr6fr"]
+texture = ExtResource("3_kqi2c")
+texture_margin_left = 60.0
+texture_margin_top = 10.0
+texture_margin_right = 60.0
+texture_margin_bottom = 30.0
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+axis_stretch_horizontal = 1
+
+[sub_resource type="GDScript" id="GDScript_efclx"]
+script/source = "extends Button
+
+@export var text_label: RichTextLabel
+@onready var text_label_pos = text_label.position
+
+func _ready():
+	pop()
+	#self_modulate = Color(randf(), randf(), randf(), 1.0)
+
+func pop():
+	create_tween().tween_property(
+		self,
+		\"scale:y\",
+		1.0,
+		0.2
+	).from(0.0001).set_trans(Tween.TRANS_ELASTIC)
+
+func _process(delta):
+	if button_pressed:
+		text_label.position = text_label_pos + Vector2(0, 7)
+	else:
+		text_label.position = text_label_pos
+"
+
+[sub_resource type="GDScript" id="GDScript_xrjus"]
+script/source = "extends GridContainer
+
+@export var multiple_choices: Array[MultipleChoice]
+var used_choices: Array[MultipleChoice]
+
+func appear(multiple_choice: MultipleChoice):
+	$\"../RichTextLabel\".text = str(\"[color=black][center]\", multiple_choice.pregunta, \"[/center][/color]\")
+	for i in range(0, multiple_choice.posibles_respuestas.size()):
+		var boton = get_child(i)
+		boton.modulate = Color.WHITE
+		boton.get_node(\"RichTextLabel\").text = str(\"[center]\", multiple_choice.posibles_respuestas[i].to_upper(), \"[/center]\")
+		boton.pressed.connect(func(): self.on_button_pressed(multiple_choice, multiple_choice.posibles_respuestas[i]))
+
+func on_button_pressed(multiple_choice, respuesta):
+	for j in range(0, multiple_choice.posibles_respuestas.size()):
+		var boton: Button = get_child(j)
+		for connection in boton.pressed.get_connections():
+			connection[\"signal\"].disconnect(connection[\"callable\"])
+		boton.modulate = Color.GREEN if multiple_choice.posibles_respuestas[j] == multiple_choice.respuesta_correcta else Color.RED
+	await disappear()
+	if(respuesta == multiple_choice.respuesta_correcta):
+		get_parent().hurt_opponent(30)
+	else:
+		get_parent().hurt_player(30)
+	await get_tree().create_timer(1.5).timeout
+	multiple_choices.erase(multiple_choice)
+	used_choices.push_back(multiple_choice)
+	if(multiple_choices.is_empty()):
+		multiple_choices = used_choices.duplicate()
+		used_choices.clear()
+	appear(multiple_choices.pick_random())
+	appear_menues()
+
+func _ready():
+	appear(multiple_choices.pick_random())
+
+func disappear():
+	var delay = 0.4
+	create_tween().tween_property(
+		$\"../ButtonDisable3Slides\",
+		\"position:x\",
+		-700.0,
+		0.7
+	).as_relative().set_delay(delay).finished
+	create_tween().tween_property(
+		$\"../RichTextLabel\",
+		\"position:x\",
+		-700.0,
+		0.7
+	).as_relative().set_delay(delay).finished
+	await create_tween().tween_property(
+		self,
+		\"position:x\",
+		-700.0,
+		0.7
+	).as_relative().set_delay(delay).finished
+
+func appear_menues():
+	create_tween().tween_property(
+		$\"../ButtonDisable3Slides\",
+		\"position:x\",
+		700.0,
+		0.7
+	).as_relative()
+	create_tween().tween_property(
+		$\"../RichTextLabel\",
+		\"position:x\",
+		700.0,
+		0.7
+	).as_relative()
+	await create_tween().tween_property(
+		self,
+		\"position:x\",
+		700.0,
+		0.7
+	).as_relative().finished
+"
+
+[sub_resource type="Resource" id="Resource_g01j4"]
+script = ExtResource("4_nh0nq")
+pregunta = "El enemigo te ataca con 🔥 [color=red]FIRE[/color] 🔥, con que te defendes"
+respuesta_correcta = "water 💧"
+posibles_respuestas = Array[String](["water 💧", "wood 🪵", "paper 📄", "cardboard 📦"])
+
+[sub_resource type="Resource" id="Resource_342p2"]
+script = ExtResource("4_nh0nq")
+pregunta = "Elegí el que no encaja en el grupo"
+respuesta_correcta = "cow"
+posibles_respuestas = Array[String](["pumpkin", "tomato", "cow", "onion"])
+
+[sub_resource type="Resource" id="Resource_mdard"]
+script = ExtResource("4_nh0nq")
+pregunta = "El enemigo ataca apuntando a los pies, ¿Cómo defendes?"
+respuesta_correcta = "jump"
+posibles_respuestas = Array[String](["jump", "crouch", "sit", "cry"])
+
+[sub_resource type="Resource" id="Resource_ewh7h"]
+script = ExtResource("4_nh0nq")
+pregunta = "Tu próximo hechizo cambia el clima, elegí el clima más CÁLIDO"
+respuesta_correcta = "sunny"
+posibles_respuestas = Array[String](["rainy", "sunny", "windy", "snowy"])
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1m25k"]
+bg_color = Color(0.689715, 0, 0.267726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n18g8"]
+bg_color = Color(0, 1, 0.231373, 1)
+
+[node name="CombatScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_n3afd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(214, 582)
+scale = Vector2(2.35938, 2.35938)
+sprite_frames = SubResource("SpriteFrames_7qjlr")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(728, 167)
+scale = Vector2(2.35938, 2.35938)
+sprite_frames = SubResource("SpriteFrames_7qjlr")
+animation = &"attack"
+autoplay = "idle"
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 55.0
+offset_right = 599.0
+offset_bottom = 316.0
+theme_override_constants/separation = 25
+script = SubResource("GDScript_qobb3")
+
+[node name="Button" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("text_label")]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c4456")
+theme_override_styles/hover = SubResource("StyleBoxTexture_f5f8n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui1xv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vr6fr")
+text = "
+"
+script = SubResource("GDScript_efclx")
+text_label = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 9.0
+offset_right = -2.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][color=white][center]Increase [u]enemy[/u]'s [color=red]health[/color] [b]by thirty[/b]"
+
+[node name="Button2" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("text_label")]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c4456")
+theme_override_styles/hover = SubResource("StyleBoxTexture_f5f8n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui1xv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vr6fr")
+text = "
+"
+script = SubResource("GDScript_efclx")
+text_label = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 9.0
+offset_right = 2.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][color=white][center]Reduce [u]enemy[/u]'s [color=red]health[/color] [b]by half[/b][/center]"
+
+[node name="Button3" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("text_label")]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c4456")
+theme_override_styles/hover = SubResource("StyleBoxTexture_f5f8n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui1xv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vr6fr")
+text = "
+"
+script = SubResource("GDScript_efclx")
+text_label = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 13.0
+offset_right = -12.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][color=white]Reduce [u]player[/u]'s [color=red]health[/color] [b]by fifty[/b][/color]"
+
+[node name="VBoxContainer2" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 202.5
+offset_top = 146.5
+offset_right = 507.5
+offset_bottom = 316.5
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
+columns = 2
+script = SubResource("GDScript_xrjus")
+multiple_choices = Array[ExtResource("4_nh0nq")]([SubResource("Resource_g01j4"), SubResource("Resource_342p2"), SubResource("Resource_mdard"), SubResource("Resource_ewh7h")])
+
+[node name="Button" type="Button" parent="VBoxContainer2" node_paths=PackedStringArray("text_label")]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c4456")
+theme_override_styles/hover = SubResource("StyleBoxTexture_f5f8n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui1xv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vr6fr")
+text = "
+"
+script = SubResource("GDScript_efclx")
+text_label = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 9.0
+offset_right = -2.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]GLASSES[/center]"
+
+[node name="Button2" type="Button" parent="VBoxContainer2" node_paths=PackedStringArray("text_label")]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c4456")
+theme_override_styles/hover = SubResource("StyleBoxTexture_f5f8n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui1xv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vr6fr")
+text = "
+"
+script = SubResource("GDScript_efclx")
+text_label = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 9.0
+offset_right = 2.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]TREE[/center]"
+
+[node name="Button3" type="Button" parent="VBoxContainer2" node_paths=PackedStringArray("text_label")]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c4456")
+theme_override_styles/hover = SubResource("StyleBoxTexture_f5f8n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui1xv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vr6fr")
+text = "
+"
+script = SubResource("GDScript_efclx")
+text_label = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2/Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 13.0
+offset_right = -12.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]RULER[/center]"
+
+[node name="Button4" type="Button" parent="VBoxContainer2" node_paths=PackedStringArray("text_label")]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c4456")
+theme_override_styles/hover = SubResource("StyleBoxTexture_f5f8n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui1xv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vr6fr")
+text = "
+"
+script = SubResource("GDScript_efclx")
+text_label = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2/Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 13.0
+offset_right = -12.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]CAR[/center]"
+
+[node name="MyHealth" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 401.0
+offset_top = 538.0
+offset_right = 904.0
+offset_bottom = 565.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1m25k")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n18g8")
+value = 70.0
+show_percentage = false
+
+[node name="MyHealthLabel" type="RichTextLabel" parent="MyHealth"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 190.0
+offset_top = 33.0
+offset_right = 230.0
+offset_bottom = 73.0
+
+[node name="OpponentHealth" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 863.0
+offset_top = 80.0
+offset_right = 1226.0
+offset_bottom = 107.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1m25k")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n18g8")
+value = 70.0
+show_percentage = false
+
+[node name="OpponentHealthLabel" type="RichTextLabel" parent="OpponentHealth"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 251.0
+offset_top = 33.0
+offset_right = 291.0
+offset_bottom = 73.0
+
+[node name="ButtonDisable3Slides" type="Sprite2D" parent="."]
+position = Vector2(341.5, 63.5)
+scale = Vector2(2.66146, 1.54688)
+texture = ExtResource("4_h36gj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 162.5
+offset_top = 28.5
+offset_right = 533.5
+offset_bottom = 121.5
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[color=black]Elegí la traducción correcta de
+[center][wave amp=20.0 freq=5.0 connected=1]ANTEOJOS[/wave][/center][/color]"
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(1600, 896)
+autoscroll = Vector2(30, 30)
+repeat_times = 3
+
+[node name="I-just-released-a-free-demo-of-tiny-swords-game-assets-link-v0-f22Woqj3Miz91" type="Sprite2D" parent="Parallax2D"]
+modulate = Color(0.481789, 0.481789, 0.481789, 1)
+z_index = -2
+position = Vector2(597.595, 364.326)
+rotation = 0.00203443
+scale = Vector2(1.00774, 1.01996)
+texture = ExtResource("5_80thm")
