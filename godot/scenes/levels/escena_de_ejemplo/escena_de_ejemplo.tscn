@@ -1,17 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=5 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/levels/escena_de_ejemplo/escena_de_ejemplo.gd" id="1_dgfep"]
-[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="2_i3uhp"]
-[ext_resource type="Script" path="res://scenes/levels/escena_de_ejemplo/node_example.gd" id="3_fov8k"]
+[ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="4_fly0r"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="4_mj4wf"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="5_j8on0"]
 
 [node name="IngameScene" type="Node2D"]
 script = ExtResource("1_dgfep")
-
-[node name="NodeExample" type="Sprite2D" parent="." groups=["Persist"]]
-texture = ExtResource("2_i3uhp")
-script = ExtResource("3_fov8k")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -23,3 +18,6 @@ visible = false
 unique_name_in_owner = true
 process_mode = 2
 visible = false
+
+[node name="Player" parent="." instance=ExtResource("4_fly0r")]
+position = Vector2(467, 332)
