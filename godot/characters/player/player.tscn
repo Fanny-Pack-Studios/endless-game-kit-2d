@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dd6b0hmw15amr"]
+[gd_scene load_steps=16 format=3 uid="uid://dd6b0hmw15amr"]
 
 [ext_resource type="Texture2D" uid="uid://32emst0ctttf" path="res://characters/player/Warrior_Blue.png" id="1_nw63t"]
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_y6xbq"]
@@ -27,6 +27,30 @@ region = Rect2(768, 0, 192, 192)
 atlas = ExtResource("1_nw63t")
 region = Rect2(960, 0, 192, 192)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjw6i"]
+atlas = ExtResource("1_nw63t")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swe6i"]
+atlas = ExtResource("1_nw63t")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta3rk"]
+atlas = ExtResource("1_nw63t")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p644d"]
+atlas = ExtResource("1_nw63t")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r5yb"]
+atlas = ExtResource("1_nw63t")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2i4g"]
+atlas = ExtResource("1_nw63t")
+region = Rect2(960, 192, 192, 192)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wcqaw"]
 animations = [{
 "frames": [{
@@ -51,14 +75,38 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjw6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swe6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta3rk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p644d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r5yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2i4g")
+}],
+"loop": true,
+"name": &"running",
+"speed": 10.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_y6xbq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(154, 147)
 sprite_frames = SubResource("SpriteFrames_wcqaw")
-animation = &"idle"
+animation = &"running"
 autoplay = "idle"
-frame_progress = 0.146733
+frame_progress = 0.510418
