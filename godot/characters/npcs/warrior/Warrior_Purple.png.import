@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr81pdrvcjx8e"
-path="res://.godot/imported/Pawn_Blue.png-af5886745040b6902744444abc72a6bb.ctex"
+uid="uid://gsgu5k18nfp1"
+path="res://.godot/imported/Warrior_Purple.png-f6f7212ae6cd42c2b61acf4f55987430.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tiny Swords/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png"
-dest_files=["res://.godot/imported/Pawn_Blue.png-af5886745040b6902744444abc72a6bb.ctex"]
+source_file="res://characters/npcs/warrior/Warrior_Purple.png"
+dest_files=["res://.godot/imported/Warrior_Purple.png-f6f7212ae6cd42c2b61acf4f55987430.ctex"]
 
 [params]
 
