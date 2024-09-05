@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddyggrsh3ahs5"]
+[gd_scene load_steps=3 format=3 uid="uid://ddyggrsh3ahs5"]
 
 [ext_resource type="PackedScene" uid="uid://b63u3ted2o6p2" path="res://characters/npcs/pawn/npc1.tscn" id="1_6f8e6"]
 [ext_resource type="PackedScene" uid="uid://mkqqacnoc1cy" path="res://characters/npcs/pawn/npc2.tscn" id="2_i2o40"]
-[ext_resource type="PackedScene" uid="uid://b3iprsvr2lln4" path="res://characters/npcs/warrior/npc_warrior.tscn" id="3_plcyn"]
 
 [node name="NpcParty" type="Node2D"]
 
@@ -11,6 +10,3 @@ position = Vector2(252, 292)
 
 [node name="Npc2" parent="." instance=ExtResource("2_i2o40")]
 position = Vector2(475, 223)
-
-[node name="NpcWarrior" parent="." instance=ExtResource("3_plcyn")]
-position = Vector2(460, 483)
