@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr81pdrvcjx8e"
-path="res://.godot/imported/Pawn_Blue.png-d8e8e739b7a94a441ac45dd1abf6c53b.ctex"
+uid="uid://bno3ffmysmbmm"
+path="res://.godot/imported/Archer_Blue.png-cd2dbfb7e1e763668c845dd51318dc62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/npcs/pawn/Pawn_Blue.png"
-dest_files=["res://.godot/imported/Pawn_Blue.png-d8e8e739b7a94a441ac45dd1abf6c53b.ctex"]
+source_file="res://characters/npcs/friends/Archer_Blue.png"
+dest_files=["res://.godot/imported/Archer_Blue.png-cd2dbfb7e1e763668c845dd51318dc62.ctex"]
 
 [params]
 

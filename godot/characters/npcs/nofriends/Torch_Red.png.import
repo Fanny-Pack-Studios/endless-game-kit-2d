@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvljnsfcvwsdm"
-path="res://.godot/imported/Pawn_Purple.png-7bdcd6b298f464eefdac1bed7627baca.ctex"
+uid="uid://h5mlndef052u"
+path="res://.godot/imported/Torch_Red.png-f41b578c62c9bf293495559541a048aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/npcs/pawn/Pawn_Purple.png"
-dest_files=["res://.godot/imported/Pawn_Purple.png-7bdcd6b298f464eefdac1bed7627baca.ctex"]
+source_file="res://characters/npcs/nofriends/Torch_Red.png"
+dest_files=["res://.godot/imported/Torch_Red.png-f41b578c62c9bf293495559541a048aa.ctex"]
 
 [params]
 

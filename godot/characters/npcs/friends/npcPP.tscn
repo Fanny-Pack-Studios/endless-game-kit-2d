@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://mkqqacnoc1cy"]
+[gd_scene load_steps=10 format=3 uid="uid://mkqqacnoc1cy"]
 
-[ext_resource type="Texture2D" uid="uid://bvljnsfcvwsdm" path="res://characters/npcs/pawn/Pawn_Purple.png" id="1_uuixs"]
+[ext_resource type="Texture2D" uid="uid://bvljnsfcvwsdm" path="res://characters/npcs/friends/Pawn_Purple.png" id="1_uuixs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lg1el"]
 atlas = ExtResource("1_uuixs")
@@ -52,6 +52,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0k4j"]
+size = Vector2(28, 20)
+
 [node name="Npc2" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -60,3 +63,7 @@ sprite_frames = SubResource("SpriteFrames_34mod")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.630565
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_v0k4j")

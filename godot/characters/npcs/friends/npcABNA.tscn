@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://kbhs71a32apn"]
+
+[ext_resource type="Texture2D" uid="uid://dh6btmnvldp40" path="res://characters/npcs/friends/Archer_Blue_(NoArms).png" id="1_54f7p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oxvx"]
+atlas = ExtResource("1_54f7p")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1agn"]
+atlas = ExtResource("1_54f7p")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvqw6"]
+atlas = ExtResource("1_54f7p")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjkjp"]
+atlas = ExtResource("1_54f7p")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8p2c"]
+atlas = ExtResource("1_54f7p")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh22k"]
+atlas = ExtResource("1_54f7p")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gu40p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oxvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1agn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvqw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjkjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8p2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eh22k")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7wqn"]
+size = Vector2(30, 32)
+
+[node name="ABNA" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_gu40p")
+animation = &"idle"
+autoplay = "idle"
+frame = 2
+frame_progress = 0.340697
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_v7wqn")
