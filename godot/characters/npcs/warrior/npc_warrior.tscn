@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b3iprsvr2lln4"]
+[gd_scene load_steps=17 format=3 uid="uid://b3iprsvr2lln4"]
 
 [ext_resource type="Texture2D" uid="uid://gsgu5k18nfp1" path="res://characters/npcs/warrior/Warrior_Purple.png" id="1_5lixo"]
 [ext_resource type="Script" path="res://characters/npcs/warrior/npc_warrior.gd" id="1_ca70c"]
@@ -100,6 +100,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5an36"]
+size = Vector2(76, 86)
+
 [node name="NpcWarrior" type="CharacterBody2D"]
 script = ExtResource("1_ca70c")
 
@@ -109,3 +112,7 @@ sprite_frames = SubResource("SpriteFrames_s3jxx")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.981684
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, -8)
+shape = SubResource("RectangleShape2D_5an36")
