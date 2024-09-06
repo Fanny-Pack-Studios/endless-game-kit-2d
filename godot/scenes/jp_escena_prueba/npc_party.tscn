@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dwwpjbb2fbguu" path="res://characters/npcs/friends/npcPY.tscn" id="13_ixnka"]
 
 [node name="NpcParty" type="Node2D"]
+y_sort_enabled = true
 
 [node name="ABNA" parent="." instance=ExtResource("4_o17e2")]
 position = Vector2(1116, 195)
