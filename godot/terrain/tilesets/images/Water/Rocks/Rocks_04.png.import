@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl1soqlpwfx3g"
-path="res://.godot/imported/Bridge_All.png-f1b54101ceda21761f1d1264395fa4e5.ctex"
+uid="uid://wa85wbw0hlwx"
+path="res://.godot/imported/Rocks_04.png-0f3b17e709e173b917ef0b88e55991ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tiny Swords/Terrain/Bridge/Bridge_All.png"
-dest_files=["res://.godot/imported/Bridge_All.png-f1b54101ceda21761f1d1264395fa4e5.ctex"]
+source_file="res://terrain/tilesets/images/Water/Rocks/Rocks_04.png"
+dest_files=["res://.godot/imported/Rocks_04.png-0f3b17e709e173b917ef0b88e55991ba.ctex"]
 
 [params]
 
