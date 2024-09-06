@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddyggrsh3ahs5"]
+[gd_scene load_steps=14 format=3 uid="uid://ddyggrsh3ahs5"]
 
 [ext_resource type="PackedScene" uid="uid://b63u3ted2o6p2" path="res://characters/npcs/friends/npcPB.tscn" id="1_6f8e6"]
 [ext_resource type="PackedScene" uid="uid://mkqqacnoc1cy" path="res://characters/npcs/friends/npcPP.tscn" id="2_i2o40"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dsfi8jrbaf3kx" path="res://characters/npcs/friends/npcAYA.tscn" id="10_i8uys"]
 [ext_resource type="PackedScene" uid="uid://bk20a04fwosyp" path="res://characters/npcs/friends/npcARA.tscn" id="11_xd6cy"]
 [ext_resource type="PackedScene" uid="uid://diva0521hu318" path="res://characters/npcs/friends/npcPR.tscn" id="12_otcdy"]
+[ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://characters/npcs/enemies/gobling/Gobling.tscn" id="13_a8wxw"]
 [ext_resource type="PackedScene" uid="uid://dwwpjbb2fbguu" path="res://characters/npcs/friends/npcPY.tscn" id="13_ixnka"]
 
 [node name="NpcParty" type="Node2D"]
@@ -53,3 +54,18 @@ position = Vector2(713, 174)
 
 [node name="Player" parent="." instance=ExtResource("3_tng6h")]
 position = Vector2(127, 284)
+
+[node name="Gobling" parent="." instance=ExtResource("13_a8wxw")]
+position = Vector2(339, 549)
+
+[node name="Gobling2" parent="." instance=ExtResource("13_a8wxw")]
+position = Vector2(518, 557)
+color = "PURPLE"
+
+[node name="Gobling3" parent="." instance=ExtResource("13_a8wxw")]
+position = Vector2(343, 665)
+color = "YELLOW"
+
+[node name="Gobling4" parent="." instance=ExtResource("13_a8wxw")]
+position = Vector2(535, 672)
+color = "BLUE"
