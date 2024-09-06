@@ -1,6 +1,14 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://d22mpqutkotsu"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://d22mpqutkotsu"]
 
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="1_s4ysc"]
+[ext_resource type="Texture2D" uid="uid://nspfpybf720p" path="res://ui/images/check_button_checked.png" id="2_mca2r"]
+[ext_resource type="Texture2D" uid="uid://dp214x75s8cs8" path="res://ui/images/check_button_checked_disabled.png" id="3_4d0l3"]
+[ext_resource type="Texture2D" uid="uid://cp2b65jqh3m7r" path="res://ui/images/check_button_checked_disabled_mirrored.png" id="4_a010n"]
+[ext_resource type="Texture2D" uid="uid://u88l04om8i7q" path="res://ui/images/check_button_checked_mirrored.png" id="5_w7qka"]
+[ext_resource type="Texture2D" uid="uid://cvnopuulnaus5" path="res://ui/images/check_button_unchecked.png" id="6_yh5s5"]
+[ext_resource type="Texture2D" uid="uid://byo5df5qq44fg" path="res://ui/images/check_button_unchecked_disabled.png" id="7_72vmj"]
+[ext_resource type="Texture2D" uid="uid://di0c2865f22p1" path="res://ui/images/check_button_unchecked_disabled_mirrored.png" id="8_4kgyo"]
+[ext_resource type="Texture2D" uid="uid://csabn0uw6yt23" path="res://ui/images/check_button_unchecked_mirrored.png" id="9_7aime"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yo7pd"]
 content_margin_left = 4.0
@@ -113,14 +121,14 @@ CheckButton/constants/h_separation = 4
 CheckButton/constants/outline_size = 0
 CheckButton/font_sizes/font_size = 16
 CheckButton/fonts/font = ExtResource("1_s4ysc")
-CheckButton/icons/checked = null
-CheckButton/icons/checked_disabled = null
-CheckButton/icons/checked_disabled_mirrored = null
-CheckButton/icons/checked_mirrored = null
-CheckButton/icons/unchecked = null
-CheckButton/icons/unchecked_disabled = null
-CheckButton/icons/unchecked_disabled_mirrored = null
-CheckButton/icons/unchecked_mirrored = null
+CheckButton/icons/checked = ExtResource("2_mca2r")
+CheckButton/icons/checked_disabled = ExtResource("3_4d0l3")
+CheckButton/icons/checked_disabled_mirrored = ExtResource("4_a010n")
+CheckButton/icons/checked_mirrored = ExtResource("5_w7qka")
+CheckButton/icons/unchecked = ExtResource("6_yh5s5")
+CheckButton/icons/unchecked_disabled = ExtResource("7_72vmj")
+CheckButton/icons/unchecked_disabled_mirrored = ExtResource("8_4kgyo")
+CheckButton/icons/unchecked_mirrored = ExtResource("9_7aime")
 CheckButton/styles/disabled = SubResource("StyleBoxEmpty_ar17k")
 CheckButton/styles/focus = SubResource("StyleBoxFlat_6xrbm")
 CheckButton/styles/hover = SubResource("StyleBoxEmpty_ar17k")
