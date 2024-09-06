@@ -1,56 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://kn6l4vw21xv2"]
+[gd_scene load_steps=3 format=3 uid="uid://cnrsvo2gmmcpx"]
 
-[ext_resource type="Texture2D" uid="uid://bno3ffmysmbmm" path="res://characters/npcs/friends/Archer_Blue.png" id="1_yyc06"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ug06n"]
-atlas = ExtResource("1_yyc06")
-region = Rect2(0, 0, 192, 168)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jye23"]
-atlas = ExtResource("1_yyc06")
-region = Rect2(192, 0, 192, 168)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4uyy6"]
-atlas = ExtResource("1_yyc06")
-region = Rect2(384, 0, 192, 168)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uxw0w"]
-atlas = ExtResource("1_yyc06")
-region = Rect2(576, 0, 192, 168)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7chiy"]
-atlas = ExtResource("1_yyc06")
-region = Rect2(768, 0, 192, 168)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aeuvu"]
-atlas = ExtResource("1_yyc06")
-region = Rect2(960, 0, 192, 168)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0q352"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ug06n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jye23")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4uyy6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uxw0w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7chiy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aeuvu")
-}],
-"loop": true,
-"name": &"flecha",
-"speed": 10.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://5tm3tyskys0e" path="res://characters/npcs/friends/archer/animations/archer_blue.tres" id="1_yxy0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adbhm"]
 size = Vector2(32, 29)
@@ -59,7 +9,7 @@ size = Vector2(32, 29)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-sprite_frames = SubResource("SpriteFrames_0q352")
+sprite_frames = ExtResource("1_yxy0m")
 animation = &"flecha"
 autoplay = "flecha"
 frame = 2

@@ -1,56 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsfi8jrbaf3kx"]
+[gd_scene load_steps=3 format=3 uid="uid://dsfi8jrbaf3kx"]
 
-[ext_resource type="Texture2D" uid="uid://b8gemiynqvqfm" path="res://characters/npcs/friends/Archer_Yellow.png" id="1_l0h5m"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m2bve"]
-atlas = ExtResource("1_l0h5m")
-region = Rect2(0, 0, 192, 168)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nvwpb"]
-atlas = ExtResource("1_l0h5m")
-region = Rect2(192, 0, 192, 168)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6e78h"]
-atlas = ExtResource("1_l0h5m")
-region = Rect2(384, 0, 192, 168)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ahiy5"]
-atlas = ExtResource("1_l0h5m")
-region = Rect2(576, 0, 192, 168)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lq0v1"]
-atlas = ExtResource("1_l0h5m")
-region = Rect2(768, 0, 192, 168)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p52ax"]
-atlas = ExtResource("1_l0h5m")
-region = Rect2(960, 0, 192, 168)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5crwt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m2bve")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nvwpb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6e78h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ahiy5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lq0v1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p52ax")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 10.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://cd0nkwp6ueukh" path="res://characters/npcs/friends/archer/animations/archer_yellow.tres" id="1_oi7va"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45fc1"]
 size = Vector2(33, 27)
@@ -58,7 +8,7 @@ size = Vector2(33, 27)
 [node name="AYA" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_5crwt")
+sprite_frames = ExtResource("1_oi7va")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.749187

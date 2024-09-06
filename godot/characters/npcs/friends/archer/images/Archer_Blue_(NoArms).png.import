@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpuim6ik17o58"
-path="res://.godot/imported/Archer_Red.png-6516aab29c8a356cb7a747b7ee151243.ctex"
+uid="uid://dh6btmnvldp40"
+path="res://.godot/imported/Archer_Blue_(NoArms).png-4271489c582d0052fc768350042701b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/npcs/friends/Archer_Red.png"
-dest_files=["res://.godot/imported/Archer_Red.png-6516aab29c8a356cb7a747b7ee151243.ctex"]
+source_file="res://characters/npcs/friends/archer/images/Archer_Blue_(NoArms).png"
+dest_files=["res://.godot/imported/Archer_Blue_(NoArms).png-4271489c582d0052fc768350042701b1.ctex"]
 
 [params]
 
