@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://ci2byqu0kqcgd"]
+
+[ext_resource type="Script" path="res://scenes/levels/escena_de_ejemplo/escena_de_ejemplo.gd" id="1_3yy6a"]
+[ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="2_0kpwt"]
+[ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_aqr1c"]
+[ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="4_5q57n"]
+[ext_resource type="PackedScene" uid="uid://q8byvj3car6a" path="res://assets/Resources/resources.tscn" id="5_jb42g"]
+
+[node name="IngameScene" type="Node2D"]
+script = ExtResource("1_3yy6a")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="FadeOverlay" parent="UI" instance=ExtResource("2_0kpwt")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PauseOverlay" parent="UI" instance=ExtResource("3_aqr1c")]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("4_5q57n")]
+
+[node name="resources" parent="." instance=ExtResource("5_jb42g")]
+position = Vector2(86, 51)
+objects = "money"
