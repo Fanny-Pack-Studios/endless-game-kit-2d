@@ -11,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dsfi8jrbaf3kx" path="res://characters/npcs/friends/npcAYA.tscn" id="10_i8uys"]
 [ext_resource type="PackedScene" uid="uid://bk20a04fwosyp" path="res://characters/npcs/friends/npcARA.tscn" id="11_xd6cy"]
 [ext_resource type="PackedScene" uid="uid://diva0521hu318" path="res://characters/npcs/friends/npcPR.tscn" id="12_otcdy"]
-[ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://characters/npcs/enemies/gobling/Gobling.tscn" id="13_a8wxw"]
+[ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://characters/npcs/enemies/goblin/Goblin.tscn" id="13_a8wxw"]
 [ext_resource type="PackedScene" uid="uid://dwwpjbb2fbguu" path="res://characters/npcs/friends/npcPY.tscn" id="13_ixnka"]
+
 
 [node name="NpcParty" type="Node2D"]
 

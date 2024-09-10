@@ -1,6 +1,7 @@
 [gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://bbffvahvhxwyj"]
 
-[ext_resource type="Texture2D" uid="uid://crndl01kxx3ol" path="res://characters/npcs/enemies/gobling/images/Torch_Purple.png" id="1_dju8i"]
+[ext_resource type="Texture2D" uid="uid://crndl01kxx3ol" path="res://characters/npcs/enemies/goblin/images/Torch_Purple.png" id="1_dju8i"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j27l0"]
 atlas = ExtResource("1_dju8i")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crndl01kxx3ol"
-path="res://.godot/imported/Torch_Purple.png-e8124aff688fd725d214c05bb5c14cae.ctex"
+uid="uid://734sweqt1bf0"
+path="res://.godot/imported/Torch_Blue.png-9e02c687904a46624fb499c53a9308b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/npcs/enemies/gobling/images/Torch_Purple.png"
-dest_files=["res://.godot/imported/Torch_Purple.png-e8124aff688fd725d214c05bb5c14cae.ctex"]
+source_file="res://characters/npcs/enemies/goblin/images/Torch_Blue.png"
+dest_files=["res://.godot/imported/Torch_Blue.png-9e02c687904a46624fb499c53a9308b0.ctex"]
 
 [params]
 
