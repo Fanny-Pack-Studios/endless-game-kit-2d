@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://clxoodqn2juot" path="res://characters/npcs/pawn/pawn.tscn" id="10_mrn0p"]
 [ext_resource type="SpriteFrames" uid="uid://0nvbd1cionvf" path="res://characters/npcs/pawn/animations/pawn_blue.tres" id="11_ceiyd"]
 [ext_resource type="SpriteFrames" uid="uid://bqla3r2ryib2e" path="res://characters/npcs/pawn/animations/pawn_red.tres" id="12_sb74l"]
-[ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://characters/npcs/goblin/goblin.tscn" id="13_a8wxw"]
+[ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://characters/npcs/goblin/Goblin.tscn" id="13_a8wxw"]
 [ext_resource type="SpriteFrames" uid="uid://bspa375ckrnmh" path="res://characters/npcs/pawn/animations/pawn_yellow.tres" id="13_c36t2"]
 
 [node name="NpcParty" type="Node2D"]
