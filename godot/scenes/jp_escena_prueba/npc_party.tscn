@@ -1,71 +1,66 @@
 [gd_scene load_steps=14 format=3 uid="uid://ddyggrsh3ahs5"]
 
-[ext_resource type="PackedScene" uid="uid://b63u3ted2o6p2" path="res://characters/npcs/friends/npcPB.tscn" id="1_6f8e6"]
-[ext_resource type="PackedScene" uid="uid://mkqqacnoc1cy" path="res://characters/npcs/friends/npcPP.tscn" id="2_i2o40"]
+[ext_resource type="SpriteFrames" uid="uid://cqg38l52hwj05" path="res://characters/npcs/goblin/animations/goblin_blue.tres" id="3_gsvs7"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="3_tng6h"]
-[ext_resource type="PackedScene" uid="uid://kbhs71a32apn" path="res://characters/npcs/friends/npcABNA.tscn" id="4_o17e2"]
-[ext_resource type="PackedScene" uid="uid://hwckcgwg3k7p" path="res://characters/npcs/friends/npcAPNA.tscn" id="5_liwhg"]
-[ext_resource type="PackedScene" uid="uid://kn6l4vw21xv2" path="res://characters/npcs/friends/npcAPA.tscn" id="7_esnx5"]
-[ext_resource type="PackedScene" uid="uid://d0nyysusim677" path="res://characters/npcs/friends/npcARNA.tscn" id="8_1gr0j"]
-[ext_resource type="PackedScene" uid="uid://bibtwtv26020d" path="res://characters/npcs/friends/npcAYNO.tscn" id="9_np38k"]
-[ext_resource type="PackedScene" uid="uid://dsfi8jrbaf3kx" path="res://characters/npcs/friends/npcAYA.tscn" id="10_i8uys"]
-[ext_resource type="PackedScene" uid="uid://bk20a04fwosyp" path="res://characters/npcs/friends/npcARA.tscn" id="11_xd6cy"]
-[ext_resource type="PackedScene" uid="uid://diva0521hu318" path="res://characters/npcs/friends/npcPR.tscn" id="12_otcdy"]
-[ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://characters/npcs/enemies/gobling/Gobling.tscn" id="13_a8wxw"]
-[ext_resource type="PackedScene" uid="uid://dwwpjbb2fbguu" path="res://characters/npcs/friends/npcPY.tscn" id="13_ixnka"]
+[ext_resource type="SpriteFrames" uid="uid://dnm04pi7yfmju" path="res://characters/npcs/goblin/animations/goblin_red.tres" id="4_fwt0r"]
+[ext_resource type="SpriteFrames" uid="uid://c0qeevigwncec" path="res://characters/npcs/goblin/animations/goblin_yellow.tres" id="5_0dde2"]
+[ext_resource type="PackedScene" uid="uid://btcimqwmqk3rh" path="res://characters/npcs/archer/archer.tscn" id="6_07ocd"]
+[ext_resource type="SpriteFrames" uid="uid://5tm3tyskys0e" path="res://characters/npcs/archer/animations/archer_blue.tres" id="7_wripa"]
+[ext_resource type="SpriteFrames" uid="uid://bmaeq6foipkk6" path="res://characters/npcs/archer/animations/archer_red.tres" id="8_ttxbx"]
+[ext_resource type="SpriteFrames" uid="uid://cd0nkwp6ueukh" path="res://characters/npcs/archer/animations/archer_yellow.tres" id="9_bw5yy"]
+[ext_resource type="PackedScene" uid="uid://clxoodqn2juot" path="res://characters/npcs/pawn/pawn.tscn" id="10_mrn0p"]
+[ext_resource type="SpriteFrames" uid="uid://0nvbd1cionvf" path="res://characters/npcs/pawn/animations/pawn_blue.tres" id="11_ceiyd"]
+[ext_resource type="SpriteFrames" uid="uid://bqla3r2ryib2e" path="res://characters/npcs/pawn/animations/pawn_red.tres" id="12_sb74l"]
+[ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://characters/npcs/goblin/goblin.tscn" id="13_a8wxw"]
+[ext_resource type="SpriteFrames" uid="uid://bspa375ckrnmh" path="res://characters/npcs/pawn/animations/pawn_yellow.tres" id="13_c36t2"]
 
 [node name="NpcParty" type="Node2D"]
-
-[node name="ABA" parent="." instance=ExtResource("7_esnx5")]
-position = Vector2(389, 113)
-
-[node name="ABNA" parent="." instance=ExtResource("4_o17e2")]
-position = Vector2(1116, 195)
-
-[node name="APA" parent="." instance=ExtResource("7_esnx5")]
-position = Vector2(500, 128)
-
-[node name="APNA" parent="." instance=ExtResource("5_liwhg")]
-position = Vector2(969, 195)
-
-[node name="ARA" parent="." instance=ExtResource("11_xd6cy")]
-position = Vector2(392, 243)
-
-[node name="ARNO" parent="." instance=ExtResource("8_1gr0j")]
-position = Vector2(1098, 311)
-
-[node name="AYA" parent="." instance=ExtResource("10_i8uys")]
-position = Vector2(536, 264)
-
-[node name="AYNO" parent="." instance=ExtResource("9_np38k")]
-position = Vector2(980, 332)
-
-[node name="Npc1" parent="." instance=ExtResource("1_6f8e6")]
-position = Vector2(847, 333)
-
-[node name="Npc2" parent="." instance=ExtResource("2_i2o40")]
-position = Vector2(704, 332)
-
-[node name="NpcPr" parent="." instance=ExtResource("12_otcdy")]
-position = Vector2(834, 174)
-
-[node name="NpcPy" parent="." instance=ExtResource("13_ixnka")]
-position = Vector2(713, 174)
+y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("3_tng6h")]
 position = Vector2(127, 284)
 
-[node name="Gobling" parent="." instance=ExtResource("13_a8wxw")]
-position = Vector2(339, 549)
+[node name="Goblin" parent="." instance=ExtResource("13_a8wxw")]
+position = Vector2(400, 252)
 
-[node name="Gobling2" parent="." instance=ExtResource("13_a8wxw")]
-position = Vector2(518, 557)
-color = "PURPLE"
+[node name="Goblin2" parent="." instance=ExtResource("13_a8wxw")]
+position = Vector2(579, 260)
+sprite_frames = ExtResource("3_gsvs7")
 
-[node name="Gobling3" parent="." instance=ExtResource("13_a8wxw")]
-position = Vector2(343, 665)
-color = "YELLOW"
+[node name="Goblin3" parent="." instance=ExtResource("13_a8wxw")]
+position = Vector2(404, 368)
+sprite_frames = ExtResource("4_fwt0r")
 
-[node name="Gobling4" parent="." instance=ExtResource("13_a8wxw")]
-position = Vector2(535, 672)
-color = "BLUE"
+[node name="Goblin4" parent="." instance=ExtResource("13_a8wxw")]
+position = Vector2(596, 375)
+sprite_frames = ExtResource("5_0dde2")
+
+[node name="Archer" parent="." instance=ExtResource("6_07ocd")]
+position = Vector2(777, 245)
+
+[node name="Archer2" parent="." instance=ExtResource("6_07ocd")]
+position = Vector2(964, 250)
+sprite_frames = ExtResource("7_wripa")
+
+[node name="Archer3" parent="." instance=ExtResource("6_07ocd")]
+position = Vector2(788, 392)
+sprite_frames = ExtResource("8_ttxbx")
+
+[node name="Archer4" parent="." instance=ExtResource("6_07ocd")]
+position = Vector2(971, 385)
+sprite_frames = ExtResource("9_bw5yy")
+
+[node name="Pawn" parent="." instance=ExtResource("10_mrn0p")]
+position = Vector2(502, 535)
+sprite_frames = ExtResource("11_ceiyd")
+
+[node name="Pawn2" parent="." instance=ExtResource("10_mrn0p")]
+position = Vector2(645, 537)
+
+[node name="Pawn3" parent="." instance=ExtResource("10_mrn0p")]
+position = Vector2(782, 543)
+sprite_frames = ExtResource("12_sb74l")
+
+[node name="Pawn4" parent="." instance=ExtResource("10_mrn0p")]
+position = Vector2(928, 540)
+sprite_frames = ExtResource("13_c36t2")
