@@ -1,20 +1,24 @@
-[gd_scene load_steps=40 format=3 uid="uid://luullnf7r6q2"]
+[gd_scene load_steps=62 format=3 uid="uid://luullnf7r6q2"]
 
 [ext_resource type="Texture2D" uid="uid://32emst0ctttf" path="res://assets/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_ykuyc"]
 [ext_resource type="Texture2D" uid="uid://bylxapp1aec53" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="2_n6yub"]
+[ext_resource type="Texture2D" uid="uid://wwnn7l1lx7ur" path="res://assets/Tiny Swords/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="2_spdql"]
 [ext_resource type="Texture2D" uid="uid://k20k0rpc5f1l" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="3_kqi2c"]
 [ext_resource type="Texture2D" uid="uid://dc2sdtxl2ou4a" path="res://assets/Tiny Swords/UI/Buttons/Button_Disable_3Slides.png" id="4_h36gj"]
 [ext_resource type="Script" path="res://multiple_choice.gd" id="4_nh0nq"]
 [ext_resource type="Texture2D" uid="uid://b4ufxisxmbjfp" path="res://assets/Tiny Swords/Resources/Trees/i-just-released-a-free-demo-of-tiny-swords-game-assets-link-v0-f22woqj3miz91.png" id="5_80thm"]
+[ext_resource type="Texture2D" uid="uid://wqwm110hqk33" path="res://assets/Tiny Swords/UI/Ribbons/Ribbon_Yellow_3Slides.png" id="6_8xppp"]
+[ext_resource type="Texture2D" uid="uid://bh7gnsgw1vp7m" path="res://assets/Tiny Swords/UI/Ribbons/Ribbon_Blue_3Slides.png" id="7_bgopp"]
+[ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://fonts/Montserrat-Medium.ttf" id="8_b52b2"]
+[ext_resource type="Texture2D" uid="uid://du5ot1oijbbd6" path="res://assets/Tiny Swords/UI/Ribbons/Ribbon_Red_3Slides.png" id="9_uosbn"]
 
 [sub_resource type="GDScript" id="GDScript_n3afd"]
 script/source = "extends Control
 
 @onready var my_health = %MyHealth
 @onready var opponent_health = %OpponentHealth
-@onready var button = $VBoxContainer/Button
-@onready var button_2 = $VBoxContainer/Button2
-@onready var button_3 = $VBoxContainer/Button3
+@onready var button = $Combat/Button
+@onready var button_2 = $Combat/Button2
 @onready var my_hp: int = my_health.max_value
 @onready var opponent_hp: int = opponent_health.max_value
 @onready var my_health_label = %MyHealthLabel
@@ -26,13 +30,10 @@ func _ready():
 	my_health.value = my_health.max_value
 	opponent_health.value = opponent_health.max_value
 	button.pressed.connect(func():
-		opponent_hp = min(100.0, max(0.0, opponent_hp + 30))
+		hurt_opponent(50)
 	)
 	button_2.pressed.connect(func():
-		hurt_opponent(opponent_hp / 2.0)
-	)
-	button_3.pressed.connect(func():
-		hurt_player(50)
+		my_hp = min(100.0, max(0.0, my_hp + 15))
 	)
 
 func hurt_opponent(damage):
@@ -50,8 +51,8 @@ func hurt_player(damage):
 func _process(delta):
 	my_health.value = move_toward(my_health.value, my_hp, delta * 50.0)
 	opponent_health.value = move_toward(opponent_health.value, opponent_hp, delta * 50.0)
-	my_health_label.text = str(my_hp)
-	opponent_health_label.text = str(opponent_hp)
+	my_health_label.text = str(\"[center][color=black]\",my_hp)
+	opponent_health_label.text = str(\"[center][color=black]\",opponent_hp)
 	
 "
 
@@ -128,6 +129,7 @@ atlas = ExtResource("1_ykuyc")
 region = Rect2(960, 192, 192, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7qjlr"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -199,6 +201,109 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qlho"]
+atlas = ExtResource("2_spdql")
+region = Rect2(0, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smtii"]
+atlas = ExtResource("2_spdql")
+region = Rect2(192, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kutpv"]
+atlas = ExtResource("2_spdql")
+region = Rect2(384, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msvpi"]
+atlas = ExtResource("2_spdql")
+region = Rect2(576, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g7sb"]
+atlas = ExtResource("2_spdql")
+region = Rect2(768, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qcnw"]
+atlas = ExtResource("2_spdql")
+region = Rect2(960, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8mhn"]
+atlas = ExtResource("2_spdql")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13yjs"]
+atlas = ExtResource("2_spdql")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uik1f"]
+atlas = ExtResource("2_spdql")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k1rp"]
+atlas = ExtResource("2_spdql")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aftv4"]
+atlas = ExtResource("2_spdql")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk54y"]
+atlas = ExtResource("2_spdql")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgc0p"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qlho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smtii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kutpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msvpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3g7sb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qcnw")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8mhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13yjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uik1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k1rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aftv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk54y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"running",
+"speed": 12.0
+}]
+
 [sub_resource type="GDScript" id="GDScript_qobb3"]
 script/source = "extends VBoxContainer
 
@@ -209,10 +314,44 @@ func _ready():
 		child.pressed.connect(func(): self.reorder_children())
 	
 func reorder_children():
+	await disappear()
+	await get_tree().create_timer(1.0).timeout
+	$\"../Minigame\".appear_menues()
+	return
 	get_children().map(func(child):
 		move_child(child, randf_range(0, get_child_count() - 1))
 		child.pop()
 	)
+
+func disappear():
+	var delay = 0.4
+	create_tween().tween_property(
+		self,
+		\"position:x\",
+		700.0,
+		0.7
+	).as_relative().set_delay(delay)
+	create_tween().tween_property(
+		$\"../YourTurn\",
+		\"position:y\",
+		782.0,
+		0.7
+	).set_trans(Tween.TRANS_ELASTIC).set_delay(delay).finished
+
+func appear_menues():
+	var delay = 0.4
+	create_tween().tween_property(
+		$\"../YourTurn\",
+		\"position:y\",
+		582,
+		0.7
+	).set_trans(Tween.TRANS_ELASTIC).set_delay(delay).finished
+	create_tween().tween_property(
+		self,
+		\"position:x\",
+		-700.0,
+		0.7
+	).as_relative().set_delay(delay).finished
 "
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c4456"]
@@ -301,18 +440,22 @@ func on_button_pressed(multiple_choice, respuesta):
 			connection[\"signal\"].disconnect(connection[\"callable\"])
 		boton.modulate = Color.GREEN if multiple_choice.posibles_respuestas[j] == multiple_choice.respuesta_correcta else Color.RED
 	await disappear()
+	var time_to_wait = 0.3
 	if(respuesta == multiple_choice.respuesta_correcta):
-		get_parent().hurt_opponent(30)
+		pass
+		#get_parent().hurt_opponent(30)
 	else:
+		time_to_wait = 1.2
 		get_parent().hurt_player(30)
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(time_to_wait).timeout
 	multiple_choices.erase(multiple_choice)
 	used_choices.push_back(multiple_choice)
 	if(multiple_choices.is_empty()):
 		multiple_choices = used_choices.duplicate()
 		used_choices.clear()
 	appear(multiple_choices.pick_random())
-	appear_menues()
+	$\"../Combat\".appear_menues()
+	#appear_menues()
 
 func _ready():
 	appear(multiple_choices.pick_random())
@@ -331,12 +474,19 @@ func disappear():
 		-700.0,
 		0.7
 	).as_relative().set_delay(delay).finished
+	create_tween().tween_property(
+		$\"../OpponentTurn\",
+		\"position:y\",
+		782,
+		0.7
+	).set_trans(Tween.TRANS_ELASTIC).set_delay(delay).finished
 	await create_tween().tween_property(
 		self,
 		\"position:x\",
 		-700.0,
 		0.7
 	).as_relative().set_delay(delay).finished
+
 
 func appear_menues():
 	create_tween().tween_property(
@@ -351,6 +501,12 @@ func appear_menues():
 		700.0,
 		0.7
 	).as_relative()
+	create_tween().tween_property(
+		$\"../OpponentTurn\",
+		\"position:y\",
+		582,
+		0.7
+	).set_trans(Tween.TRANS_ELASTIC).finished
 	await create_tween().tween_property(
 		self,
 		\"position:x\",
@@ -389,6 +545,28 @@ bg_color = Color(0.689715, 0, 0.267726, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n18g8"]
 bg_color = Color(0, 1, 0.231373, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mipg1"]
+texture = ExtResource("6_8xppp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1r4sm"]
+content_margin_top = 30.0
+texture = ExtResource("7_bgopp")
+texture_margin_left = 25.0
+texture_margin_right = 25.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_mvipm"]
+font = ExtResource("8_b52b2")
+font_size = 40
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_src8g"]
+content_margin_top = 30.0
+texture = ExtResource("9_uosbn")
+texture_margin_left = 25.0
+texture_margin_right = 25.0
+
 [node name="CombatScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -410,22 +588,21 @@ autoplay = "idle"
 unique_name_in_owner = true
 position = Vector2(728, 167)
 scale = Vector2(2.35938, 2.35938)
-sprite_frames = SubResource("SpriteFrames_7qjlr")
-animation = &"attack"
+sprite_frames = SubResource("SpriteFrames_vgc0p")
+animation = &"idle"
 autoplay = "idle"
 flip_h = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
+[node name="Combat" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 55.0
-offset_right = 599.0
-offset_bottom = 316.0
+offset_left = 1300.0
+offset_top = 356.0
+offset_right = 1867.0
+offset_bottom = 617.0
 theme_override_constants/separation = 25
 script = SubResource("GDScript_qobb3")
 
-[node name="Button" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("text_label")]
+[node name="Button" type="Button" parent="Combat" node_paths=PackedStringArray("text_label")]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -439,7 +616,7 @@ text = "
 script = SubResource("GDScript_efclx")
 text_label = NodePath("RichTextLabel")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Button"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Combat/Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -453,9 +630,9 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[center][color=white][center]Increase [u]enemy[/u]'s [color=red]health[/color] [b]by thirty[/b]"
+text = "[center][color=white][center]Attack with Sword  [color=red](damage: fifty)[/color]"
 
-[node name="Button2" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("text_label")]
+[node name="Button2" type="Button" parent="Combat" node_paths=PackedStringArray("text_label")]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -469,7 +646,7 @@ text = "
 script = SubResource("GDScript_efclx")
 text_label = NodePath("RichTextLabel")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Button2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Combat/Button2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -483,39 +660,9 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[center][color=white][center]Reduce [u]enemy[/u]'s [color=red]health[/color] [b]by half[/b][/center]"
+text = "[center][color=white][center]Eat Mushroom 🍄: [color=darkgreen](recover hp: fifteen)[/color][/center]"
 
-[node name="Button3" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("text_label")]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_c4456")
-theme_override_styles/hover = SubResource("StyleBoxTexture_f5f8n")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_ui1xv")
-theme_override_styles/normal = SubResource("StyleBoxTexture_vr6fr")
-text = "
-"
-script = SubResource("GDScript_efclx")
-text_label = NodePath("RichTextLabel")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Button3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 13.0
-offset_right = -12.0
-offset_bottom = 11.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-bbcode_enabled = true
-text = "[center][color=white]Reduce [u]player[/u]'s [color=red]health[/color] [b]by fifty[/b][/color]"
-
-[node name="VBoxContainer2" type="GridContainer" parent="."]
+[node name="Minigame" type="GridContainer" parent="."]
 layout_mode = 0
 offset_left = 202.5
 offset_top = 146.5
@@ -527,7 +674,7 @@ columns = 2
 script = SubResource("GDScript_xrjus")
 multiple_choices = Array[ExtResource("4_nh0nq")]([SubResource("Resource_g01j4"), SubResource("Resource_342p2"), SubResource("Resource_mdard"), SubResource("Resource_ewh7h")])
 
-[node name="Button" type="Button" parent="VBoxContainer2" node_paths=PackedStringArray("text_label")]
+[node name="Button" type="Button" parent="Minigame" node_paths=PackedStringArray("text_label")]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -541,7 +688,7 @@ text = "
 script = SubResource("GDScript_efclx")
 text_label = NodePath("RichTextLabel")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2/Button"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Minigame/Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -557,7 +704,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]GLASSES[/center]"
 
-[node name="Button2" type="Button" parent="VBoxContainer2" node_paths=PackedStringArray("text_label")]
+[node name="Button2" type="Button" parent="Minigame" node_paths=PackedStringArray("text_label")]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -571,7 +718,7 @@ text = "
 script = SubResource("GDScript_efclx")
 text_label = NodePath("RichTextLabel")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2/Button2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Minigame/Button2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -587,7 +734,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]TREE[/center]"
 
-[node name="Button3" type="Button" parent="VBoxContainer2" node_paths=PackedStringArray("text_label")]
+[node name="Button3" type="Button" parent="Minigame" node_paths=PackedStringArray("text_label")]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -601,7 +748,7 @@ text = "
 script = SubResource("GDScript_efclx")
 text_label = NodePath("RichTextLabel")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2/Button3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Minigame/Button3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -617,7 +764,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]RULER[/center]"
 
-[node name="Button4" type="Button" parent="VBoxContainer2" node_paths=PackedStringArray("text_label")]
+[node name="Button4" type="Button" parent="Minigame" node_paths=PackedStringArray("text_label")]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -631,7 +778,7 @@ text = "
 script = SubResource("GDScript_efclx")
 text_label = NodePath("RichTextLabel")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2/Button4"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Minigame/Button4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -662,10 +809,13 @@ show_percentage = false
 [node name="MyHealthLabel" type="RichTextLabel" parent="MyHealth"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 190.0
-offset_top = 33.0
-offset_right = 230.0
-offset_bottom = 73.0
+offset_left = 9.0
+offset_top = -51.0
+offset_right = 104.0
+offset_bottom = -11.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mipg1")
+bbcode_enabled = true
+text = "[center]100"
 
 [node name="OpponentHealth" type="ProgressBar" parent="."]
 unique_name_in_owner = true
@@ -682,10 +832,14 @@ show_percentage = false
 [node name="OpponentHealthLabel" type="RichTextLabel" parent="OpponentHealth"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 251.0
-offset_top = 33.0
-offset_right = 291.0
-offset_bottom = 73.0
+offset_left = 3.0
+offset_top = 34.0
+offset_right = 65.0
+offset_bottom = 74.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mipg1")
+bbcode_enabled = true
+text = "[center]80
+"
 
 [node name="ButtonDisable3Slides" type="Sprite2D" parent="."]
 position = Vector2(341.5, 63.5)
@@ -693,6 +847,7 @@ scale = Vector2(2.66146, 1.54688)
 texture = ExtResource("4_h36gj")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 162.5
 offset_top = 28.5
 offset_right = 533.5
@@ -714,3 +869,25 @@ position = Vector2(597.595, 364.326)
 rotation = 0.00203443
 scale = Vector2(1.00774, 1.01996)
 texture = ExtResource("5_80thm")
+
+[node name="YourTurn" type="Label" parent="."]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 582.0
+offset_right = 1275.0
+offset_bottom = 715.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_1r4sm")
+text = "YOUR TURN"
+label_settings = SubResource("LabelSettings_mvipm")
+horizontal_alignment = 1
+
+[node name="OpponentTurn" type="Label" parent="."]
+layout_mode = 0
+offset_left = 730.0
+offset_top = 582.0
+offset_right = 1275.0
+offset_bottom = 715.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_src8g")
+text = "OPPONENT'S TURN"
+label_settings = SubResource("LabelSettings_mvipm")
+horizontal_alignment = 1
