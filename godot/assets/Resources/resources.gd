@@ -3,7 +3,7 @@ extends Node2D
 
 # Definimos una variable llamada 'objects' de tipo String con el valor predeterminado "money".
 #Utilizamos la anotación @export_enum para crear una enumeración que incluye las opciones del coleccionable.
-@export_enum("money","steak","wood") var objects:String = "money" :
+@export_enum("arbusto","calabaza","carne","dinero","hongo1","hongo2","hueso","oveja","piedra","planta","tronco") var objects:String = "dinero":
 	set(value):
 		objects = value
 		if is_inside_tree():
@@ -21,5 +21,4 @@ func _on_animation_finished():
 		
 # Función que se llama cuando otro cuerpo entra en el área.
 func _on_body_entered(body):
-	if body.name == "Player": #nombre del personaje
-		self.queue_free() # Desaparecer el objeto
+	self.queue_free() # Desaparecer el objeto

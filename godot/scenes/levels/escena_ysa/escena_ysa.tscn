@@ -24,4 +24,3 @@ visible = false
 
 [node name="resources" parent="." instance=ExtResource("5_jb42g")]
 position = Vector2(86, 51)
-objects = "money"
