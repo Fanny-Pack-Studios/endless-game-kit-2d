@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bmtnwg7c71gcc"]
+
+[ext_resource type="Texture2D" uid="uid://bp4tre5omckgc" path="res://characters/npcs/archer/images/Archer_Purlple.png" id="1_whujo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd66e"]
+atlas = ExtResource("1_whujo")
+region = Rect2(0, 0, 192, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8kyy"]
+atlas = ExtResource("1_whujo")
+region = Rect2(192, 0, 192, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fldc2"]
+atlas = ExtResource("1_whujo")
+region = Rect2(384, 0, 192, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bais4"]
+atlas = ExtResource("1_whujo")
+region = Rect2(576, 0, 192, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov71u"]
+atlas = ExtResource("1_whujo")
+region = Rect2(768, 0, 192, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o47tj"]
+atlas = ExtResource("1_whujo")
+region = Rect2(960, 0, 192, 168)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd66e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8kyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fldc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bais4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov71u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o47tj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
