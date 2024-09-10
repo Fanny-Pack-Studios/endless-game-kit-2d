@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bspa375ckrnmh"]
+
+[ext_resource type="Texture2D" uid="uid://4fa44mefgdnd" path="res://characters/npcs/pawn/images/Pawn_Yellow.png" id="1_31822"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrfnh"]
+atlas = ExtResource("1_31822")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cflhw"]
+atlas = ExtResource("1_31822")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sattg"]
+atlas = ExtResource("1_31822")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtkt0"]
+atlas = ExtResource("1_31822")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rarsb"]
+atlas = ExtResource("1_31822")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3dyw"]
+atlas = ExtResource("1_31822")
+region = Rect2(960, 0, 192, 192)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrfnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cflhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sattg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtkt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rarsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3dyw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
