@@ -682,8 +682,10 @@ resource_name = "water"
 texture = ExtResource("4_ph0di")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
+0:0/0/z_index = -1
 0:0/0/terrain_set = 0
 0:0/0/terrain = 2
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g474e"]
 resource_name = "decoration"
@@ -879,6 +881,8 @@ texture_region_size = Vector2i(128, 128)
 
 [resource]
 tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 2147483648
+physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass"
 terrain_set_0/terrain_0/color = Color(0, 0.203922, 0, 1)
