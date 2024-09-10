@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://dwwpjbb2fbguu"]
+
+[ext_resource type="Texture2D" uid="uid://4fa44mefgdnd" path="res://characters/npcs/friends/Pawn_Yellow.png" id="1_pc2lx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27p0s"]
+atlas = ExtResource("1_pc2lx")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1iw6"]
+atlas = ExtResource("1_pc2lx")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0emh3"]
+atlas = ExtResource("1_pc2lx")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h2uu"]
+atlas = ExtResource("1_pc2lx")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3shrv"]
+atlas = ExtResource("1_pc2lx")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxn1y"]
+atlas = ExtResource("1_pc2lx")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_blv3r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27p0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1iw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0emh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h2uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3shrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxn1y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lbk3"]
+size = Vector2(27, 23)
+
+[node name="NpcPy" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_blv3r")
+animation = &"idle"
+autoplay = "idle"
+frame = 4
+frame_progress = 0.84353
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_3lbk3")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsfi8jrbaf3kx"]
+
+[ext_resource type="SpriteFrames" uid="uid://cd0nkwp6ueukh" path="res://characters/npcs/friends/archer/animations/archer_yellow.tres" id="1_oi7va"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45fc1"]
+size = Vector2(33, 27)
+
+[node name="AYA" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_oi7va")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.749187
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_45fc1")

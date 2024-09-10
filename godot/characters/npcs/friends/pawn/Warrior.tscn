@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://bg3w06s2esdq0"]
+
+[ext_resource type="Script" path="res://characters/npcs/friends/npc.gd" id="1_hr0g1"]
+[ext_resource type="Texture2D" uid="uid://cfl27kbp78trl" path="res://assets/Tiny Swords/Factions/Goblins/Troops/Torch/Blue/Torch_Blue.png" id="2_5dwyg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsld8"]
+atlas = ExtResource("2_5dwyg")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6tc1"]
+atlas = ExtResource("2_5dwyg")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj5xq"]
+atlas = ExtResource("2_5dwyg")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmd6t"]
+atlas = ExtResource("2_5dwyg")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xynvt"]
+atlas = ExtResource("2_5dwyg")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvui8"]
+atlas = ExtResource("2_5dwyg")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eic5o"]
+atlas = ExtResource("2_5dwyg")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cct7r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsld8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6tc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj5xq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmd6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xynvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvui8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eic5o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntg0w"]
+size = Vector2(27, 23)
+
+[node name="Warrior" type="CharacterBody2D"]
+script = ExtResource("1_hr0g1")
+sprite_frames = SubResource("SpriteFrames_cct7r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_cct7r")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_ntg0w")

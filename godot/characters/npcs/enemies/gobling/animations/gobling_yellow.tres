@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://c0qeevigwncec"]
+
+[ext_resource type="Texture2D" uid="uid://fs80p3l7cqa5" path="res://characters/npcs/enemies/gobling/images/Torch_Yellow.png" id="1_1i8ll"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a88s"]
+atlas = ExtResource("1_1i8ll")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw7i5"]
+atlas = ExtResource("1_1i8ll")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwu8e"]
+atlas = ExtResource("1_1i8ll")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og03u"]
+atlas = ExtResource("1_1i8ll")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxs6q"]
+atlas = ExtResource("1_1i8ll")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqrfr"]
+atlas = ExtResource("1_1i8ll")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfkcd"]
+atlas = ExtResource("1_1i8ll")
+region = Rect2(1152, 0, 192, 192)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a88s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw7i5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwu8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og03u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxs6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqrfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfkcd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]

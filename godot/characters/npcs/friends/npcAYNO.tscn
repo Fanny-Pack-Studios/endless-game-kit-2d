@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://bibtwtv26020d"]
+
+[ext_resource type="Texture2D" uid="uid://btcbck3lu0x5x" path="res://characters/npcs/friends/archer/images/Archer_Yellow_(NoArms).png" id="1_6rrjm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auypl"]
+atlas = ExtResource("1_6rrjm")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5u1o"]
+atlas = ExtResource("1_6rrjm")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gd6k"]
+atlas = ExtResource("1_6rrjm")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka1r8"]
+atlas = ExtResource("1_6rrjm")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fs65"]
+atlas = ExtResource("1_6rrjm")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt668"]
+atlas = ExtResource("1_6rrjm")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxxbl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auypl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5u1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gd6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka1r8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fs65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt668")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bbmv"]
+size = Vector2(32, 29)
+
+[node name="AYNO" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cxxbl")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.31305
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19)
+shape = SubResource("RectangleShape2D_6bbmv")

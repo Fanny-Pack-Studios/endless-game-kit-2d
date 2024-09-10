@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://kn6l4vw21xv2"]
+
+[ext_resource type="SpriteFrames" uid="uid://bmtnwg7c71gcc" path="res://characters/npcs/friends/archer/animations/archer_purple.tres" id="1_3lvx5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0d1l"]
+size = Vector2(33, 27)
+
+[node name="APA" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = ExtResource("1_3lvx5")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.633522
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_g0d1l")
