@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjq8sacrlwt2w"]
 
-[ext_resource type="Texture2D" uid="uid://d4disoeq8e7v3" path="res://assets/Tiny Swords/Terrain/Ground/Tilemap_Flat.png" id="1_b4kvf"]
+[ext_resource type="Texture2D" uid="uid://d4disoeq8e7v3" path="res://terrain/tilesets/images/Ground/Tilemap_Flat.png" id="1_b4kvf"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="4_42kfm"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebach"]
 texture = ExtResource("1_b4kvf")
