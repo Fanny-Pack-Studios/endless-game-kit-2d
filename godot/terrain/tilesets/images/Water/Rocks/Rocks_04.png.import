@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0010yeg6lihp"
-path="res://.godot/imported/Tilemap_Elevation.png-3512a99eaf6901d46bf5a7a10a21e6eb.ctex"
+uid="uid://wa85wbw0hlwx"
+path="res://.godot/imported/Rocks_04.png-0f3b17e709e173b917ef0b88e55991ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png"
-dest_files=["res://.godot/imported/Tilemap_Elevation.png-3512a99eaf6901d46bf5a7a10a21e6eb.ctex"]
+source_file="res://terrain/tilesets/images/Water/Rocks/Rocks_04.png"
+dest_files=["res://.godot/imported/Rocks_04.png-0f3b17e709e173b917ef0b88e55991ba.ctex"]
 
 [params]
 

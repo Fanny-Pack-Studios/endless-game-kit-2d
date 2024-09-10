@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwtjepfhnxi2i"
-path="res://.godot/imported/Water.png-fe27caf9fc40c28d3dccf65baf1c3309.ctex"
+uid="uid://cx618vl5ubwth"
+path="res://.godot/imported/rocks.png-af2f8128136c885a07ee719dabdbbb1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tiny Swords/Terrain/Water/Water.png"
-dest_files=["res://.godot/imported/Water.png-fe27caf9fc40c28d3dccf65baf1c3309.ctex"]
+source_file="res://terrain/tilesets/images/Water/Rocks/rocks.png"
+dest_files=["res://.godot/imported/rocks.png-af2f8128136c885a07ee719dabdbbb1e.ctex"]
 
 [params]
 
