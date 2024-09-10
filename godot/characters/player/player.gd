@@ -1,19 +1,12 @@
 extends CharacterBody2D
 
-# Referencia al nodo AnimatedSprite2D
-@onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D #Para referencias a otros nodos
+## Velocidad de movimiento del personaje.
+@export_range(10, 1000, 10) var SPEED = 300.0
 
-
-# Velocidad de movimiento del personaje.
-const SPEED = 300.0
+## Referencia al nodo que contiene las animaciones del personaje.
+@onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
-	# Cambia la animación según si el personaje está en movimiento o no.
-	if velocity.is_zero_approx():
-		animated_sprite_2d.play("idle")
-	else:
-		animated_sprite_2d.play("running")
-	
 	# Reinicia la velocidad en cada frame.
 	velocity = Vector2.ZERO
 	
@@ -34,6 +27,13 @@ func _physics_process(delta: float) -> void:
 	# Verifica si se está presionando la tecla para moverse hacia abajo. (Y)
 	if Input.is_action_pressed("move_down"):
 		velocity.y= SPEED
+	
+	# Cambia la animación según si el jugador esta intentando mover al
+	# personaje o no.
+	if velocity.is_zero_approx():
+		animated_sprite_2d.play("idle")
+	else:
+		animated_sprite_2d.play("running")
 	
 	# Mueve el personaje según la velocidad establecida y maneja las colisiones.
 	move_and_slide()

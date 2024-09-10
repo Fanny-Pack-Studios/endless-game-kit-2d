@@ -93,6 +93,12 @@ pause={
 
 locale/translations=PackedStringArray("res://translations/translation.en.translation", "res://translations/translation.es.translation")
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="npc"
+2d_physics/layer_32="terrain"
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.211765, 0.239216, 0.321569, 1)
