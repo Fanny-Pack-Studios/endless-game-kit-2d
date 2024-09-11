@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dihlgcv761uo5"
-path="res://.godot/imported/HappySheep_All.png-8543018eaa50f7079b5a7594a1d5e531.ctex"
+uid="uid://b5mqtbyxvfwap"
+path="res://.godot/imported/G_Spawn.png-ff5343226758cf2a1bb5588e02cd4a0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tiny Swords/Resources/Sheep/HappySheep_All.png"
-dest_files=["res://.godot/imported/HappySheep_All.png-8543018eaa50f7079b5a7594a1d5e531.ctex"]
+source_file="res://assets/Resources/G_Spawn.png"
+dest_files=["res://.godot/imported/G_Spawn.png-ff5343226758cf2a1bb5588e02cd4a0f.ctex"]
 
 [params]
 
