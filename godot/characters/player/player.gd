@@ -3,9 +3,13 @@ extends CharacterBody2D
 # Referencia al nodo AnimatedSprite2D
 @onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D #Para referencias a otros nodos
 
-
 # Velocidad de movimiento del personaje.
 const SPEED = 300.0
+var Door = false
+
+
+func _process(delta):
+	Open_Door()
 
 func _physics_process(delta: float) -> void:
 	# Cambia la animación según si el personaje está en movimiento o no.
@@ -35,5 +39,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("move_down"):
 		velocity.y= SPEED
 	
+	
+func Open_Door():
+	if Door == true:
+		set_physics_process(false)
+		animated_sprite_2d.play("entrar")
+		await (animated_sprite_2d.animation_finished)
+		Door = false
+		
 	# Mueve el personaje según la velocidad establecida y maneja las colisiones.
 	move_and_slide()
