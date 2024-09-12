@@ -126,8 +126,11 @@ animations = [{
 [sub_resource type="GDScript" id="GDScript_jfyl5"]
 script/source = "extends Area2D
 
-func _on_body_entered(_body):
-	Dialogue.say_line(\"Arturo San\", \"「大根が白いわけ」\")
+func interact_with(player):
+	await Dialogue.say_line(\"Arturo San\", \"「大根が白いわけ」\")
+
+func interaction_name() -> String:
+	return \"Inspeccionar\"
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1p2ks"]
@@ -136,11 +139,14 @@ size = Vector2(40, 40)
 [sub_resource type="GDScript" id="GDScript_g65pn"]
 script/source = "extends Area2D
 
-func _on_body_entered(_body):
-	Dialogue.show_multiple_lines(
+func interact_with(player):
+	await Dialogue.show_multiple_lines(
 		[\"Arturo pensó...\",
 		 \"mmm, parece una piedra\"]
 	)
+
+func interaction_name() -> String:
+	return \"Inspeccionar\"
 "
 
 [node name="JuanPrueba" type="Node2D"]
@@ -248,7 +254,8 @@ texture = ExtResource("17_0k7ck")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(291, 222)
-collision_layer = 0
+collision_layer = 4
+collision_mask = 0
 script = SubResource("GDScript_jfyl5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -256,11 +263,9 @@ shape = SubResource("RectangleShape2D_1p2ks")
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(545, 349)
-collision_layer = 0
+collision_layer = 4
+collision_mask = 0
 script = SubResource("GDScript_g65pn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 shape = SubResource("RectangleShape2D_1p2ks")
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

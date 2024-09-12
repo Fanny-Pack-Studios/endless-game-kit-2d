@@ -7,6 +7,7 @@
 size = Vector2(31, 32)
 
 [node name="Goblin" type="CharacterBody2D"]
+collision_layer = 6
 script = ExtResource("1_b6rfn")
 sprite_frames = ExtResource("2_6v3c6")
 
@@ -15,7 +16,7 @@ unique_name_in_owner = true
 sprite_frames = ExtResource("2_6v3c6")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.434512
+frame_progress = 0.588805
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 16)
