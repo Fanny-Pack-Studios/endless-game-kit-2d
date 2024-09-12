@@ -13,7 +13,7 @@ class_name DialogueSystem extends CanvasLayer
 ## línea haya sido leída y avanzada.[br]
 ## [i]Ejemplo:[br]
 ## Queremos hacer un personaje que diga algo y luego se borre de la escena.
-## Con el siguiente código, no va a ejecutarse el [code]queue_free()[/code] 
+## Con el siguiente código no va a ejecutarse el [code]queue_free()[/code] 
 ## hasta que el jugador haya leído y avanzado la línea de texto "¡Me voy!".[/i]
 ## [codeblock]
 ## func escapar():
