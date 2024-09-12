@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bke6wyvw5qlv4"]
+
+[ext_resource type="Script" path="res://dialogue/dialogue.gd" id="1_h5npq"]
+[ext_resource type="PackedScene" uid="uid://dvpvwup3rl7mq" path="res://dialogue/text_bubble.tscn" id="2_fctxl"]
+
+[node name="Dialogue" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_h5npq")
+
+[node name="TextBubble" parent="." instance=ExtResource("2_fctxl")]
+visible = false
