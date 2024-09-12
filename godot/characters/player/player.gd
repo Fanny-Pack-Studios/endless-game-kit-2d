@@ -1,51 +1,41 @@
 extends CharacterBody2D
 
-# Referencia al nodo AnimatedSprite2D
-@onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D #Para referencias a otros nodos
+## Velocidad de movimiento del personaje.
+@export_range(10, 1000, 10) var SPEED = 300.0
 
-# Velocidad de movimiento del personaje.
-const SPEED = 300.0
-var Door = false
+## Referencia al nodo que contiene las animaciones del personaje.
+@onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
 
-
-func _process(delta):
-	Open_Door()
-
-func _physics_process(delta: float) -> void:
-	# Cambia la animación según si el personaje está en movimiento o no.
+func _physics_process(_delta: float) -> void:
+	# Reinicia la velocidad en cada frame.
+	velocity = Vector2.ZERO
+	
+	## Solo podemos movernos si no hay un dialogo abierto
+	if not Dialogue.is_dialogue_open():
+		# Verifica si se está presionando la tecla para moverse a la izquierda. (X)
+		if Input.is_action_pressed("move_left"):
+			velocity.x= -SPEED
+			animated_sprite_2d.flip_h=true
+			
+		# Verifica si se está presionando la tecla para moverse hacia arriba. (Y)
+		if Input.is_action_pressed("move_up"):
+			velocity.y= -SPEED
+			
+		# Verifica si se está presionando la tecla para moverse a la derecha. (X)
+		if Input.is_action_pressed("move_right"):
+			velocity.x= SPEED
+			animated_sprite_2d.flip_h=false
+			
+		# Verifica si se está presionando la tecla para moverse hacia abajo. (Y)
+		if Input.is_action_pressed("move_down"):
+			velocity.y= SPEED
+	
+	# Cambia la animación según si el jugador esta intentando mover al
+	# personaje o no.
 	if velocity.is_zero_approx():
 		animated_sprite_2d.play("idle")
 	else:
 		animated_sprite_2d.play("running")
 	
-	# Reinicia la velocidad en cada frame.
-	velocity = Vector2.ZERO
-	
-	# Verifica si se está presionando la tecla para moverse a la izquierda. (X)
-	if Input.is_action_pressed("move_left"):
-		velocity.x= -SPEED
-		animated_sprite_2d.flip_h=true
-		
-	# Verifica si se está presionando la tecla para moverse hacia arriba. (Y)
-	if Input.is_action_pressed("move_up"):
-		velocity.y= -SPEED
-		
-	# Verifica si se está presionando la tecla para moverse a la derecha. (X)
-	if Input.is_action_pressed("move_right"):
-		velocity.x= SPEED
-		animated_sprite_2d.flip_h=false
-		
-	# Verifica si se está presionando la tecla para moverse hacia abajo. (Y)
-	if Input.is_action_pressed("move_down"):
-		velocity.y= SPEED
-	
-	
-func Open_Door():
-	if Door == true:
-		set_physics_process(false)
-		animated_sprite_2d.play("entrar")
-		await (animated_sprite_2d.animation_finished)
-		Door = false
-		
 	# Mueve el personaje según la velocidad establecida y maneja las colisiones.
 	move_and_slide()
