@@ -21,6 +21,14 @@ class_name DialogueSystem extends CanvasLayer
 ##   queue_free()
 ## [/codeblock]
 
+## Emitida cada vez que comienza una linea de dialogo.[br]
+## En diálogos de multiples líneas, se emitirá una vez por cada línea.[br]
+signal line_started(line: String)
+
+## Emitida cada vez que finaliza una linea de dialogo.[br]
+## En diálogos de multiples líneas, se emitirá una vez por cada línea.
+signal line_finished(line: String)
+
 ## Burbuja de texto donde se mostraran los mensajes
 @onready var text_bubble: TextBubble = $TextBubble
 
@@ -30,10 +38,25 @@ class_name DialogueSystem extends CanvasLayer
 ## await Dialogue.show_line("¡Hola mundo!")
 ## [/codeblock]
 func show_line(line: String):
+	# Se muestra la burbuja de texto
 	text_bubble.appear()
+	
+	# Se escribe la linea a mostrar en la burbuja de texto
 	text_bubble.display_text(line)
+	
+	# Se emite la señal line_started para que si otro nodo quiere hacer algo
+	# cuando comienza un dialogo pueda hacerlo
+	line_started.emit(line)
+
+	# Se espera a que la linea haya sido leida por el jugador
 	await text_bubble.line_accepted
+	
+	# Se esconde la burbuja de texto
 	await text_bubble.disappear()
+	
+	# Se emite la señal line_started para que si otro nodo quiere hacer algo
+	# cuando finaliza un diálogo pueda hacerlo
+	line_finished.emit(line)
 
 ## Muestra varios dialogos seguidos.
 ## Cada linea de dialogo es un elemento del array [param lines].[br]
@@ -52,9 +75,12 @@ func show_multiple_lines(lines: Array[String]):
 ## await Dialogue.say_line("Arturo", "¿Cómo dice?")
 ## [/codeblock]
 func say_line(character_name: String, line: String):
+	# Se construye una linea de texto con el nombre del personaje y lo
+	# que va a decir
 	var complete_line: String =\
 		"[color=blue]%s[/color]: %s" % [character_name, line]
 
+	# Se usa show_line para mostrar la linea de texto construida
 	await show_line(complete_line)
 
 ## Mostrar varios dialogos seguidos dichos por [param character_name]
