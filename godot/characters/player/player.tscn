@@ -264,7 +264,5 @@ script = ExtResource("1_y6xbq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_wcqaw")
-animation = &"dentro"
+animation = &"entrar"
 autoplay = "idle"
-frame = 8
-frame_progress = 1.0

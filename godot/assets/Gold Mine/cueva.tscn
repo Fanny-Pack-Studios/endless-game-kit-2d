@@ -47,7 +47,7 @@ script = ExtResource("1_u0q7f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ehcqw")
-animation = &"open"
+animation = &"cloused"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 18.5)
