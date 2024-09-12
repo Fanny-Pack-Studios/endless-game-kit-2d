@@ -8,7 +8,8 @@ class_name DialogueSystem extends CanvasLayer
 ## Esta clase [b]no[/b] debería instanciarse directamente.
 ## [br][br]
 ## [b]Importante: [/b] todos los métodos que muestran texto se pueden
-## utilizar con await para que el código a ejecutar no avance hasta que la
+## utilizar con [url=https://docs.godotengine.org/es/4.x/tutorials/scripting/gdscript/gdscript_basics.html#awaiting-signals-or-coroutines][code]await[/code][/url]
+## para que el código a ejecutar no avance hasta que la
 ## línea haya sido leída y avanzada.[br]
 ## [i]Ejemplo:[br]
 ## Queremos hacer un personaje que diga algo y luego se borre de la escena.
@@ -19,6 +20,9 @@ class_name DialogueSystem extends CanvasLayer
 ##   await Dialogue.show_line("¡Me voy!")
 ##   queue_free()
 ## [/codeblock]
+## @tutorial(¿Qué es un singleton?): https://docs.godotengine.org/es/4.x/tutorials/scripting/singletons_autoload.html
+## @tutorial(¿Cómo se usa await?): https://docs.godotengine.org/es/4.x/tutorials/scripting/gdscript/gdscript_basics.html#awaiting-signals-or-coroutines
+
 
 ## Emitida cada vez que comienza una linea de dialogo.[br]
 ## En diálogos de multiples líneas, se emitirá una vez por cada línea.[br]
