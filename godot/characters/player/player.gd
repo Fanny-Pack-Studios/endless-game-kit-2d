@@ -9,6 +9,8 @@ extends CharacterBody2D
 func _physics_process(_delta: float) -> void:
 	# Reinicia la velocidad en cada frame.
 	velocity = Vector2.ZERO
+	if is_opening_door():
+		return
 	
 	## Solo podemos movernos si no hay un dialogo abierto
 	if not Dialogue.is_dialogue_open():
@@ -39,3 +41,12 @@ func _physics_process(_delta: float) -> void:
 	
 	# Mueve el personaje según la velocidad establecida y maneja las colisiones.
 	move_and_slide()
+	
+# Función para entrar ala cueva. Reproduce la animación y espera a que termine.
+func open_door():
+	animated_sprite_2d.play("entrar")
+	await animated_sprite_2d.animation_finished
+	
+# Comprueba si se está reproduciendo la animación de entrar ala cueva.
+func is_opening_door():
+	return animated_sprite_2d.animation == "entrar"
