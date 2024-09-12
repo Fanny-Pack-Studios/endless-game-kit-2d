@@ -34,6 +34,10 @@ mouse_cursor/custom_image="res://ui/images/01.png"
 mouse_cursor/custom_image_hotspot=Vector2(20, 20)
 mouse_cursor/tooltip_position_offset=Vector2(20, 20)
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/abrir_documentacion/plugin.cfg")
+
 
 [gui]
 
