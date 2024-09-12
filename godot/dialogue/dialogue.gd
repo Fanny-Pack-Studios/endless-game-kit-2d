@@ -1,12 +1,11 @@
 class_name DialogueSystem extends CanvasLayer
-## DialogueSystem es una clase usada por el singleton Dialogue para mostrar
-## cuadros de texto en pantalla.
+## DialogueSystem es una clase usada por el [url=https://docs.godotengine.org/es/4.x/tutorials/scripting/singletons_autoload.html]singleton[/url]
+## Dialogue para mostrar cuadros de texto en pantalla.
 ##
-## La forma de abrir dialogos es usando directamente el singleton Dialogue
-## desde cualquier lugar del código.
+## La forma de abrir dialogos es usando directamente el [url=https://docs.godotengine.org/es/4.x/tutorials/scripting/singletons_autoload.html]singleton[/url]
+## Dialogue desde cualquier lugar del código.
 ## [br]
-## Esta clase no debería instanciarse
-## directamente.
+## Esta clase [b]no[/b] debería instanciarse directamente.
 ## [br][br]
 ## [b]Importante: [/b] todos los métodos que muestran texto se pueden
 ## utilizar con await para que el código a ejecutar no avance hasta que la
