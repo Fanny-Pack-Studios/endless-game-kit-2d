@@ -126,8 +126,8 @@ animations = [{
 [sub_resource type="GDScript" id="GDScript_jfyl5"]
 script/source = "extends Area2D
 
-func _on_body_entered(body):
-	Dialogue.say_by(\"Arturo San\", \"「大根が白いわけ」\")
+func _on_body_entered(_body):
+	Dialogue.say_line(\"Arturo San\", \"「大根が白いわけ」\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1p2ks"]
@@ -136,8 +136,8 @@ size = Vector2(40, 40)
 [sub_resource type="GDScript" id="GDScript_g65pn"]
 script/source = "extends Area2D
 
-func _on_body_entered(body):
-	Dialogue.say_multiple(
+func _on_body_entered(_body):
+	Dialogue.show_multiple_lines(
 		[\"Arturo pensó...\",
 		 \"mmm, parece una piedra\"]
 	)
