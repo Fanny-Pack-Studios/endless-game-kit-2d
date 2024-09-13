@@ -19,7 +19,7 @@ func load_animation():
 func _ready():
 	load_animation()
 
-func interact_with(_player: Player):
+func interact_with(_player):
 	await Dialogue.say_line(name, "Hola!")
 
 func interaction_name() -> String:
