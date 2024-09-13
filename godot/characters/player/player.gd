@@ -42,11 +42,11 @@ func _physics_process(_delta: float) -> void:
 	# Mueve el personaje según la velocidad establecida y maneja las colisiones.
 	move_and_slide()
 	
-# Función para entrar ala cueva. Reproduce la animación y espera a que termine.
+# Función para entrar a la cueva. Reproduce la animación y espera a que termine.
 func open_door():
 	animated_sprite_2d.play("entrar")
 	await animated_sprite_2d.animation_finished
 	
-# Comprueba si se está reproduciendo la animación de entrar ala cueva.
+# Comprueba si se está reproduciendo la animación de entrar a la cueva.
 func is_opening_door():
 	return animated_sprite_2d.animation == "entrar"
