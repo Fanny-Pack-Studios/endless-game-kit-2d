@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://characters/npcs/goblin/Goblin.tscn" id="6_blyav"]
 [ext_resource type="SpriteFrames" uid="uid://5tm3tyskys0e" path="res://characters/npcs/archer/animations/archer_blue.tres" id="7_6cek0"]
 [ext_resource type="SpriteFrames" uid="uid://cqg38l52hwj05" path="res://characters/npcs/goblin/animations/goblin_blue.tres" id="9_bs0jy"]
-[ext_resource type="PackedScene" uid="uid://4s3ocu8x2eng" path="res://characters/player/interaction_ray_cast.tscn" id="10_46pd1"]
+[ext_resource type="PackedScene" path="res://characters/player/interaction_ray_cast.tscn" id="10_46pd1"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="10_putq7"]
 [ext_resource type="Texture2D" uid="uid://barwgp6ohmifb" path="res://assets/Tiny Swords/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="17_0k7ck"]
 
