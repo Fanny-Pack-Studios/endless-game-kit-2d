@@ -4,7 +4,7 @@ func _can_handle(object: Object) -> bool:
 	var object_script = object.get_script()
 	return object_script and\
 		object_script is GDScript\
-		and object_script.get_global_name()
+		and "class_name" in object_script.source_code
 
 func _parse_begin(object: Object):
 	var open_docs_button := Button.new()
