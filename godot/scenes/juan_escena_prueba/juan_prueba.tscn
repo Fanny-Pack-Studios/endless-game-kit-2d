@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://dbt5dbugxv7wa"]
+[gd_scene load_steps=29 format=4 uid="uid://dbt5dbugxv7wa"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_1nid7"]
 [ext_resource type="Texture2D" uid="uid://32emst0ctttf" path="res://characters/player/Warrior_Blue.png" id="3_qmnvj"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://characters/npcs/goblin/Goblin.tscn" id="6_blyav"]
 [ext_resource type="SpriteFrames" uid="uid://5tm3tyskys0e" path="res://characters/npcs/archer/animations/archer_blue.tres" id="7_6cek0"]
 [ext_resource type="SpriteFrames" uid="uid://cqg38l52hwj05" path="res://characters/npcs/goblin/animations/goblin_blue.tres" id="9_bs0jy"]
+[ext_resource type="PackedScene" uid="uid://4s3ocu8x2eng" path="res://characters/player/interaction_ray_cast.tscn" id="10_46pd1"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="10_putq7"]
 [ext_resource type="Texture2D" uid="uid://barwgp6ohmifb" path="res://assets/Tiny Swords/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="17_0k7ck"]
 
@@ -126,8 +127,11 @@ animations = [{
 [sub_resource type="GDScript" id="GDScript_jfyl5"]
 script/source = "extends Area2D
 
-func _on_body_entered(_body):
-	Dialogue.say_line(\"Arturo San\", \"「大根が白いわけ」\")
+func interact_with(_player):
+	await Dialogue.say_line(\"Arturo San\", \"「大根が白いわけ」\")
+
+func interaction_name() -> String:
+	return \"Inspeccionar\"
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1p2ks"]
@@ -136,11 +140,14 @@ size = Vector2(40, 40)
 [sub_resource type="GDScript" id="GDScript_g65pn"]
 script/source = "extends Area2D
 
-func _on_body_entered(_body):
-	Dialogue.show_multiple_lines(
+func interact_with(_player):
+	await Dialogue.show_multiple_lines(
 		[\"Arturo pensó...\",
 		 \"mmm, parece una piedra\"]
 	)
+
+func interaction_name() -> String:
+	return \"Inspeccionar\"
 "
 
 [node name="JuanPrueba" type="Node2D"]
@@ -236,11 +243,15 @@ z_index = 1
 position = Vector2(648, 199)
 rotation = 3.14159
 scale = Vector2(1, -1)
+_interaction_name = "(ง •̀_•́)ง"
 sprite_frames = ExtResource("9_bs0jy")
 
 [node name="Player" parent="Espectadores" instance=ExtResource("10_putq7")]
 z_index = 1
 position = Vector2(454, 234)
+
+[node name="InteractionRayCast" parent="Espectadores/Player" node_paths=PackedStringArray("player") instance=ExtResource("10_46pd1")]
+player = NodePath("..")
 
 [node name="TowerBlue" type="Sprite2D" parent="."]
 position = Vector2(976, 244)
@@ -248,7 +259,8 @@ texture = ExtResource("17_0k7ck")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(291, 222)
-collision_layer = 0
+collision_layer = 4
+collision_mask = 0
 script = SubResource("GDScript_jfyl5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -256,11 +268,9 @@ shape = SubResource("RectangleShape2D_1p2ks")
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(545, 349)
-collision_layer = 0
+collision_layer = 4
+collision_mask = 0
 script = SubResource("GDScript_g65pn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 shape = SubResource("RectangleShape2D_1p2ks")
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

@@ -38,7 +38,6 @@ mouse_cursor/tooltip_position_offset=Vector2(20, 20)
 
 enabled=PackedStringArray("res://addons/abrir_documentacion/plugin.cfg")
 
-
 [gui]
 
 theme/custom="res://ui/theme.tres"
@@ -107,6 +106,7 @@ locale/translations=PackedStringArray("res://translations/translation.en.transla
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="npc"
+2d_physics/layer_3="interactable"
 2d_physics/layer_32="terrain"
 
 [rendering]
