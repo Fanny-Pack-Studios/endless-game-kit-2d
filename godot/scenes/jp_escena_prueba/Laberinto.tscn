@@ -26,8 +26,7 @@ tile_set = ExtResource("1_eqcnc")
 [node name="Player" parent="." instance=ExtResource("4_42kfm")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-95, -255)
-scale = Vector2(0.939861, 1.00872)
+position = Vector2(-132, -204)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
