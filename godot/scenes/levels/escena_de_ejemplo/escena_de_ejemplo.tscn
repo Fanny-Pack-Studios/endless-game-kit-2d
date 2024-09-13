@@ -20,4 +20,4 @@ process_mode = 2
 visible = false
 
 [node name="Player" parent="." instance=ExtResource("4_fly0r")]
-position = Vector2(467, 332)
+position = Vector2(484, 315)
