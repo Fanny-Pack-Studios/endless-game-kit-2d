@@ -7,7 +7,9 @@ func _can_handle(object: Object) -> bool:
 		and "class_name" in object_script.source_code
 
 func _parse_begin(object: Object):
+	var help_icon = EditorInterface.get_editor_theme().get_icon("Help", "EditorIcons")
 	var open_docs_button := Button.new()
+	open_docs_button.icon = help_icon
 	open_docs_button.text = "Abrir documentacion"
 	open_docs_button.pressed.connect(func():
 		var object_class_name: String = object.get_script().get_global_name()
