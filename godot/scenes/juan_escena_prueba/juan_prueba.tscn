@@ -126,7 +126,7 @@ animations = [{
 [sub_resource type="GDScript" id="GDScript_jfyl5"]
 script/source = "extends Area2D
 
-func interact_with(player):
+func interact_with(_player):
 	await Dialogue.say_line(\"Arturo San\", \"「大根が白いわけ」\")
 
 func interaction_name() -> String:
@@ -139,7 +139,7 @@ size = Vector2(40, 40)
 [sub_resource type="GDScript" id="GDScript_g65pn"]
 script/source = "extends Area2D
 
-func interact_with(player):
+func interact_with(_player):
 	await Dialogue.show_multiple_lines(
 		[\"Arturo pensó...\",
 		 \"mmm, parece una piedra\"]
@@ -242,6 +242,7 @@ z_index = 1
 position = Vector2(648, 199)
 rotation = 3.14159
 scale = Vector2(1, -1)
+_interaction_name = "(ง •̀_•́)ง"
 sprite_frames = ExtResource("9_bs0jy")
 
 [node name="Player" parent="Espectadores" instance=ExtResource("10_putq7")]

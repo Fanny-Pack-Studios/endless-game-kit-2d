@@ -1,6 +1,7 @@
 @tool
+class_name NPC extends CharacterBody2D
 
-extends CharacterBody2D
+@export var _interaction_name: String = "Hablar"
 
 ## Establece el conjunto de sprites animados a usar
 ## para este NPC (non playable character).
@@ -18,8 +19,8 @@ func load_animation():
 func _ready():
 	load_animation()
 
-func interact_with(player: Player):
+func interact_with(_player: Player):
 	await Dialogue.say_line(name, "Hola!")
 
 func interaction_name() -> String:
-	return "Hablar"
+	return _interaction_name
