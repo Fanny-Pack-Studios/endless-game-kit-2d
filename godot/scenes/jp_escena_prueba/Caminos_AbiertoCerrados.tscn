@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://y1fptgifbmsc"]
+[gd_scene load_steps=7 format=4 uid="uid://y1fptgifbmsc"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_qnwum"]
 [ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://characters/npcs/goblin/Goblin.tscn" id="2_gv74m"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="3_ufxhc"]
-[ext_resource type="PackedScene" path="res://characters/player/interaction_ray_cast.tscn" id="4_ux66x"]
+[ext_resource type="PackedScene" uid="uid://bgr6tltrr0pji" path="res://characters/player/interaction_ray_cast.tscn" id="4_ux66x"]
+[ext_resource type="PackedScene" uid="uid://clxoodqn2juot" path="res://characters/npcs/pawn/pawn.tscn" id="5_usvlc"]
+[ext_resource type="PackedScene" uid="uid://q8byvj3car6a" path="res://assets/Resources/resources.tscn" id="6_mpkw6"]
 
 [node name="CaminosAbiertoCerrados" type="Node2D"]
 
@@ -13,14 +15,26 @@ tile_set = ExtResource("1_qnwum")
 
 [node name="Guardianes" type="Node2D" parent="."]
 
+[node name="Pawn" parent="Guardianes" instance=ExtResource("5_usvlc")]
+position = Vector2(793, 212)
+
 [node name="Goblin" parent="Guardianes" instance=ExtResource("2_gv74m")]
 position = Vector2(276, 215)
 
 [node name="Goblin2" parent="Guardianes" instance=ExtResource("2_gv74m")]
-position = Vector2(272, 277)
+position = Vector2(272, 273)
 
 [node name="Player" parent="Guardianes" instance=ExtResource("3_ufxhc")]
 position = Vector2(861, 558)
 
-[node name="InteractionRayCast" parent="Guardianes/Player" instance=ExtResource("4_ux66x")]
+[node name="InteractionRayCast" parent="Guardianes/Player" node_paths=PackedStringArray("player") instance=ExtResource("4_ux66x")]
 position = Vector2(1, 23)
+player = NodePath("..")
+
+[node name="Resources" parent="Guardianes" instance=ExtResource("6_mpkw6")]
+position = Vector2(1157, 465)
+objects = "carne"
+
+[node name="Resources2" parent="Guardianes" instance=ExtResource("6_mpkw6")]
+position = Vector2(1162, 540)
+objects = "carne"

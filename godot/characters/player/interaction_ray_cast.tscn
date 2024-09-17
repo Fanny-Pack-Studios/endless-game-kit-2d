@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://4s3ocu8x2eng"]
+[gd_scene load_steps=12 format=3 uid="uid://bgr6tltrr0pji"]
 
 [ext_resource type="Script" path="res://characters/player/interaction_ray_cast.gd" id="1_08n8h"]
 [ext_resource type="Texture2D" uid="uid://6lte765xfg1s" path="res://assets/Tiny Swords/UI/Ribbons/Ribbon_Blue_Connection_Left.png" id="2_86nlp"]
@@ -20,7 +20,7 @@ font = ExtResource("3_1tucy")
 font_size = 14
 shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_au0ey"]
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_cd7kv"]
 frames = 2
 frame_0/texture = ExtResource("4_8ny0q")
 frame_0/duration = 0.6
@@ -29,7 +29,7 @@ frame_1/duration = 0.6
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ttp8s"]
 content_margin_top = 8.0
-texture = SubResource("AnimatedTexture_au0ey")
+texture = SubResource("AnimatedTexture_cd7kv")
 
 [sub_resource type="LabelSettings" id="LabelSettings_tmo2n"]
 font = ExtResource("3_1tucy")
