@@ -13,11 +13,24 @@ class_name TextBubble extends Control
 ## tras haberlo leído o para saltearlo.
 signal line_accepted
 
+## Señal emitida cuando la burbuja de texto se escondió por completo.
+signal disappeared
+
+func _ready():
+	Inventory.closed.connect(func(_item):
+		if visible:
+			grab_focus()
+	)
+
 ## Sobreescribimos _gui_input para ante ciertos eventos emitir la señal
 ## que indica que se puede avanzar el texto.
 func _gui_input(event: InputEvent):
 	if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
-		line_accepted.emit()
+		accept_line()
+
+## Emite a señal [signal line_accepted].
+func accept_line():
+	line_accepted.emit()
 
 ## Se escribe el texto [param text] en la burbuja de texto.[br]
 ## Por defecto, el texto se escribe en color negro, pero se pueden usar
@@ -62,5 +75,6 @@ func disappear():
 	## Esperamos a que la animacion termine
 	await animation_player.animation_finished
 	visible = false
+	disappeared.emit()
 
 	
