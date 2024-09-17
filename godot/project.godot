@@ -37,7 +37,7 @@ mouse_cursor/tooltip_position_offset=Vector2(20, 20)
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/abrir_documentacion/plugin.cfg")
+enabled=PackedStringArray("res://addons/documentation/plugin.cfg")
 
 [gui]
 
