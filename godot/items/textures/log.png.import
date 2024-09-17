@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gw4kvvbc7gpr"
-path="res://.godot/imported/M_Idle.png-865cbb5a2677589836ccab2e537366c1.ctex"
+uid="uid://dsinfqvxedsv1"
+path="res://.godot/imported/log.png-123f47dd08737f4e6040461b7f41e34e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tiny Swords/Resources/Resources/M_Idle.png"
-dest_files=["res://.godot/imported/M_Idle.png-865cbb5a2677589836ccab2e537366c1.ctex"]
+source_file="res://items/textures/log.png"
+dest_files=["res://.godot/imported/log.png-123f47dd08737f4e6040461b7f41e34e.ctex"]
 
 [params]
 

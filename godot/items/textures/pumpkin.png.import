@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsinfqvxedsv1"
-path="res://.godot/imported/W_Idle.png-82cd2259d0e87c65fe8354cfba90df47.ctex"
+uid="uid://cg5b3nrtnj158"
+path="res://.godot/imported/pumpkin.png-75744c3783b22cc1e15d31f5d72bbfa6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tiny Swords/Resources/Resources/W_Idle.png"
-dest_files=["res://.godot/imported/W_Idle.png-82cd2259d0e87c65fe8354cfba90df47.ctex"]
+source_file="res://items/textures/pumpkin.png"
+dest_files=["res://.godot/imported/pumpkin.png-75744c3783b22cc1e15d31f5d72bbfa6.ctex"]
 
 [params]
 

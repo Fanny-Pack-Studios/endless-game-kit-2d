@@ -96,7 +96,30 @@ func say_multiple_lines(character_name: String, lines: Array[String]):
 	for line in lines:
 		await say_line(character_name, line)
 
+## Fuerza que se avance a la siguiente línea de texto (si la hay) o si
+## no que se cierre la actual.[br]
+## En los casos más comunes no va a ser necesario usar este método, ya que
+## para la mayoría de los casos bastaría con [member Dialogue.say_line],
+## [member Dialogue.show_line], [member Dialogue.say_multiple_lines] o
+## [member Dialogue.say_multiple_lines].[br]
+## Se puede usar [code]await[/code] para esperar a que haya desaparecido
+## la burbuja de texto.
+## Ejemplo:
+## [codeblock]
+## await Dialogue.advance()
+## [/codeblock]
+func advance():
+	text_bubble.accept_line()
+
+	await text_bubble.disappeared
+
+## Dado un texto y una pista asociada a ese texto, devuelve un string con
+## etiquetas de BBCode que muestran al texto pasado y un tooltip sobre el
+## mismo. Al pasar el mouse por ese tooltip se muestra la pista.
+func hinted_text(text: String, hint: String) -> String:
+	return "[hint=%s][wave]%s[/wave][/hint]" % [hint, text]
+
 ## Retorna [code]true[/code] si existe un diálogo activo abierto,
 ## y [code]false[/code] en caso contrario.
 func is_dialogue_open() -> bool:
-	return text_bubble.visible
+	return text_bubble.visible or Inventory.is_open()
