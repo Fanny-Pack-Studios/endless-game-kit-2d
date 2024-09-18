@@ -92,11 +92,13 @@ position = Vector2(2669, 526)
 texture = ExtResource("14_xxoj6")
 
 [node name="RibbonRed3Slides" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(2673, 744)
 scale = Vector2(3.95833, 2.78125)
 texture = ExtResource("12_as0l5")
 
 [node name="RibbonBlue3Slides" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(1743, 746)
 scale = Vector2(3.92442, 2.781)
 texture = ExtResource("13_wjp2q")
@@ -104,6 +106,7 @@ texture = ExtResource("13_wjp2q")
 [node name="RibbonYellow3Slides" type="Sprite2D" parent="."]
 editor_description = "Desarrolladores
 "
+texture_filter = 1
 position = Vector2(794, 737)
 scale = Vector2(3.82292, 2.78125)
 texture = ExtResource("14_ut2mk")
@@ -115,11 +118,13 @@ scale = Vector2(8.701, 7)
 texture = ExtResource("15_2hn1u")
 
 [node name="RibbonRedConnectionUp" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(2661, 1019)
 scale = Vector2(8.45, 7)
 texture = ExtResource("16_sloes")
 
 [node name="RibbonBlueConnectionUp" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(1740, 1023)
 scale = Vector2(8.635, 7)
 texture = ExtResource("17_3i13g")
