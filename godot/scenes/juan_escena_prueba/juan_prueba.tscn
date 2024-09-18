@@ -282,7 +282,7 @@ sprite_frames = ExtResource("9_bs0jy")
 z_index = 1
 position = Vector2(454, 234)
 
-[node name="InteractionRayCast" parent="Espectadores/Player" node_paths=PackedStringArray("player") instance=ExtResource("10_46pd1")]
+[node name="InteractionRayCast2" parent="Espectadores/Player" node_paths=PackedStringArray("player") instance=ExtResource("10_46pd1")]
 player = NodePath("..")
 
 [node name="TowerBlue" type="Sprite2D" parent="."]
