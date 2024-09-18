@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://don05oafwf0t"]
+[gd_scene load_steps=6 format=3 uid="uid://don05oafwf0t"]
 
 [ext_resource type="Script" path="res://scenes/levels/escena_de_ejemplo/escena_de_ejemplo.gd" id="1_5hw61"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="2_5ixp7"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_4js0l"]
-[ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="4_8qhq2"]
+[ext_resource type="PackedScene" uid="uid://ddyggrsh3ahs5" path="res://scenes/jp_escena_prueba/npc_party.tscn" id="5_2p337"]
+[ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://assets/Gold Mine/cueva.tscn" id="5_qwr2u"]
 
 [node name="IngameScene" type="Node2D"]
 script = ExtResource("1_5hw61")
@@ -19,5 +20,8 @@ unique_name_in_owner = true
 process_mode = 2
 visible = false
 
-[node name="Player" parent="." instance=ExtResource("4_8qhq2")]
-position = Vector2(484, 315)
+[node name="NpcParty" parent="." instance=ExtResource("5_2p337")]
+position = Vector2(194, -100)
+
+[node name="Cueva" parent="." instance=ExtResource("5_qwr2u")]
+position = Vector2(340, 336)
