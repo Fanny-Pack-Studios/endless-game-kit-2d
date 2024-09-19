@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bl210g5u1s3i2"]
+[gd_scene load_steps=33 format=4 uid="uid://81whno6xe7gt"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_va17y"]
 [ext_resource type="Texture2D" uid="uid://32emst0ctttf" path="res://characters/player/Warrior_Blue.png" id="2_ympw1"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://characters/npcs/goblin/Goblin.tscn" id="7_2maw3"]
 [ext_resource type="SpriteFrames" uid="uid://cqg38l52hwj05" path="res://characters/npcs/goblin/animations/goblin_blue.tres" id="8_l3u6v"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="9_1k37i"]
-[ext_resource type="PackedScene" uid="uid://4s3ocu8x2eng" path="res://characters/player/interaction_ray_cast.tscn" id="10_jo2bn"]
+[ext_resource type="PackedScene" uid="uid://bgr6tltrr0pji" path="res://characters/player/interaction_ray_cast.tscn" id="10_jo2bn"]
 [ext_resource type="Texture2D" uid="uid://barwgp6ohmifb" path="res://assets/Tiny Swords/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="11_skq81"]
 [ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://items/item.tscn" id="12_h4rym"]
 [ext_resource type="Texture2D" uid="uid://k20k0rpc5f1l" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="13_pi8fp"]
@@ -290,7 +290,7 @@ sprite_frames = ExtResource("8_l3u6v")
 z_index = 1
 position = Vector2(454, 234)
 
-[node name="InteractionRayCast" parent="Espectadores/Player" node_paths=PackedStringArray("player") instance=ExtResource("10_jo2bn")]
+[node name="InteractionRayCast2" parent="Espectadores/Player" node_paths=PackedStringArray("player") instance=ExtResource("10_jo2bn")]
 player = NodePath("..")
 
 [node name="TowerBlue" type="Sprite2D" parent="."]

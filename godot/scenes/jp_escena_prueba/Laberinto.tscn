@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://bjq8sacrlwt2w"]
+[gd_scene load_steps=9 format=4 uid="uid://bjq8sacrlwt2w"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_eqcnc"]
 [ext_resource type="PackedScene" uid="uid://btcimqwmqk3rh" path="res://characters/npcs/archer/archer.tscn" id="3_t01w6"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="4_42kfm"]
 [ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://characters/npcs/goblin/Goblin.tscn" id="4_ybi1w"]
 [ext_resource type="PackedScene" uid="uid://clxoodqn2juot" path="res://characters/npcs/pawn/pawn.tscn" id="5_f84lo"]
+[ext_resource type="Script" path="res://scenes/jp_escena_prueba/goblinlab.gd" id="6_6snxf"]
+[ext_resource type="SpriteFrames" uid="uid://dnm04pi7yfmju" path="res://characters/npcs/goblin/animations/goblin_red.tres" id="7_gy38c"]
+[ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://items/item.tscn" id="9_fyofj"]
 
 [node name="Laberinto" type="Node2D"]
 y_sort_enabled = true
@@ -39,42 +42,73 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="Archer" parent="." instance=ExtResource("3_t01w6")]
+[node name="Recursos" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(61, 251)
+
+[node name="Item" parent="Recursos" instance=ExtResource("9_fyofj")]
+position = Vector2(-213, 537)
+type = 0
+
+[node name="Item2" parent="Recursos" instance=ExtResource("9_fyofj")]
+position = Vector2(-314, 538)
+type = 0
+
+[node name="Item3" parent="Recursos" instance=ExtResource("9_fyofj")]
+position = Vector2(1904, 121)
+
+[node name="Item4" parent="Recursos" instance=ExtResource("9_fyofj")]
+position = Vector2(837, -566)
+type = 5
+
+[node name="Item5" parent="Recursos" instance=ExtResource("9_fyofj")]
+position = Vector2(61, 967)
+type = 4
+
+[node name="npcs" type="Node2D" parent="."]
+
+[node name="Archer" parent="npcs" instance=ExtResource("3_t01w6")]
 z_index = 1
 position = Vector2(1892, -82)
 
-[node name="Goblin" parent="." instance=ExtResource("4_ybi1w")]
+[node name="Goblin" parent="npcs" instance=ExtResource("4_ybi1w")]
 z_index = 1
-position = Vector2(-190, 784)
+position = Vector2(1243, 986)
+rotation = -3.14159
+scale = Vector2(1, -1)
+script = ExtResource("6_6snxf")
+sprite_frames = ExtResource("7_gy38c")
 
-[node name="Pawn" parent="." instance=ExtResource("5_f84lo")]
+[node name="Pawn" parent="npcs" instance=ExtResource("5_f84lo")]
 z_index = 1
 position = Vector2(724, 268)
 
-[node name="Pawn2" parent="." instance=ExtResource("5_f84lo")]
+[node name="Pawn2" parent="npcs" instance=ExtResource("5_f84lo")]
 z_index = 1
 position = Vector2(-34, 276)
 
-[node name="Archer2" parent="." instance=ExtResource("3_t01w6")]
+[node name="Archer2" parent="npcs" instance=ExtResource("3_t01w6")]
 z_index = 1
 position = Vector2(476, 508)
 
-[node name="Archer3" parent="." instance=ExtResource("3_t01w6")]
+[node name="Archer3" parent="npcs" instance=ExtResource("3_t01w6")]
 z_index = 1
 position = Vector2(48, 1315)
 
-[node name="Goblin2" parent="." instance=ExtResource("4_ybi1w")]
+[node name="Goblin2" parent="npcs" instance=ExtResource("4_ybi1w")]
 z_index = 1
-position = Vector2(1991, 375)
+position = Vector2(1241, 1039)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
-[node name="Pawn3" parent="." instance=ExtResource("5_f84lo")]
+[node name="Pawn3" parent="npcs" instance=ExtResource("5_f84lo")]
 z_index = 1
 position = Vector2(553, 916)
 
-[node name="Goblin3" parent="." instance=ExtResource("4_ybi1w")]
+[node name="Goblin3" parent="npcs" instance=ExtResource("4_ybi1w")]
 z_index = 1
-position = Vector2(893, -341)
+position = Vector2(897, -229)
 
-[node name="Pawn4" parent="." instance=ExtResource("5_f84lo")]
+[node name="Pawn4" parent="npcs" instance=ExtResource("5_f84lo")]
 z_index = 1
 position = Vector2(1997, 1192)
