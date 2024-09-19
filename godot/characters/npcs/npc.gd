@@ -20,7 +20,7 @@ func _ready():
 	load_animation()
 
 func interact_with(_player):
-	await Dialogue.say_line(name, "We need some meat for our lunch")
+	await Dialogue.say_line(name, "Hola!")
 
 func interaction_name() -> String:
 	return _interaction_name
