@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://n0siq684nkln"]
+[gd_scene load_steps=53 format=4 uid="uid://n0siq684nkln"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_2b2nm"]
 [ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_gg68f"]
@@ -26,21 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://k20k0rpc5f1l" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="20_xsium"]
 [ext_resource type="Script" path="res://scenes/combat/enemy_attack_minigame.gd" id="22_burgw"]
 [ext_resource type="Texture2D" uid="uid://7qjypsgo6fld" path="res://assets/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="23_1c1jq"]
+[ext_resource type="PackedScene" uid="uid://b7x5gua7ye3k6" path="res://scenes/combat/combat_option_button.tscn" id="23_th00o"]
 [ext_resource type="Texture2D" uid="uid://b3pmtodft1dlv" path="res://assets/Tiny Swords/Effects/Explosion/Explosions.png" id="24_hox5a"]
-[ext_resource type="Script" path="res://scenes/combat/minigame.gd" id="24_nj7kr"]
-[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="26_d0630"]
 [ext_resource type="Script" path="res://scenes/combat/shaker.gd" id="26_trtn3"]
-[ext_resource type="Texture2D" uid="uid://8g7vc3kr2bc3" path="res://assets/Tiny Swords/Factions/Knights/Troops/Archer/Arrow/Arrow.png" id="30_syml1"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qgymt"]
-texture = ExtResource("23_1c1jq")
-texture_margin_left = 64.0
-texture_margin_top = 32.0
-texture_margin_right = 64.0
-texture_margin_bottom = 64.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(0, 39, 192, 141)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pr46"]
 
@@ -75,17 +63,15 @@ Button/styles/hover = SubResource("StyleBoxTexture_vpfsn")
 Button/styles/normal = SubResource("StyleBoxTexture_vpfsn")
 Button/styles/pressed = SubResource("StyleBoxTexture_a8ff4")
 
-[sub_resource type="Resource" id="Resource_y6deg"]
-script = ExtResource("26_d0630")
-question = "Cual motor tiene mas aguante"
-correct_answer = "Godot"
-answers = Array[String](["Godot", "Unity", "Unreal"])
-
-[sub_resource type="Resource" id="Resource_iw1qq"]
-script = ExtResource("26_d0630")
-question = "Cuanto es 2 + 2"
-correct_answer = "4"
-answers = Array[String](["3", "5", "1", "2", "4"])
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qgymt"]
+texture = ExtResource("23_1c1jq")
+texture_margin_left = 64.0
+texture_margin_top = 32.0
+texture_margin_right = 64.0
+texture_margin_bottom = 64.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 39, 192, 141)
 
 [sub_resource type="Animation" id="Animation_p023x"]
 length = 0.001
@@ -144,54 +130,6 @@ tracks/4/path = NodePath("PlayerSide/Sprite/AttackParticles:emitting")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("EnemySide/Sprite:animation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack"]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("EnemySide/Arrow:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("EnemySide/Arrow:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(954, 542)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("EnemySide/ArrowHitParticles:emitting")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -354,78 +292,11 @@ tracks/5/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_o3wb7"]
-resource_name = "enemy_attack"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("EnemySide/Sprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"attack", &"idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("EnemySide/Arrow:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.633333, 1.06667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("EnemySide/Arrow:position")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.5, 1.06667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(954, 542), Vector2(329, 542)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("EnemySide/ArrowHitParticles:emitting")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1.03333, 1.46667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("EnemySide")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"cause_damage"
-}]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lx16q"]
 _data = {
 "RESET": SubResource("Animation_p023x"),
 "attack": SubResource("Animation_66sf4"),
-"double_attack": SubResource("Animation_xp6ld"),
-"enemy_attack": SubResource("Animation_o3wb7")
+"double_attack": SubResource("Animation_xp6ld")
 }
 
 [sub_resource type="Gradient" id="Gradient_jv0lh"]
@@ -491,135 +362,6 @@ emission_box_extents = Vector3(100, 100, 0)
 gravity = Vector3(0, 98, 0)
 anim_speed_min = 1.0
 anim_speed_max = 1.0
-
-[sub_resource type="Gradient" id="Gradient_7vo67"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_47jop"]
-gradient = SubResource("Gradient_7vo67")
-
-[sub_resource type="CurveTexture" id="CurveTexture_5cbru"]
-
-[sub_resource type="Curve" id="Curve_7uuna"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0640913), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_0gra8"]
-curve = SubResource("Curve_7uuna")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uxtbj"]
-particle_flag_disable_z = true
-spread = 180.0
-initial_velocity_min = 205.57
-initial_velocity_max = 370.45
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_0gra8")
-color_ramp = SubResource("GradientTexture1D_47jop")
-emission_curve = SubResource("CurveTexture_5cbru")
-
-[sub_resource type="Gradient" id="Gradient_rv4j1"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_djxgf"]
-gradient = SubResource("Gradient_rv4j1")
-width = 20
-height = 20
-
-[sub_resource type="Animation" id="Animation_7x3hf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ChooseAttack:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("EnemyAttackMinigame:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1298, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_gmpek"]
-resource_name = "enemy_turn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("EnemyAttackMinigame:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(744, 0), Vector2(1290, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_olpn0"]
-resource_name = "finish_player_turn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ChooseAttack:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-537, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2j6bx"]
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("EnemyAttackMinigame:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1290, 0), Vector2(744, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_6rx1i"]
-resource_name = "player_turn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ChooseAttack:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-540, 0), Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5eng3"]
-_data = {
-"RESET": SubResource("Animation_7x3hf"),
-"hide_enemy_ui": SubResource("Animation_gmpek"),
-"hide_player_ui": SubResource("Animation_olpn0"),
-"show_enemy_ui": SubResource("Animation_2j6bx"),
-"show_player_ui": SubResource("Animation_6rx1i")
-}
 
 [node name="Combat" type="Control"]
 layout_mode = 3
@@ -719,7 +461,6 @@ offset_bottom = 344.0
 texture = ExtResource("2_2jkyg")
 
 [node name="ChooseAttack" type="Control" parent="." node_paths=PackedStringArray("combat")]
-layout_mode = 1
 anchors_preset = 0
 offset_right = 536.0
 offset_bottom = 368.0
@@ -728,21 +469,17 @@ combat = NodePath("..")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ChooseAttack"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.5
+offset_top = -114.0
+offset_right = 133.5
+offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ChooseAttack/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("19_altx3")
-theme_override_font_sizes/normal_font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxTexture_qgymt")
-bbcode_enabled = true
-text = "[center]Elige una acción[/center]"
-fit_content = true
 
 [node name="Attack" type="Button" parent="ChooseAttack/VBoxContainer"]
 unique_name_in_owner = true
@@ -761,18 +498,54 @@ theme = SubResource("Theme_dq435")
 text = "Curarse
 (heal = 30hp)"
 
-[node name="EnemyAttackMinigame" type="Control" parent="." node_paths=PackedStringArray("combat")]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 18.0
-offset_right = 554.0
+[node name="EnemyAttackMinigame" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 742.0
+offset_right = 1278.0
 offset_bottom = 368.0
-grow_horizontal = 0
 script = ExtResource("22_burgw")
-minigames = Array[ExtResource("24_nj7kr")]([SubResource("Resource_y6deg"), SubResource("Resource_iw1qq")])
-combat = NodePath("..")
+question = "What is BLUE?"
+answers = Array[String](["Azul", "Rojo", "Verde", "Amarillo"])
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EnemyAttackMinigame"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("19_altx3")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_qgymt")
+bbcode_enabled = true
+text = "[center]¿Cual es la traducción de [wave]ROJO[/wave]?"
+fit_content = true
+
+[node name="OptionsContainer" type="GridContainer" parent="EnemyAttackMinigame"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -236.5
+offset_top = -62.0
+offset_right = 236.5
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="CombatOptionButton" parent="EnemyAttackMinigame/OptionsContainer" instance=ExtResource("23_th00o")]
+layout_mode = 2
+
+[node name="Heal" type="Button" parent="EnemyAttackMinigame/OptionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_dq435")
+text = "Curarse
+(heal = 30hp)"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -794,7 +567,7 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = ExtResource("17_8dbld")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.810553
+frame_progress = 0.0276339
 
 [node name="AttackParticles" type="GPUParticles2D" parent="PlayerSide/Sprite"]
 z_index = 100
@@ -865,9 +638,9 @@ texture = ExtResource("24_hox5a")
 position = Vector2(1000, 512)
 scale = Vector2(2.5, 2.5)
 sprite_frames = ExtResource("19_0y243")
-animation = &"attack"
+animation = &"idle"
 autoplay = "idle"
-flip_h = true
+frame_progress = 0.579888
 
 [node name="HealthBar" type="TextureProgressBar" parent="EnemySide"]
 z_index = 150
@@ -904,27 +677,3 @@ horizontal_alignment = 1
 [node name="Shaker" type="Node2D" parent="EnemySide" node_paths=PackedStringArray("shaked_node")]
 script = ExtResource("26_trtn3")
 shaked_node = NodePath("..")
-
-[node name="ArrowHitParticles" type="GPUParticles2D" parent="EnemySide"]
-position = Vector2(329, 542)
-rotation = 3.14019
-scale = Vector2(3, 3)
-emitting = false
-amount = 50
-process_material = SubResource("ParticleProcessMaterial_uxtbj")
-texture = SubResource("GradientTexture2D_djxgf")
-explosiveness = 1.0
-
-[node name="Arrow" type="Sprite2D" parent="EnemySide"]
-visible = false
-position = Vector2(954, 542)
-rotation = 3.14019
-scale = Vector2(3, 3)
-texture = ExtResource("30_syml1")
-region_enabled = true
-region_rect = Rect2(1, 28, 63, 14)
-
-[node name="MenuTurnAnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_5eng3")
-}

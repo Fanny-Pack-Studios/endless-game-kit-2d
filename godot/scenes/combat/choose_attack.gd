@@ -9,15 +9,22 @@ extends Control
 var damage_amount: int = 0
 var heal_amount: int = 0
 
+signal player_chose_option
+
 func _ready():
 	var animation_player = %AnimationPlayer
 	attack.pressed.connect(func():
+		player_chose_option.emit()
 		player_side.attack_amount = damage_amount
 		var attack = ["attack", "double_attack"].pick_random()
 		animation_player.play(attack)
+		await animation_player.animation_finished
+		combat.next_turn()
 	)
 	heal.pressed.connect(func():
+		player_chose_option.emit()
 		player_side.heal(self.heal_amount)
+		combat.next_turn()
 	)
 	calculate_random_values_for_attack_and_heal()
 
