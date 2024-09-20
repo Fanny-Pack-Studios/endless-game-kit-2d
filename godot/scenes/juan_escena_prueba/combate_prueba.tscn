@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://05p5n6lueew6"]
+
+[ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="1_0n38d"]
+[ext_resource type="PackedScene" uid="uid://btcimqwmqk3rh" path="res://characters/npcs/archer/archer.tscn" id="2_otfe2"]
+[ext_resource type="Script" path="res://scenes/juan_escena_prueba/archer_fighter.gd" id="3_qdy42"]
+
+[node name="CombatePrueba" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_0n38d")]
+position = Vector2(356, 186)
+
+[node name="Archer" parent="." instance=ExtResource("2_otfe2")]
+position = Vector2(662, 186)
+script = ExtResource("3_qdy42")
