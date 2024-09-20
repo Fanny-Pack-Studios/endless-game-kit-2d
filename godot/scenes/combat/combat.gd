@@ -1,33 +1,63 @@
 class_name CombatScreen extends Control
 
-enum Turn {
-	PlayerTurn,
-	EnemyTurn
-}
-@onready var menu_turn_animation_player = $MenuTurnAnimationPlayer
+@onready var menu_turn_animation_player = %MenuTurnAnimationPlayer
+@onready var choose_attack = %ChooseAttackMenu
+@onready var enemy_attack_minigame = %EnemyAttackMinigameMenu
+@onready var player = %Player
+@onready var enemy = %Enemy
 
-var turn = Turn.PlayerTurn
+
+enum Turn {
+	Player,
+	Enemy
+}
+
+var turn: Turn = Turn.Player
+
 
 func _ready():
-	$ChooseAttack.player_chose_option.connect(func():
-		menu_turn_animation_player.queue("hide_player_ui")
-	)
-	$EnemyAttackMinigame.player_chose_minigame_option.connect(func():
-		menu_turn_animation_player.queue("hide_enemy_ui")
-	)
+	play_turns()
 
-func next_turn():
+
+func play_turns():
+	while player.current_health > 0 and enemy.current_health > 0:
+		await play_a_turn()
+
+	await wait_seconds(1.0)
+
+	if enemy.current_health <= 0:
+		await Dialogue.show_line("GANASTE!!!")
+	elif player.current_health <= 0:
+		await Dialogue.show_line("Perdiste! >:(")
+
+
+func play_a_turn():
 	match turn:
-		Turn.PlayerTurn:
-			$EnemyAttackMinigame.setup_minigame()
-			turn = Turn.EnemyTurn
-			menu_turn_animation_player.queue("show_enemy_ui")
-		Turn.EnemyTurn:
-			turn = Turn.PlayerTurn
+		Turn.Player:
+			choose_attack.setup_turn()
+
 			menu_turn_animation_player.queue("show_player_ui")
 
-func heal_player(amount: int):
-	pass
+			await choose_attack.player_chose_option
 
-func hurt_enemy(amount: int):
-	pass
+			menu_turn_animation_player.queue("hide_player_ui")
+
+			await choose_attack.player_turn_finished
+			
+			turn = Turn.Enemy
+		Turn.Enemy:
+			enemy_attack_minigame.setup_turn()
+
+			menu_turn_animation_player.queue("show_enemy_ui")
+
+			await enemy_attack_minigame.player_chose_option
+
+			menu_turn_animation_player.queue("hide_enemy_ui")
+
+			await enemy_attack_minigame.enemy_turn_finished
+			
+			turn = Turn.Player
+
+
+func wait_seconds(seconds: float):
+	await get_tree().create_timer(seconds).timeout

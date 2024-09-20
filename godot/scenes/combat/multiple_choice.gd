@@ -3,7 +3,7 @@ class_name MultipleChoice extends MiniGame
 const MULTIPLE_CHOICE_SCENE =\
 	preload("res://scenes/combat/multiple_choice_scene.tscn")
 
-@export var question: String
+@export_multiline var question: String
 @export var correct_answer: String
 @export var answers: Array[String]
 

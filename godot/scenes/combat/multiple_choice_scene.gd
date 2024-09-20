@@ -4,8 +4,7 @@ class_name MultipleChoiceMiniGame extends Control
 @onready var options_container = %OptionsContainer
 @onready var question_label = %QuestionLabel
 
-signal success
-signal failure
+signal completed(points: int)
 
 const COMBAT_OPTION_BUTTON = preload("res://scenes/combat/combat_option_button.tscn")
 
@@ -25,6 +24,10 @@ func setup_minigame(question, answers, correct_answer):
 		button.text = answer
 		options_container.add_child(button, true)
 		button.pressed.connect(func():
+			paint_answers()
+			
+			await get_tree().create_timer(0.5).timeout
+			
 			if(answer == correct_answer):
 				self.on_correct_answer()
 			else:
@@ -32,7 +35,14 @@ func setup_minigame(question, answers, correct_answer):
 		)
 	
 func on_correct_answer():
-	success.emit()
+	completed.emit(100)
 
 func on_incorrect_answer():
-	failure.emit()
+	completed.emit(0)
+
+func paint_answers():
+	for option in options_container.get_children():
+		if(option.text == multiple_choice.correct_answer):
+			option.modulate = Color.GREEN
+		else:
+			option.modulate = Color.RED

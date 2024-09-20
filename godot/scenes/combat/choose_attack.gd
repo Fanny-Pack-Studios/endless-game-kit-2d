@@ -3,36 +3,44 @@ extends Control
 @onready var attack = %Attack
 @onready var heal = %Heal
 @export var combat: CombatScreen
-@onready var player_side = %PlayerSide
-@onready var enemy_side = %EnemySide
-
-var damage_amount: int = 0
-var heal_amount: int = 0
+@onready var player = %Player
 
 signal player_chose_option
+signal player_turn_finished
 
-func _ready():
-	var animation_player = %AnimationPlayer
-	attack.pressed.connect(func():
-		player_chose_option.emit()
-		player_side.attack_amount = damage_amount
-		var attack = ["attack", "double_attack"].pick_random()
-		animation_player.play(attack)
-		await animation_player.animation_finished
-		combat.next_turn()
-	)
-	heal.pressed.connect(func():
-		player_chose_option.emit()
-		player_side.heal(self.heal_amount)
-		combat.next_turn()
-	)
+enum PlayerOption {
+	Attack,
+	Heal
+}
+
+func setup_turn():
 	calculate_random_values_for_attack_and_heal()
 
+
+func option_chosen(option: PlayerOption):
+	player_chose_option.emit()
+
+	match option:
+		PlayerOption.Attack:
+			await player.play_attack()
+
+		PlayerOption.Heal:
+			await player.heal()
+
+	player_turn_finished.emit()
+
+
+func _ready():
+	attack.pressed.connect(func(): option_chosen(PlayerOption.Attack))
+	heal.pressed.connect(func(): option_chosen(PlayerOption.Heal))
+
+
 func calculate_random_values_for_attack_and_heal():
-	damage_amount = randi_range(1, 100)
-	heal_amount = randi_range(1, 100)
-	attack.text = "Atacar con Sword\nDamage: %s" % number_to_word(damage_amount)
-	heal.text = "Comer Mushroom\nHeal: %s" % number_to_word(heal_amount)
+	player.attack_power = randi_range(1, 100)
+	player.heal_power = randi_range(1, 100)
+	attack.text = "Atacar con Sword\nDamage: %s" % number_to_word(player.attack_power)
+	heal.text = "Comer Mushroom\nHeal: %s" % number_to_word(player.heal_power)
+
 
 func number_to_word(number: int) -> String:
 	var digits: Array[String] = [

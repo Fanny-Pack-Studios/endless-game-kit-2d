@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://n0siq684nkln"]
+[gd_scene load_steps=61 format=4 uid="uid://n0siq684nkln"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_2b2nm"]
 [ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_gg68f"]
@@ -18,25 +18,27 @@
 [ext_resource type="SpriteFrames" uid="uid://cqg38l52hwj05" path="res://characters/npcs/goblin/animations/goblin_blue.tres" id="7_qvle1"]
 [ext_resource type="Texture2D" uid="uid://yxjgvhq8do6o" path="res://assets/Tiny Swords/Factions/Knights/Buildings/Castle/Castle_Red.png" id="7_stafv"]
 [ext_resource type="Script" path="res://scenes/combat/fighter.gd" id="18_0ntup"]
+[ext_resource type="SpriteFrames" uid="uid://bmtnwg7c71gcc" path="res://characters/npcs/archer/animations/archer_purple.tres" id="19_0y243"]
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="19_altx3"]
 [ext_resource type="Script" path="res://scenes/combat/choose_attack.gd" id="19_umu76"]
 [ext_resource type="Texture2D" uid="uid://bylxapp1aec53" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="20_vhwu1"]
 [ext_resource type="Texture2D" uid="uid://k20k0rpc5f1l" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="20_xsium"]
 [ext_resource type="Script" path="res://scenes/combat/enemy_attack_minigame.gd" id="22_burgw"]
 [ext_resource type="Texture2D" uid="uid://7qjypsgo6fld" path="res://assets/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="23_1c1jq"]
+[ext_resource type="Texture2D" uid="uid://b3pmtodft1dlv" path="res://assets/Tiny Swords/Effects/Explosion/Explosions.png" id="24_hox5a"]
 [ext_resource type="Script" path="res://scenes/combat/minigame.gd" id="24_nj7kr"]
 [ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="26_d0630"]
 [ext_resource type="Script" path="res://scenes/combat/shaker.gd" id="26_trtn3"]
 [ext_resource type="PackedScene" uid="uid://cl0w0m24diim5" path="res://scenes/combat/in_combat_characters/player_combat_sprite.tscn" id="27_ayf30"]
-[ext_resource type="PackedScene" uid="uid://bjhcqiee4pfng" path="res://scenes/combat/in_combat_characters/health_change_effect.tscn" id="29_vyk3c"]
-[ext_resource type="PackedScene" uid="uid://bchbq0gh045e2" path="res://scenes/combat/in_combat_characters/archer_combat_sprite.tscn" id="30_kqtiq"]
+[ext_resource type="Script" path="res://scenes/combat/combat_sprite.gd" id="28_pk0yn"]
+[ext_resource type="Texture2D" uid="uid://8g7vc3kr2bc3" path="res://assets/Tiny Swords/Factions/Knights/Troops/Archer/Arrow/Arrow.png" id="30_syml1"]
 
 [sub_resource type="Animation" id="Animation_7x3hf"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ChooseAttackMenu:position")
+tracks/0/path = NodePath("ChooseAttack:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -48,7 +50,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("EnemyAttackMinigameMenu:position")
+tracks/1/path = NodePath("EnemyAttackMinigame:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -63,7 +65,7 @@ resource_name = "enemy_turn"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("EnemyAttackMinigameMenu:position")
+tracks/0/path = NodePath("EnemyAttackMinigame:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -78,7 +80,7 @@ resource_name = "finish_player_turn"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ChooseAttackMenu:position")
+tracks/0/path = NodePath("ChooseAttack:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -92,7 +94,7 @@ tracks/0/keys = {
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("EnemyAttackMinigameMenu:position")
+tracks/0/path = NodePath("EnemyAttackMinigame:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -107,7 +109,7 @@ resource_name = "player_turn"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ChooseAttackMenu:position")
+tracks/0/path = NodePath("ChooseAttack:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -171,97 +173,15 @@ Button/styles/pressed = SubResource("StyleBoxTexture_a8ff4")
 
 [sub_resource type="Resource" id="Resource_y6deg"]
 script = ExtResource("26_d0630")
-question = "This is _____ apple."
-correct_answer = "an"
-answers = Array[String](["a", "an", "the"])
+question = "Cual motor tiene mas aguante"
+correct_answer = "Godot"
+answers = Array[String](["Godot", "Unity", "Unreal"])
 
 [sub_resource type="Resource" id="Resource_iw1qq"]
 script = ExtResource("26_d0630")
-question = "I like to visit museums ______ art galleries when I travel."
-correct_answer = "or"
-answers = Array[String](["but", "so", "or"])
-
-[sub_resource type="Resource" id="Resource_uwv5n"]
-script = ExtResource("26_d0630")
-question = "Peter's house is bigger _____ mine."
-correct_answer = "than"
-answers = Array[String](["than", "that", "as"])
-
-[sub_resource type="Animation" id="Animation_s6gs8"]
-resource_name = "correct_message"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Correct:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(461, -160), Vector2(461, 278)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Correct:modulate")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_eok75"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Correct:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(461, 278)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Correct:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_tddqf"]
-resource_name = "hide_message"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Correct:modulate")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_260po"]
-_data = {
-"RESET": SubResource("Animation_eok75"),
-"correct_message": SubResource("Animation_s6gs8"),
-"hide_message": SubResource("Animation_tddqf")
-}
+question = "Cuanto es 2 + 2"
+correct_answer = "4"
+answers = Array[String](["3", "5", "1", "2", "4"])
 
 [sub_resource type="Gradient" id="Gradient_worqc"]
 offsets = PackedFloat32Array(1)
@@ -281,6 +201,54 @@ gradient = SubResource("Gradient_b384p")
 font = ExtResource("19_altx3")
 font_size = 30
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u08j6"]
+particles_animation = true
+particles_anim_h_frames = 9
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6e5aa"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 100, 0)
+gravity = Vector3(0, 98, 0)
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="Gradient" id="Gradient_7vo67"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_47jop"]
+gradient = SubResource("Gradient_7vo67")
+
+[sub_resource type="CurveTexture" id="CurveTexture_5cbru"]
+
+[sub_resource type="Curve" id="Curve_7uuna"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0640913), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0gra8"]
+curve = SubResource("Curve_7uuna")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uxtbj"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 205.57
+initial_velocity_max = 370.45
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_0gra8")
+color_ramp = SubResource("GradientTexture1D_47jop")
+emission_curve = SubResource("CurveTexture_5cbru")
+
+[sub_resource type="Gradient" id="Gradient_rv4j1"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_djxgf"]
+gradient = SubResource("Gradient_rv4j1")
+width = 20
+height = 20
 
 [node name="Combat" type="Control"]
 layout_mode = 3
@@ -385,7 +353,7 @@ offset_right = 588.0
 offset_bottom = 344.0
 texture = ExtResource("2_2jkyg")
 
-[node name="ChooseAttackMenu" type="Control" parent="." node_paths=PackedStringArray("combat")]
+[node name="ChooseAttack" type="Control" parent="." node_paths=PackedStringArray("combat")]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 0
@@ -394,7 +362,7 @@ offset_bottom = 368.0
 script = ExtResource("19_umu76")
 combat = NodePath("..")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ChooseAttackMenu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ChooseAttack"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -402,7 +370,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PickYourMove" type="RichTextLabel" parent="ChooseAttackMenu/VBoxContainer"]
+[node name="PickYourMove" type="RichTextLabel" parent="ChooseAttack/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("19_altx3")
@@ -412,7 +380,7 @@ bbcode_enabled = true
 text = "[center]Elige una acción[/center]"
 fit_content = true
 
-[node name="Attack" type="Button" parent="ChooseAttackMenu/VBoxContainer"]
+[node name="Attack" type="Button" parent="ChooseAttack/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -421,7 +389,7 @@ theme = SubResource("Theme_dq435")
 text = "Atacar con sword
 (damage = 50hp)"
 
-[node name="Heal" type="Button" parent="ChooseAttackMenu/VBoxContainer"]
+[node name="Heal" type="Button" parent="ChooseAttack/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -429,7 +397,7 @@ theme = SubResource("Theme_dq435")
 text = "Curarse
 (heal = 30hp)"
 
-[node name="EnemyAttackMinigameMenu" type="Control" parent="." node_paths=PackedStringArray("combat")]
+[node name="EnemyAttackMinigame" type="Control" parent="." node_paths=PackedStringArray("combat")]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
@@ -440,50 +408,20 @@ offset_right = 554.0
 offset_bottom = 368.0
 grow_horizontal = 0
 script = ExtResource("22_burgw")
-minigames = Array[ExtResource("24_nj7kr")]([SubResource("Resource_y6deg"), SubResource("Resource_iw1qq"), SubResource("Resource_uwv5n")])
+minigames = Array[ExtResource("24_nj7kr")]([SubResource("Resource_y6deg"), SubResource("Resource_iw1qq")])
 combat = NodePath("..")
 
-[node name="Correct" type="RichTextLabel" parent="EnemyAttackMinigameMenu"]
-modulate = Color(1, 1, 1, 0)
-top_level = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -179.0
-offset_top = -82.0
-offset_right = 176.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("19_altx3")
-theme_override_font_sizes/normal_font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxTexture_qgymt")
-bbcode_enabled = true
-text = "[center][wave][font_size=40px]Correct![/font_size][/wave][/center]"
-fit_content = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="EnemyAttackMinigameMenu"]
-libraries = {
-"": SubResource("AnimationLibrary_260po")
-}
-
-[node name="Player" type="Control" parent="." node_paths=PackedStringArray("opponent")]
+[node name="PlayerSide" type="Control" parent="." node_paths=PackedStringArray("enemy")]
 unique_name_in_owner = true
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("18_0ntup")
-opponent = NodePath("../Enemy")
-max_health = 200
+enemy = NodePath("../EnemySide")
 
-[node name="Sprite" parent="Player" instance=ExtResource("27_ayf30")]
-position = Vector2(246, 535)
+[node name="Sprite" parent="PlayerSide" instance=ExtResource("27_ayf30")]
 
-[node name="HealthBar" type="TextureProgressBar" parent="Player"]
+[node name="HealthBar" type="TextureProgressBar" parent="PlayerSide"]
 z_index = 150
 layout_mode = 1
 anchors_preset = 15
@@ -495,14 +433,14 @@ offset_right = 419.0
 offset_bottom = 652.0
 grow_horizontal = 2
 grow_vertical = 2
-max_value = 200.0
+max_value = 300.0
 step = 0.01
-value = 200.0
+value = 300.0
 nine_patch_stretch = true
 texture_under = SubResource("GradientTexture2D_sgtft")
 texture_progress = SubResource("GradientTexture2D_s8obr")
 
-[node name="HealthLabel" type="Label" parent="Player/HealthBar"]
+[node name="HealthLabel" type="Label" parent="PlayerSide/HealthBar"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -511,34 +449,61 @@ offset_left = -74.0
 offset_right = 74.0
 offset_bottom = 85.0
 grow_horizontal = 2
-text = "200/200"
+text = "300/300"
 label_settings = SubResource("LabelSettings_tf1us")
 horizontal_alignment = 1
 
-[node name="Shaker" type="Node2D" parent="Player" node_paths=PackedStringArray("shaked_node")]
+[node name="Shaker" type="Node2D" parent="PlayerSide" node_paths=PackedStringArray("shaked_node")]
 script = ExtResource("26_trtn3")
-shaked_node = NodePath("../Sprite")
+shaked_node = NodePath("..")
 
-[node name="HealthChangeEffect" parent="Player" instance=ExtResource("29_vyk3c")]
-position = Vector2(263, 485)
-
-[node name="Enemy" type="Control" parent="." node_paths=PackedStringArray("opponent")]
+[node name="EnemySide" type="Control" parent="." node_paths=PackedStringArray("enemy")]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("18_0ntup")
-opponent = NodePath("../Player")
-max_health = 200
-attack_power = 100
-heal_power = 20
+enemy = NodePath("../PlayerSide")
 
-[node name="Sprite" parent="Enemy" instance=ExtResource("30_kqtiq")]
-position = Vector2(1011, 535)
-scale = Vector2(-1, 1)
+[node name="ExplosionParticles" type="GPUParticles2D" parent="EnemySide"]
+z_index = 100
+material = SubResource("CanvasItemMaterial_u08j6")
+position = Vector2(1010, 549)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_6e5aa")
+texture = ExtResource("24_hox5a")
 
-[node name="HealthBar" type="TextureProgressBar" parent="Enemy"]
+[node name="Sprite" type="AnimatedSprite2D" parent="EnemySide"]
+position = Vector2(1000, 512)
+scale = Vector2(2.5, 2.5)
+sprite_frames = ExtResource("19_0y243")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.536384
+flip_h = true
+script = ExtResource("28_pk0yn")
+
+[node name="Arrow" type="Sprite2D" parent="EnemySide/Sprite"]
+visible = false
+position = Vector2(-18.4, 12)
+rotation = 3.14019
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("30_syml1")
+region_enabled = true
+region_rect = Rect2(1, 28, 63, 14)
+
+[node name="ArrowHitParticles" type="GPUParticles2D" parent="EnemySide/Sprite"]
+position = Vector2(-268.4, 12)
+rotation = 3.14019
+scale = Vector2(1.2, 1.2)
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_uxtbj")
+texture = SubResource("GradientTexture2D_djxgf")
+explosiveness = 1.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="EnemySide"]
 z_index = 150
 layout_mode = 1
 anchors_preset = 15
@@ -550,14 +515,14 @@ offset_right = 1141.0
 offset_bottom = 653.0
 grow_horizontal = 2
 grow_vertical = 2
-max_value = 200.0
+max_value = 300.0
 step = 0.01
-value = 200.0
+value = 300.0
 nine_patch_stretch = true
 texture_under = SubResource("GradientTexture2D_sgtft")
 texture_progress = SubResource("GradientTexture2D_s8obr")
 
-[node name="HealthLabel" type="Label" parent="Enemy/HealthBar"]
+[node name="HealthLabel" type="Label" parent="EnemySide/HealthBar"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -566,13 +531,10 @@ offset_left = -74.0
 offset_right = 74.0
 offset_bottom = 85.0
 grow_horizontal = 2
-text = "200/200"
+text = "300/300"
 label_settings = SubResource("LabelSettings_tf1us")
 horizontal_alignment = 1
 
-[node name="Shaker" type="Node2D" parent="Enemy" node_paths=PackedStringArray("shaked_node")]
+[node name="Shaker" type="Node2D" parent="EnemySide" node_paths=PackedStringArray("shaked_node")]
 script = ExtResource("26_trtn3")
-shaked_node = NodePath("../Sprite")
-
-[node name="HealthChangeEffect" parent="Enemy" instance=ExtResource("29_vyk3c")]
-position = Vector2(1024, 498)
+shaked_node = NodePath("..")
