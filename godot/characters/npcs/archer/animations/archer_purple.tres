@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=16 format=3 uid="uid://bmtnwg7c71gcc"]
+[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://bmtnwg7c71gcc"]
 
 [ext_resource type="Texture2D" uid="uid://ly7w320y3vq" path="res://assets/Tiny Swords/Factions/Knights/Troops/Archer/Purple/Archer_Purlple.png" id="1_bdp0x"]
 
@@ -58,6 +58,30 @@ region = Rect2(768, 0, 192, 192)
 atlas = ExtResource("1_bdp0x")
 region = Rect2(960, 0, 192, 192)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ao0ie"]
+atlas = ExtResource("1_bdp0x")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gim3j"]
+atlas = ExtResource("1_bdp0x")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjh78"]
+atlas = ExtResource("1_bdp0x")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4pxs"]
+atlas = ExtResource("1_bdp0x")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjbk1"]
+atlas = ExtResource("1_bdp0x")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe5k1"]
+atlas = ExtResource("1_bdp0x")
+region = Rect2(960, 192, 192, 192)
+
 [resource]
 animations = [{
 "frames": [{
@@ -110,5 +134,28 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ao0ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gim3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjh78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4pxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjbk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe5k1")
+}],
+"loop": true,
+"name": &"running",
 "speed": 10.0
 }]

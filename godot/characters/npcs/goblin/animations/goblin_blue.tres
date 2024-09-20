@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://cqg38l52hwj05"]
+[gd_resource type="SpriteFrames" load_steps=16 format=3 uid="uid://cqg38l52hwj05"]
 
 [ext_resource type="Texture2D" uid="uid://734sweqt1bf0" path="res://characters/npcs/goblin/images/Torch_Blue.png" id="1_d70m1"]
+[ext_resource type="Texture2D" uid="uid://cfl27kbp78trl" path="res://assets/Tiny Swords/Factions/Goblins/Troops/Torch/Blue/Torch_Blue.png" id="2_j47tq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wjvxd"]
 atlas = ExtResource("1_d70m1")
@@ -30,6 +31,30 @@ region = Rect2(960, 0, 192, 192)
 atlas = ExtResource("1_d70m1")
 region = Rect2(1152, 0, 192, 192)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ve5r"]
+atlas = ExtResource("2_j47tq")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvybo"]
+atlas = ExtResource("2_j47tq")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugybx"]
+atlas = ExtResource("2_j47tq")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqnet"]
+atlas = ExtResource("2_j47tq")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1kng"]
+atlas = ExtResource("2_j47tq")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aep3v"]
+atlas = ExtResource("2_j47tq")
+region = Rect2(960, 192, 192, 192)
+
 [resource]
 animations = [{
 "frames": [{
@@ -56,5 +81,28 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ve5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvybo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugybx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqnet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1kng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aep3v")
+}],
+"loop": true,
+"name": &"running",
 "speed": 10.0
 }]

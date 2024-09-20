@@ -1,0 +1,136 @@
+[gd_scene load_steps=13 format=3 uid="uid://crnpi0jyql6y4"]
+
+[ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="1_t0ixm"]
+[ext_resource type="PackedScene" uid="uid://mndsxueepdkr" path="res://prefabs/npcs/talker/talker.tscn" id="2_p8ejw"]
+[ext_resource type="PackedScene" uid="uid://cdhdsgh775cfg" path="res://prefabs/npcs/trader/trader.tscn" id="3_n6j3k"]
+[ext_resource type="PackedScene" uid="uid://dbbea8dbdiuvr" path="res://prefabs/npcs/fighter/fighter.tscn" id="4_trlkt"]
+[ext_resource type="SpriteFrames" uid="uid://cd0nkwp6ueukh" path="res://characters/npcs/archer/animations/archer_yellow.tres" id="5_w035b"]
+[ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://items/item.tscn" id="6_yy8jn"]
+[ext_resource type="PackedScene" uid="uid://cphykiupy8lbk" path="res://prefabs/npcs/guard/guard.tscn" id="7_inag1"]
+[ext_resource type="PackedScene" uid="uid://wb8ro614jtx3" path="res://prefabs/npcs/guard/guard_that_uses_signal.tscn" id="8_x5vbl"]
+[ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://assets/Gold Mine/cueva.tscn" id="9_08kcl"]
+
+[sub_resource type="Animation" id="Animation_l0mci"]
+resource_name = "moverse"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(233, 120), Vector2(793, 84)]
+}
+
+[sub_resource type="Animation" id="Animation_5yvhb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(233, 120)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ro8x"]
+_data = {
+"RESET": SubResource("Animation_5yvhb"),
+"moverse": SubResource("Animation_l0mci")
+}
+
+[node name="PruebaPrefabs" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_t0ixm")]
+position = Vector2(238, 254)
+
+[node name="Talker" parent="." instance=ExtResource("2_p8ejw")]
+position = Vector2(556, 164)
+line = "Hello!"
+
+[node name="Talker2" parent="." instance=ExtResource("2_p8ejw")]
+position = Vector2(671, 315)
+npc_name = "Jorge"
+line = "¿Como estas?"
+
+[node name="Trader" parent="." instance=ExtResource("3_n6j3k")]
+position = Vector2(264, 466)
+item_i_give = 0
+item_i_want = 4
+
+[node name="Trader2" parent="." instance=ExtResource("3_n6j3k")]
+position = Vector2(416, 518)
+item_i_give = 3
+item_i_want = 2
+
+[node name="Fighter" parent="." instance=ExtResource("4_trlkt")]
+position = Vector2(706, 466)
+
+[node name="Talker3" parent="." instance=ExtResource("2_p8ejw")]
+position = Vector2(525, 353)
+npc_name = "Juan"
+line = "Soy un NPC que habla"
+sprite_frames = ExtResource("5_w035b")
+
+[node name="Trader3" parent="." instance=ExtResource("3_n6j3k")]
+position = Vector2(393, 116)
+item_i_give = 6
+amount_i_give = 5
+item_i_want = 2
+amount_i_want = 2
+
+[node name="Item" parent="." instance=ExtResource("6_yy8jn")]
+position = Vector2(129, 357)
+type = 2
+
+[node name="Item2" parent="." instance=ExtResource("6_yy8jn")]
+position = Vector2(109, 446)
+type = 2
+
+[node name="Item3" parent="." instance=ExtResource("6_yy8jn")]
+position = Vector2(46, 277)
+type = 2
+
+[node name="Item4" parent="." instance=ExtResource("6_yy8jn")]
+position = Vector2(336, 379)
+type = 2
+
+[node name="Guard" parent="." instance=ExtResource("7_inag1")]
+position = Vector2(881, 222)
+scale = Vector2(-1, 1)
+item_i_need = 2
+
+[node name="Guard2" parent="." instance=ExtResource("7_inag1")]
+position = Vector2(959, 387)
+scale = Vector2(-1, 1)
+item_i_need = 2
+direction_i_move_to = 1
+
+[node name="Guard3" parent="." instance=ExtResource("7_inag1")]
+position = Vector2(743, 170)
+scale = Vector2(-1, 1)
+item_i_need = 2
+direction_i_move_to = 3
+
+[node name="Guard4" parent="." instance=ExtResource("8_x5vbl")]
+position = Vector2(233, 120)
+item_i_need = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Guard4"]
+libraries = {
+"": SubResource("AnimationLibrary_3ro8x")
+}
+
+[node name="Cueva" parent="." instance=ExtResource("9_08kcl")]
+position = Vector2(1085, 513)
+next_scene = "res://scenes/juan_escena_prueba/recoleccion_recursos_prueba.tscn"
+
+[connection signal="received_item" from="Guard4" to="Guard4/AnimationPlayer" method="play" binds= ["moverse"]]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://81whno6xe7gt"]
+[gd_scene load_steps=28 format=4 uid="uid://81whno6xe7gt"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_va17y"]
 [ext_resource type="Texture2D" uid="uid://32emst0ctttf" path="res://characters/player/Warrior_Blue.png" id="2_ympw1"]
@@ -9,33 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://characters/npcs/goblin/Goblin.tscn" id="7_2maw3"]
 [ext_resource type="SpriteFrames" uid="uid://cqg38l52hwj05" path="res://characters/npcs/goblin/animations/goblin_blue.tres" id="8_l3u6v"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="9_1k37i"]
-[ext_resource type="PackedScene" uid="uid://bgr6tltrr0pji" path="res://characters/player/interaction_ray_cast.tscn" id="10_jo2bn"]
 [ext_resource type="Texture2D" uid="uid://barwgp6ohmifb" path="res://assets/Tiny Swords/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="11_skq81"]
+[ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://assets/Gold Mine/cueva.tscn" id="12_b58a7"]
 [ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://items/item.tscn" id="12_h4rym"]
-[ext_resource type="Texture2D" uid="uid://k20k0rpc5f1l" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="13_pi8fp"]
-[ext_resource type="Texture2D" uid="uid://bylxapp1aec53" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="14_rsdkx"]
-[ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="14_vi3ih"]
-
-[sub_resource type="GDScript" id="GDScript_hl2c8"]
-script/source = "extends Node2D
-
-func _ready():
-	$InventoryButton.pressed.connect(self.toggle_inventory)
-	Inventory.item_selected.connect(func(item):
-		Dialogue.say_line(\"Arturo\", \"Es %s\" % Item.name_of(item))
-	)
-
-
-func _unhandled_input(event: InputEvent):
-	if event.is_action_pressed(\"toggle_inventory\"):
-		toggle_inventory()
-
-func toggle_inventory():
-	if Inventory.is_open():
-		Inventory.close()
-	else:
-		Inventory.open()
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkdvn"]
 atlas = ExtResource("2_ympw1")
@@ -185,13 +161,8 @@ func gold() -> String:
 	return \"[hint=dinero][color=gold]Money[/color][/hint]\"
 "
 
-[sub_resource type="LabelSettings" id="LabelSettings_wptqr"]
-font = ExtResource("14_vi3ih")
-font_color = Color(0, 0, 0, 1)
-
 [node name="JuanPrueba" type="Node2D"]
 y_sort_enabled = true
-script = SubResource("GDScript_hl2c8")
 
 [node name="Foam" type="TileMapLayer" parent="."]
 position = Vector2(37, 39)
@@ -290,9 +261,6 @@ sprite_frames = ExtResource("8_l3u6v")
 z_index = 1
 position = Vector2(454, 234)
 
-[node name="InteractionRayCast2" parent="Espectadores/Player" node_paths=PackedStringArray("player") instance=ExtResource("10_jo2bn")]
-player = NodePath("..")
-
 [node name="TowerBlue" type="Sprite2D" parent="."]
 position = Vector2(976, 244)
 texture = ExtResource("11_skq81")
@@ -320,22 +288,9 @@ type = 5
 position = Vector2(299, 300)
 type = 4
 
-[node name="InventoryButton" type="TextureButton" parent="."]
-offset_top = 13.0
-offset_right = 192.0
-offset_bottom = 77.0
-texture_normal = ExtResource("13_pi8fp")
-texture_pressed = ExtResource("14_rsdkx")
+[node name="Cueva" parent="." instance=ExtResource("12_b58a7")]
+position = Vector2(1052, 400)
+next_scene = "res://scenes/juan_escena_prueba/prueba_prefabs.tscn"
 
-[node name="Label" type="Label" parent="InventoryButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 13.0
-offset_bottom = 13.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Inventario"
-label_settings = SubResource("LabelSettings_wptqr")
-horizontal_alignment = 1
+[node name="Cueva2" parent="." instance=ExtResource("12_b58a7")]
+position = Vector2(283, 308)
