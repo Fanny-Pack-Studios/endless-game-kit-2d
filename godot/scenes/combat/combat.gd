@@ -6,6 +6,13 @@ class_name CombatScreen extends Control
 @onready var player = %Player
 @onready var enemy = %Enemy
 
+signal finished(outcome: Outcome)
+
+enum Outcome {
+	PlayerWon,
+	PlayerLost
+}
+
 
 enum Turn {
 	Player,
@@ -27,8 +34,11 @@ func play_turns():
 
 	if enemy.current_health <= 0:
 		await Dialogue.show_line("GANASTE!!!")
+		finished.emit(Outcome.PlayerWon)
 	elif player.current_health <= 0:
 		await Dialogue.show_line("Perdiste! >:(")
+		finished.emit(Outcome.PlayerLost)
+
 
 
 func play_a_turn():
