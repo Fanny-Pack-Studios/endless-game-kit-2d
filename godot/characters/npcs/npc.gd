@@ -1,6 +1,8 @@
 @tool
 class_name NPC extends CharacterBody2D
 
+const COMBAT = preload("res://scenes/combat/combat.tscn")
+
 @export var _interaction_name: String = "Hablar"
 
 ## Establece el conjunto de sprites animados a usar
@@ -24,3 +26,14 @@ func interact_with(_player):
 
 func interaction_name() -> String:
 	return _interaction_name
+
+func combat() -> CombatScreen.Outcome:
+	var combat_scene = COMBAT.instantiate()
+
+	SceneChanger.change_scene_to(combat_scene)
+
+	var outcome = await combat_scene.finished
+
+	SceneChanger.back_to_last_scene()
+
+	return outcome
