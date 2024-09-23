@@ -46,7 +46,8 @@ func _build() -> void:
 		"res://prefabs/npcs/fighter/fighter_with_reward.tscn"
 	], false)
 	complete_step()
-	
+	bubble_add_text(["Bien hecho!"])
+	complete_step()
 
 
 	

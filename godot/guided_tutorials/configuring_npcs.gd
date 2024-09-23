@@ -48,3 +48,5 @@ func _build() -> void:
 	])
 	highlight_scene_nodes_by_name(["Item"])
 	complete_step()
+	bubble_add_text(["Bien hecho!"])
+	complete_step()

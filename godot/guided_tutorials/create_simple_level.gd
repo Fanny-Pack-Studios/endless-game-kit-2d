@@ -59,6 +59,7 @@ func _build() -> void:
 		[play_current_scene_button]
 	)
 	complete_step()
-
+	bubble_add_text(["Bien hecho!"])
+	complete_step()
 
 	
