@@ -1,10 +1,10 @@
 extends EditorInspectorPlugin
 
 func _can_handle(object: Object) -> bool:
-	var object_script = object.get_script()
-	return object_script and\
-		object_script is GDScript\
-		and "class_name" in object_script.source_code
+	var script = _get_script(object)
+	return script and\
+		script is GDScript\
+		and script.get_global_name()
 
 func _parse_begin(object: Object):
 	var help_icon = EditorInterface.get_editor_theme().get_icon("Help", "EditorIcons")
@@ -12,9 +12,15 @@ func _parse_begin(object: Object):
 	open_docs_button.icon = help_icon
 	open_docs_button.text = "Abrir documentacion"
 	open_docs_button.pressed.connect(func():
-		var object_class_name: String = object.get_script().get_global_name()
+		var object_class_name: String = _get_script(object).get_global_name()
 		var help_topic: String = str("class_name:", object_class_name)
 
 		EditorInterface.get_script_editor().goto_help(help_topic)
 	)
 	add_custom_control(open_docs_button)
+
+func _get_script(object: Object):
+	if(object is Script):
+		return object
+	else:
+		return object.get_script()
