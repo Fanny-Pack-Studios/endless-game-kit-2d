@@ -8,6 +8,7 @@ func _build() -> void:
 		"Comencemos abriendo una escena que ya cuenta con varios personajes"
 	])
 	bubble_add_task_open_scene("res://scenes/configuring_npcs_level.tscn")
+	highlight_filesystem_paths(["res://scenes/configuring_npcs_level.tscn"])
 	complete_step()
 	bubble_add_text([
 		"Vamos a aprender a modificar los nodos a través de configurar sus propiedades en el [b]Inspector[/b]"
@@ -38,9 +39,17 @@ func _build() -> void:
 	complete_step()
 	bubble_add_text([
 		"Algunos NPCs tienen propiedades más complejas",
-		"Selecciona el nodo Trader y juga con sus propiedades"
+		"Selecciona el nodo Trader"
 	])
 	highlight_scene_nodes_by_name(["Trader"])
+	complete_step()
+	highlight_inspector_properties([
+		"item_i_give",
+		"item_i_want"
+	], false)
+	bubble_add_text([
+		"Cambia el tipo de item que pide y el tipo de item que vende"
+	])
 	complete_step()
 	bubble_add_text([
 		"Finalmente, no solo los NPC pueden configurarse",

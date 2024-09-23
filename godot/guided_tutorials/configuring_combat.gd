@@ -10,6 +10,7 @@ func _build() -> void:
 		"Comencemos abriendo una escena que unicamente tiene al jugador y un combatiente"
 	])
 	bubble_add_task_open_scene("res://scenes/configuring_combat_level.tscn")
+	highlight_filesystem_paths(["res://scenes/configuring_combat_level.tscn"])
 	complete_step()
 	bubble_add_text([
 		"Selecciona al nodo fighter"
