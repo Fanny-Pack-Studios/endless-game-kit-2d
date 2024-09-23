@@ -25,8 +25,12 @@ func interact_with(_player):
 func interaction_name() -> String:
 	return _interaction_name
 
-func combat() -> CombatScreen.Outcome:
-	var combat_scene = load("res://scenes/combat/combat.tscn").instantiate()
+func combat(
+	in_combat_character: FighterCharacter = null
+) -> CombatScreen.Outcome:
+	var combat_scene: CombatScreen = load("res://scenes/combat/combat.tscn").instantiate()
+	
+	combat_scene.configure(in_combat_character)
 	
 	SceneChanger.change_scene_to(combat_scene)
 

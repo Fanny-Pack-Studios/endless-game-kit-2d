@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://crnpi0jyql6y4"]
+[gd_scene load_steps=20 format=3 uid="uid://crnpi0jyql6y4"]
 
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="1_t0ixm"]
 [ext_resource type="PackedScene" uid="uid://mndsxueepdkr" path="res://prefabs/npcs/talker/talker.tscn" id="2_p8ejw"]
@@ -6,10 +6,32 @@
 [ext_resource type="PackedScene" uid="uid://dbbea8dbdiuvr" path="res://prefabs/npcs/fighter/fighter.tscn" id="4_trlkt"]
 [ext_resource type="PackedScene" uid="uid://whfe031ftcip" path="res://prefabs/npcs/fighter/fighter_with_reward.tscn" id="5_3jj0a"]
 [ext_resource type="SpriteFrames" uid="uid://cd0nkwp6ueukh" path="res://characters/npcs/archer/animations/archer_yellow.tres" id="5_w035b"]
+[ext_resource type="Script" path="res://scenes/combat/minigame.gd" id="5_wx5mv"]
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="6_rnwi7"]
 [ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://items/item.tscn" id="6_yy8jn"]
 [ext_resource type="PackedScene" uid="uid://cphykiupy8lbk" path="res://prefabs/npcs/guard/guard.tscn" id="7_inag1"]
+[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="7_vijw3"]
 [ext_resource type="PackedScene" uid="uid://wb8ro614jtx3" path="res://prefabs/npcs/guard/guard_that_uses_signal.tscn" id="8_x5vbl"]
 [ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://assets/Gold Mine/cueva.tscn" id="9_08kcl"]
+
+[sub_resource type="Resource" id="Resource_j7cgj"]
+script = ExtResource("6_rnwi7")
+question = "What's the biggest one?"
+correct_answer = "planet"
+answers = Array[String](["whale", "house", "planet", "tree"])
+
+[sub_resource type="Resource" id="Resource_plrbf"]
+script = ExtResource("6_rnwi7")
+question = "What's the smallest one?"
+correct_answer = "atom"
+answers = Array[String](["ant", "atom", "computer", "bus"])
+
+[sub_resource type="Resource" id="Resource_hpho5"]
+script = ExtResource("7_vijw3")
+hp = 200
+attack_power = 75
+_combat_sprite = "res://scenes/combat/in_combat_characters/player_combat_sprite.tscn"
+minigames = Array[ExtResource("5_wx5mv")]([SubResource("Resource_j7cgj"), SubResource("Resource_plrbf")])
 
 [sub_resource type="Animation" id="Animation_5yvhb"]
 length = 0.001
@@ -111,6 +133,19 @@ offset_top = 46.0
 offset_right = 114.0
 offset_bottom = 95.0
 text = "Combate"
+
+[node name="Fighter3" parent="." instance=ExtResource("4_trlkt")]
+position = Vector2(1134, 598)
+in_combat_character = SubResource("Resource_hpho5")
+
+[node name="Label5" type="Label" parent="Fighter3"]
+offset_left = -31.0
+offset_top = 46.0
+offset_right = 114.0
+offset_bottom = 95.0
+text = "Combate con
+un sprite distinto
+al default configurado"
 
 [node name="Fighter2" parent="." instance=ExtResource("5_3jj0a")]
 position = Vector2(949, 582)

@@ -136,8 +136,6 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(0, 39, 192, 141)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pr46"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpfsn"]
 content_margin_left = 40.0
 content_margin_top = 20.0
@@ -148,6 +146,8 @@ texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pr46"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8ff4"]
 content_margin_left = 40.0
@@ -162,8 +162,10 @@ texture_margin_bottom = 10.0
 
 [sub_resource type="Theme" id="Theme_dq435"]
 Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 Button/font_sizes/font_size = 20
 Button/fonts/font = ExtResource("19_altx3")
+Button/styles/disabled = SubResource("StyleBoxTexture_vpfsn")
 Button/styles/focus = SubResource("StyleBoxEmpty_6pr46")
 Button/styles/hover = SubResource("StyleBoxTexture_vpfsn")
 Button/styles/normal = SubResource("StyleBoxTexture_vpfsn")
@@ -480,8 +482,10 @@ script = ExtResource("18_0ntup")
 opponent = NodePath("../Enemy")
 max_health = 200
 
-[node name="Sprite" parent="Player" instance=ExtResource("27_ayf30")]
-position = Vector2(246, 535)
+[node name="SpritePivot" type="Node2D" parent="Player"]
+position = Vector2(228, 535)
+
+[node name="Sprite" parent="Player/SpritePivot" instance=ExtResource("27_ayf30")]
 
 [node name="HealthBar" type="TextureProgressBar" parent="Player"]
 z_index = 150
@@ -517,7 +521,7 @@ horizontal_alignment = 1
 
 [node name="Shaker" type="Node2D" parent="Player" node_paths=PackedStringArray("shaked_node")]
 script = ExtResource("26_trtn3")
-shaked_node = NodePath("../Sprite")
+shaked_node = NodePath("../SpritePivot/Sprite")
 
 [node name="HealthChangeEffect" parent="Player" instance=ExtResource("29_vyk3c")]
 position = Vector2(263, 485)
@@ -534,9 +538,11 @@ max_health = 200
 attack_power = 100
 heal_power = 20
 
-[node name="Sprite" parent="Enemy" instance=ExtResource("30_kqtiq")]
-position = Vector2(1011, 535)
+[node name="SpritePivot" type="Node2D" parent="Enemy"]
+position = Vector2(1035, 535)
 scale = Vector2(-1, 1)
+
+[node name="Sprite" parent="Enemy/SpritePivot" instance=ExtResource("30_kqtiq")]
 
 [node name="HealthBar" type="TextureProgressBar" parent="Enemy"]
 z_index = 150
@@ -572,7 +578,7 @@ horizontal_alignment = 1
 
 [node name="Shaker" type="Node2D" parent="Enemy" node_paths=PackedStringArray("shaked_node")]
 script = ExtResource("26_trtn3")
-shaked_node = NodePath("../Sprite")
+shaked_node = NodePath("../SpritePivot/Sprite")
 
 [node name="HealthChangeEffect" parent="Enemy" instance=ExtResource("29_vyk3c")]
 position = Vector2(1024, 498)

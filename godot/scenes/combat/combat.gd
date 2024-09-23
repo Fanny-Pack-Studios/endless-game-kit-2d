@@ -1,5 +1,6 @@
 class_name CombatScreen extends Control
 
+
 @onready var menu_turn_animation_player = %MenuTurnAnimationPlayer
 @onready var choose_attack = %ChooseAttackMenu
 @onready var enemy_attack_minigame = %EnemyAttackMinigameMenu
@@ -20,6 +21,24 @@ enum Turn {
 }
 
 var turn: Turn = Turn.Player
+
+
+func configure(
+	in_combat_character: FighterCharacter
+	):
+		enemy = %Enemy
+		enemy_attack_minigame = %EnemyAttackMinigameMenu
+		if(not in_combat_character):
+			return
+
+		enemy.max_health = in_combat_character.hp
+		enemy.attack_power = in_combat_character.attack_power
+		var enemy_combat_sprite = in_combat_character.combat_sprite()
+		if(enemy_combat_sprite != null):
+			enemy.replace_sprite(enemy_combat_sprite)
+		var minigames = in_combat_character.minigames
+		if(not minigames.is_empty()):
+			enemy_attack_minigame.minigames = minigames
 
 
 func _ready():

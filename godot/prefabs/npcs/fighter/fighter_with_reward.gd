@@ -1,15 +1,20 @@
 @tool
 extends NPC
 
+@export_category("NPC")
 @export var npc_name: String = "Robert"
 @export var line: String = "Hola!"
+@export_category("Combat")
+@export var in_combat_character: FighterCharacter
+@export_category("Reward")
 @export var reward_item: Item.Type
 @export var reward_amount: int = 1
+
 
 func interact_with(player):
 	await Dialogue.say_line(npc_name, line)
 	
-	var outcome = await combat()
+	var outcome = await combat(in_combat_character)
 
 	match outcome:
 		CombatScreen.Outcome.PlayerWon:

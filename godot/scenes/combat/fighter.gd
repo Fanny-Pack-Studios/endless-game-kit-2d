@@ -2,7 +2,7 @@ class_name Fighter extends Control
 
 @onready var health_bar = $HealthBar
 @onready var health_label = $HealthBar/HealthLabel
-@onready var combat_sprite: CombatSprite = $Sprite
+var combat_sprite: CombatSprite
 @export var opponent: Fighter
 @onready var shaker = $Shaker
 @onready var health_change_effect = $HealthChangeEffect
@@ -15,13 +15,16 @@ var current_health: int
 
 
 func _ready():
+	if(not combat_sprite):
+		combat_sprite = $SpritePivot/Sprite
 	current_health = max_health
 	health_bar.max_value = max_health
 	health_bar.value = current_health
-	combat_sprite.hit_landed.connect(func():
-		opponent.be_hurted(attack_power)
-	)
+	combat_sprite.hit_landed.connect(self.on_sprite_animation_hit_landed)
 
+
+func on_sprite_animation_hit_landed():
+	opponent.be_hurted(attack_power)
 
 func play_attack():
 	z_index += 1
@@ -46,3 +49,11 @@ func heal():
 func _process(delta):
 	health_bar.value = move_toward(health_bar.value, current_health, delta * 70.0)
 	health_label.text = "%s/%s" % [floor(health_bar.value), max_health]
+
+
+func replace_sprite(new_combat_sprite: CombatSprite):
+	if(not combat_sprite):
+		combat_sprite = $SpritePivot/Sprite
+	$SpritePivot.remove_child(combat_sprite)
+	$SpritePivot.add_child(new_combat_sprite)
+	combat_sprite = new_combat_sprite
