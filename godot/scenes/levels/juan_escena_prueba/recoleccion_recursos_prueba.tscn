@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://assets/Gold Mine/cueva.tscn" id="12_b58a7"]
 [ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://entities/items/item.tscn" id="12_h4rym"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkdvn"]
 atlas = ExtResource("2_ympw1")
 region = Rect2(0, 0, 192, 192)
