@@ -17,10 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-UserSettings="*res://settings/user_settings.gd"
-Dialogue="*res://dialogue/dialogue.tscn"
-Inventory="*res://ui/hud/inventory/inventory.tscn"
-SceneChanger="*res://scenes/SceneChanger.tscn"
+UserSettings="*res://globals/settings/user_settings.gd"
+Dialogue="*res://globals/dialogue/dialogue.tscn"
+Inventory="*res://globals/inventory/inventory.tscn"
+SceneChanger="*res://globals/scene_changer/SceneChanger.tscn"
 
 [debug]
 
@@ -108,7 +108,6 @@ toggle_inventory={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translations/translation.en.translation", "res://translations/translation.es.translation")
 locale/translations_pot_files=PackedStringArray("res://addons/godot_tours/tour.gd", "res://guided_tutorials/create_simple_level.gd", "res://guided_tutorials/adding_an_npc.gd", "res://guided_tutorials/configuring_npcs.gd")
 
 [layer_names]

@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://scenes/levels/escena_de_ejemplo/escena_de_ejemplo.gd" id="1_5hw61"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="2_5ixp7"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_4js0l"]
-[ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="4_8qhq2"]
+[ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="4_8qhq2"]
+
 
 [node name="IngameScene" type="Node2D"]
 script = ExtResource("1_5hw61")

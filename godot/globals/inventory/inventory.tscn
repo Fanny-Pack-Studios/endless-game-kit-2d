@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0v5o8oso7iei"]
+
+[ext_resource type="Texture2D" uid="uid://cpnirtxcsivk7" path="res://assets/Tiny Swords/UI/Buttons/Button_Disable_9Slides.png" id="1_cc1di"]
+[ext_resource type="Script" path="res://globals/inventory/inventory.gd" id="1_dbi8v"]
+[ext_resource type="PackedScene" uid="uid://cgwqk7ivt1loo" path="res://globals/inventory/inventory_item.tscn" id="3_fwr6u"]
+[ext_resource type="Texture2D" uid="uid://bk4a5uq2ctxfa" path="res://assets/Tiny Swords/UI/Buttons/Button_Red.png" id="4_5a87b"]
+[ext_resource type="Texture2D" uid="uid://cxac2puhy4124" path="res://assets/Tiny Swords/UI/Icons/Regular_01.png" id="4_m5ncl"]
+[ext_resource type="Texture2D" uid="uid://dmgyd3cc36nyw" path="res://assets/Tiny Swords/UI/Buttons/Button_Red_Pressed.png" id="5_g4jwt"]
+[ext_resource type="Texture2D" uid="uid://bkrtfcekdq8bo" path="res://assets/Tiny Swords/UI/Pointers/02.png" id="6_jx2ei"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_36x1r"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+texture = ExtResource("1_cc1di")
+
+[node name="Inventory" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_dbi8v")
+
+[node name="InventoryPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -297.5
+offset_right = 256.0
+offset_bottom = 202.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_36x1r")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryPanel"]
+layout_mode = 2
+follow_focus = true
+scroll_vertical_custom_step = 200.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="ItemsContainer" type="GridContainer" parent="InventoryPanel/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 4
+
+[node name="InventoryItem" parent="InventoryPanel/ScrollContainer/ItemsContainer" instance=ExtResource("3_fwr6u")]
+layout_mode = 2
+
+[node name="InventoryItem2" parent="InventoryPanel/ScrollContainer/ItemsContainer" instance=ExtResource("3_fwr6u")]
+layout_mode = 2
+item_type = 1
+
+[node name="InventoryItem3" parent="InventoryPanel/ScrollContainer/ItemsContainer" instance=ExtResource("3_fwr6u")]
+layout_mode = 2
+item_type = 2
+
+[node name="InventoryItem6" parent="InventoryPanel/ScrollContainer/ItemsContainer" instance=ExtResource("3_fwr6u")]
+layout_mode = 2
+item_type = 3
+
+[node name="InventoryItem4" parent="InventoryPanel/ScrollContainer/ItemsContainer" instance=ExtResource("3_fwr6u")]
+layout_mode = 2
+item_type = 4
+
+[node name="InventoryItem5" parent="InventoryPanel/ScrollContainer/ItemsContainer" instance=ExtResource("3_fwr6u")]
+layout_mode = 2
+item_type = 5
+
+[node name="InventoryItem8" parent="InventoryPanel/ScrollContainer/ItemsContainer" instance=ExtResource("3_fwr6u")]
+layout_mode = 2
+item_type = 6
+
+[node name="CloseButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 174.5
+offset_top = -313.0
+offset_right = 238.5
+offset_bottom = -249.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("4_5a87b")
+texture_pressed = ExtResource("5_g4jwt")
+texture_focused = ExtResource("6_jx2ei")
+
+[node name="ExitIcon" type="TextureRect" parent="CloseButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_m5ncl")
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

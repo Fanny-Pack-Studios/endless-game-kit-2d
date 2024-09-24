@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://df46gwu1em2ut"]
 
-[ext_resource type="Texture2D" uid="uid://4fa44mefgdnd" path="res://characters/npcs/pawn/images/Pawn_Yellow.png" id="1_71t7x"]
+[ext_resource type="Texture2D" uid="uid://4fa44mefgdnd" path="res://entities/characters/npcs/pawn/images/Pawn_Yellow.png" id="1_71t7x"]
 [ext_resource type="Script" path="res://editor_only_node.gd" id="2_mde2j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_an88d"]

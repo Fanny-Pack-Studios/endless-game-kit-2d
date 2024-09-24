@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://scenes/levels/escena_de_ejemplo/escena_de_ejemplo.gd" id="1_dmv3u"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="2_86bln"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_w10he"]
-[ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://characters/player/player.tscn" id="4_g6hk0"]
+[ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="4_g6hk0"]
 [ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://assets/Gold Mine/cueva.tscn" id="5_gggvi"]
+
 
 [node name="IngameScene" type="Node2D"]
 script = ExtResource("1_dmv3u")
