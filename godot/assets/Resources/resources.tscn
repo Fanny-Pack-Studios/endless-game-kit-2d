@@ -8,10 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://5xsq8jfcg3le" path="res://assets/Resources/M_Spawn.png" id="3_43yoe"]
 [ext_resource type="Texture2D" uid="uid://b6v84a42cv2oj" path="res://assets/Resources/W_Spawn.png" id="4_ij3dv"]
 [ext_resource type="Texture2D" uid="uid://dyoacvk11740b" path="res://assets/Tiny Swords/Deco/07.png" id="4_menrn"]
-[ext_resource type="Texture2D" uid="uid://cg5b3nrtnj158" path="res://items/textures/pumpkin.png" id="5_ff60k"]
-[ext_resource type="Texture2D" uid="uid://ckt462vfqeo0o" path="res://items/textures/bone.png" id="6_q71hr"]
+[ext_resource type="Texture2D" uid="uid://cg5b3nrtnj158" path="res://entities/items/textures/pumpkin.png" id="5_ff60k"]
+[ext_resource type="Texture2D" uid="uid://ckt462vfqeo0o" path="res://entities/items/textures/bone.png" id="6_q71hr"]
 [ext_resource type="Texture2D" uid="uid://bm6345gmy005v" path="res://assets/Tiny Swords/Deco/05.png" id="8_ypqix"]
 [ext_resource type="Texture2D" uid="uid://ce8c5jm8dq6uq" path="res://assets/Tiny Swords/Deco/10.png" id="9_8ntdp"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q2sun"]
 atlas = ExtResource("4_menrn")

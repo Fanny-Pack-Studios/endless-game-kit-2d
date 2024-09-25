@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgr6tltrr0pji"]
+
+[ext_resource type="Script" path="res://entities/characters/player/interaction_ray_cast.gd" id="1_08n8h"]
+[ext_resource type="Texture2D" uid="uid://6lte765xfg1s" path="res://assets/Tiny Swords/UI/Ribbons/Ribbon_Blue_Connection_Left.png" id="2_86nlp"]
+[ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="3_1tucy"]
+[ext_resource type="PackedScene" uid="uid://bra604lxd4qwy" path="res://ui/components/press_key_indicator.tscn" id="4_hawu5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fnub"]
+size = Vector2(15, 50)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gycxy"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 25.0
+texture = ExtResource("2_86nlp")
+
+[sub_resource type="LabelSettings" id="LabelSettings_lye8f"]
+font = ExtResource("3_1tucy")
+font_size = 14
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="InteractionRayCast" type="ShapeCast2D"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_3fnub")
+target_position = Vector2(80, 0)
+max_results = 1
+collision_mask = 4
+collide_with_areas = true
+script = ExtResource("1_08n8h")
+
+[node name="Prompt" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_left = -66.0
+offset_top = -109.0
+offset_right = 50.0
+offset_bottom = -69.0
+theme_override_constants/separation = -15
+
+[node name="InteractionKey" parent="Prompt" instance=ExtResource("4_hawu5")]
+z_index = 1
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="InteractionLabel" type="Label" parent="Prompt"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_gycxy")
+text = "Hablar"
+label_settings = SubResource("LabelSettings_lye8f")

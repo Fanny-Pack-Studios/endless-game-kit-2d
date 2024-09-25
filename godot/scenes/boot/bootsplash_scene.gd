@@ -43,4 +43,4 @@ func _fade_out():
 	.finished.connect(_change_scene)
 
 func _change_scene():
-	get_tree().change_scene_to_packed(next_scene)
+	SceneChanger.change_scene_to_packed(next_scene)

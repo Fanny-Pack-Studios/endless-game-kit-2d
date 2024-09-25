@@ -1,0 +1,36 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://cas50sk2gk7rc"]
+
+[ext_resource type="Script" path="res://addons/godot_tours/godot_tour_list.gd" id="1_ar5da"]
+[ext_resource type="Script" path="res://addons/godot_tours/godot_tour_entry.gd" id="2_yh1pt"]
+
+[sub_resource type="Resource" id="Resource_egkat"]
+script = ExtResource("2_yh1pt")
+title = "Creando un nivel basico"
+is_free = false
+is_locked = false
+tour_path = "res://guided_tutorials/create_simple_level.gd"
+
+[sub_resource type="Resource" id="Resource_6wysw"]
+script = ExtResource("2_yh1pt")
+title = "Agregando un NPC"
+is_free = false
+is_locked = false
+tour_path = "res://guided_tutorials/adding_an_npc.gd"
+
+[sub_resource type="Resource" id="Resource_ehudv"]
+script = ExtResource("2_yh1pt")
+title = "Configurando NPCs"
+is_free = false
+is_locked = false
+tour_path = "res://guided_tutorials/configuring_npcs.gd"
+
+[sub_resource type="Resource" id="Resource_g70sg"]
+script = ExtResource("2_yh1pt")
+title = "Configurando un combate"
+is_free = false
+is_locked = false
+tour_path = "res://guided_tutorials/configuring_combat.gd"
+
+[resource]
+script = ExtResource("1_ar5da")
+tours = Array[ExtResource("2_yh1pt")]([SubResource("Resource_egkat"), SubResource("Resource_6wysw"), SubResource("Resource_ehudv"), SubResource("Resource_g70sg")])

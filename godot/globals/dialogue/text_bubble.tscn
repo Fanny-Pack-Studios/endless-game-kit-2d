@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=3 uid="uid://dvpvwup3rl7mq"]
+
+[ext_resource type="Texture2D" uid="uid://0ghihicw7nf4" path="res://assets/Tiny Swords/UI/Banners/Carved_3Slides.png" id="1_05ovg"]
+[ext_resource type="Script" path="res://globals/dialogue/text_bubble.gd" id="1_buxnw"]
+[ext_resource type="Script" path="res://globals/dialogue/rich_text_label.gd" id="3_h1pdr"]
+[ext_resource type="PackedScene" uid="uid://bra604lxd4qwy" path="res://ui/components/press_key_indicator.tscn" id="4_ri2ct"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhufj"]
+content_margin_left = 20.0
+texture = ExtResource("1_05ovg")
+texture_margin_left = 50.0
+texture_margin_top = 15.0
+texture_margin_right = 50.0
+texture_margin_bottom = 15.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="Animation" id="Animation_c0ixf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ss4xg"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7qe1e"]
+resource_name = "disappear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vybew"]
+_data = {
+"RESET": SubResource("Animation_c0ixf"),
+"appear": SubResource("Animation_ss4xg"),
+"disappear": SubResource("Animation_7qe1e")
+}
+
+[node name="TextBubble" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 1
+script = ExtResource("1_buxnw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 38.0
+offset_top = 561.0
+offset_right = 1247.0
+offset_bottom = 698.0
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0.372549, 0.372549, 0.372549, 0.74902)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_bhufj")
+bbcode_enabled = true
+text = "Texto de prueba"
+scroll_active = false
+script = ExtResource("3_h1pdr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vybew")
+}
+speed_scale = 4.0
+
+[node name="InteractionKey" parent="." instance=ExtResource("4_ri2ct")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1186.0
+offset_top = 635.0
+offset_right = 1236.0
+offset_bottom = 685.0
+grow_horizontal = 1
+grow_vertical = 1

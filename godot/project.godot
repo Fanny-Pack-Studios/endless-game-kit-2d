@@ -17,9 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-UserSettings="*res://settings/user_settings.gd"
-Dialogue="*res://dialogue/dialogue.tscn"
-Inventory="*res://ui/hud/inventory/inventory.tscn"
+UserSettings="*res://globals/settings/user_settings.gd"
+Dialogue="*res://globals/dialogue/dialogue.tscn"
+Inventory="*res://globals/inventory/inventory.tscn"
+SceneChanger="*res://globals/scene_changer/SceneChanger.tscn"
 
 [debug]
 
@@ -37,7 +38,7 @@ mouse_cursor/tooltip_position_offset=Vector2(20, 20)
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/documentation/plugin.cfg")
+enabled=PackedStringArray("res://addons/anim_player_refactor/plugin.cfg", "res://addons/documentation/plugin.cfg", "res://addons/godot_tours/plugin.cfg", "res://addons/zylann.editor_debugger/plugin.cfg")
 
 [gui]
 
@@ -107,7 +108,7 @@ toggle_inventory={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translations/translation.en.translation", "res://translations/translation.es.translation")
+locale/translations_pot_files=PackedStringArray("res://addons/godot_tours/tour.gd", "res://guided_tutorials/create_simple_level.gd", "res://guided_tutorials/adding_an_npc.gd", "res://guided_tutorials/configuring_npcs.gd", "res://guided_tutorials/configuring_combat.gd")
 
 [layer_names]
 

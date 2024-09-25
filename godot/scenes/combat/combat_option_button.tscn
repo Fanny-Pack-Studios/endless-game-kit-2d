@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7x5gua7ye3k6"]
+
+[ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="1_7g8hj"]
+[ext_resource type="Texture2D" uid="uid://k20k0rpc5f1l" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="2_okuye"]
+[ext_resource type="Texture2D" uid="uid://bylxapp1aec53" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="3_4rbrv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pr46"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpfsn"]
+content_margin_left = 40.0
+content_margin_top = 20.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+texture = ExtResource("2_okuye")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8ff4"]
+content_margin_left = 40.0
+content_margin_top = 30.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+texture = ExtResource("3_4rbrv")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="Theme" id="Theme_dq435"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_7g8hj")
+Button/styles/focus = SubResource("StyleBoxEmpty_6pr46")
+Button/styles/hover = SubResource("StyleBoxTexture_vpfsn")
+Button/styles/normal = SubResource("StyleBoxTexture_vpfsn")
+Button/styles/pressed = SubResource("StyleBoxTexture_a8ff4")
+
+[node name="CombatOptionButton" type="Button"]
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_dq435")
+text = "Atacar con sword
+(damage = 50hp)"
