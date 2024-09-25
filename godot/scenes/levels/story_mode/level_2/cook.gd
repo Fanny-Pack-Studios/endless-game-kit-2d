@@ -2,11 +2,11 @@
 extends NPC
 
 @export var npc_name: String
-@export var intro_message: String
-@export var request_meat_message: String
-@export var request_mushroom_message: String
-@export var thank_you_message: String
-@export var reward_message: String
+@export_multiline var intro_message: String
+@export_multiline var request_meat_message: String
+@export_multiline var request_mushroom_message: String
+@export_multiline var thank_you_message: String
+@export_multiline var reward_message: String
 var received_items: Array[Item.Type] = []
 var has_already_given_reward: bool = false
 
