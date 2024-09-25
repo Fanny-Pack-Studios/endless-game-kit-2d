@@ -25,6 +25,9 @@ func play_hurt() -> void:
 
 
 func play_one_of(animation_names) -> void:
+	if animation_names.is_empty():
+		return
+
 	var animation: String = animation_names.pick_random()
 
 	if(animation):
