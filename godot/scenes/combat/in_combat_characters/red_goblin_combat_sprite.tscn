@@ -207,7 +207,7 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = ExtResource("3_2ubf1")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.16813
+frame_progress = 0.653686
 
 [node name="ExplosionParticles" type="GPUParticles2D" parent="Sprite"]
 z_index = 100
