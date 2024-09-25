@@ -4,6 +4,7 @@ extends Control
 @onready var enemy = %Enemy
 @export var combat: CanvasItem
 @onready var animation_player = $AnimationPlayer
+@onready var minigame_container = $MinigameContainer
 
 var minigame_scene
 
@@ -46,6 +47,6 @@ func create_next_minigame():
 
 	minigame_scene = minigame.scene()
 
-	add_child(minigame_scene, true)
+	minigame_container.add_child(minigame_scene, true)
 	
 	return minigame_scene

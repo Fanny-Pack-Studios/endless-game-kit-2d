@@ -221,6 +221,7 @@ script = ExtResource("1_bg4py")
 [node name="Guard" type="CharacterBody2D" parent="."]
 collision_layer = 6
 script = ExtResource("1_blg3t")
+amount_i_need = null
 sprite_frames = ExtResource("3_bvtif")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Guard"]
@@ -228,7 +229,7 @@ unique_name_in_owner = true
 sprite_frames = ExtResource("3_bvtif")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.646547
+frame_progress = 0.80285
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Guard"]
 position = Vector2(0, 12)

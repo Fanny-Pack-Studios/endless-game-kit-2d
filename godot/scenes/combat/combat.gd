@@ -59,15 +59,37 @@ func play_turns():
 		finished.emit(Outcome.PlayerLost)
 
 
+func help():
+	match turn:
+		Turn.Player:
+			Dialogue.show_multiple_lines(
+				["Durante tu turno, puedes elegir atacar o curarte.",
+				"La cantidad se calcula aleatoriamente cada turno, lee las opciones\
+y elige la que te parezca más adecuada"]
+			)
+		Turn.Enemy:
+			Dialogue.show_multiple_lines(
+				["Durante el turno de tu oponente, debes elegir la respuesta\
+correcta o serás atacado"]
+			)
+
 
 func play_a_turn():
 	match turn:
 		Turn.Player:
 			choose_attack.setup_turn()
+			
+			help()
 
 			menu_turn_animation_player.queue("show_player_ui")
 
+			await menu_turn_animation_player.animation_finished
+			
+			choose_attack.enable_buttons()
+
 			await choose_attack.player_chose_option
+			
+			choose_attack.disable_buttons()
 
 			menu_turn_animation_player.queue("hide_player_ui")
 
@@ -76,8 +98,12 @@ func play_a_turn():
 			turn = Turn.Enemy
 		Turn.Enemy:
 			enemy_attack_minigame.setup_turn()
+			
+			help()
 
 			menu_turn_animation_player.queue("show_enemy_ui")
+
+			await menu_turn_animation_player.animation_finished
 
 			await enemy_attack_minigame.player_chose_option
 

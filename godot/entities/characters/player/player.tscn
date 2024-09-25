@@ -259,7 +259,7 @@ animations = [{
 size = Vector2(42, 30)
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 2147483649
+collision_mask = 2147483650
 floor_snap_length = 0.0
 script = ExtResource("1_y6xbq")
 
