@@ -6,6 +6,9 @@ class_name CombatScreen extends Control
 @onready var enemy_attack_minigame = %EnemyAttackMinigameMenu
 @onready var player = %Player
 @onready var enemy = %Enemy
+@onready var help_button = %HelpButton
+@export_multiline var help_message_player_turn: String
+@export_multiline var help_message_enemy_turn: String
 
 signal finished(outcome: Outcome)
 
@@ -22,6 +25,8 @@ enum Turn {
 
 var turn: Turn = Turn.Player
 
+var player_help_shown: bool = false
+var enemy_help_shown: bool = false
 
 func configure(
 	in_combat_character: FighterCharacter
@@ -42,6 +47,7 @@ func configure(
 
 
 func _ready():
+	help_button.pressed.connect(self.help)
 	play_turns()
 
 
@@ -52,26 +58,19 @@ func play_turns():
 	await wait_seconds(1.0)
 
 	if enemy.current_health <= 0:
-		#await Dialogue.show_line("GANASTE!!!")
 		finished.emit(Outcome.PlayerWon)
 	elif player.current_health <= 0:
-		#await Dialogue.show_line("Perdiste! >:(")
 		finished.emit(Outcome.PlayerLost)
 
 
 func help():
 	match turn:
 		Turn.Player:
-			Dialogue.show_multiple_lines(
-				["Durante tu turno, puedes elegir atacar o curarte.",
-				"La cantidad se calcula aleatoriamente cada turno, lee las opciones\
-y elige la que te parezca más adecuada"]
-			)
+			player_help_shown = true
+			Dialogue.say_multiple_lines("Oscar", help_message_player_turn.split("\n"))
 		Turn.Enemy:
-			Dialogue.show_multiple_lines(
-				["Durante el turno de tu oponente, debes elegir la respuesta\
-correcta o serás atacado"]
-			)
+			enemy_help_shown = true
+			Dialogue.say_multiple_lines("Oscar", help_message_enemy_turn.split("\n"))
 
 
 func play_a_turn():
@@ -79,7 +78,8 @@ func play_a_turn():
 		Turn.Player:
 			choose_attack.setup_turn()
 			
-			help()
+			if(not player_help_shown):
+				help()
 
 			menu_turn_animation_player.queue("show_player_ui")
 
@@ -99,7 +99,8 @@ func play_a_turn():
 		Turn.Enemy:
 			enemy_attack_minigame.setup_turn()
 			
-			help()
+			if(not enemy_help_shown):
+				help()
 
 			menu_turn_animation_player.queue("show_enemy_ui")
 

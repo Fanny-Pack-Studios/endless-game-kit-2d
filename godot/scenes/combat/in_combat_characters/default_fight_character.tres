@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="FighterCharacter" load_steps=6 format=3 uid="uid://yrq2vrb1s1k6"]
+[gd_resource type="Resource" script_class="FighterCharacter" load_steps=8 format=3 uid="uid://yrq2vrb1s1k6"]
 
 [ext_resource type="Script" path="res://scenes/combat/minigame.gd" id="1_4l0kw"]
 [ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="2_vnh6l"]
@@ -6,19 +6,31 @@
 
 [sub_resource type="Resource" id="Resource_j7cgj"]
 script = ExtResource("2_vnh6l")
-question = "What's the biggest one?"
+question = "Which's the biggest one?"
 correct_answer = "planet"
 answers = Array[String](["whale", "house", "planet", "tree"])
 
 [sub_resource type="Resource" id="Resource_plrbf"]
 script = ExtResource("2_vnh6l")
-question = "What's the smallest one?"
+question = "Which's the smallest one?"
 correct_answer = "atom"
 answers = Array[String](["ant", "atom", "computer", "bus"])
 
+[sub_resource type="Resource" id="Resource_6314d"]
+script = ExtResource("2_vnh6l")
+question = "The enemy will use a fire arrow, what element are you using to defend yourself?"
+correct_answer = "Water"
+answers = Array[String](["Water", "Wood", "Paper", "Grass"])
+
+[sub_resource type="Resource" id="Resource_wxrc1"]
+script = ExtResource("2_vnh6l")
+question = "The enemy just shot an arrow to your feet!, you try to evade it by..."
+correct_answer = "Jumping"
+answers = Array[String](["Jumping", "Crouching", "Crying", "Sitting"])
+
 [resource]
 script = ExtResource("3_mu12s")
-hp = 25
+hp = 200
 attack_power = 75
-_combat_sprite = "res://scenes/combat/in_combat_characters/purple_goblin_combat_sprite.tscn"
-minigames = Array[ExtResource("1_4l0kw")]([SubResource("Resource_j7cgj"), SubResource("Resource_plrbf")])
+_combat_sprite = "res://scenes/combat/in_combat_characters/archer_combat_sprite.tscn"
+minigames = Array[ExtResource("1_4l0kw")]([SubResource("Resource_j7cgj"), SubResource("Resource_plrbf"), SubResource("Resource_6314d"), SubResource("Resource_wxrc1")])
