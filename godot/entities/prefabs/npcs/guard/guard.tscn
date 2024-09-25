@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://entities/prefabs/npcs/guard/guard.gd" id="1_blg3t"]
 [ext_resource type="SpriteFrames" uid="uid://cqg38l52hwj05" path="res://entities/characters/npcs/goblin/animations/goblin_blue.tres" id="3_bvtif"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntg0w"]
 size = Vector2(27, 23)
 
@@ -46,7 +47,7 @@ tracks/2/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_8go51"]
+[sub_resource type="Animation" id="Animation_yf0rr"]
 resource_name = "move_out_of_the_way"
 length = 0.5
 tracks/0/type = "value"
@@ -59,7 +60,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 90)]
+"values": [Vector2(0, 0), Vector2(0, -90)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -166,7 +167,7 @@ tracks/2/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_yf0rr"]
+[sub_resource type="Animation" id="Animation_8go51"]
 resource_name = "move_out_of_the_way"
 length = 0.5
 tracks/0/type = "value"
@@ -179,7 +180,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -90)]
+"values": [Vector2(0, 0), Vector2(0, 90)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -228,7 +229,6 @@ unique_name_in_owner = true
 sprite_frames = ExtResource("3_bvtif")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.489109
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Guard"]
 position = Vector2(0, 12)
