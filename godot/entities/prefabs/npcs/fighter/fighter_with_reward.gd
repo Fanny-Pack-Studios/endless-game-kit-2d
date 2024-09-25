@@ -3,7 +3,7 @@ extends NPC
 
 @export_category("NPC")
 @export var npc_name: String = "Robert"
-@export var line: String = "Hola!"
+@export_multiline var line: String = "Hola!"
 @export_category("Combat")
 @export var in_combat_character: FighterCharacter
 @export_category("Reward")
