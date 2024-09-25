@@ -259,7 +259,7 @@ animations = [{
 size = Vector2(42, 30)
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 2147483650
+collision_mask = 2147483649
 floor_snap_length = 0.0
 script = ExtResource("1_y6xbq")
 
@@ -268,6 +268,8 @@ unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_wcqaw")
 animation = &"idle"
 autoplay = "idle"
+frame = 2
+frame_progress = 0.603807
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 17)
