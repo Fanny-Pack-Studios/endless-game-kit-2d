@@ -1,12 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://dv61oixouybym"]
+[gd_scene load_steps=31 format=3 uid="uid://dv61oixouybym"]
 
 [ext_resource type="Script" path="res://scenes/combat/combat_sprite.gd" id="1_lr4ua"]
 [ext_resource type="PackedScene" uid="uid://df46gwu1em2ut" path="res://scenes/combat/in_combat_characters/combat_sprite_target.tscn" id="2_1d12m"]
-[ext_resource type="SpriteFrames" uid="uid://bbffvahvhxwyj" path="res://entities/characters/npcs/goblin/animations/goblin_purple.tres" id="3_tthbk"]
+[ext_resource type="SpriteFrames" uid="uid://dnm04pi7yfmju" path="res://entities/characters/npcs/goblin/animations/goblin_red.tres" id="3_2ubf1"]
 [ext_resource type="Texture2D" uid="uid://b3pmtodft1dlv" path="res://assets/Tiny Swords/Effects/Explosion/Explosions.png" id="4_wwyok"]
 [ext_resource type="Texture2D" uid="uid://fivr03wkvo0r" path="res://assets/Tiny Swords/Effects/Fire/Fire.png" id="5_7774g"]
 
-[sub_resource type="Animation" id="Animation_fy4k1"]
+[sub_resource type="Animation" id="Animation_dxs7e"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(-5.99994, 3)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -32,139 +32,38 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2.5, 2.5)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimatedSprite2D:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimatedSprite2D2:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AnimatedSprite2D3:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
-[sub_resource type="Animation" id="Animation_udwom"]
+[sub_resource type="Animation" id="Animation_5fujn"]
 resource_name = "attack"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.533333, 1),
+"times": PackedFloat32Array(0, 0.566667, 0.933333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(659, 3), Vector2(-5.99994, 3)]
+"values": [Vector2(-5.99994, 3), Vector2(594, -3), Vector2(13.0001, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Sprite:rotation")
-tracks/1/interp = 2
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 12.5664, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.466667, 0.766667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimatedSprite2D2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.5, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimatedSprite2D3:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.5, 0.833333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_y10o3"]
-resource_name = "recibi_danio"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.5),
+"times": PackedFloat32Array(0, 0.566667, 0.933333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(2.5, 2.5), Vector2(5, 0.1), Vector2(2.5, 2.5)]
+"values": [0.0, 12.5664, 0.0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_uv153"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nipo0"]
 _data = {
-"RESET": SubResource("Animation_fy4k1"),
-"attack": SubResource("Animation_udwom"),
-"recibi_danio": SubResource("Animation_y10o3")
+"RESET": SubResource("Animation_dxs7e"),
+"attack": SubResource("Animation_5fujn")
 }
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u08j6"]
@@ -294,21 +193,21 @@ animations = [{
 [node name="CombatSprite" type="Node2D"]
 script = ExtResource("1_lr4ua")
 attack_animation_names = Array[String](["attack"])
-hurt_animation_names = Array[String](["recibi_danio"])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_uv153")
+"": SubResource("AnimationLibrary_nipo0")
 }
 
 [node name="Target" parent="." instance=ExtResource("2_1d12m")]
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5.99994, 3)
 scale = Vector2(2.5, 2.5)
-sprite_frames = ExtResource("3_tthbk")
+sprite_frames = ExtResource("3_2ubf1")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.368502
+frame_progress = 0.16813
 
 [node name="ExplosionParticles" type="GPUParticles2D" parent="Sprite"]
 z_index = 100
