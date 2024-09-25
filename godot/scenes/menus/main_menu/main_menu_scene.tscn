@@ -1,11 +1,146 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv2y18ye8j7o0"]
+[gd_scene load_steps=22 format=3 uid="uid://dv2y18ye8j7o0"]
 
 [ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu_scene.gd" id="1_1foie"]
 [ext_resource type="PackedScene" uid="uid://d0hbgem7rmn11" path="res://scenes/levels/story_mode/level_1/level_1.tscn" id="2_twe45"]
 [ext_resource type="PackedScene" uid="uid://g4qhvbvdm62w" path="res://scenes/menus/settings/game_settings_scene.tscn" id="3_dgs4d"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="3_kf1us"]
 [ext_resource type="PackedScene" uid="uid://b4blrdjthcxnn" path="res://ui/components/game_logo.tscn" id="4_fnufg"]
-[ext_resource type="PackedScene" uid="uid://wk4qhqbilatj" path="res://scenes/levels/Ysa/Credits.tscn" id="4_lyxmb"]
+[ext_resource type="PackedScene" uid="uid://ctmtgxml68wbu" path="res://scenes/levels/Ysa/Credits.tscn" id="4_lyxmb"]
+[ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="6_ugy3f"]
+[ext_resource type="Texture2D" uid="uid://3hr266vrc2wp" path="res://assets/Tiny Swords/UI/Buttons/Button_Hover_3Slides.png" id="7_s2n72"]
+[ext_resource type="Texture2D" uid="uid://dc2sdtxl2ou4a" path="res://assets/Tiny Swords/UI/Buttons/Button_Disable_3Slides.png" id="8_60oa2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bo7u8"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("7_s2n72")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y2tm3"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("8_60oa2")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1rhxr"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("7_s2n72")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yhyhx"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("7_s2n72")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gdelr"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("8_60oa2")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhfa5"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("7_s2n72")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fjufh"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("7_s2n72")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2hl7l"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("8_60oa2")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdlxq"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("7_s2n72")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7kby8"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("7_s2n72")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wymlo"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("8_60oa2")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emnx1"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("7_s2n72")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
 
 [node name="MainMenuScene" type="Node2D"]
 script = ExtResource("1_1foie")
@@ -40,6 +175,12 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_ugy3f")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/hover = SubResource("StyleBoxTexture_bo7u8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y2tm3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1rhxr")
 text = "Jugar"
 
 [node name="SettingsButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
@@ -47,13 +188,23 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Configuración"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+theme_override_styles/hover = SubResource("StyleBoxTexture_yhyhx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gdelr")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dhfa5")
+text = "Ajustes"
 
 [node name="Credits" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+theme_override_styles/hover = SubResource("StyleBoxTexture_fjufh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2hl7l")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fdlxq")
 text = "Créditos"
 
 [node name="ExitButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
@@ -61,6 +212,11 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+theme_override_styles/hover = SubResource("StyleBoxTexture_7kby8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wymlo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_emnx1")
 text = "Salir"
 
 [node name="FadeOverlay" parent="UI" instance=ExtResource("3_kf1us")]
