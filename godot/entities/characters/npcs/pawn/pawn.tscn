@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://clxoodqn2juot"]
 
 [ext_resource type="Script" path="res://entities/characters/npcs/npc.gd" id="1_tmtgn"]
-[ext_resource type="SpriteFrames" uid="uid://b6vtb10gadjhv" path="res://entities/characters/npcs/pawn/animations/pawn_purple.tres" id="2_2ij8p"]
+[ext_resource type="SpriteFrames" uid="uid://ci7npt77fohgu" path="res://entities/characters/npcs/pawn/animations/pawn_purple.tres" id="2_2ij8p"]
 
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntg0w"]
