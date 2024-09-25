@@ -1,9 +1,13 @@
-[gd_scene load_steps=18 format=4 uid="uid://dh2pepouljua5"]
+[gd_scene load_steps=23 format=4 uid="uid://dh2pepouljua5"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_jhks0"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_1tixn"]
 [ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://entities/door/door.tscn" id="3_hjwvc"]
 [ext_resource type="PackedScene" uid="uid://cphykiupy8lbk" path="res://entities/prefabs/npcs/guard/guard.tscn" id="4_3y6pl"]
+[ext_resource type="PackedScene" uid="uid://d12lxbfnq18eh" path="res://entities/prefabs/npcs/gifter/gifter.tscn" id="4_3ybj8"]
+[ext_resource type="Script" path="res://scenes/levels/story_mode/level_2/cook.gd" id="5_ayos1"]
+[ext_resource type="SpriteFrames" uid="uid://ci7npt77fohgu" path="res://entities/characters/npcs/pawn/animations/pawn_purple.tres" id="5_ru6ka"]
+[ext_resource type="SpriteFrames" uid="uid://c0qeevigwncec" path="res://entities/characters/npcs/goblin/animations/goblin_yellow.tres" id="6_eray0"]
 [ext_resource type="PackedScene" uid="uid://dbbea8dbdiuvr" path="res://entities/prefabs/npcs/fighter/fighter.tscn" id="7_l5rcb"]
 [ext_resource type="PackedScene" uid="uid://cdhdsgh775cfg" path="res://entities/prefabs/npcs/trader/trader.tscn" id="7_mjvpf"]
 [ext_resource type="SpriteFrames" uid="uid://bqla3r2ryib2e" path="res://entities/characters/npcs/pawn/animations/pawn_red.tres" id="7_xbt06"]
@@ -14,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://entities/items/item.tscn" id="10_bo5vl"]
 [ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="11_tp5l2"]
 [ext_resource type="Script" path="res://scenes/levels/story_mode/level_2/on_sheep_thief_defeated.gd" id="13_8ghd8"]
+[ext_resource type="Script" path="res://entities/prefabs/npcs/fighter/fighter_with_reward.gd" id="16_67vsl"]
 
 [sub_resource type="Resource" id="Resource_j7cgj"]
 script = ExtResource("10_8prft")
@@ -107,6 +112,37 @@ sprite_frames = ExtResource("8_vbpv8")
 [node name="OnSheepThiefDefeated" type="Node2D" parent="Characters/FighterThatHasTheSheep" node_paths=PackedStringArray("stolen_sheep")]
 script = ExtResource("13_8ghd8")
 stolen_sheep = NodePath("../../../Sheep/StolenSheep")
+
+[node name="Gifter" parent="Characters" instance=ExtResource("4_3ybj8")]
+position = Vector2(1068, 1218)
+item_i_gift = 1
+gifts_only_once = true
+line = "Can I offer you a nice Meat in this trying time?"
+
+[node name="Cook" parent="Characters" instance=ExtResource("4_3ybj8")]
+position = Vector2(1025, 1656)
+script = ExtResource("5_ayos1")
+npc_name = "Cook"
+intro_message = "Estoy intentando preparar un Stew"
+request_meat_message = "Me falta carne, ¿podrias traerme?"
+request_mushroom_message = "Me falta un hongo, ¿podrias traerme?"
+thank_you_message = "¡Muchas gracias!"
+reward_message = "Toma esto como recompensa"
+sprite_frames = ExtResource("6_eray0")
+
+[node name="Trader" parent="Characters" instance=ExtResource("7_mjvpf")]
+position = Vector2(1777, 1269)
+item_i_give = 6
+item_i_want = 2
+sprite_frames = ExtResource("5_ru6ka")
+
+[node name="Fighter" parent="Characters" instance=ExtResource("7_l5rcb")]
+position = Vector2(258, 1636)
+script = ExtResource("16_67vsl")
+npc_name = "Robin"
+line = "Te desafío a un duelo, si me ganas, te daré un Mushroom"
+reward_item = 3
+reward_amount = 1
 
 [node name="Sheep" type="Node2D" parent="."]
 
