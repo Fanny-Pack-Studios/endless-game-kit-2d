@@ -1,10 +1,9 @@
-[gd_scene load_steps=19 format=4 uid="uid://dh2pepouljua5"]
+[gd_scene load_steps=18 format=4 uid="uid://dh2pepouljua5"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_jhks0"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_1tixn"]
 [ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://entities/door/door.tscn" id="3_hjwvc"]
 [ext_resource type="PackedScene" uid="uid://cphykiupy8lbk" path="res://entities/prefabs/npcs/guard/guard.tscn" id="4_3y6pl"]
-[ext_resource type="SpriteFrames" uid="uid://dnm04pi7yfmju" path="res://entities/characters/npcs/goblin/animations/goblin_red.tres" id="5_6f636"]
 [ext_resource type="PackedScene" uid="uid://dbbea8dbdiuvr" path="res://entities/prefabs/npcs/fighter/fighter.tscn" id="7_l5rcb"]
 [ext_resource type="PackedScene" uid="uid://cdhdsgh775cfg" path="res://entities/prefabs/npcs/trader/trader.tscn" id="7_mjvpf"]
 [ext_resource type="SpriteFrames" uid="uid://bqla3r2ryib2e" path="res://entities/characters/npcs/pawn/animations/pawn_red.tres" id="7_xbt06"]
@@ -72,13 +71,8 @@ y_sort_enabled = true
 [node name="Guard" parent="Characters" instance=ExtResource("4_3y6pl")]
 position = Vector2(1443, 958)
 direction_i_move_to = 3
-
-[node name="Guard" parent="Characters/Guard" index="0"]
-sprite_frames = ExtResource("5_6f636")
-
-[node name="AnimatedSprite2D" parent="Characters/Guard/Guard" index="0"]
-sprite_frames = ExtResource("5_6f636")
-frame_progress = 0.67231
+thank_you_line = "Gracias, [i]best of luck[/i]!"
+request_item_line = "[i]You shall not pass[/i]! Para pasar, debes traer [i]two (2) logs[/i]."
 
 [node name="Shepard" parent="Characters" instance=ExtResource("7_mjvpf")]
 position = Vector2(480, 1050)
@@ -86,8 +80,9 @@ npc_name = "Bernard the Shepard"
 only_trades_once = true
 amount_i_give = 3
 item_i_want = 5
-intro_line = "¡Que bueno estas here Arturo! Someone se llevó one of my [i]sheep[/i] ¿Podrías traerla de vuelta? ¡Te daré [i]gold[/i] a cambio!"
-trade_successful_line = "Thanks Arturo! I missed my oveja, toma tu  gold"
+intro_line = "¡Qué bueno estás  [i]here[/i] Arturo!  [i]Someone [/i] se llevó  [i]one of my sheep[/i] ¿Podrías traerla de vuelta? ¡Te daré [i]gold[/i] a cambio!"
+trade_successful_line = "[i]Thanks Arturo[/i]! [i]I missed my[/i] oveja, toma tu  [i]gold[/i]"
+already_traded_line = "[i]¡Thanks a lot![/i]"
 _interaction_name = "Hablar"
 sprite_frames = ExtResource("7_xbt06")
 
@@ -101,10 +96,11 @@ script = ExtResource("8_1f6o2")
 
 [node name="FighterThatHasTheSheep" parent="Characters" instance=ExtResource("7_l5rcb")]
 position = Vector2(-3, 1383)
-npc_name = "Sheep's Thief"
+npc_name = "Keith the Thief"
 line = "¿Vienes por la [i]sheep[/i]? [i]I don't think so[/i], tendrás que [i]defeat me[/i] en batalla. [i]On guard![/i]"
-line_when_player_won = "Oh no, I lost. Toma tu sheep y lárgate."
-line_when_player_lost = "Haha! Get away de aquí, loser!"
+line_when_player_won = "[i]Oh no, I lost[/i]. Toma tu [i]sheep[/i] y lárgate."
+line_when_player_lost = "[i]Haha! Get away[/i] de aquí, [i]loser[/i]!"
+line_after_defeated = "[i]Ugh, you defeated me![/i]"
 in_combat_character = SubResource("Resource_wf2bq")
 sprite_frames = ExtResource("8_vbpv8")
 
@@ -136,5 +132,3 @@ type = 5
 
 [connection signal="traded_successfully" from="Characters/Shepard" to="Characters/Shepard/OnShepardGotHisSheepBack" method="_on_shepard_traded_successfully"]
 [connection signal="player_won" from="Characters/FighterThatHasTheSheep" to="Characters/FighterThatHasTheSheep/OnSheepThiefDefeated" method="_on_fighter_that_has_the_sheep_player_won"]
-
-[editable path="Characters/Guard"]
