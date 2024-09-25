@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://coeyblyh2cnlu"]
+
+[ext_resource type="Script" path="res://guided_tutorials/ui_tutorial.gd" id="1_o8411"]
+[ext_resource type="PackedScene" uid="uid://dhppp8l4pxdon" path="res://guided_tutorials/components/Step.tscn" id="2_3d50l"]
+[ext_resource type="Script" path="res://guided_tutorials/components/step.gd" id="3_4k47m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uimn4"]
+bg_color = Color(0.485924, 0.553362, 1, 0.298039)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.697103, 0.803484, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="UiTutorial" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+script = ExtResource("1_o8411")
+
+[node name="Step" parent="." instance=ExtResource("2_3d50l")]
+layout_mode = 2
+title = "Tutorial de tutoriales"
+description = "Bienvenido, vamos a aprender a modificar un tutorial"
+
+[node name="Step2" parent="." instance=ExtResource("2_3d50l")]
+layout_mode = 2
+title = "Tutorial de tutoriales"
+description = "Primero, abramos la escena del tutorial"
+highlighted_files = Array[String](["res://guided_tutorials/ui_tutorial.tscn"])
+task_open_scene = "res://guided_tutorials/ui_tutorial.tscn"
+
+[node name="Step3" parent="." instance=ExtResource("2_3d50l")]
+layout_mode = 2
+title = "Tutorial de tutoriales"
+description = "Ahora, seleccionemos el nodo padre"
+highlighted_node_names = Array[String](["UiTutorial"])
+
+[node name="Step4" parent="." instance=ExtResource("2_3d50l")]
+layout_mode = 2
+title = "Tutorial de tutoriales"
+description = "Se puede clickear el boton Add Step
+para agregar un nuevo paso"
+highlighted_godot_inspector = true
+
+[node name="Step5" parent="." instance=ExtResource("2_3d50l")]
+layout_mode = 2
+title = "Tutorial de tutoriales"
+description = "Ahora, selecciona alguno de los nodos, como el Step2"
+highlighted_node_names = Array[String](["Step2"])
+
+[node name="Step6" parent="." instance=ExtResource("2_3d50l")]
+layout_mode = 2
+title = "Tutorial de tutoriales"
+description = "¡Puedes cambiar el titulo y descripcion del paso elegido desde el inspector!"
+highlighted_inspector_properties = Array[StringName]([&"title", &"description"])
+
+[node name="Step7" parent="." instance=ExtResource("2_3d50l")]
+layout_mode = 2
+title = "Tutorial de tutoriales"
+description = "¡Eso es todo por ahora!"
+
+[node name="Step8" type="PanelContainer" parent="." instance=ExtResource("2_3d50l")]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uimn4")
+script = ExtResource("3_4k47m")
+title = "Tutorial de tutoriales"
+
+[node name="Step9" type="PanelContainer" parent="." instance=ExtResource("2_3d50l")]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uimn4")
+script = ExtResource("3_4k47m")
+title = "Tutorial de tutoriales"

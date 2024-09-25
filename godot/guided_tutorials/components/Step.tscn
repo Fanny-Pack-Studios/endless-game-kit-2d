@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhppp8l4pxdon"]
+
+[ext_resource type="Script" path="res://guided_tutorials/components/step.gd" id="1_wcrvv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uimn4"]
+bg_color = Color(0.485924, 0.553362, 1, 0.298039)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.697103, 0.803484, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Step" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 75)
+offset_right = 104.0
+offset_bottom = 50.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uimn4")
+script = ExtResource("1_wcrvv")
+
+[node name="PanelContainer3" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer3/PanelContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer3/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Title"
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer3/PanelContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Description" type="Label" parent="PanelContainer3/PanelContainer2/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Description"
