@@ -52,10 +52,10 @@ func play_turns():
 	await wait_seconds(1.0)
 
 	if enemy.current_health <= 0:
-		await Dialogue.show_line("GANASTE!!!")
+		#await Dialogue.show_line("GANASTE!!!")
 		finished.emit(Outcome.PlayerWon)
 	elif player.current_health <= 0:
-		await Dialogue.show_line("Perdiste! >:(")
+		#await Dialogue.show_line("Perdiste! >:(")
 		finished.emit(Outcome.PlayerLost)
 
 

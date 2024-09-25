@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dpuim6ik17o58" path="res://entities/characters/npcs/archer/images/Archer_Red.png" id="1_sv8ly"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxde3"]
 atlas = ExtResource("1_sv8ly")
 region = Rect2(0, 0, 192, 168)

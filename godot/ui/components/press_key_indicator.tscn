@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bra604lxd4qwy"]
+
+[ext_resource type="Texture2D" uid="uid://djyacabakpk38" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue.png" id="1_gaard"]
+[ext_resource type="Texture2D" uid="uid://4c0m5wvyxcwq" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_Pressed.png" id="2_2f3dm"]
+[ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="3_3xv0q"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_cd7kv"]
+frames = 2
+frame_0/texture = ExtResource("1_gaard")
+frame_0/duration = 0.6
+frame_1/texture = ExtResource("2_2f3dm")
+frame_1/duration = 0.6
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ttp8s"]
+content_margin_top = 8.0
+texture = SubResource("AnimatedTexture_cd7kv")
+
+[sub_resource type="LabelSettings" id="LabelSettings_tmo2n"]
+font = ExtResource("3_3xv0q")
+font_color = Color(0, 0, 0, 1)
+
+[node name="InteractionKey" type="Label"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ttp8s")
+text = "E"
+label_settings = SubResource("LabelSettings_tmo2n")
+horizontal_alignment = 1

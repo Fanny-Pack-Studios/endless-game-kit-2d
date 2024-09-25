@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvpvwup3rl7mq"]
+[gd_scene load_steps=10 format=3 uid="uid://dvpvwup3rl7mq"]
 
 [ext_resource type="Texture2D" uid="uid://0ghihicw7nf4" path="res://assets/Tiny Swords/UI/Banners/Carved_3Slides.png" id="1_05ovg"]
 [ext_resource type="Script" path="res://globals/dialogue/text_bubble.gd" id="1_buxnw"]
 [ext_resource type="Script" path="res://globals/dialogue/rich_text_label.gd" id="3_h1pdr"]
-
+[ext_resource type="PackedScene" uid="uid://bra604lxd4qwy" path="res://ui/components/press_key_indicator.tscn" id="4_ri2ct"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhufj"]
 content_margin_left = 20.0
@@ -106,3 +106,15 @@ libraries = {
 "": SubResource("AnimationLibrary_vybew")
 }
 speed_scale = 4.0
+
+[node name="InteractionKey" parent="." instance=ExtResource("4_ri2ct")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1186.0
+offset_top = 635.0
+offset_right = 1236.0
+offset_bottom = 685.0
+grow_horizontal = 1
+grow_vertical = 1

@@ -7,8 +7,8 @@ func _build() -> void:
 	bubble_add_text([
 		"Comencemos abriendo una escena que ya cuenta con varios personajes"
 	])
-	bubble_add_task_open_scene("res://scenes/configuring_npcs_level.tscn")
-	highlight_filesystem_paths(["res://scenes/configuring_npcs_level.tscn"])
+	bubble_add_task_open_scene("res://scenes/levels/example_levels/configuring_npcs_level.tscn")
+	highlight_filesystem_paths(["res://scenes/levels/example_levels/configuring_npcs_level.tscn"])
 	complete_step()
 	bubble_add_text([
 		"Vamos a aprender a modificar los nodos a través de configurar sus propiedades en el [b]Inspector[/b]"

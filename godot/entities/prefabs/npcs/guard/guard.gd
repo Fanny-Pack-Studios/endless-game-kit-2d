@@ -4,6 +4,8 @@ class_name Guard extends NPC
 @export var npc_name: String = "Guard"
 @export var item_i_need: Item.Type
 @export var direction_i_move_to: Direction
+@export var request_item_line: String = "No podes pasar hasta que me des: "
+@export var thank_you_line: String = "Gracias, me corro del camino"
 
 var has_it_already_moved_out_of_the_way: bool = false
 
@@ -20,9 +22,9 @@ func interact_with(player):
 	else:
 		await Dialogue.say_line(
 			npc_name,
-			"No podes pasar hasta que me des un %s" % Item.name_of(item_i_need)
+			request_item_line + Item.english_name_of(item_i_need)
 		)
-		if(Inventory.has(item_i_need)):
+		if(not Inventory.is_empty()):
 			var chosen_item = await Inventory.choose_item()
 			if(chosen_item == item_i_need):
 				has_it_already_moved_out_of_the_way = true
@@ -30,7 +32,7 @@ func interact_with(player):
 				
 				await Dialogue.say_line(
 					npc_name,
-					"Gracias, me corro del camino"
+					thank_you_line
 				)
 				var animation_player = $AnimationPlayer
 				match direction_i_move_to:
@@ -42,3 +44,11 @@ func interact_with(player):
 						animation_player.play("move_left")
 					Direction.Right:
 						animation_player.play("move_right")
+			else:
+				await Dialogue.say_line(
+					npc_name,
+					"Eso no es %s, es %s" % [
+						Item.english_name_of(item_i_need),
+						Item.english_name_of(chosen_item)
+					]
+				)
