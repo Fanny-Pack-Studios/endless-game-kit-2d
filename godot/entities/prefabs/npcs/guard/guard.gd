@@ -5,8 +5,8 @@ class_name Guard extends NPC
 @export var item_i_need: Item.Type
 @export var amount_i_need: int
 @export var direction_i_move_to: Direction
-@export var request_item_line: String = "No podes pasar hasta que me des: "
-@export var thank_you_line: String = "Gracias, me corro del camino"
+@export_multiline var request_item_line: String = "No podes pasar hasta que me des: "
+@export_multiline var thank_you_line: String = "Gracias, me corro del camino"
 
 var has_it_already_moved_out_of_the_way: bool = false
 
@@ -23,7 +23,7 @@ func interact_with(player):
 	else:
 		await Dialogue.say_line(
 			npc_name,
-			request_item_line + Item.english_name_of(item_i_need)
+			request_item_line
 		)
 		if(not Inventory.is_empty()):
 			var chosen_item = await Inventory.choose_item()
