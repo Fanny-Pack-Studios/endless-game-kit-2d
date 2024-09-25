@@ -52,22 +52,44 @@ func play_turns():
 	await wait_seconds(1.0)
 
 	if enemy.current_health <= 0:
-		await Dialogue.show_line("GANASTE!!!")
+		#await Dialogue.show_line("GANASTE!!!")
 		finished.emit(Outcome.PlayerWon)
 	elif player.current_health <= 0:
-		await Dialogue.show_line("Perdiste! >:(")
+		#await Dialogue.show_line("Perdiste! >:(")
 		finished.emit(Outcome.PlayerLost)
 
+
+func help():
+	match turn:
+		Turn.Player:
+			Dialogue.show_multiple_lines(
+				["Durante tu turno, puedes elegir atacar o curarte.",
+				"La cantidad se calcula aleatoriamente cada turno, lee las opciones\
+y elige la que te parezca más adecuada"]
+			)
+		Turn.Enemy:
+			Dialogue.show_multiple_lines(
+				["Durante el turno de tu oponente, debes elegir la respuesta\
+correcta o serás atacado"]
+			)
 
 
 func play_a_turn():
 	match turn:
 		Turn.Player:
 			choose_attack.setup_turn()
+			
+			help()
 
 			menu_turn_animation_player.queue("show_player_ui")
 
+			await menu_turn_animation_player.animation_finished
+			
+			choose_attack.enable_buttons()
+
 			await choose_attack.player_chose_option
+			
+			choose_attack.disable_buttons()
 
 			menu_turn_animation_player.queue("hide_player_ui")
 
@@ -76,8 +98,12 @@ func play_a_turn():
 			turn = Turn.Enemy
 		Turn.Enemy:
 			enemy_attack_minigame.setup_turn()
+			
+			help()
 
 			menu_turn_animation_player.queue("show_enemy_ui")
+
+			await menu_turn_animation_player.animation_finished
 
 			await enemy_attack_minigame.player_chose_option
 

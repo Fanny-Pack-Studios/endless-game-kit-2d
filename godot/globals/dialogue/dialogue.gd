@@ -35,6 +35,9 @@ signal line_finished(line: String)
 ## Burbuja de texto donde se mostraran los mensajes
 @onready var text_bubble: TextBubble = $TextBubble
 
+@export var character_name_color: Color
+@export var character_name_outline_color: Color
+
 ## Muestra un dialogo con el texto [param line].[br]
 ## Ejemplo:
 ## [codeblock]
@@ -81,7 +84,12 @@ func say_line(character_name: String, line: String):
 	# Se construye una linea de texto con el nombre del personaje y lo
 	# que va a decir
 	var complete_line: String =\
-		"[color=blue]%s[/color]: %s" % [character_name, line]
+		"[outline_size=10px][outline_color=%s][color=%s]%s[/color][/outline_color][/outline_size]: %s" % [
+			character_name_outline_color.to_html(),
+			character_name_color.to_html(),
+			character_name,
+			line
+		]
 
 	# Se usa show_line para mostrar la linea de texto construida
 	await show_line(complete_line)

@@ -1,6 +1,0 @@
-2024-09-24T20:23:10:INFO: { "OS": "Windows", "video_adapter_driver_info": ["NVIDIA", "31.0.15.5222"], "screen_size": (1920, 1080), "screen_dpi": 120, "screen_scale": 1, "cores": 12, "locale": "es" }
-2024-09-24T20:23:10:INFO: [step_commands: 0]
-Godot Engine v4.3.stable.official (c) 2007-present Juan Linietsky, Ariel Manzur & Godot Contributors.
---- Debug adapter server started on port 6006 ---
---- GDScript language server started on port 6005 ---
-

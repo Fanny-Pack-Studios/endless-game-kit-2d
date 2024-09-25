@@ -6,3 +6,4 @@ godot/.godot/
 .mono/
 data_*/
 *.translation
+godot/godot_tours.log

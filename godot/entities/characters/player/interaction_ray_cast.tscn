@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgr6tltrr0pji"]
+[gd_scene load_steps=8 format=3 uid="uid://bgr6tltrr0pji"]
 
 [ext_resource type="Script" path="res://entities/characters/player/interaction_ray_cast.gd" id="1_08n8h"]
 [ext_resource type="Texture2D" uid="uid://6lte765xfg1s" path="res://assets/Tiny Swords/UI/Ribbons/Ribbon_Blue_Connection_Left.png" id="2_86nlp"]
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="3_1tucy"]
-[ext_resource type="Texture2D" uid="uid://djyacabakpk38" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue.png" id="4_8ny0q"]
-[ext_resource type="Texture2D" uid="uid://4c0m5wvyxcwq" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_Pressed.png" id="5_ql44n"]
-
+[ext_resource type="PackedScene" uid="uid://bra604lxd4qwy" path="res://ui/components/press_key_indicator.tscn" id="4_hawu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fnub"]
 size = Vector2(15, 50)
@@ -21,21 +19,6 @@ font = ExtResource("3_1tucy")
 font_size = 14
 shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_cd7kv"]
-frames = 2
-frame_0/texture = ExtResource("4_8ny0q")
-frame_0/duration = 0.6
-frame_1/texture = ExtResource("5_ql44n")
-frame_1/duration = 0.6
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ttp8s"]
-content_margin_top = 8.0
-texture = SubResource("AnimatedTexture_cd7kv")
-
-[sub_resource type="LabelSettings" id="LabelSettings_tmo2n"]
-font = ExtResource("3_1tucy")
-font_color = Color(0, 0, 0, 1)
-
 [node name="InteractionRayCast" type="ShapeCast2D"]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_3fnub")
@@ -45,32 +28,27 @@ collision_mask = 4
 collide_with_areas = true
 script = ExtResource("1_08n8h")
 
-[node name="Prompt" type="Control" parent="."]
+[node name="Prompt" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 0
-offset_top = -8.0
-offset_right = 40.0
-offset_bottom = 32.0
+offset_left = -66.0
+offset_top = -109.0
+offset_right = 50.0
+offset_bottom = -69.0
+theme_override_constants/separation = -15
+
+[node name="InteractionKey" parent="Prompt" instance=ExtResource("4_hawu5")]
+z_index = 1
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
 
 [node name="InteractionLabel" type="Label" parent="Prompt"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = -24.0
-offset_top = -77.0
-offset_right = 65.0
-offset_bottom = -30.0
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_gycxy")
 text = "Hablar"
 label_settings = SubResource("LabelSettings_lye8f")
-
-[node name="InteractionKey" type="Label" parent="Prompt"]
-layout_mode = 0
-offset_left = -56.0
-offset_top = -80.0
-offset_right = -6.0
-offset_bottom = -30.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_ttp8s")
-text = "E"
-label_settings = SubResource("LabelSettings_tmo2n")
-horizontal_alignment = 1

@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dv2y18ye8j7o0"]
+[gd_scene load_steps=7 format=3 uid="uid://dv2y18ye8j7o0"]
 
 [ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu_scene.gd" id="1_1foie"]
-[ext_resource type="PackedScene" uid="uid://cik30de5gaaah" path="res://scenes/levels/escena_de_ejemplo/escena_de_ejemplo.tscn" id="2_nl5i6"]
+[ext_resource type="PackedScene" uid="uid://d0hbgem7rmn11" path="res://scenes/levels/story_mode/level_1/level_1.tscn" id="2_twe45"]
 [ext_resource type="PackedScene" uid="uid://g4qhvbvdm62w" path="res://scenes/menus/settings/game_settings_scene.tscn" id="3_dgs4d"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="3_kf1us"]
 [ext_resource type="PackedScene" uid="uid://b4blrdjthcxnn" path="res://ui/components/game_logo.tscn" id="4_fnufg"]
+[ext_resource type="PackedScene" uid="uid://wk4qhqbilatj" path="res://scenes/levels/Ysa/Credits.tscn" id="4_lyxmb"]
 
 [node name="MainMenuScene" type="Node2D"]
 script = ExtResource("1_1foie")
-game_scene = ExtResource("2_nl5i6")
+game_scene = ExtResource("2_twe45")
 settings_scene = ExtResource("3_dgs4d")
-credits_scene = ExtResource("3_dgs4d")
+credits_scene = ExtResource("4_lyxmb")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -30,6 +31,7 @@ layout_mode = 2
 
 [node name="ContinueButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "continue"
 
@@ -38,28 +40,28 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "new_game"
+text = "Jugar"
 
 [node name="SettingsButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "settings"
-
-[node name="ExitButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(180, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-text = "leave_game"
+text = "Configuración"
 
 [node name="Credits" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "credits"
+text = "Créditos"
+
+[node name="ExitButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Salir"
 
 [node name="FadeOverlay" parent="UI" instance=ExtResource("3_kf1us")]
 unique_name_in_owner = true

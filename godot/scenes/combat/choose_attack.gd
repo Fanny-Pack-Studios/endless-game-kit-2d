@@ -14,9 +14,17 @@ enum PlayerOption {
 }
 
 func setup_turn():
+	calculate_random_values_for_attack_and_heal()
+
+
+func enable_buttons():
 	for option_button in [attack, heal]:
 		option_button.disabled = false
-	calculate_random_values_for_attack_and_heal()
+
+
+func disable_buttons():
+	for option_button in [attack, heal]:
+		option_button.disabled = true
 
 
 func option_chosen(option: PlayerOption):

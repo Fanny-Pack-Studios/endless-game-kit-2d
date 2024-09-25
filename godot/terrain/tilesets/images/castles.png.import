@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duvfdfjey3dn5"
-path="res://.godot/imported/GoldMine_Destroyed.png-61b4327a5d14ffd524612d2b3051c413.ctex"
+uid="uid://bqs6bpw30qvwx"
+path="res://.godot/imported/castles.png-0b39a0f0c3ab4cc1a9577bdc055f2a6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gold Mine/GoldMine_Destroyed.png"
-dest_files=["res://.godot/imported/GoldMine_Destroyed.png-61b4327a5d14ffd524612d2b3051c413.ctex"]
+source_file="res://terrain/tilesets/images/castles.png"
+dest_files=["res://.godot/imported/castles.png-0b39a0f0c3ab4cc1a9577bdc055f2a6d.ctex"]
 
 [params]
 

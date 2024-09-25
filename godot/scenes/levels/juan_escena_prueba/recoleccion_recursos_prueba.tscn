@@ -10,7 +10,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cqg38l52hwj05" path="res://entities/characters/npcs/goblin/animations/goblin_blue.tres" id="8_l3u6v"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="9_1k37i"]
 [ext_resource type="Texture2D" uid="uid://barwgp6ohmifb" path="res://assets/Tiny Swords/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="11_skq81"]
-[ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://assets/Gold Mine/cueva.tscn" id="12_b58a7"]
+[ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://entities/door/door.tscn" id="12_b58a7"]
 [ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://entities/items/item.tscn" id="12_h4rym"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkdvn"]
