@@ -197,3 +197,4 @@ item_i_want = 4
 
 [node name="Cueva" parent="." instance=ExtResource("9_02ecn")]
 position = Vector2(1417, 1927)
+next_scene = "res://scenes/levels/Ysa/Credits.tscn"
