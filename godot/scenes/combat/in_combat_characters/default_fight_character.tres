@@ -32,5 +32,7 @@ answers = Array[String](["Jumping", "Crouching", "Crying", "Sitting"])
 script = ExtResource("3_mu12s")
 hp = 200
 attack_power = 75
+
 _combat_sprite = "res://scenes/combat/in_combat_characters/archer_combat_sprite.tscn"
 minigames = Array[ExtResource("1_4l0kw")]([SubResource("Resource_j7cgj"), SubResource("Resource_plrbf"), SubResource("Resource_6314d"), SubResource("Resource_wxrc1")])
+

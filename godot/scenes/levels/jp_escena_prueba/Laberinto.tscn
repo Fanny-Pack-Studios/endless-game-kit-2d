@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_eqcnc"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="4_42kfm"]
-[ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://assets/Gold Mine/cueva.tscn" id="4_v3w51"]
+[ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://entities/door/door.tscn" id="4_v3w51"]
 [ext_resource type="PackedScene" uid="uid://dgnd613n5wy1q" path="res://entities/characters/npcs/goblin/Goblin.tscn" id="4_ybi1w"]
 [ext_resource type="PackedScene" uid="uid://clxoodqn2juot" path="res://entities/characters/npcs/pawn/pawn.tscn" id="5_f84lo"]
 [ext_resource type="Script" path="res://scenes/levels/jp_escena_prueba/goblinlab.gd" id="6_6snxf"]
