@@ -1,0 +1,94 @@
+[gd_scene load_steps=12 format=3 uid="uid://c7ottki5juh0e"]
+
+[ext_resource type="Texture2D" uid="uid://cy0mrh41cn7io" path="res://assets/Tiny Swords/Resources/Trees/Tree.png" id="1_egn7w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46d4s"]
+size = Vector2(24, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pove3"]
+atlas = ExtResource("1_egn7w")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mb87j"]
+atlas = ExtResource("1_egn7w")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_turgm"]
+atlas = ExtResource("1_egn7w")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsn04"]
+atlas = ExtResource("1_egn7w")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bebl"]
+atlas = ExtResource("1_egn7w")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca6mu"]
+atlas = ExtResource("1_egn7w")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_004l7"]
+atlas = ExtResource("1_egn7w")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws5m4"]
+atlas = ExtResource("1_egn7w")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gg5rj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pove3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mb87j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_turgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsn04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bebl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca6mu")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_004l7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws5m4")
+}],
+"loop": true,
+"name": &"talado",
+"speed": 5.0
+}]
+
+[node name="Tree" type="StaticBody2D"]
+collision_layer = 2147483648
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -16)
+shape = SubResource("RectangleShape2D_46d4s")
+
+[node name="Tree" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -56)
+sprite_frames = SubResource("SpriteFrames_gg5rj")
+animation = &"idle"
+autoplay = "idle"

@@ -6,7 +6,7 @@ class_name MultipleChoiceMiniGame extends Control
 
 signal completed(points: int)
 
-const COMBAT_OPTION_BUTTON = preload("res://scenes/combat/combat_option_button.tscn")
+const COMBAT_OPTION_BUTTON = preload("res://ui/components/button.tscn")
 
 func _ready():
 	setup_minigame(

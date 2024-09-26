@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://g4qhvbvdm62w" path="res://scenes/menus/settings/game_settings_scene.tscn" id="3_dgs4d"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="3_kf1us"]
 [ext_resource type="PackedScene" uid="uid://b4blrdjthcxnn" path="res://ui/components/game_logo.tscn" id="4_fnufg"]
-[ext_resource type="PackedScene" uid="uid://wk4qhqbilatj" path="res://scenes/levels/Ysa/Credits.tscn" id="4_lyxmb"]
+[ext_resource type="PackedScene" uid="uid://c1uqgpo182al6" path="res://scenes/levels/Ysa/Credits.tscn" id="4_lyxmb"]
 
 [node name="MainMenuScene" type="Node2D"]
 script = ExtResource("1_1foie")
