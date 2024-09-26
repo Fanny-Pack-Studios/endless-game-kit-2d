@@ -268,7 +268,8 @@ position = Vector2(1068, 1218)
 npc_name = "Brandon the random"
 item_i_gift = 1
 gifts_only_once = true
-line = "Can I offer you a nice Meat in this trying time?"
+line = "Arturo, [i] I’m so happy to see you![/i] toma esta meat de parte tu más grande [i]fan[/i]"
+line_after_ran_out_of_gifts = "[i]Enjoy![/i] "
 
 [node name="Cook" parent="Characters" instance=ExtResource("4_3ybj8")]
 position = Vector2(1106, 1619)
@@ -286,6 +287,9 @@ position = Vector2(1960, 1246)
 npc_name = "Jack the Lumberjack"
 item_i_give = 6
 item_i_want = 2
+intro_line = "[i]You want some [/i]madera?  Un [i]log[/i] por una bolsa de [i]gold[/i], ¿que te parece?"
+trade_successful_line = "[i]Alwasy a pleasure[/i] hacer negocios contigo"
+already_traded_line = "[i]Thanks a lot![/i]"
 sprite_frames = ExtResource("5_ru6ka")
 
 [node name="Fighter" parent="Characters" instance=ExtResource("7_l5rcb")]
