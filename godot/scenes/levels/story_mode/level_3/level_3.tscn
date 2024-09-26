@@ -38,7 +38,8 @@ z_index = 1
 position = Vector2(-132, -204)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2, 2)
+position = Vector2(1, 0)
+zoom = Vector2(1.7, 1.7)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
