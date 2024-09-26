@@ -210,7 +210,7 @@ position = Vector2(1443, 958)
 npc_name = "Sawyer the Soldier"
 item_i_need = 6
 amount_i_need = 2
-direction_i_move_to = 3
+direction_i_move_to = 1
 thank_you_line = "Gracias, [i]best of luck[/i]!"
 request_item_line = "[i]You shall not pass[/i]! Para pasar, debes traer [i]two (2) logs[/i]."
 
