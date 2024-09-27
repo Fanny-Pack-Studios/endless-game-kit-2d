@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://bylxapp1aec53" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="12_ln4ib"]
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="13_fop5l"]
 
-
 [sub_resource type="LabelSettings" id="LabelSettings_kragx"]
 font = ExtResource("13_fop5l")
 font_color = Color(0, 0, 0, 1)
