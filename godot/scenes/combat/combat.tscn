@@ -29,7 +29,8 @@
 [ext_resource type="Script" path="res://scenes/combat/shaker.gd" id="26_trtn3"]
 [ext_resource type="PackedScene" uid="uid://cl0w0m24diim5" path="res://scenes/combat/in_combat_characters/player_combat_sprite.tscn" id="27_ayf30"]
 [ext_resource type="PackedScene" uid="uid://bjhcqiee4pfng" path="res://scenes/combat/in_combat_characters/health_change_effect.tscn" id="29_vyk3c"]
-[ext_resource type="PackedScene" uid="uid://bchbq0gh045e2" path="res://scenes/combat/in_combat_characters/archer_combat_sprite.tscn" id="30_kqtiq"]
+[ext_resource type="PackedScene" uid="uid://bchbq0gh045e2" path="res://scenes/combat/in_combat_characters/archer/archer_combat_sprite.tscn" id="30_kqtiq"]
+
 
 [sub_resource type="Animation" id="Animation_7x3hf"]
 length = 0.001
