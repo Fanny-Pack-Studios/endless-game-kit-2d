@@ -1,9 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://g4qhvbvdm62w"]
+[gd_scene load_steps=14 format=3 uid="uid://g4qhvbvdm62w"]
 
 [ext_resource type="Script" path="res://scenes/menus/settings/game_settings_scene.gd" id="1_3764u"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_w6tmj"]
 [ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/game_settings.tscn" id="2_qsqie"]
+[ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="3_exubj"]
+[ext_resource type="Texture2D" uid="uid://d27ek4ygoqs2p" path="res://assets/Tiny Swords/UI/Banners/Banner_Connection_Up.png" id="3_nbib0"]
 [ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="3_unbh4"]
+[ext_resource type="Texture2D" uid="uid://cokkh78kdfecv" path="res://assets/Tiny Swords/UI/Banners/Carved_Regular.png" id="6_5mp22"]
+[ext_resource type="SpriteFrames" uid="uid://hlscvhl2hdpk" path="res://scenes/menus/background.tres" id="8_6nmg0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2gibu"]
+texture = ExtResource("3_nbib0")
+texture_margin_left = 25.0
+texture_margin_top = 45.0
+texture_margin_right = 25.0
+texture_margin_bottom = 30.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(38, 2, 116, 151)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ompel"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1n23p"]
+texture = ExtResource("6_5mp22")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.691357, 0.691357, 0.691357, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_04b06"]
+load_path = "res://.godot/imported/Carved_Regular.png-b7b9b83a205d01dcc17286c96d6b6203.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27led"]
+texture = SubResource("CompressedTexture2D_04b06")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [node name="GameSettingsScene" type="Node2D"]
 script = ExtResource("1_3764u")
@@ -11,30 +49,58 @@ script = ExtResource("1_3764u")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="CenterContainer" type="CenterContainer" parent="UI"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -337.5
+offset_right = 150.0
+offset_bottom = 337.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="UI/CenterContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_styles/panel = SubResource("StyleBoxTexture_2gibu")
 
-[node name="SettingsLabel" type="Label" parent="UI/CenterContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer/PanelContainer"]
 layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-text = "settings"
+theme_override_constants/separation = 0
 
-[node name="GameSettings" parent="UI/CenterContainer/VBoxContainer" instance=ExtResource("2_qsqie")]
+[node name="GameSettings" parent="UI/CenterContainer/PanelContainer/VBoxContainer" instance=ExtResource("2_qsqie")]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
 
-[node name="ReturnButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+[node name="ReturnButton" type="Button" parent="UI/CenterContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_unbh4")
-text = "return_to_main"
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_exubj")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ompel")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1n23p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1n23p")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1n23p")
+theme_override_styles/normal = SubResource("StyleBoxTexture_27led")
+text = "Volver"
 
 [node name="FadeOverlay" parent="UI" instance=ExtResource("1_w6tmj")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("8_6nmg0")
+animation = &"principal"
+autoplay = "principal"
+centered = false

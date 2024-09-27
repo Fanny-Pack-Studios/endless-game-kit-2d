@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://c1uqgpo182al6"]
+[gd_scene load_steps=50 format=4 uid="uid://cje2ilwmcadb2"]
 
 [ext_resource type="Script" path="res://scenes/levels/Ysa/credits.gd" id="1_qr75k"]
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_squa7"]
@@ -85,14 +85,6 @@ content_margin_top = 27.0
 content_margin_right = 0.0
 content_margin_bottom = 13.0
 texture = ExtResource("15_2hn1u")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 32.0
-expand_margin_top = 40.0
-expand_margin_bottom = 20.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w2dwj"]
 content_margin_top = 7.0
