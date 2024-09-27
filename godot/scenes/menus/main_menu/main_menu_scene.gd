@@ -1,8 +1,6 @@
 extends Node2D
 
 @export var level_1:PackedScene
-@export var level_2:PackedScene
-@export var level_3:PackedScene
 @export var settings_scene:PackedScene
 @export var credits_scene:PackedScene
 
@@ -21,12 +19,6 @@ func _ready() -> void:
 	# connect signals
 	%NewGameButton.pressed.connect(func():
 		_on_play(level_1)
-	)
-	%NewGameButton2.pressed.connect(func():
-		_on_play(level_2)
-	)
-	%NewGameButton3.pressed.connect(func():
-		_on_play(level_3)
 	)
 	settings_button.pressed.connect(_on_settings_button_pressed)
 	exit_button.pressed.connect(_on_exit_button_pressed)

@@ -41,7 +41,7 @@ Button/styles/hover = SubResource("StyleBoxTexture_vpfsn")
 Button/styles/normal = SubResource("StyleBoxTexture_vpfsn")
 Button/styles/pressed = SubResource("StyleBoxTexture_a8ff4")
 
-[node name="Attack" type="Button"]
+[node name="Button" type="Button"]
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = SubResource("Theme_dq435")

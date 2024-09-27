@@ -39,9 +39,8 @@ gdscript/warnings/unused_signal=0
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/size/always_on_top=true
+window/size/viewport_width=1200
+window/size/viewport_height=912
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://ui/images/01.png"
 mouse_cursor/custom_image_hotspot=Vector2(20, 20)

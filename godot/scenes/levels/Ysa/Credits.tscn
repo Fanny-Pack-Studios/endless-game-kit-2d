@@ -145,6 +145,7 @@ size = Vector2(1295.25, 149.5)
 y_sort_enabled = true
 position = Vector2(-110, -457)
 script = ExtResource("1_qr75k")
+main_menu_scene = "res://scenes/menus/main_menu/main_menu_scene.tscn"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
