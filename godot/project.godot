@@ -8,6 +8,17 @@
 
 config_version=5
 
+[addons]
+
+resources_spreadsheet_view/array_color_tint=100.0
+resources_spreadsheet_view/color_rows=true
+resources_spreadsheet_view/array_min_width=128.0
+resources_spreadsheet_view/resource_preview_size=32.0
+resources_spreadsheet_view/clip_headers=false
+resources_spreadsheet_view/dupe_arrays=true
+resources_spreadsheet_view/context_menu_on_leftclick=false
+resources_spreadsheet_view/fold_docks=false
+
 [application]
 
 config/name="Gamelab GameKit"
@@ -30,15 +41,15 @@ gdscript/warnings/unused_signal=0
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/always_on_top=true
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_height"
 mouse_cursor/custom_image="res://ui/images/01.png"
 mouse_cursor/custom_image_hotspot=Vector2(20, 20)
 mouse_cursor/tooltip_position_offset=Vector2(20, 20)
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/anim_player_refactor/plugin.cfg", "res://addons/documentation/plugin.cfg", "res://addons/godot_tours/plugin.cfg", "res://addons/zylann.editor_debugger/plugin.cfg")
+enabled=PackedStringArray("res://addons/anim_player_refactor/plugin.cfg", "res://addons/documentation/plugin.cfg", "res://addons/godot_tours/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/zylann.editor_debugger/plugin.cfg")
 
 [gui]
 

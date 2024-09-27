@@ -375,8 +375,7 @@ objects = "money"
 
 [node name="animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sxsph")
-animation = &"carne"
-frame_progress = 0.688404
+animation = &"calabaza"
 
 [node name="area_collect" type="Area2D" parent="."]
 collision_layer = 0

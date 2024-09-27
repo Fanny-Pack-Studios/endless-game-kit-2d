@@ -1,24 +1,15 @@
-[gd_resource type="Resource" script_class="FighterCharacter" load_steps=6 format=3 uid="uid://yrq2vrb1s1k6"]
+[gd_resource type="Resource" script_class="FighterCharacter" load_steps=7 format=3 uid="uid://yrq2vrb1s1k6"]
 
 [ext_resource type="Script" path="res://scenes/combat/minigame.gd" id="1_4l0kw"]
-[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="2_vnh6l"]
+[ext_resource type="Resource" uid="uid://c1ea41ane0pxj" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_004.tres" id="2_dsjnh"]
+[ext_resource type="Resource" uid="uid://yxt328n1bimj" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_005.tres" id="3_d5wpj"]
 [ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="3_mu12s"]
-
-[sub_resource type="Resource" id="Resource_j7cgj"]
-script = ExtResource("2_vnh6l")
-question = "What's the biggest one?"
-correct_answer = "planet"
-answers = Array[String](["whale", "house", "planet", "tree"])
-
-[sub_resource type="Resource" id="Resource_plrbf"]
-script = ExtResource("2_vnh6l")
-question = "What's the smallest one?"
-correct_answer = "atom"
-answers = Array[String](["ant", "atom", "computer", "bus"])
+[ext_resource type="Resource" uid="uid://7cmno5dm7vko" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_006.tres" id="4_gtllm"]
+[ext_resource type="Resource" uid="uid://dcnf4cx0lmmrm" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_007.tres" id="5_o3l36"]
 
 [resource]
 script = ExtResource("3_mu12s")
 hp = 200
 attack_power = 75
 _combat_sprite = "res://scenes/combat/in_combat_characters/archer_combat_sprite.tscn"
-minigames = Array[ExtResource("1_4l0kw")]([SubResource("Resource_j7cgj"), SubResource("Resource_plrbf")])
+minigames = Array[ExtResource("1_4l0kw")]([ExtResource("2_dsjnh"), ExtResource("3_d5wpj"), ExtResource("4_gtllm"), ExtResource("5_o3l36")])

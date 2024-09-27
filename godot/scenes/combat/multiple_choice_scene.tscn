@@ -2,18 +2,17 @@
 
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="1_2fjti"]
 [ext_resource type="Script" path="res://scenes/combat/multiple_choice_scene.gd" id="1_h6b35"]
-[ext_resource type="Texture2D" uid="uid://7qjypsgo6fld" path="res://assets/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="2_3p1es"]
-[ext_resource type="PackedScene" uid="uid://b7x5gua7ye3k6" path="res://scenes/combat/combat_option_button.tscn" id="3_o2i8x"]
+[ext_resource type="Texture2D" uid="uid://0ghihicw7nf4" path="res://assets/Tiny Swords/UI/Banners/Carved_3Slides.png" id="3_hx6ib"]
+[ext_resource type="PackedScene" uid="uid://cl54874jf84gw" path="res://ui/components/button.tscn" id="4_t66dx"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qgymt"]
-texture = ExtResource("2_3p1es")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l7e54"]
+texture = ExtResource("3_hx6ib")
 texture_margin_left = 64.0
-texture_margin_top = 32.0
+texture_margin_top = 20.0
 texture_margin_right = 64.0
-texture_margin_bottom = 64.0
+texture_margin_bottom = 20.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-region_rect = Rect2(0, 39, 192, 141)
 
 [node name="MultipleChoice" type="VBoxContainer"]
 anchors_preset = 15
@@ -28,10 +27,11 @@ script = ExtResource("1_h6b35")
 [node name="QuestionLabel" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_2fjti")
 theme_override_font_sizes/normal_font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxTexture_qgymt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l7e54")
 bbcode_enabled = true
 text = "[center]¿Cual es la traducción de [wave]ROJO[/wave]?"
 fit_content = true
@@ -43,14 +43,18 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 columns = 2
 
-[node name="CombatOptionButton" parent="OptionsContainer" instance=ExtResource("3_o2i8x")]
+[node name="Option" parent="OptionsContainer" instance=ExtResource("4_t66dx")]
 layout_mode = 2
+text = "BLUE"
 
-[node name="CombatOptionButton2" parent="OptionsContainer" instance=ExtResource("3_o2i8x")]
+[node name="Option2" parent="OptionsContainer" instance=ExtResource("4_t66dx")]
 layout_mode = 2
+text = "RED"
 
-[node name="CombatOptionButton3" parent="OptionsContainer" instance=ExtResource("3_o2i8x")]
+[node name="Option3" parent="OptionsContainer" instance=ExtResource("4_t66dx")]
 layout_mode = 2
+text = "YELLOW"
 
-[node name="CombatOptionButton4" parent="OptionsContainer" instance=ExtResource("3_o2i8x")]
+[node name="Option4" parent="OptionsContainer" instance=ExtResource("4_t66dx")]
 layout_mode = 2
+text = "GREEN"

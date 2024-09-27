@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://fs80p3l7cqa5" path="res://entities/characters/npcs/goblin/images/Torch_Yellow.png" id="1_1i8ll"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6a88s"]
 atlas = ExtResource("1_1i8ll")
 region = Rect2(0, 0, 192, 192)

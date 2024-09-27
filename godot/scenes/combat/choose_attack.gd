@@ -14,9 +14,17 @@ enum PlayerOption {
 }
 
 func setup_turn():
+	calculate_random_values_for_attack_and_heal()
+
+
+func enable_buttons():
 	for option_button in [attack, heal]:
 		option_button.disabled = false
-	calculate_random_values_for_attack_and_heal()
+
+
+func disable_buttons():
+	for option_button in [attack, heal]:
+		option_button.disabled = true
 
 
 func option_chosen(option: PlayerOption):
@@ -43,7 +51,7 @@ func calculate_random_values_for_attack_and_heal():
 	player.attack_power = randi_range(1, 100)
 	player.heal_power = randi_range(1, 100)
 	attack.text = "Atacar con Sword\nDamage: %s" % number_to_word(player.attack_power)
-	heal.text = "Comer Mushroom\nHeal: %s" % number_to_word(player.heal_power)
+	heal.text = "Curarse\nHeal: %s" % number_to_word(player.heal_power)
 
 
 func number_to_word(number: int) -> String:
