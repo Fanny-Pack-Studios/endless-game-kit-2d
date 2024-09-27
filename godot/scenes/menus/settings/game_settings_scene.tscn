@@ -1,40 +1,118 @@
-[gd_scene load_steps=5 format=3 uid="uid://g4qhvbvdm62w"]
+[gd_scene load_steps=12 format=3 uid="uid://g4qhvbvdm62w"]
 
 [ext_resource type="Script" path="res://scenes/menus/settings/game_settings_scene.gd" id="1_3764u"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_w6tmj"]
+[ext_resource type="Texture2D" uid="uid://b8iqcply3e08i" path="res://scenes/menus/main_menu/principal.gif.png/54309ca39e894f34d07e48f9f881f3b5lp33WBg11IIVIMQg-0.png" id="2_fiitt"]
 [ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/game_settings.tscn" id="2_qsqie"]
+[ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="3_exubj"]
+[ext_resource type="Texture2D" uid="uid://d27ek4ygoqs2p" path="res://assets/Tiny Swords/UI/Banners/Banner_Connection_Up.png" id="3_nbib0"]
 [ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="3_unbh4"]
+[ext_resource type="Texture2D" uid="uid://bem564jfoil1o" path="res://assets/Tiny Swords/UI/Icons/Pressed_09.png" id="4_q2j7c"]
+[ext_resource type="Texture2D" uid="uid://bl7o8vpc65l2n" path="res://assets/Tiny Swords/UI/Icons/Pressed_08.png" id="9_nmlpo"]
+[ext_resource type="Texture2D" uid="uid://dj6uod800ctgb" path="res://assets/Tiny Swords/UI/Icons/Regular_08.png" id="9_x7u35"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0y1e0"]
+content_margin_left = 18.0
+content_margin_right = 5.0
+content_margin_bottom = 8.0
+texture = ExtResource("9_x7u35")
 
 [node name="GameSettingsScene" type="Node2D"]
 script = ExtResource("1_3764u")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="54309Ca39e894f34d07e48f9f881f3b5Lp33wBg11iivimQg-0" type="Sprite2D" parent="UI"]
+position = Vector2(976, 112)
+scale = Vector2(1.33, 1.14474)
+texture = ExtResource("2_fiitt")
+
+[node name="BannerConnectionUp" type="Sprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(653, 448.5)
+scale = Vector2(4.85417, 4.71354)
+texture = ExtResource("3_nbib0")
+
 [node name="CenterContainer" type="CenterContainer" parent="UI"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 423.0
+offset_top = -138.0
+offset_right = -408.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 54
 
 [node name="SettingsLabel" type="Label" parent="UI/CenterContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_type_variation = &"HeaderLarge"
-text = "settings"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_exubj")
+theme_override_font_sizes/font_size = 90
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="GameSettings" parent="UI/CenterContainer/VBoxContainer" instance=ExtResource("2_qsqie")]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
 
 [node name="ReturnButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_unbh4")
-text = "return_to_main"
+theme_override_colors/font_color = Color(0.26132, 0.503909, 1, 0.729412)
+theme_override_fonts/font = ExtResource("3_exubj")
+theme_override_font_sizes/font_size = 24
+text = "Return_to_main"
 
 [node name="FadeOverlay" parent="UI" instance=ExtResource("1_w6tmj")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Button2" type="Button" parent="UI"]
+visible = false
+texture_filter = 1
+offset_left = 784.0
+offset_top = 336.0
+offset_right = 882.0
+offset_bottom = 398.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_0y1e0")
+
+[node name="Pressed08" type="Sprite2D" parent="UI"]
+position = Vector2(824, 384)
+texture = ExtResource("9_nmlpo")
+
+[node name="Pressed08" type="Sprite2D" parent="UI/Pressed08"]
+position = Vector2(0, 72)
+texture = ExtResource("9_nmlpo")
+
+[node name="Pressed08" type="Sprite2D" parent="UI/Pressed08/Pressed08"]
+position = Vector2(0, 80)
+texture = ExtResource("9_nmlpo")
+
+[node name="Pressed09" type="Sprite2D" parent="UI"]
+position = Vector2(472, 384)
+texture = ExtResource("4_q2j7c")
+
+[node name="Pressed09" type="Sprite2D" parent="UI/Pressed09"]
+position = Vector2(0, 72)
+texture = ExtResource("4_q2j7c")
+
+[node name="Pressed09" type="Sprite2D" parent="UI/Pressed09/Pressed09"]
+position = Vector2(0, 80)
+texture = ExtResource("4_q2j7c")

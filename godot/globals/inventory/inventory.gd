@@ -53,6 +53,7 @@ signal item_selected(item)
 ## valores la cantidad de ese objeto que hay en el inventario.
 var items: Dictionary
 
+
 ## Agrega un objeto del tipo especificado al inventario.
 func add_item(item: Item.Type) -> void:
 	## Si el objeto no existe en el diccionario, lo creamos con 0 como
