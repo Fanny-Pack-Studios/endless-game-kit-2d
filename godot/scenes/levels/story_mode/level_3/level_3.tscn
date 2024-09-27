@@ -121,17 +121,33 @@ If I were you I would pick anything I find on the way."
 [node name="Advisor2" parent="Npcs" instance=ExtResource("3_xsoqf")]
 z_index = 1
 position = Vector2(895, 1339)
+<<<<<<< Updated upstream
 line = "Be careful, you might also find a few foes!"
+=======
+npc_name = "Kim the Pilgrim"
+line = "Be careful, you might also find a few [hint=\"enemigos\"]foes[/hint]!"
+>>>>>>> Stashed changes
 
 [node name="Advisor3" parent="Npcs" instance=ExtResource("3_xsoqf")]
 z_index = 1
 position = Vector2(1361, 859)
+<<<<<<< Updated upstream
 line = "There might be traders along the way, keep an eye open!"
+=======
+npc_name = "Marlor the Explorer"
+line = "There might be [hint=\"Comerciantes\"]traders[/hint] along the way, keep an eye open!
+"
+>>>>>>> Stashed changes
 
 [node name="Advisor4" parent="Npcs" instance=ExtResource("3_xsoqf")]
 z_index = 1
 position = Vector2(2562, 544)
+<<<<<<< Updated upstream
 line = "Did you see all those bones on the ground? Spooky!"
+=======
+npc_name = "Smaugh the Scout"
+line = "Did you see all those bones on the ground? [hint=\"Escalofriante\"]Spooky[/hint]!"
+>>>>>>> Stashed changes
 
 [node name="Fighter" parent="Npcs" instance=ExtResource("4_y1far")]
 z_index = 1
@@ -140,12 +156,20 @@ position = Vector2(763, 1860)
 [node name="Fighter2" parent="Npcs" instance=ExtResource("4_y1far")]
 z_index = 1
 position = Vector2(1142, 1140)
+npc_name = "Randy the Bandit: "
+line = "You need to be prepared for bigger things, fight with me!"
+line_when_player_won = "You are strong. Here’s some gold!"
+line_when_player_lost = "Did you really think you could [hint=\"Derrotarme\"]beat me[/hint]?"
 in_combat_character = SubResource("Resource_4pb3o")
 reward_item = 2
 
 [node name="Fighter3" parent="Npcs" instance=ExtResource("4_y1far")]
 z_index = 1
 position = Vector2(1532, 403)
+npc_name = "Gunther the Archer"
+line = "Time to test your [hint=\"Habilidades\"]skills[/hint]! Fight me, if you dare!"
+line_when_player_won = "Impressive! Here’s some gold, you’ve earned it."
+line_when_player_lost = "Ha! Was that all? You’ve [hint=\"Desperdicié\"]wasted[/hint] my time."
 in_combat_character = SubResource("Resource_menvu")
 reward_item = 2
 
