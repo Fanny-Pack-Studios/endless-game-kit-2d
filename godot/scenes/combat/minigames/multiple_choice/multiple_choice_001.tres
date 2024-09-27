@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://o7q5fs7q6d63"]
+
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="1_prnqr"]
+
+[resource]
+script = ExtResource("1_prnqr")
+question = "This is _____ apple."
+correct_answer = "an"
+answers = Array[String](["a", "the", "an", "but"])

@@ -1,49 +1,46 @@
 extends Node2D
 
-@export var game_scene:PackedScene
+@export var level_1:PackedScene
+@export var level_2:PackedScene
+@export var level_3:PackedScene
 @export var settings_scene:PackedScene
 @export var credits_scene:PackedScene
 
 @onready var overlay := %FadeOverlay
-@onready var continue_button := %ContinueButton
-@onready var new_game_button := %NewGameButton
 @onready var settings_button := %SettingsButton
 @onready var exit_button := %ExitButton
 @onready var credits = %Credits
 
-var next_scene = game_scene
+var next_scene = level_1
 var new_game = true
 
 func _ready() -> void:
 	overlay.visible = true
-	new_game_button.disabled = game_scene == null
 	settings_button.disabled = settings_scene == null
 	
 	# connect signals
-	new_game_button.pressed.connect(_on_play_button_pressed)
-	continue_button.pressed.connect(_on_continue_button_pressed)
+	%NewGameButton.pressed.connect(func():
+		_on_play(level_1)
+	)
+	%NewGameButton2.pressed.connect(func():
+		_on_play(level_2)
+	)
+	%NewGameButton3.pressed.connect(func():
+		_on_play(level_3)
+	)
 	settings_button.pressed.connect(_on_settings_button_pressed)
 	exit_button.pressed.connect(_on_exit_button_pressed)
 	credits.pressed.connect(_on_credits_button_pressed)
 	overlay.on_complete_fade_out.connect(_on_fade_overlay_on_complete_fade_out)
-	
-	if continue_button.visible:
-		continue_button.grab_focus()
-	else:
-		new_game_button.grab_focus()
+
 
 func _on_settings_button_pressed() -> void:
 	new_game = false
 	next_scene = settings_scene
 	overlay.fade_out()
 	
-func _on_play_button_pressed() -> void:
-	next_scene = game_scene
-	overlay.fade_out()
-	
-func _on_continue_button_pressed() -> void:
-	new_game = false
-	next_scene = game_scene
+func _on_play(level) -> void:
+	next_scene = level
 	overlay.fade_out()
 
 func _on_exit_button_pressed() -> void:

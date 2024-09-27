@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://cvxx28wly7a5p"]
+
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="1_6hcqc"]
+
+[resource]
+script = ExtResource("1_6hcqc")
+question = "I like to visit museums ______ art galleries when I travel."
+correct_answer = "or"
+answers = Array[String](["but", "so", "or"])

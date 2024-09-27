@@ -1,15 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv2y18ye8j7o0"]
+[gd_scene load_steps=9 format=3 uid="uid://dv2y18ye8j7o0"]
 
 [ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu_scene.gd" id="1_1foie"]
 [ext_resource type="PackedScene" uid="uid://d0hbgem7rmn11" path="res://scenes/levels/story_mode/level_1/level_1.tscn" id="2_twe45"]
 [ext_resource type="PackedScene" uid="uid://g4qhvbvdm62w" path="res://scenes/menus/settings/game_settings_scene.tscn" id="3_dgs4d"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="3_kf1us"]
+[ext_resource type="PackedScene" uid="uid://dh2pepouljua5" path="res://scenes/levels/story_mode/level_2/level_2.tscn" id="3_lid4v"]
+[ext_resource type="PackedScene" uid="uid://bx2llcrqojvbu" path="res://scenes/levels/story_mode/level_3/level_3.tscn" id="4_4blnk"]
 [ext_resource type="PackedScene" uid="uid://b4blrdjthcxnn" path="res://ui/components/game_logo.tscn" id="4_fnufg"]
 [ext_resource type="PackedScene" uid="uid://c1uqgpo182al6" path="res://scenes/levels/Ysa/Credits.tscn" id="4_lyxmb"]
 
 [node name="MainMenuScene" type="Node2D"]
 script = ExtResource("1_1foie")
-game_scene = ExtResource("2_twe45")
+level_1 = ExtResource("2_twe45")
+level_2 = ExtResource("3_lid4v")
+level_3 = ExtResource("4_4blnk")
 settings_scene = ExtResource("3_dgs4d")
 credits_scene = ExtResource("4_lyxmb")
 
@@ -29,18 +33,26 @@ theme_override_constants/separation = 5
 [node name="GameLogo" parent="UI/CenterContainer/VBoxContainer" instance=ExtResource("4_fnufg")]
 layout_mode = 2
 
-[node name="ContinueButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "continue"
-
 [node name="NewGameButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Jugar"
+text = "Jugar desde Nivel 1"
+
+[node name="NewGameButton2" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Jugar desde Nivel 2"
+
+[node name="NewGameButton3" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Jugar desde Nivel 3"
 
 [node name="SettingsButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true

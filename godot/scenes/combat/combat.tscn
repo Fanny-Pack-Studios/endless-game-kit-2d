@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://n0siq684nkln"]
+[gd_scene load_steps=51 format=4 uid="uid://n0siq684nkln"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_2b2nm"]
 [ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_gg68f"]
@@ -23,8 +23,10 @@
 [ext_resource type="PackedScene" uid="uid://cl54874jf84gw" path="res://ui/components/button.tscn" id="21_tyn66"]
 [ext_resource type="Script" path="res://scenes/combat/enemy_attack_minigame.gd" id="22_burgw"]
 [ext_resource type="Texture2D" uid="uid://7qjypsgo6fld" path="res://assets/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="23_1c1jq"]
+[ext_resource type="Resource" uid="uid://o7q5fs7q6d63" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_001.tres" id="24_2eick"]
 [ext_resource type="Script" path="res://scenes/combat/minigame.gd" id="24_nj7kr"]
-[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="26_d0630"]
+[ext_resource type="Resource" uid="uid://cvxx28wly7a5p" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_002.tres" id="25_cjmr0"]
+[ext_resource type="Resource" uid="uid://b32soaign0vdp" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_003.tres" id="26_atbcd"]
 [ext_resource type="Script" path="res://scenes/combat/shaker.gd" id="26_trtn3"]
 [ext_resource type="PackedScene" uid="uid://cl0w0m24diim5" path="res://scenes/combat/in_combat_characters/player_combat_sprite.tscn" id="27_ayf30"]
 [ext_resource type="PackedScene" uid="uid://bjhcqiee4pfng" path="res://scenes/combat/in_combat_characters/health_change_effect.tscn" id="29_vyk3c"]
@@ -136,24 +138,6 @@ texture_margin_bottom = 64.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(0, 39, 192, 141)
-
-[sub_resource type="Resource" id="Resource_y6deg"]
-script = ExtResource("26_d0630")
-question = "This is _____ apple."
-correct_answer = "an"
-answers = Array[String](["a", "an", "the"])
-
-[sub_resource type="Resource" id="Resource_iw1qq"]
-script = ExtResource("26_d0630")
-question = "I like to visit museums ______ art galleries when I travel."
-correct_answer = "or"
-answers = Array[String](["but", "so", "or"])
-
-[sub_resource type="Resource" id="Resource_uwv5n"]
-script = ExtResource("26_d0630")
-question = "Peter's house is bigger _____ mine."
-correct_answer = "than"
-answers = Array[String](["than", "that", "as"])
 
 [sub_resource type="Animation" id="Animation_eok75"]
 length = 0.001
@@ -424,7 +408,7 @@ offset_right = 554.0
 offset_bottom = 368.0
 grow_horizontal = 0
 script = ExtResource("22_burgw")
-minigames = Array[ExtResource("24_nj7kr")]([SubResource("Resource_y6deg"), SubResource("Resource_iw1qq"), SubResource("Resource_uwv5n")])
+minigames = Array[ExtResource("24_nj7kr")]([ExtResource("24_2eick"), ExtResource("25_cjmr0"), ExtResource("26_atbcd")])
 combat = NodePath("..")
 
 [node name="AnswerToBlock" type="RichTextLabel" parent="EnemyAttackMinigameMenu"]
