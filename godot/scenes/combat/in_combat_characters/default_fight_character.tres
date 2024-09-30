@@ -11,6 +11,5 @@
 script = ExtResource("3_mu12s")
 hp = 200
 attack_power = 75
-_combat_sprite = "res://scenes/combat/in_combat_characters/archer_combat_sprite.tscn"
+_combat_sprite = "res://scenes/combat/in_combat_characters/archer/archer_combat_sprite.tscn"
 minigames = Array[ExtResource("1_4l0kw")]([ExtResource("2_dsjnh"), ExtResource("3_d5wpj"), ExtResource("4_gtllm"), ExtResource("5_o3l36")])
-

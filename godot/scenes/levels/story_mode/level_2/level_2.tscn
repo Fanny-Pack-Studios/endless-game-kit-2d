@@ -99,7 +99,7 @@ answers = Array[String](["ant", "atom", "computer", "bus"])
 script = ExtResource("11_tp5l2")
 hp = 100
 attack_power = 40
-_combat_sprite = "res://scenes/combat/in_combat_characters/archer_combat_sprite.tscn"
+_combat_sprite = "res://scenes/combat/in_combat_characters/archer/archer_combat_sprite.tscn"
 minigames = Array[ExtResource("9_8qoht")]([SubResource("Resource_j7cgj"), SubResource("Resource_plrbf")])
 
 [sub_resource type="Animation" id="Animation_hehpx"]
