@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://tkdnp2ieke05"]
+
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="1_jnyx4"]
+
+[resource]
+script = ExtResource("1_jnyx4")
+question = "The word \"adventure\" refers to:"
+correct_answer = "A fun and exciting journey or experience"
+answers = Array[String](["A boring day at home", "A fun and exciting journey or experience", "A simple task", "A long nap"])

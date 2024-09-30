@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://b20kyqekgryxk"]
+
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="1_fm5ns"]
+
+[resource]
+script = ExtResource("1_fm5ns")
+question = "What is the opposite of \"dark\"?"
+correct_answer = "Bright"
+answers = Array[String](["Heavy", "Light", "Bright", "Dim"])

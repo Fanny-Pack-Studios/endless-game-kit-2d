@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://dlb1ltsyytmfy"]
+
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="1_3cx4y"]
+
+[resource]
+script = ExtResource("1_3cx4y")
+question = "The word \"brave\" describes someone who is"
+correct_answer = "Fearless"
+answers = Array[String](["Scared", "Fearless", "Weak", "Shy"])
