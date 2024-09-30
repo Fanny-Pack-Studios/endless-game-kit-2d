@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://crqrb2f7ormw1"]
+
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="1_v5dxv"]
+
+[resource]
+script = ExtResource("1_v5dxv")
+question = "What is the opposite of \"fast\"?"
+correct_answer = "Slow"
+answers = Array[String](["Slow", "Quick", "Loud", "Strong"])

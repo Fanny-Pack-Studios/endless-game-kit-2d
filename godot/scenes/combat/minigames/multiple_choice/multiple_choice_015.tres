@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://c8lka1t2071jt"]
+
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="1_aq5g7"]
+
+[resource]
+script = ExtResource("1_aq5g7")
+question = "The cat likes to __________ in the sun during the afternoon."
+correct_answer = "sleep"
+answers = Array[String](["jump", "run", "sleep", "swim"])

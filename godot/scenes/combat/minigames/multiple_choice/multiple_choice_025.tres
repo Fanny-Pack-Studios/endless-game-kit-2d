@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://caxh2yd5jtq10"]
+
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="1_othqk"]
+
+[resource]
+script = ExtResource("1_othqk")
+question = "The __________ of the day was sunny and warm."
+correct_answer = "Weather"
+answers = Array[String](["Weather", "Homework", "Lunch", "Game"])

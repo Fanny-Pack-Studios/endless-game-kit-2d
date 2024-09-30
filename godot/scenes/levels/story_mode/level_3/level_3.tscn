@@ -115,8 +115,8 @@ y_sort_enabled = true
 [node name="Advisor1" parent="Npcs" instance=ExtResource("3_xsoqf")]
 z_index = 1
 position = Vector2(611, 811)
-line = "Wow there is a big maze ahead!
-If I were you I would pick anything I find on the way."
+npc_name = "Grover the Commoner"
+line = "Wow there is a big [hint=\"Laberinto\"]maze[/hint] ahead! If I were you I would pick anything I find on the way."
 
 [node name="Advisor2" parent="Npcs" instance=ExtResource("3_xsoqf")]
 z_index = 1
@@ -140,6 +140,11 @@ line = "Did you see all those bones on the ground? [hint=\"Escalofriante\"]Spook
 [node name="Fighter" parent="Npcs" instance=ExtResource("4_y1far")]
 z_index = 1
 position = Vector2(763, 1860)
+npc_name = "Harper the Farmer"
+line = "If you want a pumpkin you will have to fight me!
+"
+line_when_player_won = "You won, take your pumpkin!"
+line_when_player_lost = "haha! Get away from here!"
 
 [node name="Fighter2" parent="Npcs" instance=ExtResource("4_y1far")]
 z_index = 1
@@ -164,49 +169,74 @@ reward_item = 2
 [node name="Guard" parent="Npcs" instance=ExtResource("5_ild2g")]
 z_index = 1
 position = Vector2(1573, 1362)
+npc_name = "Piper the Gatekeeper"
 item_i_need = 1
-request_item_line = "You can't continue until you bring me Meat"
+thank_you_line = "The way is yours. Go ahead."
+request_item_line = "If you want to pass, you’ll need meat.
+"
 
 [node name="Guard2" parent="Npcs" instance=ExtResource("5_ild2g")]
 z_index = 1
 position = Vector2(1510, 1564)
+npc_name = "Sasoire the Squire"
 item_i_need = 5
 direction_i_move_to = 1
-request_item_line = "Can you bring me a Sheep?, if you do, I'll let you pass"
+thank_you_line = "Alright, you may [hint=\"continuar\"]proceed[/hint]."
+request_item_line = "Bring me a sheep and I’ll open the way for you."
 
 [node name="Guard3" parent="Npcs" instance=ExtResource("5_ild2g")]
 z_index = 1
 position = Vector2(1953, 1684)
+npc_name = "Oliver the Soldier"
 direction_i_move_to = 3
-request_item_line = "I'm so hungry I can't move.
-Would you be so kind to bring me a Pumpkin?"
+thank_you_line = "Good [hint=\"Trabajo\"]job[/hint]. You’re free to go!"
+request_item_line = "You can’t go any [hint=\"adelante\"]further[/hint] unless you bring me a pumpkin.
+"
 
 [node name="Guard4" parent="Npcs" instance=ExtResource("5_ild2g")]
 z_index = 1
-position = Vector2(1700, 1939)
+position = Vector2(1717, 1931)
+npc_name = "Jordan the Swordman"
 item_i_need = 6
 direction_i_move_to = 2
-request_item_line = "You shall not pass...
-...unless you get me some Wood."
+thank_you_line = "You’ve [hint=\"Ganado\"]earned[/hint] your passage. Step forward."
+request_item_line = "You may proceed, but only if you give me a log."
 
 [node name="Trader" parent="Npcs" instance=ExtResource("7_ah5wn")]
 z_index = 1
 position = Vector2(2619, 961)
+npc_name = "Billy the Butcher"
 item_i_give = 1
 item_i_want = 2
+intro_line = "Hand over the gold, and I’ll give you some meat [hint=\"a cambio\"]in exchange[/hint]!"
+trade_successful_line = "Good trade!"
 
 [node name="Trader2" parent="Npcs" instance=ExtResource("7_ah5wn")]
 z_index = 1
 position = Vector2(2619, 1051)
+npc_name = "Tess the Shepherdess"
 item_i_give = 5
 item_i_want = 2
+intro_line = "I accept your gold and give you a sheep in return!"
+trade_successful_line = "Thank you for the [hint=\"intercambio\"trade[/hint]! Enjoy your sheep!
+"
 
 [node name="Trader3" parent="Npcs" instance=ExtResource("7_ah5wn")]
 z_index = 1
 position = Vector2(2623, 1779)
+npc_name = "Sabrina the Carpenter"
 item_i_give = 6
 item_i_want = 4
+intro_line = "You give me a bone, and I’ll give you with a log! 
+"
+trade_successful_line = "Thanks for your [hint=\"negocio\"business![/hint] Use that log well!"
 
 [node name="Cueva" parent="." instance=ExtResource("9_02ecn")]
 position = Vector2(1417, 1927)
 next_scene = "res://scenes/levels/Ysa/Credits.tscn"
+
+[node name="Trader" parent="." instance=ExtResource("7_ah5wn")]
+position = Vector2(1504, 1965)
+npc_name = "Oscar"
+intro_line = "Well done Arturo! We have been expecting you. Now you are king of england!"
+trade_successful_line = "Go through the cave and face your destiny!"

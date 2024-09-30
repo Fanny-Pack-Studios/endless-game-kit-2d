@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://ci5x5titrxlmq"]
+
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="1_ksspg"]
+
+[resource]
+script = ExtResource("1_ksspg")
+question = "What does \"friendly\" mean?"
+correct_answer = "Someone who is nice and likes to help others"
+answers = Array[String](["Not nice or kind", "Always alone", "Someone who is nice and likes to help others", "Very quiet and shy"])

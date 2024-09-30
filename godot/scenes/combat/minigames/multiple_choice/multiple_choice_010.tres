@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://dpfw0ft8bb8kj"]
+
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="1_1phai"]
+
+[resource]
+script = ExtResource("1_1phai")
+question = "The dog began to __________ when it saw its owner coming home."
+correct_answer = "bark"
+answers = Array[String](["bark", "sleep", "eat", "hide"])

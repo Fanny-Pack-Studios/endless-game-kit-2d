@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://b78g15d8q4j8e"]
+
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="1_2o12g"]
+
+[resource]
+script = ExtResource("1_2o12g")
+question = "What does \"courageous\" mean?"
+correct_answer = "Brave and willing to face danger or fear"
+answers = Array[String](["Scared of everything", "Very shy and quiet", "Always careful", "Brave and willing to face danger or fear"])
