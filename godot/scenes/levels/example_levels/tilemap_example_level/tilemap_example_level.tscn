@@ -3,7 +3,6 @@
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_m4ld3"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_rrnx5"]
 
-
 [node name="TilemapExampleLevel" type="Node2D"]
 y_sort_enabled = true
 

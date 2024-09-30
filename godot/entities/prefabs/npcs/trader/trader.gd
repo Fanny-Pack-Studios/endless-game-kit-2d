@@ -11,8 +11,8 @@ var already_traded: bool = false
 @export var amount_i_want: int = 1
 @export_category("Talking")
 @export_multiline var intro_line: String = ""
-@export var trade_successful_line: String = "Un placer hacer negocios"
-@export var already_traded_line: String = "¡Thanks a lot!"
+@export_multiline var trade_successful_line: String = "Un placer hacer negocios"
+@export_multiline var already_traded_line: String = "¡Thanks a lot!"
 
 signal traded_successfully
 

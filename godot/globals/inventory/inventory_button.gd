@@ -1,4 +1,4 @@
-extends TextureButton
+extends Button
 
 func _ready():
 	self.pressed.connect(self.toggle_inventory)

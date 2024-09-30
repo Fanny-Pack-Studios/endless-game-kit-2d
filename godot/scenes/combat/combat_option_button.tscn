@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7x5gua7ye3k6"]
+[gd_scene load_steps=8 format=3 uid="uid://uvjukb5j2dpu"]
 
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="1_7g8hj"]
 [ext_resource type="Texture2D" uid="uid://k20k0rpc5f1l" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="2_okuye"]
