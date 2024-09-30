@@ -128,8 +128,7 @@ line = "Be careful, you might also find a few [hint=\"enemigos\"]foes[/hint]!"
 z_index = 1
 position = Vector2(1361, 859)
 npc_name = "Marlor the Explorer"
-line = "There might be [hint=\"Comerciantes\"]traders[/hint] along the way, keep an eye open!
-"
+line = "There might be [hint=\"Comerciantes\"]traders[/hint] along the way, keep an eye open!"
 
 [node name="Advisor4" parent="Npcs" instance=ExtResource("3_xsoqf")]
 z_index = 1
@@ -227,9 +226,9 @@ position = Vector2(2623, 1779)
 npc_name = "Sabrina the Carpenter"
 item_i_give = 6
 item_i_want = 4
-intro_line = "You give me a bone, and I’ll give you with a log! 
+intro_line = "You give me a bone, and I’ll give you a log! 
 "
-trade_successful_line = "Thanks for your [hint=\"negocio\"business![/hint] Use that log well!"
+trade_successful_line = "Thanks for your [hint=\"negocio\"]business![/hint]. Use that log well!"
 
 [node name="Cueva" parent="." instance=ExtResource("9_02ecn")]
 position = Vector2(1417, 1927)
