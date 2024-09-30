@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://entities/characters/player/interaction_ray_cast.gd" id="1_08n8h"]
 [ext_resource type="Texture2D" uid="uid://6lte765xfg1s" path="res://assets/Tiny Swords/UI/Ribbons/Ribbon_Blue_Connection_Left.png" id="2_86nlp"]
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="3_1tucy"]
-[ext_resource type="PackedScene" path="res://ui/components/press_key_indicator.tscn" id="4_hawu5"]
+[ext_resource type="PackedScene" uid="uid://bra604lxd4qwy" path="res://ui/components/press_key_indicator.tscn" id="4_hawu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fnub"]
 size = Vector2(15, 50)

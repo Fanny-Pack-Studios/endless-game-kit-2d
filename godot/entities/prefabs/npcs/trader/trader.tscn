@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://entities/prefabs/npcs/trader/trader.gd" id="1_chhss"]
 [ext_resource type="SpriteFrames" uid="uid://bspa375ckrnmh" path="res://entities/characters/npcs/pawn/animations/pawn_yellow.tres" id="2_jmi7e"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntg0w"]
 size = Vector2(27, 23)
 
@@ -17,7 +18,7 @@ unique_name_in_owner = true
 sprite_frames = ExtResource("2_jmi7e")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.178235
+frame_progress = 0.139343
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)
