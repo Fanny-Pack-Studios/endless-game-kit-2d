@@ -288,7 +288,7 @@ npc_name = "Jack the Lumberjack"
 item_i_give = 6
 item_i_want = 2
 intro_line = "[i]You want some [/i]madera?  Un [i]log[/i] por una bolsa de [i]gold[/i], ¿que te parece?"
-trade_successful_line = "[i]Alwasy a pleasure[/i] hacer negocios contigo"
+trade_successful_line = "[i]Always a pleasure[/i] hacer negocios contigo"
 already_traded_line = "[i]Thanks a lot![/i]"
 sprite_frames = ExtResource("5_ru6ka")
 
