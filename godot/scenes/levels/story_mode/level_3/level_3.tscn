@@ -115,27 +115,34 @@ y_sort_enabled = true
 [node name="Advisor1" parent="Npcs" instance=ExtResource("3_xsoqf")]
 z_index = 1
 position = Vector2(611, 811)
-line = "Wow there is a big maze ahead!
+npc_name = "Grover the Commoner"
+line = "Wow there is a big [hint=\"Laberinto\"]maze[/hint] ahead!
 If I were you I would pick anything I find on the way."
 
 [node name="Advisor2" parent="Npcs" instance=ExtResource("3_xsoqf")]
 z_index = 1
 position = Vector2(895, 1339)
-line = "Be careful, you might also find a few foes!"
+line = "Be careful, you might also find a few [hint=\"enemigos\"]foes[/hint]!"
 
 [node name="Advisor3" parent="Npcs" instance=ExtResource("3_xsoqf")]
 z_index = 1
 position = Vector2(1361, 859)
+npc_name = "Smaugh the Scout"
 line = "There might be traders along the way, keep an eye open!"
 
 [node name="Advisor4" parent="Npcs" instance=ExtResource("3_xsoqf")]
 z_index = 1
 position = Vector2(2562, 544)
+npc_name = "Kim the Pilgrim"
 line = "Did you see all those bones on the ground? Spooky!"
 
 [node name="Fighter" parent="Npcs" instance=ExtResource("4_y1far")]
 z_index = 1
 position = Vector2(763, 1860)
+npc_name = "Harper the Farmer"
+line = "If you want a pumpkin you will have to fight me!"
+line_when_player_won = "You won, take your pumpkin!"
+line_when_player_lost = "haha! Get away from here!"
 
 [node name="Fighter2" parent="Npcs" instance=ExtResource("4_y1far")]
 z_index = 1

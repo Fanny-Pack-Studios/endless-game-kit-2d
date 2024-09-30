@@ -175,6 +175,7 @@ Para que te deje pasar, debés traer un: [i][outline_size=6px][outline_color=bla
 
 [node name="Talker" parent="Characters" instance=ExtResource("7_m45ri")]
 position = Vector2(461, 187)
+npc_name = "Oscar"
 line = "¡Hola, Arturo! Tu destino es aprender inglés y reclamar tu lugar como el Rey Arturo.
 Explora el territorio y habla con quienes encuentres para descubrir tu verdadero destino
 ¡Buena suerte en tu viaje!"
