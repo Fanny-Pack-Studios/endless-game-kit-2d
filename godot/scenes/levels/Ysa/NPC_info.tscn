@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwmxgqjsq3u3i"]
+
+[ext_resource type="Texture2D" uid="uid://b7m74oeocclu3" path="res://assets/Tiny Swords/UI/Buttons/Button_Hover.png" id="1_duokd"]
+[ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="2_cmpjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_400j5"]
+size = Vector2(31, 36)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4r8w"]
+content_margin_left = 0.0
+content_margin_right = 20.0
+content_margin_bottom = 7.0
+texture = ExtResource("1_duokd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbvgb"]
+content_margin_left = 6.0
+texture = ExtResource("1_duokd")
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_w2vw1"]
+font = ExtResource("2_cmpjg")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="Indicador_Info" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(670, 660)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(-551.5, -565)
+shape = SubResource("RectangleShape2D_400j5")
+
+[node name="Información" type="Label" parent="."]
+z_index = 1
+texture_filter = 1
+offset_left = -574.0
+offset_top = -585.0
+offset_right = -530.0
+offset_bottom = -544.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxTexture_n4r8w")
+text = "❗"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shadow" type="Label" parent="Información"]
+modulate = Color(0, 0, 0, 0.556863)
+z_as_relative = false
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 49.0
+offset_bottom = 47.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mbvgb")
+label_settings = SubResource("LabelSettings_w2vw1")
+horizontal_alignment = 1
