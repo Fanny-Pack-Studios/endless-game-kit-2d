@@ -127,4 +127,4 @@ toggle_inventory={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.211765, 0.239216, 0.321569, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
