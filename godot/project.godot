@@ -53,7 +53,6 @@ enabled=PackedStringArray("res://addons/anim_player_refactor/plugin.cfg", "res:/
 [gui]
 
 timers/tooltip_delay_sec=0.0
-timers/tooltip_delay_sec.editor_hint=0.0
 theme/custom="res://ui/theme.tres"
 
 [input]
