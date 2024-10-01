@@ -1,7 +1,6 @@
 @tool
 extends NPC
 
-@export var npc_name: String
 @export var item_i_gift: Item.Type
 @export var gifts_only_once: bool = false
 @export_multiline var line: String

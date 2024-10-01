@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var npc_name: String = "Guard"
+@export var npc_name: String
 @export var item_i_need: Item.Type
 @export var amount_i_need: int = 1
 @export var direction_i_move_to: Guard.Direction

@@ -1,6 +1,9 @@
 @tool
 class_name NPC extends CharacterBody2D
+## Un NPC (Non-playable character) es un personaje del juego que no es 
+## controlado por el jugador.
 
+@export var npc_name: String = "NPC"
 @export var _interaction_name: String = "Hablar"
 
 ## Establece el conjunto de sprites animados a usar
@@ -20,7 +23,7 @@ func _ready():
 	load_animation()
 
 func interact_with(_player):
-	await Dialogue.say_line(name, "Hola!")
+	await Dialogue.say_line(npc_name, "Hola!")
 
 func interaction_name() -> String:
 	return _interaction_name
