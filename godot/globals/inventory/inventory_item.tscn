@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bkrtfcekdq8bo" path="res://assets/Tiny Swords/UI/Pointers/02.png" id="5_iu3ft"]
 
 
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d6vsx"]
 content_margin_right = 15.0
 content_margin_bottom = 15.0

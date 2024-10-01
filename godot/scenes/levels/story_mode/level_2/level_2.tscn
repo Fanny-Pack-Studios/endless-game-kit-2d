@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=4 uid="uid://dh2pepouljua5"]
 
-[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_jhks0"]
+[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_jhks0"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_1tixn"]
 [ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://entities/door/door.tscn" id="3_hjwvc"]
 [ext_resource type="PackedScene" uid="uid://cphykiupy8lbk" path="res://entities/prefabs/npcs/guard/guard.tscn" id="4_3y6pl"]
@@ -13,8 +13,8 @@
 [ext_resource type="SpriteFrames" uid="uid://bqla3r2ryib2e" path="res://entities/characters/npcs/pawn/animations/pawn_red.tres" id="7_xbt06"]
 [ext_resource type="Script" path="res://scenes/levels/story_mode/level_2/on_shepard_got_his_sheep_back.gd" id="8_1f6o2"]
 [ext_resource type="SpriteFrames" uid="uid://bmaeq6foipkk6" path="res://entities/characters/npcs/archer/animations/archer_red.tres" id="8_vbpv8"]
-[ext_resource type="Script" path="res://scenes/combat/minigame.gd" id="9_8qoht"]
-[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="10_8prft"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/minigame.gd" id="9_8qoht"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/multiple_choice.gd" id="10_8prft"]
 [ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://entities/items/item.tscn" id="10_bo5vl"]
 [ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="11_tp5l2"]
 [ext_resource type="Script" path="res://scenes/levels/story_mode/level_2/on_sheep_thief_defeated.gd" id="13_8ghd8"]

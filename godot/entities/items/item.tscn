@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bvbhchxyunk26" path="res://entities/items/textures/mushroom.png" id="2_jvb0w"]
 
 
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_psoqa"]
 radius = 16.0312
 

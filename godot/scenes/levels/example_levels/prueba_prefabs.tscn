@@ -1,0 +1,265 @@
+[gd_scene load_steps=20 format=3 uid="uid://crnpi0jyql6y4"]
+
+[ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="1_t0ixm"]
+[ext_resource type="PackedScene" uid="uid://mndsxueepdkr" path="res://entities/prefabs/npcs/talker/talker.tscn" id="2_p8ejw"]
+[ext_resource type="PackedScene" uid="uid://cdhdsgh775cfg" path="res://entities/prefabs/npcs/trader/trader.tscn" id="3_n6j3k"]
+[ext_resource type="PackedScene" uid="uid://dbbea8dbdiuvr" path="res://entities/prefabs/npcs/fighter/fighter.tscn" id="4_trlkt"]
+[ext_resource type="PackedScene" uid="uid://whfe031ftcip" path="res://entities/prefabs/npcs/fighter/fighter_with_reward.tscn" id="5_3jj0a"]
+[ext_resource type="SpriteFrames" uid="uid://cd0nkwp6ueukh" path="res://entities/characters/npcs/archer/animations/archer_yellow.tres" id="5_w035b"]
+[ext_resource type="Script" path="res://scenes/combat/minigame.gd" id="5_wx5mv"]
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="6_rnwi7"]
+[ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://entities/items/item.tscn" id="6_yy8jn"]
+[ext_resource type="PackedScene" uid="uid://cphykiupy8lbk" path="res://entities/prefabs/npcs/guard/guard.tscn" id="7_inag1"]
+[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="7_vijw3"]
+[ext_resource type="PackedScene" uid="uid://wb8ro614jtx3" path="res://entities/prefabs/npcs/guard/guard_that_uses_signal.tscn" id="8_x5vbl"]
+[ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://entities/door/door.tscn" id="9_08kcl"]
+
+[sub_resource type="Resource" id="Resource_j7cgj"]
+script = ExtResource("6_rnwi7")
+question = "What's the biggest one?"
+correct_answer = "planet"
+answers = Array[String](["whale", "house", "planet", "tree"])
+
+[sub_resource type="Resource" id="Resource_plrbf"]
+script = ExtResource("6_rnwi7")
+question = "What's the smallest one?"
+correct_answer = "atom"
+answers = Array[String](["ant", "atom", "computer", "bus"])
+
+[sub_resource type="Resource" id="Resource_hpho5"]
+script = ExtResource("7_vijw3")
+hp = 200
+attack_power = 75
+_combat_sprite = "res://scenes/combat/in_combat_characters/player_combat_sprite.tscn"
+minigames = Array[ExtResource("5_wx5mv")]([SubResource("Resource_j7cgj"), SubResource("Resource_plrbf")])
+
+[sub_resource type="Animation" id="Animation_5yvhb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(233, 120)]
+}
+
+[sub_resource type="Animation" id="Animation_l0mci"]
+resource_name = "moverse"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(233, 120), Vector2(793, 84)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ro8x"]
+_data = {
+"RESET": SubResource("Animation_5yvhb"),
+"moverse": SubResource("Animation_l0mci")
+}
+
+[node name="PruebaPrefabs" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_t0ixm")]
+position = Vector2(238, 254)
+
+[node name="Talker" parent="." instance=ExtResource("2_p8ejw")]
+position = Vector2(162, 589)
+line = "Hello!"
+
+[node name="Label" type="Label" parent="Talker"]
+offset_left = -100.0
+offset_top = 39.0
+offset_right = 33.0
+offset_bottom = 62.0
+text = "NPC que te habla"
+
+[node name="Talker2" parent="." instance=ExtResource("2_p8ejw")]
+position = Vector2(282, 642)
+line = "¿Como estas?"
+npc_name = "Jorge"
+
+[node name="Label2" type="Label" parent="Talker2"]
+offset_left = -63.0
+offset_top = 42.0
+offset_right = 70.0
+offset_bottom = 65.0
+text = "NPC que te habla"
+
+[node name="Trader" parent="." instance=ExtResource("3_n6j3k")]
+position = Vector2(518, 642)
+item_i_give = 0
+item_i_want = 4
+
+[node name="Label3" type="Label" parent="Trader"]
+offset_left = -73.0
+offset_top = 31.0
+offset_right = 72.0
+offset_bottom = 80.0
+text = "Te cambia 1
+calabaza x 1 hueso"
+
+[node name="Trader2" parent="." instance=ExtResource("3_n6j3k")]
+position = Vector2(613, 608)
+item_i_give = 3
+item_i_want = 2
+
+[node name="Label4" type="Label" parent="Trader2"]
+offset_left = -61.0
+offset_top = -79.0
+offset_right = 84.0
+offset_bottom = -30.0
+text = "Te cambia 1
+hongo x dinero"
+
+[node name="Fighter" parent="." instance=ExtResource("4_trlkt")]
+position = Vector2(796, 572)
+
+[node name="Label5" type="Label" parent="Fighter"]
+offset_left = -31.0
+offset_top = 46.0
+offset_right = 114.0
+offset_bottom = 95.0
+text = "Combate"
+
+[node name="Fighter3" parent="." instance=ExtResource("4_trlkt")]
+position = Vector2(1134, 598)
+in_combat_character = SubResource("Resource_hpho5")
+
+[node name="Label5" type="Label" parent="Fighter3"]
+offset_left = -31.0
+offset_top = 46.0
+offset_right = 114.0
+offset_bottom = 95.0
+text = "Combate con
+un sprite distinto
+al default configurado"
+
+[node name="Fighter2" parent="." instance=ExtResource("5_3jj0a")]
+position = Vector2(949, 582)
+
+[node name="Label6" type="Label" parent="Fighter2"]
+offset_left = -48.0
+offset_top = 41.0
+offset_right = 97.0
+offset_bottom = 90.0
+text = "Combate con
+recompensa"
+
+[node name="Talker3" parent="." instance=ExtResource("2_p8ejw")]
+position = Vector2(252, 473)
+line = "Soy un NPC que habla"
+npc_name = "Juan"
+sprite_frames = ExtResource("5_w035b")
+
+[node name="Label3" type="Label" parent="Talker3"]
+offset_left = -57.0
+offset_top = 53.0
+offset_right = 76.0
+offset_bottom = 76.0
+text = "NPC que te habla"
+
+[node name="Trader3" parent="." instance=ExtResource("3_n6j3k")]
+position = Vector2(424, 526)
+item_i_give = 6
+amount_i_give = 5
+item_i_want = 2
+amount_i_want = 2
+
+[node name="Label6" type="Label" parent="Trader3"]
+offset_left = -55.0
+offset_top = -76.0
+offset_right = 92.0
+offset_bottom = -27.0
+text = "Te cambia 5 tronco
+x 2 dinero"
+
+[node name="Item" parent="." instance=ExtResource("6_yy8jn")]
+position = Vector2(129, 357)
+type = 2
+
+[node name="Item2" parent="." instance=ExtResource("6_yy8jn")]
+position = Vector2(109, 446)
+type = 2
+
+[node name="Item3" parent="." instance=ExtResource("6_yy8jn")]
+position = Vector2(46, 277)
+type = 2
+
+[node name="Item4" parent="." instance=ExtResource("6_yy8jn")]
+position = Vector2(336, 379)
+type = 2
+
+[node name="Guard" parent="." instance=ExtResource("7_inag1")]
+position = Vector2(619, 335)
+item_i_need = 2
+
+[node name="Label7" type="Label" parent="Guard"]
+offset_left = -71.0
+offset_top = 30.0
+offset_right = 76.0
+offset_bottom = 79.0
+text = "Guardia que se mueve
+hacia arriba si el das dinero"
+
+[node name="Guard2" parent="." instance=ExtResource("7_inag1")]
+position = Vector2(975, 327)
+item_i_need = 2
+direction_i_move_to = 1
+
+[node name="Label8" type="Label" parent="Guard2"]
+offset_left = -118.0
+offset_top = 32.0
+offset_right = 95.0
+offset_bottom = 81.0
+text = "Guardia que se mueve
+hacia abajo si el das dinero"
+
+[node name="Guard3" parent="." instance=ExtResource("7_inag1")]
+position = Vector2(859, 89)
+item_i_need = 2
+direction_i_move_to = 3
+
+[node name="Label9" type="Label" parent="Guard3"]
+offset_left = -99.0
+offset_top = 39.0
+offset_right = 114.0
+offset_bottom = 88.0
+text = "Guardia que se mueve
+hacia el costado si el das dinero"
+
+[node name="Guard4" parent="." instance=ExtResource("8_x5vbl")]
+position = Vector2(233, 120)
+item_i_need = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Guard4"]
+libraries = {
+"": SubResource("AnimationLibrary_3ro8x")
+}
+
+[node name="Label10" type="Label" parent="Guard4"]
+offset_left = -213.0
+offset_top = -21.0
+offset_right = 32.0
+offset_bottom = 54.0
+text = "Guardia que ejecuta
+un animation player si
+le das dinero"
+
+[node name="Cueva" parent="." instance=ExtResource("9_08kcl")]
+position = Vector2(1085, 513)
+next_scene = "res://scenes/juan_escena_prueba/recoleccion_recursos_prueba.tscn"
+
+[connection signal="received_item" from="Guard4" to="Guard4/AnimationPlayer" method="play" binds= ["moverse"]]

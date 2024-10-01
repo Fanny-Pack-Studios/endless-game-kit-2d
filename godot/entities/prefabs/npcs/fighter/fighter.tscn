@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://entities/prefabs/npcs/fighter/fighter.gd" id="1_7xabp"]
 [ext_resource type="SpriteFrames" uid="uid://bmtnwg7c71gcc" path="res://entities/characters/npcs/archer/animations/archer_purple.tres" id="2_fi7hp"]
-[ext_resource type="Resource" uid="uid://yrq2vrb1s1k6" path="res://scenes/combat/in_combat_characters/default_fight_character.tres" id="2_r0fsi"]
+[ext_resource type="Resource" uid="uid://yrq2vrb1s1k6" path="res://scenes/combat/in_combat_characters/fighter_characters/default_fighter_character.tres" id="2_r0fsi"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntg0w"]
 size = Vector2(27, 23)

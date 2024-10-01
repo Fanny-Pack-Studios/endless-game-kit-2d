@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://wnrmw3ppge5c"]
 
-[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="1_al6pv"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/multiple_choice.gd" id="1_al6pv"]
+
 
 [resource]
 script = ExtResource("1_al6pv")

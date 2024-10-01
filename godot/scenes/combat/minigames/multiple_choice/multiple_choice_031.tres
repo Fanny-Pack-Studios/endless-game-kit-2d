@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://lnmylhimchka"]
+
+[ext_resource type="Script" path="res://scenes/combat_screen/multiple_choice.gd" id="1_bs6ql"]
+
+[resource]
+script = ExtResource("1_bs6ql")
+question = "What is the opposite of \"old\"?"
+correct_answer = "New"
+answers = Array[String](["Strong", "Aasdasd", "tres", "Soft"])

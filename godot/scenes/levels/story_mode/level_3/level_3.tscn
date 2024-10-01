@@ -1,14 +1,14 @@
 [gd_scene load_steps=18 format=4 uid="uid://bx2llcrqojvbu"]
 
-[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_e1nu0"]
+[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_e1nu0"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_u3j2w"]
 [ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://entities/items/item.tscn" id="3_78505"]
 [ext_resource type="PackedScene" uid="uid://mndsxueepdkr" path="res://entities/prefabs/npcs/talker/talker.tscn" id="3_xsoqf"]
 [ext_resource type="PackedScene" uid="uid://whfe031ftcip" path="res://entities/prefabs/npcs/fighter/fighter_with_reward.tscn" id="4_y1far"]
 [ext_resource type="PackedScene" uid="uid://cphykiupy8lbk" path="res://entities/prefabs/npcs/guard/guard.tscn" id="5_ild2g"]
-[ext_resource type="Script" path="res://scenes/combat/minigame.gd" id="6_wwgm3"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/minigame.gd" id="6_wwgm3"]
 [ext_resource type="PackedScene" uid="uid://cdhdsgh775cfg" path="res://entities/prefabs/npcs/trader/trader.tscn" id="7_ah5wn"]
-[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="7_ij253"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/multiple_choice.gd" id="7_ij253"]
 [ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="8_wp7ol"]
 [ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://entities/door/door.tscn" id="9_02ecn"]
 

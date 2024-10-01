@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://c43vipg1r10nw"]
 
-[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_nxqnd"]
+[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_nxqnd"]
 [ext_resource type="Script" path="res://scenes/levels/story_mode/level_3/level_3_in_construction.gd" id="1_vgr48"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_4vln1"]
 [ext_resource type="PackedScene" uid="uid://mndsxueepdkr" path="res://entities/prefabs/npcs/talker/talker.tscn" id="3_xaev6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cu44xfcx8iagf" path="res://assets/Tiny Swords/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="5_tv3vf"]
 [ext_resource type="Texture2D" uid="uid://dvmxwhrdrxqvn" path="res://assets/Tiny Swords/Factions/Knights/Buildings/House/House_Destroyed.png" id="6_jdquf"]
 [ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://entities/door/door.tscn" id="9_h1ow6"]
+
 
 [node name="Nivel1" type="Node2D"]
 y_sort_enabled = true

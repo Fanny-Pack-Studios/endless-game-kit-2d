@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FighterCharacter" load_steps=5 format=3 uid="uid://yrq2vrb1s1k6"]
+
+[ext_resource type="Script" path="res://scenes/combat/minigames/minigame.gd" id="1_pqvkp"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/pick_any_minigame_at_random.gd" id="2_ft2qd"]
+[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="3_lpey6"]
+
+[sub_resource type="Resource" id="Resource_egswk"]
+script = ExtResource("2_ft2qd")
+
+[resource]
+script = ExtResource("3_lpey6")
+hp = 200
+attack_power = 75
+_combat_sprite = "res://scenes/combat/in_combat_characters/archer_combat_sprite.tscn"
+minigames = Array[ExtResource("1_pqvkp")]([SubResource("Resource_egswk")])

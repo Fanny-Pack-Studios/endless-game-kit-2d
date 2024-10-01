@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=4 uid="uid://d0hbgem7rmn11"]
 
-[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_u35a0"]
+[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_u35a0"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_ves3c"]
 [ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://entities/door/door.tscn" id="3_htqlv"]
 [ext_resource type="PackedScene" uid="uid://cphykiupy8lbk" path="res://entities/prefabs/npcs/guard/guard.tscn" id="4_x2ek1"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=4 uid="uid://cafkloagaunvp"]
 
-[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_7a74f"]
+[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_7a74f"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_hdyso"]
 [ext_resource type="PackedScene" uid="uid://dbbea8dbdiuvr" path="res://entities/prefabs/npcs/fighter/fighter.tscn" id="5_3ujdm"]
 

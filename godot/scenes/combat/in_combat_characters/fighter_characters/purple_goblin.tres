@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FighterCharacter" load_steps=7 format=3 uid="uid://hoegshyw5m54"]
+
+[ext_resource type="Script" path="res://scenes/combat/minigames/minigame.gd" id="1_sgx48"]
+[ext_resource type="Resource" uid="uid://c1ea41ane0pxj" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_004.tres" id="2_ox41n"]
+[ext_resource type="Resource" uid="uid://yxt328n1bimj" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_005.tres" id="3_e5pyt"]
+[ext_resource type="Resource" uid="uid://7cmno5dm7vko" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_006.tres" id="4_yooxe"]
+[ext_resource type="Resource" uid="uid://dcnf4cx0lmmrm" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_007.tres" id="5_qthca"]
+[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="6_j4ofu"]
+
+[resource]
+script = ExtResource("6_j4ofu")
+hp = 200
+attack_power = 75
+_combat_sprite = "res://scenes/combat/in_combat_characters/combat_sprites/purple_goblin_combat_sprite.tscn"
+minigames = Array[ExtResource("1_sgx48")]([ExtResource("2_ox41n"), ExtResource("3_e5pyt"), ExtResource("4_yooxe"), ExtResource("5_qthca")])

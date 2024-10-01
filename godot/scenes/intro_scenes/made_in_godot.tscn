@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmmr5jbylu08i"]
+
+[ext_resource type="Script" path="res://scenes/intro_scenes/intro_scene.gd" id="1_qgoi7"]
+[ext_resource type="PackedScene" uid="uid://c48p45rn8dnhn" path="res://scenes/intro_scenes/logos.tscn" id="2_n2mro"]
+[ext_resource type="Texture2D" uid="uid://dbleey5rqqxdn" path="res://scenes/intro_scenes/images/godot_logo.png" id="3_c3eml"]
+[ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="4_3pjjk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cbnh2"]
+font_size = 30
+
+[node name="GodotLogo" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_qgoi7")
+next_scene = ExtResource("2_n2mro")
+
+[node name="Godot" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Logo" type="TextureRect" parent="Godot"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_c3eml")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Godot"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_3pjjk")
+theme_override_font_sizes/font_size = 20
+text = "Hecho en
+Godot Engine"
+label_settings = SubResource("LabelSettings_cbnh2")
+horizontal_alignment = 1
+vertical_alignment = 1

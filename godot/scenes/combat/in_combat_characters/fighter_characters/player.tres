@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FighterCharacter" load_steps=7 format=3 uid="uid://dftjjiqyd5r22"]
+
+[ext_resource type="Script" path="res://scenes/combat/minigames/minigame.gd" id="1_he3d2"]
+[ext_resource type="Resource" uid="uid://c1ea41ane0pxj" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_004.tres" id="2_6ikc4"]
+[ext_resource type="Resource" uid="uid://yxt328n1bimj" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_005.tres" id="3_qqeff"]
+[ext_resource type="Resource" uid="uid://7cmno5dm7vko" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_006.tres" id="4_gb3m0"]
+[ext_resource type="Resource" uid="uid://dcnf4cx0lmmrm" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_007.tres" id="5_nt6si"]
+[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="6_8jdky"]
+
+[resource]
+script = ExtResource("6_8jdky")
+hp = 200
+attack_power = 75
+_combat_sprite = "res://scenes/combat/in_combat_characters/combat_sprites/player_combat_sprite.tscn"
+minigames = Array[ExtResource("1_he3d2")]([ExtResource("2_6ikc4"), ExtResource("3_qqeff"), ExtResource("4_gb3m0"), ExtResource("5_nt6si")])
