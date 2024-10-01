@@ -2,11 +2,11 @@
 extends NPC
 
 @export var npc_name: String
-@export var intro_message: String
-@export var request_meat_message: String
-@export var request_mushroom_message: String
-@export var thank_you_message: String
-@export var reward_message: String
+@export_multiline var intro_message: String
+@export_multiline var request_meat_message: String
+@export_multiline var request_mushroom_message: String
+@export_multiline var thank_you_message: String
+@export_multiline var reward_message: String
 var received_items: Array[Item.Type] = []
 var has_already_given_reward: bool = false
 
@@ -50,30 +50,12 @@ func try_to_receive(acceptable_items: Array[Item.Type]) -> bool:
 		Inventory.remove_item(chosen_item)
 		received_items.push_back(chosen_item)
 		return true
+	elif(chosen_item == null):
+		await say("Te espero aquí")
+		return false
 	else:
 		await say("Esto no es lo que quería")
 		return false
-
-func ask_for(item: Item.Type):
-	var message: String
-	match item:
-		Item.Type.Carne:
-			message = request_meat_message
-		Item.Type.Hongo:
-			message = request_mushroom_message
-	await say(message)
-	var chosen_item = await Inventory.choose_item()
-	if(chosen_item == item):
-		await say(thank_you_message)
-		Inventory.remove_item(chosen_item)
-		received_items.push_back(chosen_item)
-	elif(chosen_item != null):
-		await say("Quería %s, no %s" % [
-			Item.english_name_of(item),
-			Item.english_name_of(chosen_item),
-		])
-	else:
-		await say("Te espero aqui")
 
 
 func has_item(item: Item.Type):

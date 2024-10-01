@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx8oah73nplof"]
+
+[ext_resource type="Texture2D" uid="uid://3hr266vrc2wp" path="res://assets/Tiny Swords/UI/Buttons/Button_Hover_3Slides.png" id="1_ni4pw"]
+[ext_resource type="Texture2D" uid="uid://dc2sdtxl2ou4a" path="res://assets/Tiny Swords/UI/Buttons/Button_Disable_3Slides.png" id="2_8j3lt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cmwh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_03h6s"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("1_ni4pw")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2gig2"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("2_8j3lt")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dmj58"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 21.0
+texture = ExtResource("1_ni4pw")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[node name="NewGameButton" type="Button"]
+custom_minimum_size = Vector2(180, 0)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1cmwh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_03h6s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2gig2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dmj58")
+text = "Jugar"

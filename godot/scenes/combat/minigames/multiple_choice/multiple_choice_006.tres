@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://7cmno5dm7vko"]
+
+[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="1_qitfa"]
+
+[resource]
+script = ExtResource("1_qitfa")
+question = "The enemy will use a fire arrow, what element are you using to defend yourself?"
+correct_answer = "Water"
+answers = Array[String](["Water", "Wood", "Paper", "Grass"])

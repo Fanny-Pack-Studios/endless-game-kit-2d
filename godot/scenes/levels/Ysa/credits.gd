@@ -9,4 +9,4 @@ func _ready() -> void:
 
 # Función para cambiar a la escena del menú principal
 func _on_regresar_button_pressed() -> void:
-	get_tree().change_scene_to_file(main_menu_scene)
+	SceneChanger.change_scene_to_file(main_menu_scene)

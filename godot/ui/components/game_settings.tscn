@@ -21,27 +21,20 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-
-[node name="Empty1" type="Label" parent="MarginContainer/GridContainer"]
-layout_mode = 2
-
-[node name="Empty2" type="Label" parent="MarginContainer/GridContainer"]
-layout_mode = 2
-
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/GridContainer"]
-layout_mode = 2
-
-[node name="Empty3" type="Label" parent="MarginContainer/GridContainer"]
-layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="Volume" type="Label" parent="MarginContainer/GridContainer"]
 layout_mode = 2
-text = "volume"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Volumen"
 horizontal_alignment = 1
 
 [node name="MasterVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
 layout_mode = 2
-text = "settings_volume_master"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Volumen maestro"
 
 [node name="MasterVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
@@ -50,7 +43,9 @@ property = "mastervolume"
 
 [node name="MusicVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
 layout_mode = 2
-text = "settings_volume_music"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Volumen de música"
 
 [node name="MusicVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
@@ -59,7 +54,9 @@ property = "musicvolume"
 
 [node name="SoundVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
 layout_mode = 2
-text = "settings_volume_sound"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Volumen de sonido"
 
 [node name="SoundVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
