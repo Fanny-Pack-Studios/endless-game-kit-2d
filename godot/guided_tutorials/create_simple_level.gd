@@ -1,7 +1,7 @@
 extends GDTour
 
 const DUPLICATE = preload("res://guided_tutorials/duplicate.png")
-const SIMPLEST_LEVEL_SCENE_PATH = "res://scenes/levels/lau_niveles_de_prueba/simplest_level.tscn"
+const SIMPLEST_LEVEL_SCENE_PATH = "res://scenes/levels/example_levels/simplest_level.tscn"
 const TALKER_SCENE_PATH = "res://entities/prefabs/npcs/talker/talker.tscn"
 
 func _build() -> void:
