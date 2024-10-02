@@ -8,6 +8,7 @@
 script = ExtResource("2_ft2qd")
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("3_lpey6")
 hp = 200
 attack_power = 75

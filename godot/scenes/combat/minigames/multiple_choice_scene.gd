@@ -6,7 +6,7 @@ class_name MultipleChoiceMiniGame extends Control
 
 signal completed(points: int)
 
-const COMBAT_OPTION_BUTTON = preload("res://ui/components/button.tscn")
+const COMBAT_OPTION_BUTTON = preload("res://ui/components/game_button.tscn")
 
 func _ready():
 	setup_minigame(
@@ -21,6 +21,7 @@ func setup_minigame(question, answers, correct_answer):
 		option.queue_free()
 	for answer in answers:
 		var button = COMBAT_OPTION_BUTTON.instantiate()
+		button.text_to_voice = true
 		button.text = answer
 		options_container.add_child(button, true)
 		button.pressed.connect(func():

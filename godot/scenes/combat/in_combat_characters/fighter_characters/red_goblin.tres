@@ -1,15 +1,15 @@
-[gd_resource type="Resource" script_class="FighterCharacter" load_steps=7 format=3 uid="uid://ct024eee8owir"]
+[gd_resource type="Resource" script_class="FighterCharacter" load_steps=5 format=3 uid="uid://ct024eee8owir"]
 
 [ext_resource type="Script" path="res://scenes/combat/minigames/minigame.gd" id="1_6kl74"]
-[ext_resource type="Resource" uid="uid://c1ea41ane0pxj" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_004.tres" id="2_qrlaj"]
-[ext_resource type="Resource" uid="uid://yxt328n1bimj" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_005.tres" id="3_0wpli"]
-[ext_resource type="Resource" uid="uid://7cmno5dm7vko" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_006.tres" id="4_vjdlf"]
-[ext_resource type="Resource" uid="uid://dcnf4cx0lmmrm" path="res://scenes/combat/minigames/multiple_choice/multiple_choice_007.tres" id="5_7lvbg"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/pick_any_minigame_at_random.gd" id="2_kq5ca"]
 [ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="6_jxg38"]
+
+[sub_resource type="Resource" id="Resource_tuc7c"]
+script = ExtResource("2_kq5ca")
 
 [resource]
 script = ExtResource("6_jxg38")
 hp = 200
 attack_power = 75
 _combat_sprite = "res://scenes/combat/in_combat_characters/combat_sprites/red_goblin_combat_sprite.tscn"
-minigames = Array[ExtResource("1_6kl74")]([ExtResource("2_qrlaj"), ExtResource("3_0wpli"), ExtResource("4_vjdlf"), ExtResource("5_7lvbg")])
+minigames = Array[ExtResource("1_6kl74")]([SubResource("Resource_tuc7c")])

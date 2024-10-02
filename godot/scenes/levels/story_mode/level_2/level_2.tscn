@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dh2pepouljua5"]
+[gd_scene load_steps=26 format=4 uid="uid://dh2pepouljua5"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_jhks0"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_1tixn"]
@@ -13,10 +13,8 @@
 [ext_resource type="SpriteFrames" uid="uid://bqla3r2ryib2e" path="res://entities/characters/npcs/pawn/animations/pawn_red.tres" id="7_xbt06"]
 [ext_resource type="Script" path="res://scenes/levels/story_mode/level_2/on_shepard_got_his_sheep_back.gd" id="8_1f6o2"]
 [ext_resource type="SpriteFrames" uid="uid://bmaeq6foipkk6" path="res://entities/characters/npcs/archer/animations/archer_red.tres" id="8_vbpv8"]
-[ext_resource type="Script" path="res://scenes/combat/minigames/minigame.gd" id="9_8qoht"]
-[ext_resource type="Script" path="res://scenes/combat/minigames/multiple_choice.gd" id="10_8prft"]
 [ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://entities/items/item.tscn" id="10_bo5vl"]
-[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="11_tp5l2"]
+[ext_resource type="Resource" uid="uid://cgdm8w7oy2jyl" path="res://scenes/combat/in_combat_characters/fighter_characters/purple_archer.tres" id="10_g1v1m"]
 [ext_resource type="Script" path="res://scenes/levels/story_mode/level_2/on_sheep_thief_defeated.gd" id="13_8ghd8"]
 [ext_resource type="Script" path="res://entities/prefabs/npcs/fighter/fighter_with_reward.gd" id="16_67vsl"]
 [ext_resource type="PackedScene" uid="uid://c7ottki5juh0e" path="res://entities/trees/tree.tscn" id="20_kiqjn"]
@@ -82,25 +80,6 @@ _data = {
 "RESET": SubResource("Animation_mlqb6"),
 "sheep_appear": SubResource("Animation_xijgw")
 }
-
-[sub_resource type="Resource" id="Resource_j7cgj"]
-script = ExtResource("10_8prft")
-question = "What's the biggest one?"
-correct_answer = "planet"
-answers = Array[String](["whale", "house", "planet", "tree"])
-
-[sub_resource type="Resource" id="Resource_plrbf"]
-script = ExtResource("10_8prft")
-question = "What's the smallest one?"
-correct_answer = "atom"
-answers = Array[String](["ant", "atom", "computer", "bus"])
-
-[sub_resource type="Resource" id="Resource_wf2bq"]
-script = ExtResource("11_tp5l2")
-hp = 100
-attack_power = 40
-_combat_sprite = "res://scenes/combat/in_combat_characters/archer_combat_sprite.tscn"
-minigames = Array[ExtResource("9_8qoht")]([SubResource("Resource_j7cgj"), SubResource("Resource_plrbf")])
 
 [sub_resource type="Animation" id="Animation_hehpx"]
 length = 0.001
@@ -216,13 +195,13 @@ request_item_line = "[i]You shall not pass[/i]! Para pasar, debes traer [i]two (
 
 [node name="Shepard" parent="Characters" instance=ExtResource("7_mjvpf")]
 position = Vector2(415, 1042)
-npc_name = "Bernard the Shepard"
 only_trades_once = true
 amount_i_give = 3
 item_i_want = 5
 intro_line = "¡Qué bueno estás  [i]here[/i] Arturo!  [i]Someone [/i] se llevó  [i]one of my sheep[/i] ¿Podrías traerla de vuelta? ¡Te daré [i]gold[/i] a cambio!"
 trade_successful_line = "[i]Thanks Arturo[/i]! [i]I missed my[/i] oveja, toma tu  [i]gold[/i]"
 already_traded_line = "[i]¡Thanks a lot![/i]"
+npc_name = "Bernard the Shepard"
 _interaction_name = "Hablar"
 sprite_frames = ExtResource("7_xbt06")
 
@@ -242,12 +221,12 @@ libraries = {
 
 [node name="FighterThatHasTheSheep" parent="Characters" instance=ExtResource("7_l5rcb")]
 position = Vector2(-3, 1383)
-npc_name = "Keith the Thief"
 line = "¿Vienes por la [i]sheep[/i]? [i]I don't think so[/i], tendrás que [i]defeat me[/i] en batalla. [i]On guard![/i]"
 line_when_player_won = "[i]Oh no, I lost[/i]. Toma tu [i]sheep[/i] y lárgate."
 line_when_player_lost = "[i]Haha! Get away[/i] de aquí, [i]loser[/i]!"
 line_after_defeated = "[i]Ugh, you defeated me![/i]"
-in_combat_character = SubResource("Resource_wf2bq")
+in_combat_character = ExtResource("10_g1v1m")
+npc_name = "Keith the Thief"
 sprite_frames = ExtResource("8_vbpv8")
 
 [node name="StolenSheep" parent="Characters/FighterThatHasTheSheep" instance=ExtResource("10_bo5vl")]
@@ -265,40 +244,41 @@ libraries = {
 
 [node name="Gifter" parent="Characters" instance=ExtResource("4_3ybj8")]
 position = Vector2(1068, 1218)
-npc_name = "Brandon the random"
 item_i_gift = 1
 gifts_only_once = true
 line = "Arturo, [i] I’m so happy to see you![/i] toma esta meat de parte tu más grande [i]fan[/i]"
 line_after_ran_out_of_gifts = "[i]Enjoy![/i] "
+npc_name = "Brandon the random"
 
 [node name="Cook" parent="Characters" instance=ExtResource("4_3ybj8")]
 position = Vector2(1106, 1619)
 script = ExtResource("5_ayos1")
-npc_name = "Luke the Cook"
 intro_message = "Oh! [i]Welcome Arturo[/i], estaba a punto de cocinar, [i]but i'm missing[/i] algunos ingredientes. [i]Could you bring me a mushroom and some meat?[/i]"
 request_meat_message = "Todavía me falta [i]meat. Could you bring me some?[/i]"
 request_mushroom_message = "[i]I still need a mushroom[/i], ¿podrías traerme uno?"
 thank_you_message = "[i]Thank you![/i]"
 reward_message = "¡Toma esto como [i]reward[/i]!"
+npc_name = "Luke the Cook"
 sprite_frames = ExtResource("6_eray0")
 
 [node name="Trader" parent="Characters" instance=ExtResource("7_mjvpf")]
 position = Vector2(1960, 1246)
-npc_name = "Jack the Lumberjack"
 item_i_give = 6
 item_i_want = 2
 intro_line = "[i]You want some [/i]madera?  Un [i]log[/i] por una bolsa de [i]gold[/i], ¿que te parece?"
 trade_successful_line = "[i]Always a pleasure[/i] hacer negocios contigo"
 already_traded_line = "[i]Thanks a lot![/i]"
+npc_name = "Jack the Lumberjack"
 sprite_frames = ExtResource("5_ru6ka")
 
 [node name="Fighter" parent="Characters" instance=ExtResource("7_l5rcb")]
 position = Vector2(261, 1609)
 script = ExtResource("16_67vsl")
-npc_name = "Dwight the knight"
 line = "[i]I don't trust you![/i] No creo que seas un buen rey. [i]Draw your sword and face me![/i]"
+in_combat_character = ExtResource("10_g1v1m")
 reward_item = 3
 reward_amount = 1
+npc_name = "Dwight the knight"
 
 [node name="Sheep" type="Node2D" parent="."]
 

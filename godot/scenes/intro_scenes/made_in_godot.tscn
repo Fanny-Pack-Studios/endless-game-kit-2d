@@ -8,7 +8,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_cbnh2"]
 font_size = 30
 
-[node name="GodotLogo" type="PanelContainer"]
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 2
+
+[node name="GodotLogo" type="PanelContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,12 +23,12 @@ size_flags_vertical = 3
 script = ExtResource("1_qgoi7")
 next_scene = ExtResource("2_n2mro")
 
-[node name="Godot" type="VBoxContainer" parent="."]
+[node name="Godot" type="VBoxContainer" parent="GodotLogo"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 
-[node name="Logo" type="TextureRect" parent="Godot"]
+[node name="Logo" type="TextureRect" parent="GodotLogo/Godot"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -34,7 +37,7 @@ texture = ExtResource("3_c3eml")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Godot"]
+[node name="Label" type="Label" parent="GodotLogo/Godot"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_3pjjk")

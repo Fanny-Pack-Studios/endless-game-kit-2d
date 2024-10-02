@@ -20,7 +20,7 @@
 [ext_resource type="Script" path="res://scenes/combat/fighter_ui.gd" id="18_0ntup"]
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="19_altx3"]
 [ext_resource type="Script" path="res://scenes/combat/choose_attack.gd" id="19_umu76"]
-[ext_resource type="PackedScene" uid="uid://cl54874jf84gw" path="res://ui/components/button.tscn" id="21_tyn66"]
+[ext_resource type="PackedScene" uid="uid://cl54874jf84gw" path="res://ui/components/game_button.tscn" id="21_tyn66"]
 [ext_resource type="Script" path="res://scenes/combat/enemy_attack_minigame.gd" id="22_burgw"]
 [ext_resource type="Texture2D" uid="uid://7qjypsgo6fld" path="res://assets/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="23_1c1jq"]
 [ext_resource type="Script" path="res://scenes/combat/minigames/minigame.gd" id="24_nj7kr"]
@@ -137,7 +137,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(0, 39, 192, 141)
 
-[sub_resource type="Resource" id="Resource_vsng0"]
+[sub_resource type="Resource" id="Resource_j6ynl"]
 script = ExtResource("24_sd52g")
 
 [sub_resource type="Animation" id="Animation_eok75"]
@@ -393,18 +393,21 @@ fit_content = true
 
 [node name="Attack1" parent="ChooseAttackMenu/VBoxContainer" instance=ExtResource("21_tyn66")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 text = "Cut
 (damage = 50hp)"
 
 [node name="Attack2" parent="ChooseAttackMenu/VBoxContainer" instance=ExtResource("21_tyn66")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 text = "Slash
 (damage = 50hp)"
 
 [node name="Heal" parent="ChooseAttackMenu/VBoxContainer" instance=ExtResource("21_tyn66")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 text = "Curarse
 (heal = 30hp)"
@@ -420,7 +423,7 @@ offset_right = 634.0
 offset_bottom = 368.0
 grow_horizontal = 0
 script = ExtResource("22_burgw")
-minigames = Array[ExtResource("24_nj7kr")]([SubResource("Resource_vsng0")])
+minigames = Array[ExtResource("24_nj7kr")]([SubResource("Resource_j6ynl")])
 combat = NodePath("..")
 
 [node name="AnswerToBlock" type="RichTextLabel" parent="EnemyAttackMinigameMenu"]
@@ -461,6 +464,7 @@ offset_right = 216.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("19_altx3")
 theme_override_font_sizes/normal_font_size = 20

@@ -1,9 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://jyv4g54adkmo"]
+[gd_scene load_steps=5 format=3 uid="uid://jyv4g54adkmo"]
 
 [ext_resource type="Script" path="res://ui/overlays/pause_overlay.gd" id="1_q2yda"]
-[ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/game_settings.tscn" id="2_n78uc"]
+[ext_resource type="Texture2D" uid="uid://7qjypsgo6fld" path="res://assets/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="2_bfor1"]
+[ext_resource type="PackedScene" uid="uid://cl54874jf84gw" path="res://ui/components/game_button.tscn" id="3_2olbv"]
 
-[node name="PauseOverlay" type="CenterContainer"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w8tpm"]
+texture = ExtResource("2_bfor1")
+texture_margin_left = 64.0
+texture_margin_top = 32.0
+texture_margin_right = 64.0
+texture_margin_bottom = 64.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 39, 192, 141)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+
+[node name="Pause" type="CenterContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,44 +25,33 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q2yda")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+[node name="VBoxContainer3" type="VBoxContainer" parent="Pause"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer3"]
+[node name="Label" type="Label" parent="Pause/VBoxContainer3"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "game_paused"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_w8tpm")
+text = "Pausa"
 horizontal_alignment = 1
 
-[node name="SettingsContainer" type="VBoxContainer" parent="VBoxContainer3"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="GameSettings" parent="VBoxContainer3/SettingsContainer" instance=ExtResource("2_n78uc")]
-layout_mode = 2
-
-[node name="BackButton" type="Button" parent="VBoxContainer3/SettingsContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "return_to_menu"
-
-[node name="MenuContainer" type="VBoxContainer" parent="VBoxContainer3"]
+[node name="MenuContainer" type="VBoxContainer" parent="Pause/VBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="ResumeButton" type="Button" parent="VBoxContainer3/MenuContainer"]
+[node name="ResumeButton" parent="Pause/VBoxContainer3/MenuContainer" instance=ExtResource("3_2olbv")]
 unique_name_in_owner = true
 layout_mode = 2
-text = "resume_game"
+text = "Continuar"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer3/MenuContainer"]
+[node name="BackToMainMenuButton" parent="Pause/VBoxContainer3/MenuContainer" instance=ExtResource("3_2olbv")]
 unique_name_in_owner = true
 layout_mode = 2
-text = "settings"
+text = "Volver al menu"
 
-[node name="ExitButton" type="Button" parent="VBoxContainer3/MenuContainer"]
+[node name="ExitButton" parent="Pause/VBoxContainer3/MenuContainer" instance=ExtResource("3_2olbv")]
 unique_name_in_owner = true
 layout_mode = 2
-text = "leave_game"
+text = "Salir"

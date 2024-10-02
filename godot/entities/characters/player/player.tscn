@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://32emst0ctttf" path="res://entities/characters/player/Warrior_Blue.png" id="1_nw63t"]
 [ext_resource type="Script" path="res://entities/characters/player/player.gd" id="1_y6xbq"]
 [ext_resource type="Texture2D" uid="uid://b3pmtodft1dlv" path="res://assets/Tiny Swords/Effects/Explosion/Explosions.png" id="2_52fpm"]
-[ext_resource type="PackedScene" uid="uid://cl54874jf84gw" path="res://ui/components/button.tscn" id="4_ryjk7"]
+[ext_resource type="PackedScene" uid="uid://cl54874jf84gw" path="res://ui/components/game_button.tscn" id="4_ryjk7"]
 [ext_resource type="Script" path="res://globals/inventory/inventory_button.gd" id="5_58wdf"]
 [ext_resource type="PackedScene" uid="uid://bgr6tltrr0pji" path="res://entities/characters/player/interaction_ray_cast.tscn" id="5_kh0st"]
 
