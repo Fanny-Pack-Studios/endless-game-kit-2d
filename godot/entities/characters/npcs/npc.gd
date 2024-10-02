@@ -31,7 +31,7 @@ func interaction_name() -> String:
 func combat(
 	in_combat_character: FighterCharacter = null
 ) -> CombatScreen.Outcome:
-	var combat_scene: CombatScreen = load("res://scenes/combat/combat.tscn").instantiate()
+	var combat_scene: CombatScreen = load("res://scenes/combat/combat_screen.tscn").instantiate()
 	
 	combat_scene.configure(in_combat_character)
 	
