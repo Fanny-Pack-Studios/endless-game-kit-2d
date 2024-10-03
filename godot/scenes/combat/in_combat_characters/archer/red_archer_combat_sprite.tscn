@@ -1,9 +1,10 @@
 [gd_scene load_steps=17 format=3 uid="uid://cll61msk85hb2"]
 
-[ext_resource type="Script" path="res://scenes/combat/combat_sprite.gd" id="1_6j36y"]
+[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/combat_sprite.gd" id="1_6j36y"]
 [ext_resource type="PackedScene" uid="uid://df46gwu1em2ut" path="res://scenes/combat/in_combat_characters/combat_sprite_target.tscn" id="2_e0ft8"]
 [ext_resource type="SpriteFrames" uid="uid://bmaeq6foipkk6" path="res://entities/characters/npcs/archer/animations/archer_red.tres" id="3_6t6bn"]
 [ext_resource type="Texture2D" uid="uid://8g7vc3kr2bc3" path="res://assets/Tiny Swords/Factions/Knights/Troops/Archer/Arrow/Arrow.png" id="4_sfxkn"]
+
 
 [sub_resource type="Animation" id="Animation_xt1qj"]
 length = 0.001
