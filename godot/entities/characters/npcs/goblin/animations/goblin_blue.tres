@@ -1,7 +1,55 @@
-[gd_resource type="SpriteFrames" load_steps=16 format=3 uid="uid://cqg38l52hwj05"]
+[gd_resource type="SpriteFrames" load_steps=28 format=3 uid="uid://cqg38l52hwj05"]
 
 [ext_resource type="Texture2D" uid="uid://734sweqt1bf0" path="res://entities/characters/npcs/goblin/images/Torch_Blue.png" id="1_d70m1"]
 [ext_resource type="Texture2D" uid="uid://cfl27kbp78trl" path="res://assets/Tiny Swords/Factions/Goblins/Troops/Torch/Blue/Torch_Blue.png" id="2_j47tq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqc4b"]
+atlas = ExtResource("1_d70m1")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pil3y"]
+atlas = ExtResource("1_d70m1")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy6ah"]
+atlas = ExtResource("1_d70m1")
+region = Rect2(384, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x78v3"]
+atlas = ExtResource("1_d70m1")
+region = Rect2(576, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbvwa"]
+atlas = ExtResource("1_d70m1")
+region = Rect2(768, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oil55"]
+atlas = ExtResource("1_d70m1")
+region = Rect2(960, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6o1f"]
+atlas = ExtResource("1_d70m1")
+region = Rect2(960, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlrov"]
+atlas = ExtResource("1_d70m1")
+region = Rect2(768, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gewfv"]
+atlas = ExtResource("1_d70m1")
+region = Rect2(576, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vut5p"]
+atlas = ExtResource("1_d70m1")
+region = Rect2(576, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgavm"]
+atlas = ExtResource("1_d70m1")
+region = Rect2(768, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmh24"]
+atlas = ExtResource("1_d70m1")
+region = Rect2(960, 768, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wjvxd"]
 atlas = ExtResource("1_d70m1")
@@ -31,13 +79,13 @@ region = Rect2(960, 0, 192, 192)
 atlas = ExtResource("1_d70m1")
 region = Rect2(1152, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ve5r"]
-atlas = ExtResource("2_j47tq")
-region = Rect2(0, 192, 192, 192)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvybo"]
 atlas = ExtResource("2_j47tq")
 region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ve5r"]
+atlas = ExtResource("2_j47tq")
+region = Rect2(0, 192, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ugybx"]
 atlas = ExtResource("2_j47tq")
@@ -57,6 +105,47 @@ region = Rect2(960, 192, 192, 192)
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqc4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pil3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy6ah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x78v3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbvwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oil55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6o1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlrov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gewfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vut5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgavm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmh24")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wjvxd")
@@ -85,10 +174,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ve5r")
+"texture": SubResource("AtlasTexture_fvybo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fvybo")
+"texture": SubResource("AtlasTexture_1ve5r")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ugybx")

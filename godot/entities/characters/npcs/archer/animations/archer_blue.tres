@@ -1,6 +1,38 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://5tm3tyskys0e"]
+[gd_resource type="SpriteFrames" load_steps=16 format=3 uid="uid://5tm3tyskys0e"]
 
 [ext_resource type="Texture2D" uid="uid://bno3ffmysmbmm" path="res://entities/characters/npcs/archer/images/Archer_Blue.png" id="1_bndqf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xolv"]
+atlas = ExtResource("1_bndqf")
+region = Rect2(0, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_budgg"]
+atlas = ExtResource("1_bndqf")
+region = Rect2(192, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emlee"]
+atlas = ExtResource("1_bndqf")
+region = Rect2(384, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgnvq"]
+atlas = ExtResource("1_bndqf")
+region = Rect2(576, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw3dc"]
+atlas = ExtResource("1_bndqf")
+region = Rect2(768, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgns0"]
+atlas = ExtResource("1_bndqf")
+region = Rect2(960, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj554"]
+atlas = ExtResource("1_bndqf")
+region = Rect2(1152, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igl8m"]
+atlas = ExtResource("1_bndqf")
+region = Rect2(1344, 768, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ug06n"]
 atlas = ExtResource("1_bndqf")
@@ -28,6 +60,35 @@ region = Rect2(960, 0, 192, 168)
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xolv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_budgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emlee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgnvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw3dc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgns0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj554")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igl8m")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ug06n")
