@@ -1,18 +1,10 @@
 [gd_scene load_steps=31 format=3 uid="uid://dv61oixouybym"]
 
-<<<<<<<< HEAD:godot/scenes/combat/in_combat_characters/goblin/red_goblin_combat_sprite.tscn
-[ext_resource type="Script" path="res://scenes/combat/combat_sprite.gd" id="1_0q8m6"]
+[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/combat_sprite.gd" id="1_0q8m6"]
 [ext_resource type="PackedScene" uid="uid://df46gwu1em2ut" path="res://scenes/combat/in_combat_characters/combat_sprite_target.tscn" id="2_05f2y"]
 [ext_resource type="SpriteFrames" uid="uid://dnm04pi7yfmju" path="res://entities/characters/npcs/goblin/animations/goblin_red.tres" id="3_keblw"]
 [ext_resource type="Texture2D" uid="uid://b3pmtodft1dlv" path="res://assets/Tiny Swords/Effects/Explosion/Explosions.png" id="4_jloys"]
 [ext_resource type="Texture2D" uid="uid://fivr03wkvo0r" path="res://assets/Tiny Swords/Effects/Fire/Fire.png" id="5_4w6us"]
-========
-[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/combat_sprite.gd" id="1_lr4ua"]
-[ext_resource type="PackedScene" uid="uid://df46gwu1em2ut" path="res://scenes/combat/in_combat_characters/combat_sprite_target.tscn" id="2_1d12m"]
-[ext_resource type="SpriteFrames" uid="uid://dnm04pi7yfmju" path="res://entities/characters/npcs/goblin/animations/goblin_red.tres" id="3_2ubf1"]
-[ext_resource type="Texture2D" uid="uid://b3pmtodft1dlv" path="res://assets/Tiny Swords/Effects/Explosion/Explosions.png" id="4_wwyok"]
-[ext_resource type="Texture2D" uid="uid://fivr03wkvo0r" path="res://assets/Tiny Swords/Effects/Fire/Fire.png" id="5_7774g"]
->>>>>>>> origin/main:godot/scenes/combat/in_combat_characters/combat_sprites/red_goblin_combat_sprite.tscn
 
 
 [sub_resource type="Animation" id="Animation_dxs7e"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4m7hpwfbvru7"]
+
+[ext_resource type="Texture2D" uid="uid://b7m74oeocclu3" path="res://assets/Tiny Swords/UI/Buttons/Button_Hover.png" id="1_85su1"]
+[ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="3_3nxwh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4r8w"]
+content_margin_left = 0.0
+content_margin_right = 20.0
+content_margin_bottom = 7.0
+texture = ExtResource("1_85su1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_km6vu"]
+content_margin_left = 6.0
+texture = ExtResource("1_85su1")
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_y4fdd"]
+font = ExtResource("3_3nxwh")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12n0g"]
+size = Vector2(31, 36)
+
+[node name="Indicador_Pelea" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(670, 660)
+
+[node name="Pelea" type="Label" parent="."]
+z_index = 1
+texture_filter = 1
+offset_left = -490.0
+offset_top = -581.0
+offset_right = -446.0
+offset_bottom = -540.0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxTexture_n4r8w")
+text = "⚔️"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shadow" type="Label" parent="Pelea"]
+modulate = Color(0, 0, 0, 0.556863)
+z_as_relative = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 49.0
+offset_bottom = 47.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_km6vu")
+label_settings = SubResource("LabelSettings_y4fdd")
+horizontal_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(-467, -562)
+shape = SubResource("RectangleShape2D_12n0g")
