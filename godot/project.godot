@@ -8,12 +8,29 @@
 
 config_version=5
 
+[addons]
+
+resources_spreadsheet_view/array_color_tint=100.0
+resources_spreadsheet_view/color_rows=true
+resources_spreadsheet_view/array_min_width=128.0
+resources_spreadsheet_view/resource_preview_size=32.0
+resources_spreadsheet_view/clip_headers=false
+resources_spreadsheet_view/dupe_arrays=true
+resources_spreadsheet_view/context_menu_on_leftclick=false
+resources_spreadsheet_view/fold_docks=false
+
 [application]
 
 config/name="Gamelab GameKit"
-run/main_scene="res://scenes/boot/godot/godot_bootsplash_scene.tscn"
+run/main_scene="res://scenes/intro_scenes/made_in_godot.tscn"
 config/features=PackedStringArray("4.3")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="res://game_logo.png"
+
+[audio]
+
+general/text_to_speech=true
 
 [autoload]
 
@@ -21,6 +38,7 @@ UserSettings="*res://globals/settings/user_settings.gd"
 Dialogue="*res://globals/dialogue/dialogue.tscn"
 Inventory="*res://globals/inventory/inventory.tscn"
 SceneChanger="*res://globals/scene_changer/SceneChanger.tscn"
+PauseOverlay="*res://ui/overlays/pause_overlay.tscn"
 
 [debug]
 
@@ -28,20 +46,20 @@ gdscript/warnings/unused_signal=0
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1200
+window/size/viewport_height=912
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_height"
 mouse_cursor/custom_image="res://ui/images/01.png"
 mouse_cursor/custom_image_hotspot=Vector2(20, 20)
 mouse_cursor/tooltip_position_offset=Vector2(20, 20)
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/anim_player_refactor/plugin.cfg", "res://addons/documentation/plugin.cfg", "res://addons/godot_tours/plugin.cfg", "res://addons/zylann.editor_debugger/plugin.cfg")
+enabled=PackedStringArray("res://addons/anim_player_refactor/plugin.cfg", "res://addons/documentation/plugin.cfg", "res://addons/godot_tours/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/zylann.editor_debugger/plugin.cfg")
 
 [gui]
 
+timers/tooltip_delay_sec=0.0
 theme/custom="res://ui/theme.tres"
 
 [input]
@@ -106,10 +124,6 @@ toggle_inventory={
 ]
 }
 
-[internationalization]
-
-locale/translations_pot_files=PackedStringArray("res://addons/godot_tours/tour.gd", "res://guided_tutorials/create_simple_level.gd", "res://guided_tutorials/adding_an_npc.gd", "res://guided_tutorials/configuring_npcs.gd", "res://guided_tutorials/configuring_combat.gd")
-
 [layer_names]
 
 2d_physics/layer_1="player"
@@ -119,4 +133,4 @@ locale/translations_pot_files=PackedStringArray("res://addons/godot_tours/tour.g
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.211765, 0.239216, 0.321569, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
