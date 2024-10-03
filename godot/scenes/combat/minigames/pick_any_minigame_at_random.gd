@@ -10,11 +10,13 @@ func calculate_minigame_filepaths(base_directory):
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
-			var full_name = base_directory.path_join(file_name)
+			var full_name = base_directory.path_join(file_name).trim_suffix(".remap")
 			if dir.current_is_dir():
 				calculate_minigame_filepaths(full_name)
 			else:
-				if ResourceLoader.exists(full_name, "MiniGame") and file_name.ends_with(".tres"):
+				var resource_exists = ResourceLoader.exists(full_name)
+				var full_name_ends_in_tres = full_name.ends_with(".tres")
+				if ResourceLoader.exists(full_name) and full_name.ends_with(".tres"):
 					minigame_filepaths.push_back(full_name)
 			file_name = dir.get_next()
 

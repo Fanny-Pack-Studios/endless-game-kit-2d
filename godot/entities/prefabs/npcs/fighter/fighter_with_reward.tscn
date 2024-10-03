@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://whfe031ftcip"]
+[gd_scene load_steps=7 format=3 uid="uid://whfe031ftcip"]
 
 [ext_resource type="Script" path="res://entities/prefabs/npcs/fighter/fighter_with_reward.gd" id="1_gisx6"]
 [ext_resource type="Resource" uid="uid://yrq2vrb1s1k6" path="res://scenes/combat/in_combat_characters/fighter_characters/default_fighter_character.tres" id="2_aot1d"]
 [ext_resource type="SpriteFrames" uid="uid://bmtnwg7c71gcc" path="res://entities/characters/npcs/archer/animations/archer_purple.tres" id="2_wdeol"]
 [ext_resource type="PackedScene" uid="uid://bchbq0gh045e2" path="res://scenes/combat/in_combat_characters/combat_sprites/purple_archer_combat_sprite.tscn" id="5_cc4uh"]
+[ext_resource type="PackedScene" uid="uid://b4m7hpwfbvru7" path="res://scenes/levels/story_mode/level_credits/NPC_fight.tscn" id="5_hrdhq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntg0w"]
 size = Vector2(27, 23)
@@ -20,7 +21,7 @@ unique_name_in_owner = true
 sprite_frames = ExtResource("2_wdeol")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.301086
+frame_progress = 0.184809
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)
@@ -30,3 +31,6 @@ shape = SubResource("RectangleShape2D_ntg0w")
 visible = false
 position = Vector2(1011, 535)
 scale = Vector2(-1, 1)
+
+[node name="Indicador_Pelea" parent="." instance=ExtResource("5_hrdhq")]
+position = Vector2(1, -55)

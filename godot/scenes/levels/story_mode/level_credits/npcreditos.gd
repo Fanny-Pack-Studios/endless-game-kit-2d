@@ -1,4 +1,6 @@
+@tool
 extends NPC
+
 func interact_with(player) -> void:
 	var dialogue = [
 	"Viva el Rey!", "Viva!!!","¡Felicidades, Majestad!",

@@ -1,7 +1,7 @@
 [gd_scene load_steps=38 format=3 uid="uid://dv2y18ye8j7o0"]
 
 [ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu_scene.gd" id="1_1foie"]
-[ext_resource type="PackedScene" uid="uid://d0hbgem7rmn11" path="res://scenes/levels/story_mode/level_1/level_1.tscn" id="2_7gvr1"]
+[ext_resource type="PackedScene" uid="uid://dxnhyxcvugtcl" path="res://scenes/levels/story_mode/intro/intro_level.tscn" id="2_cqjmn"]
 [ext_resource type="PackedScene" uid="uid://g4qhvbvdm62w" path="res://scenes/menus/settings/game_settings_scene.tscn" id="3_dgs4d"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="3_kf1us"]
 [ext_resource type="PackedScene" uid="uid://cje2ilwmcadb2" path="res://scenes/levels/story_mode/level_credits/level_credits.tscn" id="4_l1ego"]
@@ -138,7 +138,7 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="MainMenuScene" type="Node2D"]
 script = ExtResource("1_1foie")
-level_1 = ExtResource("2_7gvr1")
+starting_level = ExtResource("2_cqjmn")
 settings_scene = ExtResource("3_dgs4d")
 credits_scene = ExtResource("4_l1ego")
 

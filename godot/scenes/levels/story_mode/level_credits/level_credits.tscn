@@ -30,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://k20k0rpc5f1l" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="22_kd866"]
 [ext_resource type="Texture2D" uid="uid://bdg630pcsc7hs" path="res://assets/Tiny Swords/UI/Icons/Pressed_01.png" id="23_n2sa6"]
 
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xbmv4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k8e27"]

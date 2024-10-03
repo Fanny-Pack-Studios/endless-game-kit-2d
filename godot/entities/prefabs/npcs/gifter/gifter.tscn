@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d12lxbfnq18eh"]
+[gd_scene load_steps=5 format=3 uid="uid://d12lxbfnq18eh"]
 
 [ext_resource type="Script" path="res://entities/prefabs/npcs/gifter/gifter.gd" id="1_r000p"]
-[ext_resource type="SpriteFrames" uid="uid://ci7npt77fohgu" path="res://entities/characters/npcs/pawn/animations/pawn_purple.tres" id="2_fc1uc"]
+[ext_resource type="SpriteFrames" uid="uid://b6vtb10gadjhv" path="res://entities/characters/npcs/pawn/animations/pawn_purple.tres" id="2_fc1uc"]
+[ext_resource type="PackedScene" uid="uid://bwmxgqjsq3u3i" path="res://scenes/levels/story_mode/level_credits/NPC_info.tscn" id="3_rvg4v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntg0w"]
 size = Vector2(27, 23)
@@ -9,9 +10,9 @@ size = Vector2(27, 23)
 [node name="Gifter" type="CharacterBody2D"]
 collision_layer = 6
 script = ExtResource("1_r000p")
-npc_name = "Gifter"
 line = "Can I offer you a nice pumpkin in this trying time?"
 line_after_ran_out_of_gifts = "Enjoy"
+npc_name = "Gifter"
 sprite_frames = ExtResource("2_fc1uc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -19,7 +20,11 @@ unique_name_in_owner = true
 sprite_frames = ExtResource("2_fc1uc")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.638694
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_ntg0w")
+
+[node name="Indicador_Info" parent="." instance=ExtResource("3_rvg4v")]
+position = Vector2(-1, -50)

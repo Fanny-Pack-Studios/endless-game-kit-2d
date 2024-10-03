@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dh2pepouljua5"]
+[gd_scene load_steps=31 format=4 uid="uid://dh2pepouljua5"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_jhks0"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_1tixn"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cphykiupy8lbk" path="res://entities/prefabs/npcs/guard/guard.tscn" id="4_3y6pl"]
 [ext_resource type="PackedScene" uid="uid://d12lxbfnq18eh" path="res://entities/prefabs/npcs/gifter/gifter.tscn" id="4_3ybj8"]
 [ext_resource type="Script" path="res://scenes/levels/story_mode/level_2/cook.gd" id="5_ayos1"]
-[ext_resource type="SpriteFrames" uid="uid://ci7npt77fohgu" path="res://entities/characters/npcs/pawn/animations/pawn_purple.tres" id="5_ru6ka"]
+[ext_resource type="SpriteFrames" uid="uid://b6vtb10gadjhv" path="res://entities/characters/npcs/pawn/animations/pawn_purple.tres" id="5_ru6ka"]
 [ext_resource type="SpriteFrames" uid="uid://c0qeevigwncec" path="res://entities/characters/npcs/goblin/animations/goblin_yellow.tres" id="6_eray0"]
 [ext_resource type="PackedScene" uid="uid://dbbea8dbdiuvr" path="res://entities/prefabs/npcs/fighter/fighter.tscn" id="7_l5rcb"]
 [ext_resource type="PackedScene" uid="uid://cdhdsgh775cfg" path="res://entities/prefabs/npcs/trader/trader.tscn" id="7_mjvpf"]
@@ -15,6 +15,9 @@
 [ext_resource type="SpriteFrames" uid="uid://bmaeq6foipkk6" path="res://entities/characters/npcs/archer/animations/archer_red.tres" id="8_vbpv8"]
 [ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://entities/items/item.tscn" id="10_bo5vl"]
 [ext_resource type="Resource" uid="uid://cgdm8w7oy2jyl" path="res://scenes/combat/in_combat_characters/fighter_characters/purple_archer.tres" id="10_g1v1m"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/minigame.gd" id="10_tbah6"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/pick_any_minigame_at_random.gd" id="11_qxhqs"]
+[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="12_uvy4v"]
 [ext_resource type="Script" path="res://scenes/levels/story_mode/level_2/on_sheep_thief_defeated.gd" id="13_8ghd8"]
 [ext_resource type="Script" path="res://entities/prefabs/npcs/fighter/fighter_with_reward.gd" id="16_67vsl"]
 [ext_resource type="PackedScene" uid="uid://c7ottki5juh0e" path="res://entities/trees/tree.tscn" id="20_kiqjn"]
@@ -80,6 +83,16 @@ _data = {
 "RESET": SubResource("Animation_mlqb6"),
 "sheep_appear": SubResource("Animation_xijgw")
 }
+
+[sub_resource type="Resource" id="Resource_myfom"]
+script = ExtResource("11_qxhqs")
+
+[sub_resource type="Resource" id="Resource_77q0e"]
+script = ExtResource("12_uvy4v")
+hp = 100
+attack_power = 50
+_combat_sprite = "res://scenes/combat/in_combat_characters/archer/red_archer_combat_sprite.tscn"
+minigames = Array[ExtResource("10_tbah6")]([SubResource("Resource_myfom")])
 
 [sub_resource type="Animation" id="Animation_hehpx"]
 length = 0.001
@@ -163,7 +176,7 @@ tile_map_data = PackedByteArray("AAD+/xQAFAADAAIAAAD+/xUAFAADAAIAAAAeABgAHgABAAE
 tile_set = ExtResource("1_jhks0")
 
 [node name="Player" parent="." instance=ExtResource("2_1tixn")]
-position = Vector2(102, 146)
+position = Vector2(109, 190)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
@@ -198,7 +211,7 @@ position = Vector2(415, 1042)
 only_trades_once = true
 amount_i_give = 3
 item_i_want = 5
-intro_line = "¡Qué bueno estás  [i]here[/i] Arturo!  [i]Someone [/i] se llevó  [i]one of my sheep[/i] ¿Podrías traerla de vuelta? ¡Te daré [i]gold[/i] a cambio!"
+intro_line = "¡Qué bueno que estás  [i]here[/i] Arturo!  [i]Someone [/i] se llevó  [i]one of my sheep[/i] ¿Podrías traerla de vuelta? ¡Te daré [i]gold[/i] a cambio!"
 trade_successful_line = "[i]Thanks Arturo[/i]! [i]I missed my[/i] oveja, toma tu  [i]gold[/i]"
 already_traded_line = "[i]¡Thanks a lot![/i]"
 npc_name = "Bernard the Shepard"
@@ -225,7 +238,7 @@ line = "¿Vienes por la [i]sheep[/i]? [i]I don't think so[/i], tendrás que [i]d
 line_when_player_won = "[i]Oh no, I lost[/i]. Toma tu [i]sheep[/i] y lárgate."
 line_when_player_lost = "[i]Haha! Get away[/i] de aquí, [i]loser[/i]!"
 line_after_defeated = "[i]Ugh, you defeated me![/i]"
-in_combat_character = ExtResource("10_g1v1m")
+in_combat_character = SubResource("Resource_77q0e")
 npc_name = "Keith the Thief"
 sprite_frames = ExtResource("8_vbpv8")
 

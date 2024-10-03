@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://mndsxueepdkr"]
+[gd_scene load_steps=5 format=3 uid="uid://mndsxueepdkr"]
 
 [ext_resource type="Script" path="res://entities/prefabs/npcs/talker/talker.gd" id="1_0jvfh"]
 [ext_resource type="SpriteFrames" uid="uid://cqg38l52hwj05" path="res://entities/characters/npcs/goblin/animations/goblin_blue.tres" id="2_35571"]
+[ext_resource type="PackedScene" uid="uid://bwmxgqjsq3u3i" path="res://scenes/levels/story_mode/level_credits/NPC_info.tscn" id="3_hytah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntg0w"]
 size = Vector2(27, 23)
@@ -16,8 +17,11 @@ unique_name_in_owner = true
 sprite_frames = ExtResource("2_35571")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.140212
+frame_progress = 0.385392
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_ntg0w")
+
+[node name="InfoIndicator" parent="." instance=ExtResource("3_hytah")]
+position = Vector2(0, -56)

@@ -5,7 +5,6 @@
 [ext_resource type="Script" path="res://scenes/combat/in_combat_characters/combat_sprite.gd" id="2_j2rpm"]
 [ext_resource type="Texture2D" uid="uid://8g7vc3kr2bc3" path="res://assets/Tiny Swords/Factions/Knights/Troops/Archer/Arrow/Arrow.png" id="3_ivs0l"]
 
-
 [sub_resource type="Animation" id="Animation_xt1qj"]
 length = 0.001
 tracks/0/type = "value"

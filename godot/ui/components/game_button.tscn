@@ -59,7 +59,7 @@ text = "Atacar con sword
 autowrap_mode = 3
 script = ExtResource("4_yay1e")
 
-[node name="ReadButton" type="Button" parent="."]
+[node name="ReadOutLoudButton" type="Button" parent="."]
 modulate = Color(1, 0.886275, 0, 1)
 z_index = 1
 layout_mode = 1
@@ -72,7 +72,7 @@ offset_right = 49.0
 offset_bottom = 15.0
 grow_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="ReadButton"]
+[node name="TextureRect" type="TextureRect" parent="ReadOutLoudButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

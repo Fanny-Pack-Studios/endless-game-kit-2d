@@ -9,7 +9,7 @@ script = ExtResource("2_11jwr")
 
 [resource]
 script = ExtResource("6_koxge")
-hp = 200
-attack_power = 75
+hp = 120
+attack_power = 50
 _combat_sprite = "res://scenes/combat/in_combat_characters/combat_sprites/purple_archer_combat_sprite.tscn"
 minigames = Array[ExtResource("1_hyuck")]([SubResource("Resource_lxpxc")])
