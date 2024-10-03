@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://s8me57fq7yh1"]
+
+[ext_resource type="Script" path="res://scenes/combat/minigames/multiple_choice.gd" id="1_ic3x6"]
+
+
+[resource]
+script = ExtResource("1_ic3x6")
+question = "It is important to __________ your hands before eating."
+correct_answer = "wash"
+answers = Array[String](["dry", "wash", "paint", "shake"])

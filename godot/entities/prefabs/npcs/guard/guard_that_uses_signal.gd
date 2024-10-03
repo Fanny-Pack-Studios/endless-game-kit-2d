@@ -3,7 +3,6 @@ extends NPC
 
 signal received_item
 
-@export var npc_name: String = "Guard"
 @export var item_i_need: Item.Type
 
 var has_received_item: bool = false

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://bwycwd2nch7dp"]
+
+[ext_resource type="Script" path="res://scenes/combat/minigames/multiple_choice.gd" id="1_2oe5h"]
+
+
+[resource]
+script = ExtResource("1_2oe5h")
+question = "What does \"kneel\" mean?"
+correct_answer = "Arrodillarse"
+answers = Array[String](["Pararse", "Arrodillarse", "Saltar", "Acostarse"])

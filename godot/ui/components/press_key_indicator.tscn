@@ -20,11 +20,9 @@ font = ExtResource("3_3xv0q")
 font_color = Color(0, 0, 0, 1)
 
 [node name="InteractionKey" type="Label"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(40, 40)
+offset_right = 40.0
+offset_bottom = 40.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_ttp8s")
 text = "E"
 label_settings = SubResource("LabelSettings_tmo2n")

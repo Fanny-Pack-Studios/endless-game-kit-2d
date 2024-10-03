@@ -1,5 +1,7 @@
 extends GDTour
 
+const CONFIGURING_NPCS_LEVEL_SCENE_PATH = "res://scenes/levels/example_levels/configuring_npcs_level.tscn"
+
 func _build() -> void:
 	bubble_set_title("Configurando NPCs")
 	bubble_add_text(["Ahora aprenderemos como modificar el comportamiento default de los npcs"])
@@ -7,8 +9,8 @@ func _build() -> void:
 	bubble_add_text([
 		"Comencemos abriendo una escena que ya cuenta con varios personajes"
 	])
-	bubble_add_task_open_scene("res://scenes/levels/example_levels/configuring_npcs_level.tscn")
-	highlight_filesystem_paths(["res://scenes/levels/example_levels/configuring_npcs_level.tscn"])
+	bubble_add_task_open_scene(CONFIGURING_NPCS_LEVEL_SCENE_PATH)
+	highlight_filesystem_paths([CONFIGURING_NPCS_LEVEL_SCENE_PATH])
 	complete_step()
 	bubble_add_text([
 		"Vamos a aprender a modificar los nodos a través de configurar sus propiedades en el [b]Inspector[/b]"

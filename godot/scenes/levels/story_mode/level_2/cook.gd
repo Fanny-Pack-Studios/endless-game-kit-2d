@@ -1,7 +1,6 @@
 @tool
 extends NPC
 
-@export var npc_name: String
 @export_multiline var intro_message: String
 @export_multiline var request_meat_message: String
 @export_multiline var request_mushroom_message: String

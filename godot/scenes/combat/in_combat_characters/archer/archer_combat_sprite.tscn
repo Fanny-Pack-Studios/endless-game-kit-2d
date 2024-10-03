@@ -1,0 +1,229 @@
+[gd_scene load_steps=17 format=3 uid="uid://bchbq0gh045e2"]
+
+[ext_resource type="SpriteFrames" uid="uid://bmtnwg7c71gcc" path="res://entities/characters/npcs/archer/animations/archer_purple.tres" id="1_mg5uy"]
+[ext_resource type="PackedScene" uid="uid://df46gwu1em2ut" path="res://scenes/combat/in_combat_characters/combat_sprite_target.tscn" id="2_21o2e"]
+[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/combat_sprite.gd" id="2_j2rpm"]
+[ext_resource type="Texture2D" uid="uid://8g7vc3kr2bc3" path="res://assets/Tiny Swords/Factions/Knights/Troops/Archer/Arrow/Arrow.png" id="3_ivs0l"]
+
+
+[sub_resource type="Animation" id="Animation_xt1qj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Arrow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Arrow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9.99998, 12.8)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/ArrowHitParticles:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.001),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0cv3m"]
+resource_name = "attack"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"attack", &"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Arrow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.26667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Arrow:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.566667, 1.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(9.99998, 12.8), Vector2(270, 12.8)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/ArrowHitParticles:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.36667, 1.56667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.33333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"land_hit"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_1lnoj"]
+resource_name = "hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mgwy4"]
+_data = {
+"RESET": SubResource("Animation_xt1qj"),
+"attack": SubResource("Animation_0cv3m"),
+"hurt": SubResource("Animation_1lnoj")
+}
+
+[sub_resource type="Gradient" id="Gradient_7vo67"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_47jop"]
+gradient = SubResource("Gradient_7vo67")
+
+[sub_resource type="CurveTexture" id="CurveTexture_5cbru"]
+
+[sub_resource type="Curve" id="Curve_7uuna"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0640913), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0gra8"]
+curve = SubResource("Curve_7uuna")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uxtbj"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 205.57
+initial_velocity_max = 370.45
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_0gra8")
+color_ramp = SubResource("GradientTexture1D_47jop")
+emission_curve = SubResource("CurveTexture_5cbru")
+
+[sub_resource type="Gradient" id="Gradient_rv4j1"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_djxgf"]
+gradient = SubResource("Gradient_rv4j1")
+width = 20
+height = 20
+
+[node name="CombatSprite" type="Node2D"]
+script = ExtResource("2_j2rpm")
+attack_animation_names = Array[String](["attack"])
+hurt_animation_names = Array[String](["hurt"])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mgwy4")
+}
+
+[node name="Target" parent="." instance=ExtResource("2_21o2e")]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+sprite_frames = ExtResource("1_mg5uy")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Arrow" type="Sprite2D" parent="Sprite"]
+visible = false
+position = Vector2(9.99998, 12.8)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_ivs0l")
+region_enabled = true
+region_rect = Rect2(1, 28, 63, 14)
+
+[node name="ArrowHitParticles" type="GPUParticles2D" parent="Sprite"]
+position = Vector2(273.6, 12)
+rotation = 3.14019
+scale = Vector2(1.2, 1.2)
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_uxtbj")
+texture = SubResource("GradientTexture2D_djxgf")
+one_shot = true
+explosiveness = 1.0

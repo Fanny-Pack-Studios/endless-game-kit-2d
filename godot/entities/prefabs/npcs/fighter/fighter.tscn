@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://entities/prefabs/npcs/fighter/fighter.gd" id="1_7xabp"]
 [ext_resource type="SpriteFrames" uid="uid://bmtnwg7c71gcc" path="res://entities/characters/npcs/archer/animations/archer_purple.tres" id="2_fi7hp"]
-[ext_resource type="Resource" uid="uid://yrq2vrb1s1k6" path="res://scenes/combat/in_combat_characters/default_fight_character.tres" id="2_r0fsi"]
+[ext_resource type="Resource" uid="uid://yrq2vrb1s1k6" path="res://scenes/combat/in_combat_characters/fighter_characters/default_fighter_character.tres" id="2_r0fsi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntg0w"]
 size = Vector2(27, 23)
@@ -10,9 +10,9 @@ size = Vector2(27, 23)
 [node name="Fighter" type="CharacterBody2D"]
 collision_layer = 6
 script = ExtResource("1_7xabp")
-npc_name = "Peleador"
 line = "Preparate para el combate"
 in_combat_character = ExtResource("2_r0fsi")
+npc_name = "Peleador"
 _interaction_name = "Combatir"
 sprite_frames = ExtResource("2_fi7hp")
 
@@ -21,7 +21,7 @@ unique_name_in_owner = true
 sprite_frames = ExtResource("2_fi7hp")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.0421422
+frame_progress = 0.833799
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)

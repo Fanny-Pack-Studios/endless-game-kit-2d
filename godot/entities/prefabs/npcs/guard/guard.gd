@@ -1,7 +1,6 @@
 @tool
 class_name Guard extends NPC
 
-@export var npc_name: String = "Guard"
 @export var item_i_need: Item.Type
 @export var amount_i_need: int
 @export var direction_i_move_to: Direction
