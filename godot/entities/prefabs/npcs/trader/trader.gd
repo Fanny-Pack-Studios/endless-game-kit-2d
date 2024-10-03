@@ -1,7 +1,6 @@
 @tool
 extends NPC
 
-@export var npc_name: String = "Trader"
 @export_category("Trading")
 var already_traded: bool = false
 @export var only_trades_once: bool = false

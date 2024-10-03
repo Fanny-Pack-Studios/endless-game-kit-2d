@@ -1,12 +1,34 @@
-[gd_scene load_steps=8 format=4 uid="uid://dnvc5d62ipqst"]
+[gd_scene load_steps=14 format=4 uid="uid://dnvc5d62ipqst"]
 
-[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_21eao"]
+[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_21eao"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_wevow"]
 [ext_resource type="PackedScene" uid="uid://mndsxueepdkr" path="res://entities/prefabs/npcs/talker/talker.tscn" id="3_7njt4"]
 [ext_resource type="PackedScene" uid="uid://cdhdsgh775cfg" path="res://entities/prefabs/npcs/trader/trader.tscn" id="4_i8vxv"]
 [ext_resource type="PackedScene" uid="uid://dbbea8dbdiuvr" path="res://entities/prefabs/npcs/fighter/fighter.tscn" id="5_p7fev"]
 [ext_resource type="PackedScene" uid="uid://whfe031ftcip" path="res://entities/prefabs/npcs/fighter/fighter_with_reward.tscn" id="6_ltviw"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/minigame.gd" id="6_xukxb"]
 [ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://entities/items/item.tscn" id="7_8bjnu"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/pick_any_minigame_at_random.gd" id="7_nw83t"]
+[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="8_kprqe"]
+
+[sub_resource type="Resource" id="Resource_egswk"]
+script = ExtResource("7_nw83t")
+
+[sub_resource type="Resource" id="Resource_iibm4"]
+resource_local_to_scene = true
+script = ExtResource("8_kprqe")
+hp = 200
+attack_power = 75
+_combat_sprite = "res://scenes/combat/in_combat_characters/archer_combat_sprite.tscn"
+minigames = Array[ExtResource("6_xukxb")]([SubResource("Resource_egswk")])
+
+[sub_resource type="Resource" id="Resource_mwmo0"]
+resource_local_to_scene = true
+script = ExtResource("8_kprqe")
+hp = 200
+attack_power = 75
+_combat_sprite = "res://scenes/combat/in_combat_characters/archer_combat_sprite.tscn"
+minigames = Array[ExtResource("6_xukxb")]([SubResource("Resource_egswk")])
 
 [node name="Nivel1" type="Node2D"]
 
@@ -28,15 +50,19 @@ drag_vertical_enabled = true
 
 [node name="Talker" parent="." instance=ExtResource("3_7njt4")]
 position = Vector2(692, 366)
+line = "¿Que tal?"
+npc_name = "Jose"
 
 [node name="Trader" parent="." instance=ExtResource("4_i8vxv")]
 position = Vector2(323, 379)
 
 [node name="Fighter" parent="." instance=ExtResource("5_p7fev")]
 position = Vector2(711, 184)
+in_combat_character = SubResource("Resource_iibm4")
 
 [node name="Fighter2" parent="." instance=ExtResource("6_ltviw")]
 position = Vector2(368, 192)
+in_combat_character = SubResource("Resource_mwmo0")
 
 [node name="Items" type="Node2D" parent="."]
 

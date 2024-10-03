@@ -1,16 +1,18 @@
 extends GDTour
 
 const DUPLICATE = preload("res://guided_tutorials/duplicate.png")
+const SIMPLEST_LEVEL_SCENE_PATH = "res://scenes/levels/example_levels/simplest_level.tscn"
+const TALKER_SCENE_PATH = "res://entities/prefabs/npcs/talker/talker.tscn"
 
 func _build() -> void:
 	bubble_set_title("Creando un nivel básico")
 	bubble_add_text(["Buenas, vamos a aprender a crear un nuevo nivel"])
 	bubble_add_task_open_scene(
-		"res://scenes/lau_niveles_de_prueba/simplest_level.tscn",
+		SIMPLEST_LEVEL_SCENE_PATH,
 		"Abre la escena simplest_level.tscn"
 	)
 	highlight_filesystem_paths(
-		["res://scenes/lau_niveles_de_prueba/simplest_level.tscn"]
+		[SIMPLEST_LEVEL_SCENE_PATH]
 	)
 	complete_step()
 	bubble_add_text([
@@ -19,7 +21,7 @@ func _build() -> void:
 	])
 	bubble_add_texture(DUPLICATE)
 	highlight_filesystem_paths(
-		["res://scenes/lau_niveles_de_prueba/simplest_level.tscn"]
+		[SIMPLEST_LEVEL_SCENE_PATH]
 	)
 	complete_step()
 	bubble_add_text([
@@ -43,7 +45,7 @@ func _build() -> void:
 		"Arrastra talker.tscn al arbol de nodos de la escena"
 	])
 	highlight_filesystem_paths([
-		"res://prefabs/npcs/talker/talker.tscn"
+		TALKER_SCENE_PATH
 	])
 	highlight_scene_nodes_by_name(["Nivel1"])
 	complete_step()

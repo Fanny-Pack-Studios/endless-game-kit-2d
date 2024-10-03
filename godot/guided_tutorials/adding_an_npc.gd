@@ -1,6 +1,10 @@
 extends GDTour
 
-const DUPLICATE = preload("res://guided_tutorials/duplicate.png")
+const TALKER_SCENE_PATH = "res://entities/prefabs/npcs/talker/talker.tscn"
+const TRADER_SCENE_PATH = "res://entities/prefabs/npcs/trader/trader.tscn"
+const FIGHTER_SCENE_PATH = "res://entities/prefabs/npcs/fighter/fighter.tscn"
+const GUARD_SCENE_PATH = "res://entities/prefabs/npcs/guard/guard.tscn"
+const FIGHTER_WITH_REWARD_SCENE_PATH = "res://entities/prefabs/npcs/fighter/fighter_with_reward.tscn"
 
 func _build() -> void:
 	bubble_set_title("Agregando un NPC")
@@ -15,9 +19,7 @@ func _build() -> void:
 		"Agreguemos un personaje con el cual hablar",
 		"Arrastra talker.tscn al arbol de nodos de la escena"
 	])
-	highlight_filesystem_paths([
-		"res://prefabs/npcs/talker/talker.tscn"
-	])
+	highlight_filesystem_paths([TALKER_SCENE_PATH])
 	highlight_scene_nodes_by_path(["."])
 	complete_step()
 	bubble_add_text([
@@ -39,11 +41,11 @@ func _build() -> void:
 		"Prueba agregando diferentes NPCs al nivel y corre el juego para interactuar con ellos"
 	])
 	highlight_filesystem_paths([
-		"res://prefabs/npcs/talker/talker.tscn",
-		"res://prefabs/npcs/trader/trader.tscn",
-		"res://prefabs/npcs/guard/guard.tscn",
-		"res://prefabs/npcs/fighter/fighter.tscn",
-		"res://prefabs/npcs/fighter/fighter_with_reward.tscn"
+		TALKER_SCENE_PATH,
+		TRADER_SCENE_PATH,
+		GUARD_SCENE_PATH,
+		FIGHTER_SCENE_PATH,
+		FIGHTER_WITH_REWARD_SCENE_PATH
 	], false)
 	complete_step()
 	bubble_add_text(["Bien hecho!"])

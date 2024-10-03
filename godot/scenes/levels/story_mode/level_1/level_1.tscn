@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=4 uid="uid://d0hbgem7rmn11"]
 
-[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://terrain/tilesets/tileset.tres" id="1_u35a0"]
+[ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_u35a0"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_ves3c"]
 [ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://entities/door/door.tscn" id="3_htqlv"]
 [ext_resource type="PackedScene" uid="uid://cphykiupy8lbk" path="res://entities/prefabs/npcs/guard/guard.tscn" id="4_x2ek1"]
@@ -175,15 +175,15 @@ Para que te deje pasar, debés traer un: [i][outline_size=6px][outline_color=bla
 
 [node name="Talker" parent="Characters" instance=ExtResource("7_m45ri")]
 position = Vector2(461, 187)
-npc_name = "Oscar"
 line = "¡Hola, Arturo! Tu destino es aprender inglés y reclamar tu lugar como el Rey Arturo.
 Explora el territorio y habla con quienes encuentres para descubrir tu verdadero destino
 ¡Buena suerte en tu viaje!"
+npc_name = "Oscar"
 sprite_frames = ExtResource("8_6mf6n")
 
 [node name="Talker2" parent="Characters" instance=ExtResource("7_m45ri")]
 position = Vector2(1187, 533)
-npc_name = "Michael"
 line = "Encontrarás Mushrooms y Pumpkins más adelante.
 Los Mushrooms son rojos con puntos blancos, y los Pumpkins son naranjas y redondos."
+npc_name = "Michael"
 sprite_frames = ExtResource("8_6mf6n")

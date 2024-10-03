@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d0hbgem7rmn11" path="res://scenes/levels/story_mode/level_1/level_1.tscn" id="2_7gvr1"]
 [ext_resource type="PackedScene" uid="uid://g4qhvbvdm62w" path="res://scenes/menus/settings/game_settings_scene.tscn" id="3_dgs4d"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="3_kf1us"]
-[ext_resource type="PackedScene" uid="uid://cje2ilwmcadb2" path="res://scenes/levels/Ysa/Credits.tscn" id="4_l1ego"]
+[ext_resource type="PackedScene" uid="uid://cje2ilwmcadb2" path="res://scenes/levels/story_mode/level_credits/level_credits.tscn" id="4_l1ego"]
 [ext_resource type="PackedScene" uid="uid://dx8oah73nplof" path="res://ui/components/menu_button.tscn" id="6_3vfbt"]
 [ext_resource type="Texture2D" uid="uid://b8iqcply3e08i" path="res://scenes/menus/main_menu/principal.gif.png/54309ca39e894f34d07e48f9f881f3b5lp33WBg11IIVIMQg-0.png" id="8_6rg4w"]
 [ext_resource type="Texture2D" uid="uid://btj7hsqh1b0al" path="res://scenes/menus/main_menu/principal.gif.png/54309ca39e894f34d07e48f9f881f3b5lp33WBg11IIVIMQg-1.png" id="9_kmpfa"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MultipleChoice" load_steps=2 format=3 uid="uid://c1cy5fm34y0bx"]
+
+[ext_resource type="Script" path="res://scenes/combat/minigames/multiple_choice.gd" id="1_qvjku"]
+
+
+[resource]
+script = ExtResource("1_qvjku")
+question = "What is the opposite of \"old\"?"
+correct_answer = "New"
+answers = Array[String](["Strong", "New", "Weak", "Soft"])

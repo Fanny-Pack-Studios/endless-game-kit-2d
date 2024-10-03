@@ -5,6 +5,7 @@
 
 [node name="Dialogue" type="CanvasLayer"]
 process_mode = 3
+layer = 5
 script = ExtResource("1_h5npq")
 character_name_color = Color(1, 1, 1, 1)
 character_name_outline_color = Color(0.380392, 0.596078, 1, 1)

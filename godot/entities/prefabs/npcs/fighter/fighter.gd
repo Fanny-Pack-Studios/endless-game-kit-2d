@@ -2,7 +2,6 @@
 extends NPC
 
 @export_category("Character")
-@export var npc_name: String = "Robert"
 @export_multiline var line: String = "Hola!"
 @export var line_when_player_won: String = "Ganaste!"
 @export var line_when_player_lost: String = "Perdiste!"
