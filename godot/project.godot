@@ -55,7 +55,7 @@ mouse_cursor/tooltip_position_offset=Vector2(20, 20)
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/anim_player_refactor/plugin.cfg", "res://addons/documentation/plugin.cfg", "res://addons/godot_tours/plugin.cfg", "res://addons/repl/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/zylann.editor_debugger/plugin.cfg")
+enabled=PackedStringArray("res://addons/anim_player_refactor/plugin.cfg", "res://addons/documentation/plugin.cfg", "res://addons/godot_tours/plugin.cfg", "res://addons/repl/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg")
 
 [file_customization]
 

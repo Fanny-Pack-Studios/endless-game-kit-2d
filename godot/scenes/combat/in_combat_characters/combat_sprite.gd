@@ -26,11 +26,14 @@ func play_hurt() -> void:
 
 func play_one_of(animation_names) -> void:
 	if animation_names.is_empty():
+		await get_tree().process_frame
 		return
 
 	var animation: String = animation_names.pick_random()
 
-	if(animation):
+	if(animation in animation_player.get_animation_list()):
 		animation_player.play(animation)
 
 		await animation_player.animation_finished
+	else:
+		await get_tree().process_frame

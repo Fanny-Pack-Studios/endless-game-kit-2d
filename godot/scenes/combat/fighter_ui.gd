@@ -13,6 +13,7 @@ var current_health: int
 @export var attack_power: int = 10
 @export var heal_power: int = 10
 
+var already_attacked_this_turn: bool = false
 
 func _ready():
 	if(not combat_sprite):
@@ -23,12 +24,21 @@ func _ready():
 	combat_sprite.hit_landed.connect(self.on_sprite_animation_hit_landed)
 
 
-func on_sprite_animation_hit_landed():
+func attack():
+	already_attacked_this_turn = true
 	opponent.be_hurted(attack_power)
 
+
+func on_sprite_animation_hit_landed():
+	attack()
+
+
 func play_attack():
+	already_attacked_this_turn = false
 	z_index += 1
 	await combat_sprite.play_attack()
+	if(not already_attacked_this_turn):
+		attack()
 	z_index -= 1
 
 

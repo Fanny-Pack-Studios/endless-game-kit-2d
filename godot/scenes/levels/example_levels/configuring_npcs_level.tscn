@@ -13,6 +13,7 @@
 
 [sub_resource type="Resource" id="Resource_egswk"]
 script = ExtResource("7_nw83t")
+minigames_path = "res://scenes/combat/minigames"
 
 [sub_resource type="Resource" id="Resource_iibm4"]
 resource_local_to_scene = true
