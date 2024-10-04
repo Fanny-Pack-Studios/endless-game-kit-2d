@@ -455,6 +455,11 @@ func bubble_add_task(description: String, repeat: int, repeat_callable: Callable
 	queue_command(func() -> void: bubble.add_task(description, repeat, repeat_callable, error_predicate))
 
 
+func step(block):
+	block.call()
+	complete_step()
+
+
 func bubble_add_task_press_button(button: Button, description := "") -> void:
 	var text: String = description
 	if text.is_empty():

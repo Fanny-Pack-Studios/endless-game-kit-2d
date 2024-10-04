@@ -63,5 +63,5 @@ unique_name_in_owner = true
 mouse_default_cursor_shape = 2
 theme = SubResource("Theme_l356x")
 theme_override_font_sizes/font_size = 14
-text = "GODOT TOURS"
+text = "TUTORIALES"
 script = ExtResource("1_m0m61")

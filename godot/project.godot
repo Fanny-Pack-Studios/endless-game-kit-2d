@@ -55,7 +55,20 @@ mouse_cursor/tooltip_position_offset=Vector2(20, 20)
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/anim_player_refactor/plugin.cfg", "res://addons/documentation/plugin.cfg", "res://addons/godot_tours/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/zylann.editor_debugger/plugin.cfg")
+enabled=PackedStringArray("res://addons/anim_player_refactor/plugin.cfg", "res://addons/documentation/plugin.cfg", "res://addons/godot_tours/plugin.cfg", "res://addons/repl/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/zylann.editor_debugger/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray",
+"res://assets/": "green",
+"res://entities/": "green",
+"res://globals/": "orange",
+"res://guided_tutorials/": "gray",
+"res://scenes/": "green",
+"res://script_templates/": "gray",
+"res://ui/": "orange"
+}
 
 [gui]
 
@@ -126,7 +139,8 @@ toggle_inventory={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://addons/godot_tours/tour.gd", "res://guided_tutorials/create_simple_level.gd", "res://guided_tutorials/adding_an_npc.gd", "res://guided_tutorials/configuring_npcs.gd", "res://guided_tutorials/configuring_combat.gd")
+locale/translations=PackedStringArray("res://translations/es.po", "res://translations/es.mo")
+locale/translations_pot_files=PackedStringArray("res://addons/godot_tours/ui/ui_welcome_menu.gd", "res://addons/godot_tours/tour.gd", "res://guided_tutorials/create_simple_level.gd", "res://guided_tutorials/adding_an_npc.gd", "res://guided_tutorials/configuring_npcs.gd", "res://guided_tutorials/configuring_combat.gd")
 
 [layer_names]
 

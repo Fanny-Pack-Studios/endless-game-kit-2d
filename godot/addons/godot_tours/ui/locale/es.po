@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+
+msgid "NEXT STEP"
+msgstr "Siguiente"
+
+msgid "BACK"
+msgstr "Atrás"
+
+msgid "END TOUR AND CONTINUE LEARNING"
+msgstr "Terminar tutorial y continuar"
+
+msgid "NO"
+msgstr "No"
+
+msgid "YES"
+msgstr "Sí"
+
+msgid "Close the tour?"
+msgstr "¿Cerrar el tutorial?"
+
+msgid "Your progress will be lost."
+msgstr "Tu progreso se perderá"
+
+msgid "Welcome to Godot Tour!"
+msgstr "Top Down Gamekit"
+
+msgid "START LEARNING"
+msgstr "Comenzar"
+
+msgid "Reset the tour?"
+msgstr "¿Resetear el tutorial?"
+
+msgid ""
+"Do you want to reset %s?\n"
+"This will reset the files to the tour starting point, overwriting your "
+"changes."
+msgstr "¿Deseas resetear %s?"

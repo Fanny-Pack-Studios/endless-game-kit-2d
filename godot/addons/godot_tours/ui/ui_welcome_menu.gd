@@ -46,10 +46,10 @@ func _ready() -> void:
 
 func setup(translation_service: TranslationService, tour_list: GodotTourList) -> void:
 	Utils.update_locale(translation_service, {
-		label_title: {text = "Welcome to Godot Tour!"},
-		button_start_learning: {text = "START LEARNING"},
-		button_reset_no: {text = "NO"},
-		button_reset_yes: {text = "YES"},
+		label_title: {text = TranslationServer.translate("Welcome to Godot Tour!")},
+		button_start_learning: {text = TranslationServer.translate("START LEARNING")},
+		button_reset_no: {text = TranslationServer.translate("NO")},
+		button_reset_yes: {text = TranslationServer.translate("YES")},
 	})
 
 	button_close.pressed.connect(func emit_closed_and_free() -> void:

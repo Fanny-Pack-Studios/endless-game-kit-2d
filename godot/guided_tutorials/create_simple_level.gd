@@ -63,5 +63,3 @@ func _build() -> void:
 	complete_step()
 	bubble_add_text(["Bien hecho!"])
 	complete_step()
-
-	
