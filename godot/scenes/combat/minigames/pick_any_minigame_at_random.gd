@@ -34,5 +34,9 @@ func scene() -> MiniGameScene:
 	if(minigame_filepaths.is_empty()):
 		calculate_minigame_filepaths(minigames_path)
 	var minigame_filepath = minigame_filepaths.pick_random()
-	var minigame: MultipleChoice = load(minigame_filepath)
-	return minigame.scene()
+	var minigame = load(minigame_filepath)
+	if minigame is MiniGame:
+		return minigame.scene()
+	else:
+		minigame_filepaths.erase(minigame_filepath)
+		return scene()

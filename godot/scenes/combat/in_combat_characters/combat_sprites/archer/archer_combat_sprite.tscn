@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://cll61msk85hb2"]
+[gd_scene load_steps=17 format=3 uid="uid://bchbq0gh045e2"]
 
-[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/combat_sprite.gd" id="1_6j36y"]
-[ext_resource type="PackedScene" uid="uid://df46gwu1em2ut" path="res://scenes/combat/in_combat_characters/combat_sprite_target.tscn" id="2_e0ft8"]
-[ext_resource type="SpriteFrames" uid="uid://bmaeq6foipkk6" path="res://entities/characters/npcs/archer/animations/archer_red.tres" id="3_6t6bn"]
-[ext_resource type="Texture2D" uid="uid://8g7vc3kr2bc3" path="res://assets/Tiny Swords/Factions/Knights/Troops/Archer/Arrow/Arrow.png" id="4_sfxkn"]
-
+[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/combat_sprite.gd" id="1_4bah4"]
+[ext_resource type="PackedScene" uid="uid://df46gwu1em2ut" path="res://scenes/combat/in_combat_characters/combat_sprite_target.tscn" id="2_0sowp"]
+[ext_resource type="SpriteFrames" uid="uid://bmtnwg7c71gcc" path="res://entities/characters/npcs/archer/animations/archer_purple.tres" id="3_nsjun"]
+[ext_resource type="Texture2D" uid="uid://8g7vc3kr2bc3" path="res://assets/Tiny Swords/Factions/Knights/Troops/Archer/Arrow/Arrow.png" id="4_mydyt"]
 
 [sub_resource type="Animation" id="Animation_xt1qj"]
 length = 0.001
@@ -192,7 +191,7 @@ width = 20
 height = 20
 
 [node name="CombatSprite" type="Node2D"]
-script = ExtResource("1_6j36y")
+script = ExtResource("1_4bah4")
 attack_animation_names = Array[String](["attack"])
 hurt_animation_names = Array[String](["hurt"])
 
@@ -201,11 +200,11 @@ libraries = {
 "": SubResource("AnimationLibrary_mgwy4")
 }
 
-[node name="Target" parent="." instance=ExtResource("2_e0ft8")]
+[node name="Target" parent="." instance=ExtResource("2_0sowp")]
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.5, 2.5)
-sprite_frames = ExtResource("3_6t6bn")
+sprite_frames = ExtResource("3_nsjun")
 animation = &"idle"
 autoplay = "idle"
 
@@ -213,7 +212,7 @@ autoplay = "idle"
 visible = false
 position = Vector2(9.99998, 12.8)
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("4_sfxkn")
+texture = ExtResource("4_mydyt")
 region_enabled = true
 region_rect = Rect2(1, 28, 63, 14)
 

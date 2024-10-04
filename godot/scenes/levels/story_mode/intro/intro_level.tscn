@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://dxnhyxcvugtcl"]
+[gd_scene load_steps=56 format=4 uid="uid://dxnhyxcvugtcl"]
 
 [ext_resource type="Script" path="res://scenes/levels/story_mode/intro/intro_level.gd" id="1_7080m"]
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_dy1ve"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://mndsxueepdkr" path="res://entities/prefabs/npcs/talker/talker.tscn" id="9_8x6ep"]
 [ext_resource type="SpriteFrames" uid="uid://bmtnwg7c71gcc" path="res://entities/characters/npcs/archer/animations/archer_purple.tres" id="9_ow7yv"]
 [ext_resource type="SpriteFrames" uid="uid://0nvbd1cionvf" path="res://entities/characters/npcs/pawn/animations/pawn_blue.tres" id="10_wla5j"]
+[ext_resource type="AudioStream" uid="uid://cpc8cviu38y80" path="res://assets/sounds/592023__c-v__sword-drawn.wav" id="11_ymnel"]
 [ext_resource type="Texture2D" uid="uid://cyy6kc6odeekh" path="res://entities/characters/player/sword.png" id="13_80iul"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8h3ms"]
@@ -457,7 +458,7 @@ tracks/14/keys = {
 
 [sub_resource type="Animation" id="Animation_111yw"]
 resource_name = "intro"
-length = 30.0
+length = 35.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -465,7 +466,7 @@ tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(5.13333, 6.13333, 7.6, 8.2, 8.53333, 9.2, 28.8, 29.4, 29.7333, 30.4),
+"times": PackedFloat32Array(5.13333, 6.13333, 8.56667, 9.16667, 11.8, 12.4667, 32.0667, 32.6667, 33, 33.6667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
@@ -513,7 +514,7 @@ tracks/4/path = NodePath("Arturo:animation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 8.5),
+"times": PackedFloat32Array(0, 11.7667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [&"swordless", &"idle"]
@@ -525,7 +526,7 @@ tracks/5/path = NodePath("Sword:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.0333338, 8.5),
+"times": PackedFloat32Array(0.0333338, 11.7667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -549,7 +550,7 @@ tracks/7/path = NodePath("Characters:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 8.46667),
+"times": PackedFloat32Array(0, 11.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -561,7 +562,7 @@ tracks/8/path = NodePath("Characters/Npc3:scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(9.8, 10.1333, 11.0333),
+"times": PackedFloat32Array(13.0667, 13.4, 14.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [Vector2(-1, 1), Vector2(1, 1), Vector2(-1, 1)]
@@ -573,7 +574,7 @@ tracks/9/path = NodePath("Characters/Npc4:scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(9.73333, 10.8, 12.1),
+"times": PackedFloat32Array(13, 14.0667, 15.3667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [Vector2(-1, 1), Vector2(1, 1), Vector2(-1, 1)]
@@ -585,7 +586,7 @@ tracks/10/path = NodePath("Message:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(13.7, 14.6, 18.5, 19.0667),
+"times": PackedFloat32Array(16.9667, 17.8667, 21.7667, 22.3334),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -597,7 +598,7 @@ tracks/11/path = NodePath("Message2:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(15.1, 15.6667, 18.8333, 19.5),
+"times": PackedFloat32Array(18.3667, 18.9334, 22.1, 22.7667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -609,7 +610,7 @@ tracks/12/path = NodePath("Message3:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(15.5667, 16.1333, 19, 20.4667),
+"times": PackedFloat32Array(18.8334, 19.4, 22.2667, 23.7334),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -621,7 +622,7 @@ tracks/13/path = NodePath("Message4:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(24.8, 25.4333),
+"times": PackedFloat32Array(28.0667, 28.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -633,11 +634,26 @@ tracks/14/path = NodePath("Arturo:flip_h")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(20.9667, 21.7333, 22.6, 23.3333, 24.1333),
+"times": PackedFloat32Array(24.2334, 25, 25.8667, 26.6, 27.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [false, true, false, true, false]
 }
+tracks/15/type = "audio"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("AudioStreamPlayer")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_ymnel")
+}],
+"times": PackedFloat32Array(7.9)
+}
+tracks/15/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j24wq"]
 _data = {
@@ -879,3 +895,5 @@ text = "Un día, Arturo Lopez
 despertó en un mundo desconocido..."
 label_settings = SubResource("LabelSettings_y40g2")
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

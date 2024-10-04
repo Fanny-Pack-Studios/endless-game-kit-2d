@@ -1,12 +1,13 @@
-[gd_scene load_steps=32 format=3 uid="uid://dkrk0a13egeai"]
+[gd_scene load_steps=32 format=3 uid="uid://khruhmnas1l5"]
 
-[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/combat_sprite.gd" id="1_5kysk"]
-[ext_resource type="PackedScene" uid="uid://df46gwu1em2ut" path="res://scenes/combat/in_combat_characters/combat_sprite_target.tscn" id="2_10mdc"]
-[ext_resource type="SpriteFrames" uid="uid://bbffvahvhxwyj" path="res://entities/characters/npcs/goblin/animations/goblin_purple.tres" id="3_xerbq"]
-[ext_resource type="Texture2D" uid="uid://b3pmtodft1dlv" path="res://assets/Tiny Swords/Effects/Explosion/Explosions.png" id="4_4v7sw"]
-[ext_resource type="Texture2D" uid="uid://fivr03wkvo0r" path="res://assets/Tiny Swords/Effects/Fire/Fire.png" id="5_ou5ey"]
+[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/combat_sprite.gd" id="1_qur75"]
+[ext_resource type="PackedScene" uid="uid://df46gwu1em2ut" path="res://scenes/combat/in_combat_characters/combat_sprite_target.tscn" id="2_blfy4"]
+[ext_resource type="SpriteFrames" uid="uid://c0qeevigwncec" path="res://entities/characters/npcs/goblin/animations/goblin_yellow.tres" id="3_wqibr"]
+[ext_resource type="Texture2D" uid="uid://b3pmtodft1dlv" path="res://assets/Tiny Swords/Effects/Explosion/Explosions.png" id="4_7exxr"]
+[ext_resource type="Texture2D" uid="uid://fivr03wkvo0r" path="res://assets/Tiny Swords/Effects/Fire/Fire.png" id="5_l1tkx"]
 
-[sub_resource type="Animation" id="Animation_fy4k1"]
+
+[sub_resource type="Animation" id="Animation_dxs7e"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -18,7 +19,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(-5.99994, 3)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -35,19 +36,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:scale")
+tracks/2/path = NodePath("AnimatedSprite2D:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2.5, 2.5)]
+"update": 1,
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimatedSprite2D:visible")
+tracks/3/path = NodePath("AnimatedSprite2D2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -59,7 +60,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AnimatedSprite2D2:visible")
+tracks/4/path = NodePath("AnimatedSprite2D3:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -68,44 +69,32 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AnimatedSprite2D3:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
-[sub_resource type="Animation" id="Animation_udwom"]
+[sub_resource type="Animation" id="Animation_5fujn"]
 resource_name = "attack"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.533333, 1),
+"times": PackedFloat32Array(0, 0.6, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(659, 3), Vector2(-5.99994, 3)]
+"values": [Vector2(-5.99994, 3), Vector2(595, 9), Vector2(6.10352e-05, 8)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Sprite:rotation")
-tracks/1/interp = 2
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.333333, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 12.5664, 0.0]
+"values": [0.0, 12.5664, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -114,7 +103,7 @@ tracks/2/path = NodePath("AnimatedSprite2D:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.466667, 0.766667),
+"times": PackedFloat32Array(0.333333, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -126,7 +115,7 @@ tracks/3/path = NodePath("AnimatedSprite2D2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.466667, 0.766667),
+"times": PackedFloat32Array(0.333333, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -138,7 +127,7 @@ tracks/4/path = NodePath("AnimatedSprite2D3:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.466667, 0.766667),
+"times": PackedFloat32Array(0.333333, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -150,7 +139,7 @@ tracks/5/path = NodePath(".")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.466667),
+"times": PackedFloat32Array(0.333333),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -158,27 +147,26 @@ tracks/5/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_y10o3"]
-resource_name = "recibi_danio"
-length = 0.5
+[sub_resource type="Animation" id="Animation_k20ik"]
+resource_name = "recbir_daño"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:scale")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.233333, 0.433333, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2.5, 2.5), Vector2(5, 0.1), Vector2(2.5, 2.5)]
+"values": [Vector2(-5.99994, 3), Vector2(-10, 15), Vector2(-96, 13), Vector2(-15, 18)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_uv153"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nipo0"]
 _data = {
-"RESET": SubResource("Animation_fy4k1"),
-"attack": SubResource("Animation_udwom"),
-"recibi_danio": SubResource("Animation_y10o3")
+"RESET": SubResource("Animation_dxs7e"),
+"attack": SubResource("Animation_5fujn"),
+"recbir_daño": SubResource("Animation_k20ik")
 }
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u08j6"]
@@ -249,31 +237,31 @@ width = 4
 height = 20
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gcwf"]
-atlas = ExtResource("5_ou5ey")
+atlas = ExtResource("5_l1tkx")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3ah5"]
-atlas = ExtResource("5_ou5ey")
+atlas = ExtResource("5_l1tkx")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xogar"]
-atlas = ExtResource("5_ou5ey")
+atlas = ExtResource("5_l1tkx")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xv0dy"]
-atlas = ExtResource("5_ou5ey")
+atlas = ExtResource("5_l1tkx")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1u3f"]
-atlas = ExtResource("5_ou5ey")
+atlas = ExtResource("5_l1tkx")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjps1"]
-atlas = ExtResource("5_ou5ey")
+atlas = ExtResource("5_l1tkx")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxehj"]
-atlas = ExtResource("5_ou5ey")
+atlas = ExtResource("5_l1tkx")
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k2ix1"]
@@ -306,23 +294,23 @@ animations = [{
 }]
 
 [node name="CombatSprite" type="Node2D"]
-script = ExtResource("1_5kysk")
+script = ExtResource("1_qur75")
 attack_animation_names = Array[String](["attack"])
-hurt_animation_names = Array[String](["recibi_danio"])
+hurt_animation_names = Array[String](["recbir_daño"])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_uv153")
+"": SubResource("AnimationLibrary_nipo0")
 }
 
-[node name="Target" parent="." instance=ExtResource("2_10mdc")]
+[node name="Target" parent="." instance=ExtResource("2_blfy4")]
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5.99994, 3)
 scale = Vector2(2.5, 2.5)
-sprite_frames = ExtResource("3_xerbq")
+sprite_frames = ExtResource("3_wqibr")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.368502
 
 [node name="ExplosionParticles" type="GPUParticles2D" parent="Sprite"]
 z_index = 100
@@ -331,7 +319,7 @@ position = Vector2(75.6, -6.8)
 scale = Vector2(0.4, 0.4)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_6e5aa")
-texture = ExtResource("4_4v7sw")
+texture = ExtResource("4_7exxr")
 
 [node name="AttackParticles" type="GPUParticles2D" parent="Sprite"]
 z_index = 100
