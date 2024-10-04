@@ -32,6 +32,12 @@ func _on_settings_button_pressed() -> void:
 	
 func _on_play(level) -> void:
 	next_scene = level
+	create_tween().tween_property(
+		$AudioStreamPlayer,
+		"volume_db",
+		-80,
+		4.0
+	)
 	overlay.fade_out()
 
 func _on_exit_button_pressed() -> void:

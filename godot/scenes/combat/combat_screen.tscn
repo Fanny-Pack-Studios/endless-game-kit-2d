@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://n0siq684nkln"]
+[gd_scene load_steps=52 format=4 uid="uid://n0siq684nkln"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_2b2nm"]
 [ext_resource type="Script" path="res://scenes/combat/combat_screen.gd" id="1_2mq25"]
@@ -31,6 +31,8 @@
 [ext_resource type="Texture2D" uid="uid://bk4a5uq2ctxfa" path="res://assets/Tiny Swords/UI/Buttons/Button_Red.png" id="30_fmxhc"]
 [ext_resource type="PackedScene" uid="uid://bchbq0gh045e2" path="res://scenes/combat/in_combat_characters/combat_sprites/purple_archer_combat_sprite.tscn" id="30_kqtiq"]
 [ext_resource type="Texture2D" uid="uid://dmgyd3cc36nyw" path="res://assets/Tiny Swords/UI/Buttons/Button_Red_Pressed.png" id="31_q7j5i"]
+[ext_resource type="AudioStream" uid="uid://dtb82lutc7pw7" path="res://assets/sounds/698375__sieuamthanh__happy-8bit-pixel-adenture-30.wav" id="32_u0vyi"]
+[ext_resource type="AudioStream" uid="uid://cmvw64u16brep" path="res://assets/sounds/521642__fupicat__winharpsichord.wav" id="33_4pcem"]
 
 [sub_resource type="Animation" id="Animation_7x3hf"]
 length = 0.001
@@ -616,3 +618,11 @@ grow_vertical = 2
 text = "?"
 label_settings = SubResource("LabelSettings_nt2du")
 horizontal_alignment = 1
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("32_u0vyi")
+volume_db = -12.0
+autoplay = true
+
+[node name="VictoryFanfare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_4pcem")

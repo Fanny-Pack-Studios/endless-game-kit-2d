@@ -6,6 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_tuc7c"]
 script = ExtResource("2_kq5ca")
+minigames_path = "res://scenes/combat/minigames"
 
 [resource]
 script = ExtResource("6_jxg38")

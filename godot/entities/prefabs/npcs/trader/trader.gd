@@ -12,6 +12,7 @@ var already_traded: bool = false
 @export_multiline var intro_line: String = ""
 @export_multiline var trade_successful_line: String = "Un placer hacer negocios"
 @export_multiline var already_traded_line: String = "¡Thanks a lot!"
+@onready var successful_trade_sound = $SuccessfulTradeSound
 
 signal traded_successfully
 
@@ -53,6 +54,7 @@ func interact_with(_player):
 			await say("No tienes suficientes %ss" % Item.english_name_of(item_i_want))
 		else:
 			traded_successfully.emit()
+			successful_trade_sound.play()
 			already_traded = true
 			for i in range(0, amount_i_want):
 				Inventory.remove_item(item_i_want)

@@ -1,16 +1,22 @@
-[gd_scene load_steps=10 format=4 uid="uid://mv5ghj7630u0"]
+[gd_scene load_steps=11 format=4 uid="uid://mv5ghj7630u0"]
 
 [ext_resource type="Script" path="res://scenes/levels/example_levels/example_combat.gd" id="1_cqvvq"]
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_vjl1o"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_7iuwi"]
 [ext_resource type="PackedScene" uid="uid://dbbea8dbdiuvr" path="res://entities/prefabs/npcs/fighter/fighter.tscn" id="3_gs63t"]
 [ext_resource type="Script" path="res://scenes/combat/minigames/minigame.gd" id="4_pa27c"]
-[ext_resource type="Script" path="res://scenes/combat/minigames/pick_any_minigame_at_random.gd" id="5_d6kwi"]
 [ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="6_5vw4v"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/answer_correctly.gd" id="6_cy6t7"]
 
-[sub_resource type="Resource" id="Resource_egswk"]
-script = ExtResource("5_d6kwi")
-minigames_path = "res://scenes/combat/minigames"
+[sub_resource type="Resource" id="Resource_5bl8n"]
+script = ExtResource("6_cy6t7")
+correct_answer = "red"
+question = "What's the translation for ROJO?"
+
+[sub_resource type="Resource" id="Resource_fujjw"]
+script = ExtResource("6_cy6t7")
+correct_answer = "big"
+question = "What's the opposite of small?"
 
 [sub_resource type="Resource" id="Resource_r3om4"]
 resource_local_to_scene = true
@@ -18,7 +24,7 @@ script = ExtResource("6_5vw4v")
 hp = 200
 attack_power = 75
 _combat_sprite = "res://scenes/combat/in_combat_characters/archer/archer_combat_sprite.tscn"
-minigames = Array[ExtResource("4_pa27c")]([SubResource("Resource_egswk")])
+minigames = Array[ExtResource("4_pa27c")]([SubResource("Resource_5bl8n"), SubResource("Resource_fujjw"), null])
 
 [node name="Nivel1" type="Node2D"]
 script = ExtResource("1_cqvvq")

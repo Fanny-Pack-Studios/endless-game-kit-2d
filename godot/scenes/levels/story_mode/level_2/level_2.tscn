@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dh2pepouljua5"]
+[gd_scene load_steps=33 format=4 uid="uid://dh2pepouljua5"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_jhks0"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_1tixn"]
@@ -22,6 +22,8 @@
 [ext_resource type="Script" path="res://entities/prefabs/npcs/fighter/fighter_with_reward.gd" id="16_67vsl"]
 [ext_resource type="PackedScene" uid="uid://c7ottki5juh0e" path="res://entities/trees/tree.tscn" id="20_kiqjn"]
 [ext_resource type="PackedScene" uid="uid://syc3gtucf4yi" path="res://entities/trees/tree_chopped.tscn" id="21_ut7sm"]
+[ext_resource type="AudioStream" uid="uid://djgjy61njk6ve" path="res://assets/sounds/641933__kbrecordzz__victorian-family-sheep-song.mp3" id="23_jilup"]
+[ext_resource type="AudioStream" uid="uid://cycr0q7qtb83d" path="res://assets/sounds/578072__ramonmineiro__medieval_village_atmosphere.wav" id="24_fprs8"]
 
 [sub_resource type="Animation" id="Animation_mlqb6"]
 length = 0.001
@@ -86,6 +88,7 @@ _data = {
 
 [sub_resource type="Resource" id="Resource_myfom"]
 script = ExtResource("11_qxhqs")
+minigames_path = "res://scenes/combat/minigames"
 
 [sub_resource type="Resource" id="Resource_77q0e"]
 script = ExtResource("12_uvy4v")
@@ -340,6 +343,14 @@ position = Vector2(2104, 1335)
 
 [node name="ChoppedTree2" parent="." instance=ExtResource("21_ut7sm")]
 position = Vector2(2125, 1231)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_jilup")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_fprs8")
+autoplay = true
 
 [connection signal="traded_successfully" from="Characters/Shepard" to="Characters/Shepard/OnShepardGotHisSheepBack" method="_on_shepard_traded_successfully"]
 [connection signal="player_won" from="Characters/FighterThatHasTheSheep" to="Characters/FighterThatHasTheSheep/OnSheepThiefDefeated" method="_on_fighter_that_has_the_sheep_player_won"]

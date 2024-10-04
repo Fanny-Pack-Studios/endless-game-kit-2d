@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AnswerCorrectly" load_steps=2 format=3 uid="uid://lpa3or7y8m2e"]
+
+[ext_resource type="Script" path="res://scenes/combat/minigames/answer_correctly.gd" id="1_5qjds"]
+
+[resource]
+script = ExtResource("1_5qjds")
+correct_answer = ""
+question = ""

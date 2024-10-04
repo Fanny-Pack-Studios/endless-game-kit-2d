@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://d0hbgem7rmn11"]
+[gd_scene load_steps=16 format=4 uid="uid://d0hbgem7rmn11"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_u35a0"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_ves3c"]
@@ -10,6 +10,7 @@
 [ext_resource type="SpriteFrames" uid="uid://0nvbd1cionvf" path="res://entities/characters/npcs/pawn/animations/pawn_blue.tres" id="8_6mf6n"]
 [ext_resource type="Script" path="res://scenes/levels/story_mode/level_1/stone_without_sword.gd" id="9_syv6e"]
 [ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://entities/items/item.tscn" id="10_f82q6"]
+[ext_resource type="AudioStream" uid="uid://djgjy61njk6ve" path="res://assets/sounds/641933__kbrecordzz__victorian-family-sheep-song.mp3" id="11_1twqj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1cm73"]
 size = Vector2(44.5, 31)
@@ -178,7 +179,6 @@ position = Vector2(461, 187)
 line = "¡Hola, Arturo! Tu destino es aprender inglés y reclamar tu lugar como el Rey Arturo.
 Explora el territorio y habla con quienes encuentres para descubrir tu verdadero destino
 ¡Buena suerte en tu viaje!"
-gives_important_info = true
 npc_name = "Oscar"
 sprite_frames = ExtResource("8_6mf6n")
 
@@ -186,6 +186,9 @@ sprite_frames = ExtResource("8_6mf6n")
 position = Vector2(1187, 533)
 line = "Encontrarás Mushrooms y Pumpkins más adelante.
 Los Mushrooms son rojos con puntos blancos, y los Pumpkins son naranjas y redondos."
-gives_important_info = true
 npc_name = "Michael"
 sprite_frames = ExtResource("8_6mf6n")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_1twqj")
+autoplay = true

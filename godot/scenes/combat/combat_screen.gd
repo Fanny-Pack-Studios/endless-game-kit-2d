@@ -55,11 +55,12 @@ func play_turns():
 	while player.current_health > 0 and enemy.current_health > 0:
 		await play_a_turn()
 
-	await wait_seconds(1.0)
-
 	if enemy.current_health <= 0:
+		$VictoryFanfare.play()
+		await $VictoryFanfare.finished
 		finished.emit(Outcome.PlayerWon)
 	elif player.current_health <= 0:
+		await wait_seconds(1.0)
 		finished.emit(Outcome.PlayerLost)
 
 

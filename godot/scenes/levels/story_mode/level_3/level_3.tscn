@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bx2llcrqojvbu"]
+[gd_scene load_steps=14 format=4 uid="uid://bx2llcrqojvbu"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_e1nu0"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_u3j2w"]
@@ -12,6 +12,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dnm04pi7yfmju" path="res://entities/characters/npcs/goblin/animations/goblin_red.tres" id="9_sihmq"]
 [ext_resource type="Resource" uid="uid://cgdm8w7oy2jyl" path="res://scenes/combat/in_combat_characters/fighter_characters/purple_archer.tres" id="9_yaql5"]
 [ext_resource type="SpriteFrames" uid="uid://bspa375ckrnmh" path="res://entities/characters/npcs/pawn/animations/pawn_yellow.tres" id="12_dquyo"]
+[ext_resource type="AudioStream" uid="uid://8mahfo8ru4xc" path="res://assets/sounds/553821__ekvelika__chonology-of-love.wav" id="13_rpclr"]
 
 [node name="Laberinto" type="Node2D"]
 y_sort_enabled = true
@@ -208,3 +209,7 @@ sprite_frames = ExtResource("12_dquyo")
 
 [node name="DoorFromPreviousLevel" parent="." instance=ExtResource("9_02ecn")]
 position = Vector2(601, 318)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_rpclr")
+autoplay = true

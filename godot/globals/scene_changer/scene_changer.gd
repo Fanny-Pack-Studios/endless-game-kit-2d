@@ -12,6 +12,9 @@ func _ready():
 
 
 func change_scene_to(next_scene: Node) -> void:
+	if(current_scene == null):
+		return
+
 	previous_scene = current_scene
 	current_scene = next_scene
 

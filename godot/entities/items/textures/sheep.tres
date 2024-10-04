@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dihlgcv761uo5" path="res://assets/Tiny Swords/Resources/Resources/HappySheep_All.png" id="1_78alx"]
 
-
 [resource]
 atlas = ExtResource("1_78alx")
 region = Rect2(0, 0, 128, 128)

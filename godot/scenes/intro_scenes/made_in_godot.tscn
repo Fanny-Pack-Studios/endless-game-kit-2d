@@ -8,7 +8,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_cbnh2"]
 font_size = 30
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="MadeInGodot" type="CanvasLayer"]
 layer = 2
 
 [node name="GodotLogo" type="PanelContainer" parent="."]

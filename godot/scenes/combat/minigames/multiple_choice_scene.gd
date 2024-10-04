@@ -3,6 +3,9 @@ class_name MultipleChoiceMiniGame extends MiniGameScene
 @export var multiple_choice: MultipleChoice
 @onready var options_container = %OptionsContainer
 @onready var question_label = %QuestionLabel
+@onready var correct = $Correct
+@onready var wrong = $Wrong
+
 
 const COMBAT_OPTION_BUTTON = preload("res://ui/components/game_button.tscn")
 
@@ -25,8 +28,6 @@ func setup_minigame(question, answers, correct_answer):
 		button.pressed.connect(func():
 			paint_answers()
 			
-			await get_tree().create_timer(0.5).timeout
-			
 			if(answer == correct_answer):
 				self.on_correct_answer()
 			else:
@@ -34,9 +35,13 @@ func setup_minigame(question, answers, correct_answer):
 		)
 	
 func on_correct_answer():
+	correct.play()
+	await get_tree().create_timer(0.5).timeout
 	completed.emit(100)
 
 func on_incorrect_answer():
+	wrong.play()
+	await get_tree().create_timer(0.5).timeout
 	completed.emit(0)
 
 func paint_answers():

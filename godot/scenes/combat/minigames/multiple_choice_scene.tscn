@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dg18w574jekb7"]
+[gd_scene load_steps=6 format=3 uid="uid://dg18w574jekb7"]
 
 [ext_resource type="Script" path="res://scenes/combat/minigames/multiple_choice_scene.gd" id="1_h6b35"]
 [ext_resource type="PackedScene" uid="uid://uw56if3krkna" path="res://ui/components/text_label.tscn" id="2_3t7p6"]
+[ext_resource type="AudioStream" uid="uid://ckdgx7lmnc0yc" path="res://assets/sounds/476178__unadamlar__correct-choice.wav" id="4_eqrsa"]
 [ext_resource type="PackedScene" uid="uid://cl54874jf84gw" path="res://ui/components/game_button.tscn" id="4_t66dx"]
+[ext_resource type="AudioStream" uid="uid://cudn4qep5il7x" path="res://assets/sounds/476177__unadamlar__wrong-choice.wav" id="5_n7e3s"]
 
 [node name="MultipleChoice" type="VBoxContainer"]
 anchors_preset = 15
@@ -45,3 +47,9 @@ text_to_voice = true
 layout_mode = 2
 text = "GREEN"
 text_to_voice = true
+
+[node name="Correct" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_eqrsa")
+
+[node name="Wrong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_n7e3s")

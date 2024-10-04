@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dv2y18ye8j7o0"]
+[gd_scene load_steps=39 format=3 uid="uid://dv2y18ye8j7o0"]
 
 [ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu_scene.gd" id="1_1foie"]
 [ext_resource type="PackedScene" uid="uid://dxnhyxcvugtcl" path="res://scenes/levels/story_mode/intro/intro_level.tscn" id="2_cqjmn"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://d8givm4cvtd7" path="res://scenes/menus/main_menu/principal.gif.png/54309ca39e894f34d07e48f9f881f3b5lp33WBg11IIVIMQg-11.png" id="19_mp3ms"]
 [ext_resource type="Texture2D" uid="uid://bqm7n7x7h46yv" path="res://scenes/menus/main_menu/principal.gif.png/54309ca39e894f34d07e48f9f881f3b5lp33WBg11IIVIMQg-12.png" id="20_e6yg7"]
 [ext_resource type="Texture2D" uid="uid://f7th7hkfwww" path="res://assets/Tiny Swords/UI/Banners/Banner_Connection_Right.png" id="21_srle3"]
+[ext_resource type="AudioStream" uid="uid://cy0fwtmn1erj3" path="res://assets/sounds/646460__g-14__medieval-march-mp3.mp3" id="22_1tkr3"]
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="22_2c1s3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_adki1"]
@@ -207,3 +208,7 @@ offset_bottom = 127.0
 theme_override_colors/font_color = Color(0.996078, 0, 0, 1)
 theme_override_font_sizes/font_size = 29
 text = "ARTURO"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_1tkr3")
+autoplay = true

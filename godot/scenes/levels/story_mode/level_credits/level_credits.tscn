@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://cje2ilwmcadb2"]
+[gd_scene load_steps=51 format=4 uid="uid://cje2ilwmcadb2"]
 
 [ext_resource type="Script" path="res://scenes/levels/story_mode/level_credits/credits.gd" id="1_qr75k"]
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_squa7"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://04rakar51mlb" path="res://assets/Tiny Swords/Factions/Knights/Buildings/Tower/Tower_Yellow.png" id="21_tv66s"]
 [ext_resource type="Texture2D" uid="uid://k20k0rpc5f1l" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="22_kd866"]
 [ext_resource type="Texture2D" uid="uid://bdg630pcsc7hs" path="res://assets/Tiny Swords/UI/Icons/Pressed_01.png" id="23_n2sa6"]
+[ext_resource type="AudioStream" uid="uid://cy0fwtmn1erj3" path="res://assets/sounds/646460__g-14__medieval-march-mp3.mp3" id="30_p5efj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xbmv4"]
 
@@ -642,3 +643,7 @@ type = 4
 position = Vector2(2098, 1346)
 rotation = 0.00697624
 type = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_p5efj")
+autoplay = true
