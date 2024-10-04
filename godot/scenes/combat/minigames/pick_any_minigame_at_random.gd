@@ -21,7 +21,7 @@ func calculate_minigame_filepaths(base_directory):
 			file_name = dir.get_next()
 
 
-func scene() -> CanvasItem:
+func scene() -> MiniGameScene:
 	if(minigame_filepaths.is_empty()):
 		calculate_minigame_filepaths(MULTIPLE_CHOICE_DIR_PATH)
 	var minigame_filepath = minigame_filepaths.pick_random()
