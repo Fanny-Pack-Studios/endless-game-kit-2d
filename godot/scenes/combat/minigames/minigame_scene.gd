@@ -12,3 +12,11 @@ class_name MiniGameScene extends Control
 ## [b]Importante: [/b] debe emitirse sí o sí, en caso contrario el combate
 ## nunca avanzará luego de este minijuego.
 signal completed(points: int)
+
+## Para ser usado en el momento que el minijuego se resolvió exitosamente.
+func succeed():
+	completed.emit(100)
+
+## Para ser usado en el momento que el minijuego se resolvió mal.
+func fail():
+	completed.emit(0)

@@ -12,5 +12,5 @@ func _ready():
 	super()
 	$InfoIndicator.visible = gives_important_info
 
-func interact_with(player):
+func interact_with(_player):
 	await Dialogue.say_multiple_lines(npc_name, line.split("\n"))

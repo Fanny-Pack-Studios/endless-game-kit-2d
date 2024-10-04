@@ -37,12 +37,12 @@ func setup_minigame(question, answers, correct_answer):
 func on_correct_answer():
 	correct.play()
 	await get_tree().create_timer(0.5).timeout
-	completed.emit(100)
+	succeed()
 
 func on_incorrect_answer():
 	wrong.play()
 	await get_tree().create_timer(0.5).timeout
-	completed.emit(0)
+	fail()
 
 func paint_answers():
 	for option in options_container.get_children():
