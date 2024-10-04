@@ -57,6 +57,7 @@ func _ready():
 	attack_1.pressed.connect(func(): option_chosen(PlayerOption.Attack1))
 	attack_2.pressed.connect(func(): option_chosen(PlayerOption.Attack2))
 	heal.pressed.connect(func(): option_chosen(PlayerOption.Heal))
+	disable_buttons()
 
 
 func calculate_random_values_for_attack_and_heal():
