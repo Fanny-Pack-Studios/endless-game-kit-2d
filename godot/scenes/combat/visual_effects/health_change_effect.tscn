@@ -101,7 +101,7 @@ _data = {
 }
 
 [node name="HealthChangeEffect" type="Node2D"]
-modulate = Color(0, 1, 0, 1)
+modulate = Color(1, 1, 1, 0)
 script = ExtResource("2_w62ib")
 
 [node name="PositionPivot" type="Node2D" parent="."]

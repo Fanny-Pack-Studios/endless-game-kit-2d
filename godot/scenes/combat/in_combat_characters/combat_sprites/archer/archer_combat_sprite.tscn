@@ -207,6 +207,7 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = ExtResource("3_nsjun")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.814426
 
 [node name="Arrow" type="Sprite2D" parent="Sprite"]
 visible = false
