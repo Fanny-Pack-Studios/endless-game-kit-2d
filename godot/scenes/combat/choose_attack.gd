@@ -1,4 +1,5 @@
-extends Control
+class_name ChooseAttackMenu extends Control
+## Clase asociada a la interfaz de opciones del jugador.
 
 @onready var attack_1 = %Attack1
 @onready var attack_2 = %Attack2
@@ -19,20 +20,23 @@ enum PlayerOption {
 	Heal
 }
 
+## Configura el turno del jugador
 func setup_turn():
 	calculate_random_values_for_attack_and_heal()
 
-
+## Habilita los botones para que se puedan clickear
 func enable_buttons():
 	for option_button in [attack_1, attack_2, heal]:
 		option_button.disabled = false
 
-
+## Deshabilita los botones para que no se puedan clickear
 func disable_buttons():
 	for option_button in [attack_1, attack_2, heal]:
 		option_button.disabled = true
 
-
+## Según la opción de botón elegida, ejecuta una acción acorde.
+## También, deshabilita los botones y señaliza el fin del turno del jugador
+## luego de que se reproduzca la acción.
 func option_chosen(option: PlayerOption):
 	disable_buttons()
 	player_chose_option.emit()
@@ -52,27 +56,40 @@ func option_chosen(option: PlayerOption):
 
 	player_turn_finished.emit()
 
-
+## Se conectan las señales [code]pressed[/code] de los botones de acciones
+## al método option_chosen, pasando como parámetro la acción elegida.
 func _ready():
 	attack_1.pressed.connect(func(): option_chosen(PlayerOption.Attack1))
 	attack_2.pressed.connect(func(): option_chosen(PlayerOption.Attack2))
 	heal.pressed.connect(func(): option_chosen(PlayerOption.Heal))
 	disable_buttons()
 
-
+## Se calculan valores al azar para los ataques y la curación.[br]
+## También se completa el texto de los botones de manera que reflejen
+## el daño o curación que representaran.
 func calculate_random_values_for_attack_and_heal():
+	# Todos los turnos, hacemos que haya un ataque fuerte (entre 51 y 100 de
+	# daño), y un atauqe debil (entre 1 y 50 de daño)
 	var strong_attack: int = randi_range(51, 100)
 	var weak_attack: int = randi_range(1, 50)
 	var attack_powers = [strong_attack, weak_attack]
+	# Cual ataque es cual se calcula al azar, shuffle hace que la lista quede
+	# en un orden aleatorio
 	attack_powers.shuffle()
+	# Entonces cuando sacamos el primer y ultimo elemento para definir el poder
+	# de cada ataque, no sabemos de antemano cual es el ataque débil y el fuerte.
 	attack_1_power = attack_powers.front()
 	attack_2_power = attack_powers.back()
+	# El poder de curación se calcula al azar entre 1 y 100.
 	heal_power = randi_range(1, 100)
+	# Los textos de las opciones se escriben en inglés en vez de con números.
 	attack_1.text = "Cut\nDamage: %s" % number_to_word(attack_1_power)
 	attack_2.text = "Slash\nDamage: %s" % number_to_word(attack_2_power)
 	heal.text = "Eat apple\nHeal: %s" % number_to_word(heal_power)
 
-
+## Dado un número entero, devuelve el nombre del número en inglés.
+## Soporta números entre 1 y 100.[br]
+## [b]DESAFIO:[/b] modificar este método para que soporte números hasta 1000.
 func number_to_word(number: int) -> String:
 	var digits: Array[String] = [
 		"zero", "one", "two", "three", "four", "five",

@@ -45,4 +45,4 @@ func combat(
 
 
 func say(line):
-	await Dialogue.show_line(line)
+	await Dialogue.say_line(npc_name, line)

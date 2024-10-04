@@ -18,12 +18,9 @@ enum Direction {
 
 func interact_with(player):
 	if(has_it_already_moved_out_of_the_way):
-		await Dialogue.say_line(npc_name, "Adelante")
+		await say("Adelante")
 	else:
-		await Dialogue.say_line(
-			npc_name,
-			request_item_line
-		)
+		await say(request_item_line)
 		if(not Inventory.is_empty()):
 			var chosen_item = await Inventory.choose_item()
 			if(chosen_item == item_i_need):
@@ -47,10 +44,13 @@ func interact_with(player):
 						Direction.Right:
 							animation_player.play("move_right")
 				else:
-					await Dialogue.say_line(
-						npc_name,
-						"Eso no es %s, es %s" % [
-							Item.english_name_of(item_i_need),
-							Item.english_name_of(chosen_item)
-						]
-					)
+					await say("No tienes suficiente, quiero %s y tienes %s" % [
+						amount_i_need, Inventory.amount_of(chosen_item)
+					])
+			else:
+				await say(
+					"Eso no es %s, es %s" % [
+						Item.english_name_of(item_i_need),
+						Item.english_name_of(chosen_item)
+					]
+				)

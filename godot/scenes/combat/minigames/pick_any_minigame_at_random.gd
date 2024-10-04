@@ -23,8 +23,6 @@ func calculate_minigame_filepaths(base_directory: String):
 			if dir.current_is_dir():
 				calculate_minigame_filepaths(full_name)
 			else:
-				var resource_exists = ResourceLoader.exists(full_name)
-				var full_name_ends_in_tres = full_name.ends_with(".tres")
 				if ResourceLoader.exists(full_name) and full_name.ends_with(".tres"):
 					minigame_filepaths.push_back(full_name)
 			file_name = dir.get_next()

@@ -15,7 +15,7 @@ func interact_with(player):
 	# Ejemplo de saludo:
 	await say("¡Hola buen día!")
 	#
-	# Ejemplo de saludo (configurable desde un export). Descomentar también
+	# Ejemplo de saludo (configurable desde un @export). Descomentar también
 	# la línea 4 para que esto funcione:
 	#await say(saludo)
 	#

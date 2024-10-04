@@ -65,5 +65,6 @@ func replace_sprite(new_combat_sprite: CombatSprite):
 	if(not combat_sprite):
 		combat_sprite = $SpritePivot/Sprite
 	$SpritePivot.remove_child(combat_sprite)
+	combat_sprite.queue_free()
 	$SpritePivot.add_child(new_combat_sprite)
 	combat_sprite = new_combat_sprite
