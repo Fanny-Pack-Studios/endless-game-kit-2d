@@ -56,6 +56,7 @@ func play_turns():
 		await play_a_turn()
 
 	if enemy.current_health <= 0:
+		$BackgroundMusic.stop()
 		$VictoryFanfare.play()
 		await $VictoryFanfare.finished
 		finished.emit(Outcome.PlayerWon)

@@ -25,7 +25,10 @@ func _ready():
 ## Sobreescribimos _gui_input para ante ciertos eventos emitir la señal
 ## que indica que se puede avanzar el texto.
 func _gui_input(event: InputEvent):
-	if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact"):
+	if event.is_action_pressed("ui_accept")\
+		or event.is_action_pressed("interact")\
+		or event.is_action_pressed("pause"):
+		get_viewport().set_input_as_handled()
 		accept_line()
 
 ## Emite a señal [signal line_accepted].
