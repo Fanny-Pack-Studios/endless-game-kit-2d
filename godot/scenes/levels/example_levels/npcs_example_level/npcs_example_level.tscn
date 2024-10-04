@@ -74,7 +74,7 @@ _data = {
 "moverse": SubResource("Animation_l0mci")
 }
 
-[node name="TilemapExampleLevel" type="Node2D"]
+[node name="ExampleLevel" type="Node2D"]
 y_sort_enabled = true
 
 [node name="Foam" type="TileMapLayer" parent="."]
@@ -91,7 +91,6 @@ position = Vector2(351, 315)
 
 [node name="Talker" parent="." instance=ExtResource("3_b6nvd")]
 position = Vector2(162, 589)
-line = "Hello!"
 
 [node name="TextLabel" parent="Talker" instance=ExtResource("4_2v08c")]
 offset_left = -149.0
@@ -102,8 +101,6 @@ text = "te habla"
 
 [node name="Trader" parent="." instance=ExtResource("5_m0tec")]
 position = Vector2(518, 642)
-item_i_give = 0
-item_i_want = 4
 
 [node name="TextLabel" parent="Trader" instance=ExtResource("4_2v08c")]
 offset_left = -136.0
@@ -193,7 +190,6 @@ x 2 dinero"
 
 [node name="Item" parent="." instance=ExtResource("13_mi1a8")]
 position = Vector2(129, 357)
-type = 2
 
 [node name="Item2" parent="." instance=ExtResource("13_mi1a8")]
 position = Vector2(109, 446)

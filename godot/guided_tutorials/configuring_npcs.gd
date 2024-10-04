@@ -1,6 +1,6 @@
 extends GDTour
 
-const CONFIGURING_NPCS_LEVEL_SCENE_PATH = "res://scenes/levels/example_levels/configuring_npcs_level.tscn"
+const CONFIGURING_NPCS_LEVEL_SCENE_PATH = "res://scenes/levels/example_levels/npcs_example_level/npcs_example_level.tscn"
 
 func _build() -> void:
 	context_set_2d()
@@ -18,7 +18,7 @@ func _build() -> void:
 	])
 	complete_step()
 	highlight_scene_nodes_by_name(["Talker"])
-	bubble_add_task_select_nodes_by_path(["Nivel1/Talker"], "Selecciona el nodo Talker en el arbol de escenas")
+	bubble_add_task_select_nodes_by_path(["ExampleLevel/Talker"], "Selecciona el nodo Talker en el arbol de escenas")
 	complete_step()
 	highlight_inspector_properties([
 		"npc_name",
@@ -47,11 +47,11 @@ func _build() -> void:
 		"Algunos NPCs tienen propiedades más complejas",
 		"Selecciona el nodo Trader"
 	])
-	bubble_add_task_select_nodes_by_path(["Nivel1/Trader"], "Selecciona el nodo Trader")
+	bubble_add_task_select_nodes_by_path(["ExampleLevel/Trader"], "Selecciona el nodo Trader")
 	highlight_scene_nodes_by_name(["Trader"])
 	complete_step()
 
-	spatial_editor_focus_node_by_paths(["Nivel1/Trader"])
+	spatial_editor_focus_node_by_paths(["ExampleLevel/Trader"])
 	highlight_inspector_properties([
 		"item_i_give",
 		"item_i_want"
@@ -67,11 +67,11 @@ func _build() -> void:
 		"Finalmente, no solo los NPC pueden configurarse"
 	])
 	highlight_scene_nodes_by_name(["Item"])
-	bubble_add_task_select_nodes_by_path(["Nivel1/Items/Item"], "Selecciona el nodo Item")
+	bubble_add_task_select_nodes_by_path(["ExampleLevel/Item"], "Selecciona el nodo Item")
 	complete_step()
 
 	highlight_inspector_properties(["type"])
-	bubble_add_task_set_node_property("Item", "type", Item.Type.Dinero, "Prueba configurar el item para que sea de tipo Dinero")
+	bubble_add_task_set_node_property("Item", "type", Item.Type.Hueso, "Prueba configurar el item para que sea de tipo Hueso")
 	complete_step()
 
 	bubble_add_text(["Bien hecho!"])
