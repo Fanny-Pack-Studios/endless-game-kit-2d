@@ -18,7 +18,7 @@ func _build() -> void:
 	])
 	complete_step()
 	highlight_scene_nodes_by_name(["Talker"])
-	bubble_add_text(["Selecciona el nodo Talker en el arbol de escenas"])
+	bubble_add_task_select_nodes_by_path(["Nivel1/Talker"], "Selecciona el nodo Talker en el arbol de escenas")
 	complete_step()
 	highlight_inspector_properties([
 		"npc_name",
@@ -39,13 +39,19 @@ func _build() -> void:
 		"npc_name",
 		"line"
 	], false)
+	bubble_add_task_set_node_property("Talker", "npc_name", "Carlos", "Cambia el nombre del npc a Carlos")
+	bubble_add_task_set_node_property("Talker", "line", "Buen Dia", "Cambia lo que te dice el NPC a Buen Dia")
 	complete_step()
+
 	bubble_add_text([
 		"Algunos NPCs tienen propiedades más complejas",
 		"Selecciona el nodo Trader"
 	])
+	bubble_add_task_select_nodes_by_path(["Nivel1/Trader"], "Selecciona el nodo Trader")
 	highlight_scene_nodes_by_name(["Trader"])
 	complete_step()
+
+	spatial_editor_focus_node_by_paths(["Nivel1/Trader"])
 	highlight_inspector_properties([
 		"item_i_give",
 		"item_i_want"
@@ -53,12 +59,20 @@ func _build() -> void:
 	bubble_add_text([
 		"Cambia el tipo de item que pide y el tipo de item que vende"
 	])
+	bubble_add_task_set_node_property("Trader", "item_i_want", Item.Type.Oveja, "Cambia el item que pide a Ovejas")
+	bubble_add_task_set_node_property("Trader", "item_i_give", Item.Type.Tronco, "Cambia el item que da a Troncos")
 	complete_step()
+
 	bubble_add_text([
-		"Finalmente, no solo los NPC pueden configurarse",
-		"Prueba configurar un item para que sea de otro tipo"
+		"Finalmente, no solo los NPC pueden configurarse"
 	])
 	highlight_scene_nodes_by_name(["Item"])
+	bubble_add_task_select_nodes_by_path(["Nivel1/Items/Item"], "Selecciona el nodo Item")
 	complete_step()
+
+	highlight_inspector_properties(["type"])
+	bubble_add_task_set_node_property("Item", "type", Item.Type.Dinero, "Prueba configurar el item para que sea de tipo Dinero")
+	complete_step()
+
 	bubble_add_text(["Bien hecho!"])
 	complete_step()

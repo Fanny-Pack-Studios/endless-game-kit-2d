@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://crnpi0jyql6y4"]
+[gd_scene load_steps=24 format=3 uid="uid://crnpi0jyql6y4"]
 
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="1_t0ixm"]
 [ext_resource type="PackedScene" uid="uid://mndsxueepdkr" path="res://entities/prefabs/npcs/talker/talker.tscn" id="2_p8ejw"]
@@ -6,13 +6,26 @@
 [ext_resource type="PackedScene" uid="uid://dbbea8dbdiuvr" path="res://entities/prefabs/npcs/fighter/fighter.tscn" id="4_trlkt"]
 [ext_resource type="PackedScene" uid="uid://whfe031ftcip" path="res://entities/prefabs/npcs/fighter/fighter_with_reward.tscn" id="5_3jj0a"]
 [ext_resource type="SpriteFrames" uid="uid://cd0nkwp6ueukh" path="res://entities/characters/npcs/archer/animations/archer_yellow.tres" id="5_w035b"]
-[ext_resource type="Script" path="res://scenes/combat/minigame.gd" id="5_wx5mv"]
-[ext_resource type="Script" path="res://scenes/combat/multiple_choice.gd" id="6_rnwi7"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/minigame.gd" id="5_wx5mv"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/multiple_choice.gd" id="6_rnwi7"]
 [ext_resource type="PackedScene" uid="uid://ewf5cl8ycquv" path="res://entities/items/item.tscn" id="6_yy8jn"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/pick_any_minigame_at_random.gd" id="6_yy32e"]
 [ext_resource type="PackedScene" uid="uid://cphykiupy8lbk" path="res://entities/prefabs/npcs/guard/guard.tscn" id="7_inag1"]
 [ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="7_vijw3"]
 [ext_resource type="PackedScene" uid="uid://wb8ro614jtx3" path="res://entities/prefabs/npcs/guard/guard_that_uses_signal.tscn" id="8_x5vbl"]
 [ext_resource type="PackedScene" uid="uid://b6j76ro0xvs0g" path="res://entities/door/door.tscn" id="9_08kcl"]
+
+[sub_resource type="Resource" id="Resource_egswk"]
+script = ExtResource("6_yy32e")
+minigames_path = "res://scenes/combat/minigames"
+
+[sub_resource type="Resource" id="Resource_oa6vc"]
+resource_local_to_scene = true
+script = ExtResource("7_vijw3")
+hp = 200
+attack_power = 75
+_combat_sprite = "res://scenes/combat/in_combat_characters/archer/archer_combat_sprite.tscn"
+minigames = Array[ExtResource("5_wx5mv")]([SubResource("Resource_egswk")])
 
 [sub_resource type="Resource" id="Resource_j7cgj"]
 script = ExtResource("6_rnwi7")
@@ -32,6 +45,14 @@ hp = 200
 attack_power = 75
 _combat_sprite = "res://scenes/combat/in_combat_characters/player_combat_sprite.tscn"
 minigames = Array[ExtResource("5_wx5mv")]([SubResource("Resource_j7cgj"), SubResource("Resource_plrbf")])
+
+[sub_resource type="Resource" id="Resource_er6gm"]
+resource_local_to_scene = true
+script = ExtResource("7_vijw3")
+hp = 200
+attack_power = 75
+_combat_sprite = "res://scenes/combat/in_combat_characters/archer/archer_combat_sprite.tscn"
+minigames = Array[ExtResource("5_wx5mv")]([SubResource("Resource_egswk")])
 
 [sub_resource type="Animation" id="Animation_5yvhb"]
 length = 0.001
@@ -85,6 +106,7 @@ offset_top = 39.0
 offset_right = 33.0
 offset_bottom = 62.0
 text = "NPC que te habla"
+metadata/_edit_use_anchors_ = true
 
 [node name="Talker2" parent="." instance=ExtResource("2_p8ejw")]
 position = Vector2(282, 642)
@@ -97,6 +119,7 @@ offset_top = 42.0
 offset_right = 70.0
 offset_bottom = 65.0
 text = "NPC que te habla"
+metadata/_edit_use_anchors_ = true
 
 [node name="Trader" parent="." instance=ExtResource("3_n6j3k")]
 position = Vector2(518, 642)
@@ -110,6 +133,7 @@ offset_right = 72.0
 offset_bottom = 80.0
 text = "Te cambia 1
 calabaza x 1 hueso"
+metadata/_edit_use_anchors_ = true
 
 [node name="Trader2" parent="." instance=ExtResource("3_n6j3k")]
 position = Vector2(613, 608)
@@ -123,9 +147,11 @@ offset_right = 84.0
 offset_bottom = -30.0
 text = "Te cambia 1
 hongo x dinero"
+metadata/_edit_use_anchors_ = true
 
 [node name="Fighter" parent="." instance=ExtResource("4_trlkt")]
 position = Vector2(796, 572)
+in_combat_character = SubResource("Resource_oa6vc")
 
 [node name="Label5" type="Label" parent="Fighter"]
 offset_left = -31.0
@@ -133,6 +159,7 @@ offset_top = 46.0
 offset_right = 114.0
 offset_bottom = 95.0
 text = "Combate"
+metadata/_edit_use_anchors_ = true
 
 [node name="Fighter3" parent="." instance=ExtResource("4_trlkt")]
 position = Vector2(1134, 598)
@@ -146,9 +173,11 @@ offset_bottom = 95.0
 text = "Combate con
 un sprite distinto
 al default configurado"
+metadata/_edit_use_anchors_ = true
 
 [node name="Fighter2" parent="." instance=ExtResource("5_3jj0a")]
 position = Vector2(949, 582)
+in_combat_character = SubResource("Resource_er6gm")
 
 [node name="Label6" type="Label" parent="Fighter2"]
 offset_left = -48.0
@@ -157,6 +186,7 @@ offset_right = 97.0
 offset_bottom = 90.0
 text = "Combate con
 recompensa"
+metadata/_edit_use_anchors_ = true
 
 [node name="Talker3" parent="." instance=ExtResource("2_p8ejw")]
 position = Vector2(252, 473)
@@ -170,6 +200,7 @@ offset_top = 53.0
 offset_right = 76.0
 offset_bottom = 76.0
 text = "NPC que te habla"
+metadata/_edit_use_anchors_ = true
 
 [node name="Trader3" parent="." instance=ExtResource("3_n6j3k")]
 position = Vector2(424, 526)
@@ -185,6 +216,7 @@ offset_right = 92.0
 offset_bottom = -27.0
 text = "Te cambia 5 tronco
 x 2 dinero"
+metadata/_edit_use_anchors_ = true
 
 [node name="Item" parent="." instance=ExtResource("6_yy8jn")]
 position = Vector2(129, 357)
@@ -213,6 +245,7 @@ offset_right = 76.0
 offset_bottom = 79.0
 text = "Guardia que se mueve
 hacia arriba si el das dinero"
+metadata/_edit_use_anchors_ = true
 
 [node name="Guard2" parent="." instance=ExtResource("7_inag1")]
 position = Vector2(975, 327)
@@ -226,6 +259,7 @@ offset_right = 95.0
 offset_bottom = 81.0
 text = "Guardia que se mueve
 hacia abajo si el das dinero"
+metadata/_edit_use_anchors_ = true
 
 [node name="Guard3" parent="." instance=ExtResource("7_inag1")]
 position = Vector2(859, 89)
@@ -239,6 +273,7 @@ offset_right = 114.0
 offset_bottom = 88.0
 text = "Guardia que se mueve
 hacia el costado si el das dinero"
+metadata/_edit_use_anchors_ = true
 
 [node name="Guard4" parent="." instance=ExtResource("8_x5vbl")]
 position = Vector2(233, 120)
@@ -257,6 +292,7 @@ offset_bottom = 54.0
 text = "Guardia que ejecuta
 un animation player si
 le das dinero"
+metadata/_edit_use_anchors_ = true
 
 [node name="Cueva" parent="." instance=ExtResource("9_08kcl")]
 position = Vector2(1085, 513)

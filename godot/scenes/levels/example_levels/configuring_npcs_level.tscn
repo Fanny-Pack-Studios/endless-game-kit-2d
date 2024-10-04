@@ -51,11 +51,9 @@ drag_vertical_enabled = true
 
 [node name="Talker" parent="." instance=ExtResource("3_7njt4")]
 position = Vector2(692, 366)
-line = "¿Que tal?"
-npc_name = "Jose"
 
 [node name="Trader" parent="." instance=ExtResource("4_i8vxv")]
-position = Vector2(323, 379)
+position = Vector2(-1, 0)
 
 [node name="Fighter" parent="." instance=ExtResource("5_p7fev")]
 position = Vector2(711, 184)

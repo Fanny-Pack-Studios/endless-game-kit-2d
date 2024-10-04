@@ -1,12 +1,12 @@
 extends GDTour
 
 const EDITING_MINIGAMES = preload("res://guided_tutorials/editing_minigames.png")
-const CONFIGURING_COMBAT_LEVEL_SCENE_PATH = "res://scenes/levels/example_levels/configuring_combat_level.tscn"
+const CONFIGURING_COMBAT_LEVEL_SCENE_PATH = "res://scenes/levels/example_levels/combat_level/example_combat.tscn"
 
 func _build() -> void:
 	context_set_2d()
 	bubble_set_title("Configurando un combate")
-	bubble_add_text(["Vamos a configurar los minijuegos de un combate"])
+	bubble_add_text(["Vamos a configurar un oponente de un combate"])
 	complete_step()
 	bubble_add_text([
 		"Comencemos abriendo una escena que unicamente tiene al jugador y un combatiente"
@@ -24,16 +24,30 @@ func _build() -> void:
 	])
 	highlight_inspector_properties(["in_combat_character"], false)
 	complete_step()
+	
 	bubble_add_text([
-		"Ahora, selecciona la subpropiedad Minigames"
+		"Ahora, modifica las propiedades hp y attack_power"
 	])
-	highlight_inspector_properties(["minigames"], false)
+	highlight_inspector_properties(["hp", "attack_power"], false)
 	complete_step()
+
 	bubble_add_text([
-		"Puedes expandir cada uno de los MultipleChoice existentes clickeandolos",
-		"Si quieres agregar más, puedes usar el boton + Add Element"
+		"Prueba configurar un nuevo combat sprite"
 	])
-	bubble_add_texture(EDITING_MINIGAMES, 1200)
+	highlight_inspector_properties(["_combat_sprite"], false)
 	complete_step()
+	
+	bubble_add_text([
+		"Finalmente, corre el jugeo para ver la diferencia"
+	])
+	var play_current_scene_button = EditorInterface.get_base_control().find_children(
+		"", "EditorRunBar", true, false
+	).front().find_children("", "HBoxContainer", true, false).front()\
+	.find_children("", "Button", false, false)[3]
+	highlight_controls(
+		[play_current_scene_button]
+	)
+	complete_step()
+
 	bubble_add_text(["Bien hecho!"])
 	complete_step()
