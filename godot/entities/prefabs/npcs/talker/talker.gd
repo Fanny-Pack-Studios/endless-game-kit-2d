@@ -8,5 +8,9 @@ extends NPC
 		if(is_inside_tree()):
 			$InfoIndicator.visible = gives_important_info
 
+func _ready():
+	super()
+	$InfoIndicator.visible = gives_important_info
+
 func interact_with(player):
 	await Dialogue.say_multiple_lines(npc_name, line.split("\n"))
