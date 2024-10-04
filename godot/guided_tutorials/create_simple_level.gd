@@ -5,6 +5,7 @@ const SIMPLEST_LEVEL_SCENE_PATH = "res://scenes/levels/example_levels/simplest_l
 const TALKER_SCENE_PATH = "res://entities/prefabs/npcs/talker/talker.tscn"
 
 func _build() -> void:
+	context_set_2d()
 	bubble_set_title("Creando un nivel básico")
 	bubble_add_text(["Buenas, vamos a aprender a crear un nuevo nivel"])
 	bubble_add_task_open_scene(

@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=4 uid="uid://cafkloagaunvp"]
+[gd_scene load_steps=9 format=4 uid="uid://cafkloagaunvp"]
 
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="1_7a74f"]
 [ext_resource type="PackedScene" uid="uid://dd6b0hmw15amr" path="res://entities/characters/player/player.tscn" id="2_hdyso"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/minigame.gd" id="4_forcq"]
+[ext_resource type="Script" path="res://scenes/combat/minigames/pick_any_minigame_at_random.gd" id="5_0f4h5"]
 [ext_resource type="PackedScene" uid="uid://dbbea8dbdiuvr" path="res://entities/prefabs/npcs/fighter/fighter.tscn" id="5_3ujdm"]
+[ext_resource type="Script" path="res://scenes/combat/in_combat_characters/fighter_character.gd" id="6_amaqh"]
+
+[sub_resource type="Resource" id="Resource_egswk"]
+script = ExtResource("5_0f4h5")
+minigames_path = "res://scenes/combat/minigames"
+
+[sub_resource type="Resource" id="Resource_bsd3x"]
+resource_local_to_scene = true
+script = ExtResource("6_amaqh")
+hp = 200
+attack_power = 75
+_combat_sprite = "res://scenes/combat/in_combat_characters/archer/archer_combat_sprite.tscn"
+minigames = Array[ExtResource("4_forcq")]([SubResource("Resource_egswk")])
 
 [node name="Nivel1" type="Node2D"]
 
@@ -24,3 +39,4 @@ drag_vertical_enabled = true
 
 [node name="Fighter" parent="." instance=ExtResource("5_3ujdm")]
 position = Vector2(710, 354)
+in_combat_character = SubResource("Resource_bsd3x")

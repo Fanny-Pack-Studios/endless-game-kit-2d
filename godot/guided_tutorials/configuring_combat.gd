@@ -4,6 +4,7 @@ const EDITING_MINIGAMES = preload("res://guided_tutorials/editing_minigames.png"
 const CONFIGURING_COMBAT_LEVEL_SCENE_PATH = "res://scenes/levels/example_levels/configuring_combat_level.tscn"
 
 func _build() -> void:
+	context_set_2d()
 	bubble_set_title("Configurando un combate")
 	bubble_add_text(["Vamos a configurar los minijuegos de un combate"])
 	complete_step()

@@ -3,7 +3,7 @@ extends GDTour
 const CONFIGURING_NPCS_LEVEL_SCENE_PATH = "res://scenes/levels/example_levels/configuring_npcs_level.tscn"
 
 func _build() -> void:
-	
+	context_set_2d()
 	bubble_set_title("Configurando NPCs: %s" % gtr("Welcome to Godot Tour!"))
 	bubble_add_text(["Ahora aprenderemos como modificar el comportamiento default de los npcs"])
 	complete_step()

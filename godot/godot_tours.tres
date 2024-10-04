@@ -10,6 +10,13 @@ is_free = false
 is_locked = false
 tour_path = "res://guided_tutorials/project_structure.gd"
 
+[sub_resource type="Resource" id="Resource_6wysw"]
+script = ExtResource("2_yh1pt")
+title = "Agregando un NPC"
+is_free = false
+is_locked = false
+tour_path = "res://guided_tutorials/adding_an_npc.gd"
+
 [sub_resource type="Resource" id="Resource_egkat"]
 script = ExtResource("2_yh1pt")
 title = "Creando un nivel basico"
@@ -24,13 +31,6 @@ is_free = false
 is_locked = false
 tour_path = "res://guided_tutorials/configuring_npcs.gd"
 
-[sub_resource type="Resource" id="Resource_6wysw"]
-script = ExtResource("2_yh1pt")
-title = "Agregando un NPC"
-is_free = false
-is_locked = false
-tour_path = "res://guided_tutorials/adding_an_npc.gd"
-
 [sub_resource type="Resource" id="Resource_g70sg"]
 script = ExtResource("2_yh1pt")
 title = "Configurando un combate"
@@ -40,4 +40,4 @@ tour_path = "res://guided_tutorials/configuring_combat.gd"
 
 [resource]
 script = ExtResource("1_ar5da")
-tours = Array[ExtResource("2_yh1pt")]([SubResource("Resource_0wlr8"), SubResource("Resource_egkat"), SubResource("Resource_ehudv"), SubResource("Resource_6wysw"), SubResource("Resource_g70sg")])
+tours = Array[ExtResource("2_yh1pt")]([SubResource("Resource_0wlr8"), SubResource("Resource_6wysw"), SubResource("Resource_egkat"), SubResource("Resource_ehudv"), SubResource("Resource_g70sg")])

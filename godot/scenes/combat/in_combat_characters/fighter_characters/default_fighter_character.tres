@@ -6,6 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_egswk"]
 script = ExtResource("2_ft2qd")
+minigames_path = "res://scenes/combat/minigames"
 
 [resource]
 resource_local_to_scene = true
