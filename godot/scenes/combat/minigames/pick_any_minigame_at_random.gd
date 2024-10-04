@@ -1,10 +1,19 @@
 class_name PickAnyMinigameAtRandom extends MiniGame
+## Elegir cualquier minijuego al azar.
+##
+## El objetivo de esta clase es tener una manera sencilla de configurar un 
+## oponente de un combate que tenga a su disposición cualquiera de los minijuegos
+## que se encuentran en una carpeta especificada.
 
-const MULTIPLE_CHOICE_DIR_PATH = "res://scenes/combat/minigames"
+## Carpeta que contiene los minijuegos posibles
+@export var minigames_path: String = "res://scenes/combat/minigames"
 
+## Lista de todas las rutas a minijuegos encontradas.
 var minigame_filepaths: Array[String]
 
-func calculate_minigame_filepaths(base_directory):
+## Recorre la carpeta que contiene los minijuegos para encontrar todos aquellos 
+## archivos que sean un minijuego.
+func calculate_minigame_filepaths(base_directory: String):
 	var dir = DirAccess.open(base_directory)
 	if dir:
 		dir.list_dir_begin()
@@ -20,10 +29,10 @@ func calculate_minigame_filepaths(base_directory):
 					minigame_filepaths.push_back(full_name)
 			file_name = dir.get_next()
 
-
+## De todos los minijuegos posibles, obtiene alguno y crea y configura su escena.
 func scene() -> MiniGameScene:
 	if(minigame_filepaths.is_empty()):
-		calculate_minigame_filepaths(MULTIPLE_CHOICE_DIR_PATH)
+		calculate_minigame_filepaths(minigames_path)
 	var minigame_filepath = minigame_filepaths.pick_random()
 	var minigame: MultipleChoice = load(minigame_filepath)
 	return minigame.scene()
