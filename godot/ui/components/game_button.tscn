@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="1_q5mo3"]
 [ext_resource type="Texture2D" uid="uid://k20k0rpc5f1l" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="2_fj5np"]
 [ext_resource type="Texture2D" uid="uid://bylxapp1aec53" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="3_gtlj0"]
-[ext_resource type="Script" path="res://ui/components/button.gd" id="4_yay1e"]
+[ext_resource type="Script" path="res://ui/components/game_button.gd" id="4_yay1e"]
 [ext_resource type="Texture2D" uid="uid://b7pmw2q2qw8b1" path="res://assets/Tiny Swords/UI/Icons/Regular_03.png" id="5_6a6sa"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpfsn"]

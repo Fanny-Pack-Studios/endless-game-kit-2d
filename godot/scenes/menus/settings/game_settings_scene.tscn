@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/menus/settings/game_settings_scene.gd" id="1_3764u"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_w6tmj"]
-[ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/game_settings.tscn" id="2_qsqie"]
+[ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/game_settings.tscn" id="2_qsqie"]
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="3_exubj"]
 [ext_resource type="Texture2D" uid="uid://d27ek4ygoqs2p" path="res://assets/Tiny Swords/UI/Banners/Banner_Connection_Up.png" id="3_nbib0"]
 [ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="3_unbh4"]

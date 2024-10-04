@@ -1,7 +1,12 @@
+@tool
 class_name GameButton extends Button
 
 @onready var read_button = $ReadOutLoudButton
-@export var text_to_voice: bool = false
+@export var text_to_voice: bool = false :
+	set(new_value):
+		text_to_voice = new_value
+		if(is_inside_tree()):
+			read_button.visible = text_to_voice
 
 func _ready():
 	if(not text_to_voice):

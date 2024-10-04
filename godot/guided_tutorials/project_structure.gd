@@ -145,10 +145,17 @@ el juego está corriendo. Lo más importante que encontrarás aquí es:",
 	highlight_filesystem_paths([UI])
 	bubble_set_title("UI")
 	bubble_add_text([
-		"Aquí hay escenas que se utilizazn en la interfaz de usuario del juego.",
-		"Muchas de esas son reutilizables y pueden ser agregadas a nuevas interfaces."
+		"Aquí hay escenas que se utilizazn en la interfaz de usuario del juego."
 	])
 	complete_step()
+
+	highlight_filesystem_paths([UI.path_join("components")])
+	bubble_set_title("Componentes reutilizables")
+	bubble_add_text([
+		"Muchas de esas escenas son reutilizables y pueden ser agregadas a nuevas interfaces."
+	])
+	complete_step()
+
 	bubble_set_title("Estructura del Proyecto")
 	bubble_add_text([
 		"¡Eso es todo por ahora, en los próximos tutoriales pasarás por varias de las carpetas que describimos aquí!"

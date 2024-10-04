@@ -1,6 +1,6 @@
 [gd_scene load_steps=72 format=4 uid="uid://bci2ari0cx8if"]
 
-[ext_resource type="PackedScene" uid="uid://bo4ehnumovbi" path="res://ui/components/bootsplash.tscn" id="1_aglqj"]
+[ext_resource type="PackedScene" uid="uid://bo4ehnumovbi" path="res://ui/bootsplash.tscn" id="1_aglqj"]
 [ext_resource type="TileSet" uid="uid://bmdxvmqreuxe6" path="res://assets/terrain/tilesets/tileset.tres" id="2_lncdy"]
 [ext_resource type="Texture2D" uid="uid://32emst0ctttf" path="res://entities/characters/player/Warrior_Blue.png" id="3_q0r51"]
 [ext_resource type="Texture2D" uid="uid://b3pmtodft1dlv" path="res://assets/Tiny Swords/Effects/Explosion/Explosions.png" id="4_p3nrq"]

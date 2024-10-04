@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://nbaodrlopo7y"]
 
 [ext_resource type="PackedScene" uid="uid://cpo1u33eut0i4" path="res://ui/components/float_range_game_settings_option.tscn" id="1_0gpwr"]
-[ext_resource type="Script" path="res://ui/components/game_settings.gd" id="1_eje8l"]
+[ext_resource type="Script" path="res://ui/game_settings.gd" id="1_eje8l"]
 
 [node name="GameSettings" type="VBoxContainer"]
 anchors_preset = 15
