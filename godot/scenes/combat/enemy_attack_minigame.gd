@@ -1,4 +1,4 @@
-extends Control
+class_name EnemyAttackMiniGame extends Control
 
 @export var minigames: Array[MiniGame]
 @onready var enemy = %Enemy

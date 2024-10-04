@@ -1,10 +1,8 @@
-class_name MultipleChoiceMiniGame extends Control
+class_name MultipleChoiceMiniGame extends MiniGameScene
 
 @export var multiple_choice: MultipleChoice
 @onready var options_container = %OptionsContainer
 @onready var question_label = %QuestionLabel
-
-signal completed(points: int)
 
 const COMBAT_OPTION_BUTTON = preload("res://ui/components/game_button.tscn")
 

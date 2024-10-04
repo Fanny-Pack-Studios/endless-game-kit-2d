@@ -7,7 +7,7 @@ const MULTIPLE_CHOICE_SCENE_PATH =\
 @export var correct_answer: String
 @export var answers: Array[String]
 
-func scene() -> CanvasItem:
+func scene() -> MiniGameScene:
 	var multiple_choice_minigame = load(MULTIPLE_CHOICE_SCENE_PATH).instantiate()
 	multiple_choice_minigame.multiple_choice = self
 	return multiple_choice_minigame

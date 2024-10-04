@@ -149,7 +149,6 @@ el juego está corriendo. Lo más importante que encontrarás aquí es:",
 		"Muchas de esas son reutilizables y pueden ser agregadas a nuevas interfaces."
 	])
 	complete_step()
-
 	bubble_set_title("Estructura del Proyecto")
 	bubble_add_text([
 		"¡Eso es todo por ahora, en los próximos tutoriales pasarás por varias de las carpetas que describimos aquí!"
