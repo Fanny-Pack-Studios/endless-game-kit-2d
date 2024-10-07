@@ -14,6 +14,7 @@ const UI = "res://ui"
 func _build() -> void:
 	bubble_set_title("Estructura del proyecto")
 	bubble_add_text(["Este tutorial te explicará qué compone este proyecto y cómo está organizado."])
+	bubble_move_and_anchor(EditorInterface.get_base_control(), Bubble.At.CENTER)
 	complete_step()
 	
 	bubble_set_title("Convencion de colores")

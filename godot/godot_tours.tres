@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=8 format=3 uid="uid://cas50sk2gk7rc"]
+[gd_resource type="Resource" load_steps=9 format=3 uid="uid://cas50sk2gk7rc"]
 
 [ext_resource type="Script" path="res://addons/godot_tours/godot_tour_list.gd" id="1_ar5da"]
 [ext_resource type="Script" path="res://addons/godot_tours/godot_tour_entry.gd" id="2_yh1pt"]
@@ -38,6 +38,13 @@ is_free = false
 is_locked = false
 tour_path = "res://guided_tutorials/configuring_combat.gd"
 
+[sub_resource type="Resource" id="Resource_7n0ds"]
+script = ExtResource("2_yh1pt")
+title = "Agregando una puerta a otro nivel"
+is_free = false
+is_locked = false
+tour_path = "res://guided_tutorials/adding_a_door.gd"
+
 [resource]
 script = ExtResource("1_ar5da")
-tours = Array[ExtResource("2_yh1pt")]([SubResource("Resource_0wlr8"), SubResource("Resource_6wysw"), SubResource("Resource_egkat"), SubResource("Resource_ehudv"), SubResource("Resource_g70sg")])
+tours = Array[ExtResource("2_yh1pt")]([SubResource("Resource_0wlr8"), SubResource("Resource_6wysw"), SubResource("Resource_egkat"), SubResource("Resource_ehudv"), SubResource("Resource_g70sg"), SubResource("Resource_7n0ds")])

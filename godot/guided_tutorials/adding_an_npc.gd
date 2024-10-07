@@ -9,6 +9,7 @@ const SIMPLEST_LEVEL_SCENE_PATH = "res://scenes/levels/example_levels/simple_lev
 
 func _build() -> void:
 	context_set_2d()
+	bubble_move_and_anchor(EditorInterface.get_base_control(), Bubble.At.BOTTOM_RIGHT)
 	bubble_set_title("Agregando un NPC")
 	bubble_add_text(["Buenas, vamos a aprender a agregar un personaje"])
 	complete_step()

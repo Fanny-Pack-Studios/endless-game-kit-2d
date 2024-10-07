@@ -6,6 +6,7 @@ const CONFIGURING_COMBAT_LEVEL_SCENE_PATH = "res://scenes/levels/example_levels/
 func _build() -> void:
 	context_set_2d()
 	bubble_set_title("Configurando un combate")
+	bubble_move_and_anchor(EditorInterface.get_base_control(), Bubble.At.BOTTOM_RIGHT)
 	bubble_add_text(["Vamos a configurar un oponente de un combate"])
 	complete_step()
 	bubble_add_text([

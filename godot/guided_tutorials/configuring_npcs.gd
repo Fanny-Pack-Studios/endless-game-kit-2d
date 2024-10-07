@@ -4,8 +4,9 @@ const CONFIGURING_NPCS_LEVEL_SCENE_PATH = "res://scenes/levels/example_levels/np
 
 func _build() -> void:
 	context_set_2d()
-	bubble_set_title("Configurando NPCs: %s" % gtr("Welcome to Godot Tour!"))
+	bubble_set_title("Configurando NPCs")
 	bubble_add_text(["Ahora aprenderemos como modificar el comportamiento default de los npcs"])
+	bubble_move_and_anchor(EditorInterface.get_base_control(), Bubble.At.BOTTOM_RIGHT)
 	complete_step()
 	bubble_add_text([
 		"Comencemos abriendo una escena que ya cuenta con varios personajes"

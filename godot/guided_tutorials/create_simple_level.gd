@@ -8,6 +8,7 @@ func _build() -> void:
 	context_set_2d()
 	bubble_set_title("Creando un nivel básico")
 	bubble_add_text(["Buenas, vamos a aprender a crear un nuevo nivel"])
+	bubble_move_and_anchor(EditorInterface.get_base_control(), Bubble.At.BOTTOM_RIGHT)
 	bubble_add_task_open_scene(
 		SIMPLEST_LEVEL_SCENE_PATH,
 		"Abre la escena simplest_level.tscn"

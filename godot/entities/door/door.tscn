@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://8l8wjl0jlt8v" path="res://entities/door/images/GoldMine_Inactive.png" id="3_h1gw4"]
 [ext_resource type="Texture2D" uid="uid://cu3sgy56u8070" path="res://entities/door/images/GoldMine_Active.png" id="4_ox0u6"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_fs2oa"]
 atlas = ExtResource("2_lr4br")
 region = Rect2(0, 0, 192, 128)
@@ -46,7 +45,7 @@ size = Vector2(56, 57)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_723al"]
 size = Vector2(131, 88)
 
-[node name="Cueva" type="Area2D"]
+[node name="Door" type="Area2D"]
 collision_layer = 2147483652
 collision_mask = 0
 monitoring = false
